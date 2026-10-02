@@ -14,8 +14,7 @@ public class ItemDataSO : ScriptableObject
     public int maxStackSizeAtShop = 1;
 
     [Header("Drop Details")]
-    [Range(0, 1000)]
-    public int itemRarity = 100;
+    public ItemRarity itemRarity = ItemRarity.Common;
     [Range(0, 100)]
     public float dropChance;
     [Range(0, 100)]
@@ -37,6 +36,16 @@ public class ItemDataSO : ScriptableObject
 
     private void OnValidate()
     {
+        if (!System.Enum.IsDefined(typeof(ItemRarity), itemRarity))
+        {
+            int val = (int)itemRarity;
+            if (val <= 100) itemRarity = ItemRarity.Common;
+            else if (val <= 300) itemRarity = ItemRarity.Uncommon;
+            else if (val <= 600) itemRarity = ItemRarity.Rare;
+            else if (val <= 850) itemRarity = ItemRarity.Epic;
+            else itemRarity = ItemRarity.Legendary;
+        }
+
         dropChance = GetDropChance();
 
 #if UNITY_EDITOR
@@ -48,7 +57,7 @@ public class ItemDataSO : ScriptableObject
     public float GetDropChance()
     {
         float maxRarity = 1000;
-        float chance = (maxRarity - itemRarity + 1) / maxRarity * 100;
+        float chance = (maxRarity - (int)itemRarity + 1) / maxRarity * 100;
 
         return Mathf.Min(chance, maxDropChance);
     }

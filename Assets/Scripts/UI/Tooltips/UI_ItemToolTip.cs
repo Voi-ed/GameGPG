@@ -42,12 +42,16 @@ public class UI_ItemToolTip : UI_ToolTip
         itemName.text = GetColoredText(color,itemToShow.itemData.itemName);
     }
 
-    private string GetColorByRarity(int rarity)
+    private string GetColorByRarity(ItemRarity rarity)
     {
-        if (rarity <= 100) return "white"; // Common
-        if (rarity <= 300) return "green"; // Uncommon
-        if (rarity <= 600) return "blue";  // Rare
-        if (rarity <= 850) return "purple";// Epic
-        return "orange";                   // Legendary
+        switch (rarity)
+        {
+            case ItemRarity.Common: return "white";
+            case ItemRarity.Uncommon: return "green";
+            case ItemRarity.Rare: return "blue";
+            case ItemRarity.Epic: return "purple";
+            case ItemRarity.Legendary: return "orange";
+            default: return "white";
+        }
     }
 }

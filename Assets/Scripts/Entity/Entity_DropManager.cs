@@ -65,10 +65,10 @@ public class Entity_DropManager : MonoBehaviour
 
         foreach (var item in possibleDrops) 
         {                                   
-            if (maxRarityAmount > item.itemRarity)
+            if (maxRarityAmount > (int)item.itemRarity)
             {
                 finalDrops.Add(item);
-                maxRarityAmount = maxRarityAmount - item.itemRarity;
+                maxRarityAmount = maxRarityAmount - (int)item.itemRarity;
             }
         }
 
