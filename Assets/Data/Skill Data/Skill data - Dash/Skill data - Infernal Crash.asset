@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
+  m_Name: Skill data - Infernal Crash
+  m_EditorClassIdentifier: 
+  displayName: "H\u1ECFa Long Xung K\xEDch"
+  description: "Khi k\u1EBFt th\xFAc l\u01B0\u1EDBt, d\u1EADm m\u1EA1nh t\u1EA1o
+    \u0111\u1EA1i ch\u1EA5n h\u1ECFa ng\u1EE5c g\xE2y s\xE1t th\u01B0\u01A1ng l\u1EDBn
+    v\xE0 L\xC0M CHO\xC1NG (Stun) k\u1EBB \u0111\u1ECBch 1.5s. \u0110\u1ED3ng th\u1EDDi
+    k\xEDch n\u1ED5 d\xE2y chuy\u1EC1n to\xE0n b\u1ED9 v\u1EC7t l\u1EEDa sau l\u01B0ng,
+    h\u1EA5t tung k\u1EBB \u0111\u1ECBch b\xE1m \u0111u\u1ED5i."
+  icon: {fileID: -1778065067, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  cost: 3
+  unlockedByDefault: 0
+  skillType: 0
+  upgradeData:
+    upgradeType: 26
+    cooldown: 4
+    damageScaleData:
+      phyiscal: 0.4
+      elemental: 1.8
+      chillDuration: 0
+      chillSlowMulitplier: 0
+      burnDuratin: 3.5
+      burnDamageScale: 1.8
+      shockDuration: 0
+      shockDamageScale: 0
+      shockCharge: 0

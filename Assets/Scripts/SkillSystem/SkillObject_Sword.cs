@@ -26,7 +26,7 @@ public class SkillObject_Sword : SkillObject_Base
         damageScaleData = swordManager.damageScaleData;
     }
 
-    public void GetSwordBackToPlayer() => shouldComeback = true;
+    public virtual void GetSwordBackToPlayer() => shouldComeback = true;
 
     protected void HandleComeback()
     {

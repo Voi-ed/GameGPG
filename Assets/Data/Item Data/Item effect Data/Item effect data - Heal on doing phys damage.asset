@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd71c69bcef3f64a83fdac052cddb6d, type: 3}
   m_Name: Item effect data - Heal on doing phys damage
   m_EditorClassIdentifier: 
-  effectDescription: Heals you for 20% of physical damage you inflict with basic
-    attacks.
+  effectDescription: Hồi phục 20% lượng sát thương vật lý gây ra từ đòn đánh thường thành Máu.
   percentHealedOnAttack: 0.2
+  lifestealVfxPrefab: {fileID: 4553287630450876385, guid: 15483e51212e3d74886ea57291f4639a, type: 3}

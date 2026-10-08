@@ -18,6 +18,10 @@ public class Player : Entity
     public Player_Stats stats { get; private set; }
     public Player_QuestManager questManager { get; private set; }
 
+    [Header("Ground Position")]
+    [SerializeField] private Transform groundPos;
+    public Transform GroundPos => groundPos;
+
 
     #region State Variables
 
@@ -76,6 +80,21 @@ public class Player : Entity
         inventory = GetComponent<Inventory_Player>();
         stats = GetComponent<Player_Stats>();
         questManager = GetComponent<Player_QuestManager>();
+
+        if (groundPos == null)
+            groundPos = transform.Find("GroundPos");
+
+        if (groundPos == null)
+        {
+            foreach (Transform child in GetComponentsInChildren<Transform>(true))
+            {
+                if (child.name == "GroundPos")
+                {
+                    groundPos = child;
+                    break;
+                }
+            }
+        }
 
         input = new PlayerInputSet();
         ui.SetupControlsUI(input);

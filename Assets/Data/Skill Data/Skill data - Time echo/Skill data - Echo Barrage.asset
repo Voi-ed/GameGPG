@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Echo Barrage
   m_EditorClassIdentifier: 
-  displayName: Echo Barrage
-  description: The Time echo can perform 3 attack.
+  displayName: Bão Đòn Ảo Ảnh
+  description: 'Ảo ảnh thời gian có thể thực hiện 3 đòn tấn công liên tiếp.'
   icon: {fileID: 1194482098, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 2
   unlockedByDefault: 0

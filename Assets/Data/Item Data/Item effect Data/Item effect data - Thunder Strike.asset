@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8001, type: 3}
+  m_Name: Item effect data - Thunder Strike
+  m_EditorClassIdentifier: 
+  effectDescription: Mỗi đòn đánh có 30% tỷ lệ triệu hồi tia sét giáng xuống mục tiêu gây 35 Sát thương Lôi điện diện rộng.
+  procChance: 0.3
+  lightningDamage: 35
+  splashRadius: 2.5
+  cooldown: 1.2
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
+  lightningVfxPrefab: {fileID: 609128798462994316, guid: 7892dafb312e9ef46bc51c6c233e5927, type: 3}

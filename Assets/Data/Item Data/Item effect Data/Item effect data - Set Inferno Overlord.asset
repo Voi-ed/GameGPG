@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a2b3c4d5e6f708192a3b4c5d6e9002, type: 3}
+  m_Name: Item effect data - Set Inferno Overlord
+  m_EditorClassIdentifier: 
+  effectDescription: "Viêm Nộ Bộc Phá: Mỗi 3 đòn đánh kích nổ bão lửa gây 70 Sát thương Lửa diện rộng 5m lên tất cả kẻ địch."
+  hitRequirement: 3
+  eruptionDamage: 70
+  radius: 5
+  cooldown: 2.5
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
+  impactBurstVfxPrefab: {fileID: 2504214343621411470, guid: f1f2a3b4c5d6e7f8091a2b3c4d5e9001, type: 3}

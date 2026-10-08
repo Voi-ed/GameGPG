@@ -19,7 +19,7 @@ MonoBehaviour:
   dropChance: 79.9
   maxDropChance: 79.9
   craftRecipe: []
-  itemName: Animal leather
+  itemName: Da Thú
   itemIcon: {fileID: -676011521, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 0
   maxStackSize: 5

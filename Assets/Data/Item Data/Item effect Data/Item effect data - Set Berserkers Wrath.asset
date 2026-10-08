@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8017, type: 3}
+  m_Name: Item effect data - Set Berserkers Wrath
+  m_EditorClassIdentifier: 
+  effectDescription: "Cơn Cuồng Nộ Bất Diệt: Khi nhận sát thương chí tử, không chết mà kích hoạt Bất Tử trong 3.5s, hồi 35% Máu và tăng +50 Sát thương trong 6s (Hồi chiêu 90s)."
+  healPercent: 0.35
+  invulnerabilityDuration: 3.5
+  damageBonus: 50
+  buffDuration: 6
+  cooldown: 90
+  wrathAuraPrefab: {fileID: 0}
+  wrathExplosionVfxPrefab: {fileID: 4021103657954561961, guid: 65de1f9b1c5a4e11a2dae36258aa601b, type: 3}

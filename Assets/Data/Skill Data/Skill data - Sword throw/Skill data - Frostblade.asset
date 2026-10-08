@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
+  m_Name: Skill data - Frostblade
+  m_EditorClassIdentifier: 
+  displayName: "H\xE0n Ki\u1EBFm Tr\u1EA3m"
+  description: "Ph\xF3ng thanh ki\u1EBFm mang lu\u1ED3ng h\xE0n kh\xED bu\u1ED1t
+    gi\xE1. Khi c\u1EAFm \u0111\u1EA5t t\u1EA1o b\xE3o tuy\u1EBFt h\xFAt nh\u1EB9
+    qu\xE1i v\u1EADt xung quanh, g\xE2y s\xE1t th\u01B0\u01A1ng B\u0103ng li\xEAn
+    t\u1EE5c v\xE0 \u0111\xF3ng b\u0103ng k\u1EBB \u0111\u1ECBch. Khi g\u1ECDi ki\u1EBFm
+    v\u1EC1, ki\u1EBFm x\xE9 b\u0103ng k\xEDch n\u1ED5 b\u1EA1o k\xEDch l\xEAn c\xE1c
+    m\u1EE5c ti\xEAu b\u1ECB \u0111\xF3ng b\u0103ng."
+  icon: {fileID: -1585429683, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  cost: 2
+  unlockedByDefault: 0
+  skillType: 3
+  upgradeData:
+    upgradeType: 28
+    cooldown: 5
+    damageScaleData:
+      phyiscal: 0.25
+      elemental: 1.2
+      chillDuration: 3
+      chillSlowMulitplier: 0.4
+      burnDuratin: 0
+      burnDamageScale: 0
+      shockDuration: 0
+      shockDamageScale: 0
+      shockCharge: 0

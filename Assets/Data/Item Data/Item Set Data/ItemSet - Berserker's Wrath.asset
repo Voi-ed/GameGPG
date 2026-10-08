@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f2a3b4c5d6e7f8091a2b3c4d5e6f77, type: 3}
+  m_Name: ItemSet - Berserker's Wrath
+  m_EditorClassIdentifier: 
+  setName: Cuồng Nộ Chiến Binh
+  overrideVfxColor: 0
+  setVfxColor: {r: 0.9019608, g: 0.2, b: 0.11764706, a: 1}
+  twoPieceModifiers:
+  - statType: 7
+    value: 20
+  - statType: 0
+    value: 80
+  fourPieceModifiers:
+  - statType: 2
+    value: 8
+  - statType: 10
+    value: 10
+  fourPieceEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8017, type: 2}

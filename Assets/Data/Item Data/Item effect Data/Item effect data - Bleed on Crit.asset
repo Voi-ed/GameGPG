@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8008, type: 3}
+  m_Name: Item effect data - Bleed on Crit
+  m_EditorClassIdentifier: 
+  effectDescription: Đòn đánh chí mạng khiến kẻ địch bị Xuất Huyết, nhận 15 sát thương vật lý mỗi giây trong 3 giây.
+  bleedDamagePerTick: 15
+  totalTicks: 3
+  tickInterval: 1
+  critHitVfxPrefab: {fileID: 85941164691198867, guid: 77e099487fc940c0bd5cda3854e280ab, type: 3}
+  bleedTickVfxPrefab: {fileID: 6823200998282874702, guid: 5540db83ea454290932fc3481fae0ac4, type: 3}

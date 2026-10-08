@@ -4,6 +4,7 @@ using UnityEngine;
 public class Entity_Combat : MonoBehaviour
 {
     public event Action<float> OnDoingPhysicalDamage;
+    public event Action<AttackData, Transform> OnDoingDamage;
 
     private Entity_SFX sfx;
     private Entity_VFX vfx;
@@ -13,6 +14,7 @@ public class Entity_Combat : MonoBehaviour
 
     [Header("Target detection")]
     [SerializeField] private Transform targetCheck;
+    public Transform TargetCheck => targetCheck;
     [SerializeField] private float targetCheckRadius = 1;
     [SerializeField] private LayerMask whatIsTarget;
 
@@ -51,6 +53,7 @@ public class Entity_Combat : MonoBehaviour
             if (targetGotHit)
             {
                 OnDoingPhysicalDamage?.Invoke(physicalDamage);
+                OnDoingDamage?.Invoke(attackData, target.transform);
                 vfx.CreateOnHitVFX(target.transform, attackData.isCrit, element);
                 sfx?.PlayAttackHit();
             }
@@ -87,6 +90,7 @@ public class Entity_Combat : MonoBehaviour
         if (targetGotHit)
         {
             OnDoingPhysicalDamage?.Invoke(physicalDamage);
+            OnDoingDamage?.Invoke(attackData, target.transform);
             vfx.CreateOnHitVFX(target.transform, attackData.isCrit, element);
             sfx?.PlayAttackHit();
         }

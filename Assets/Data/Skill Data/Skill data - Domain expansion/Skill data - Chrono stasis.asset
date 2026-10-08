@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
+  m_Name: Skill data - Chrono stasis
+  m_EditorClassIdentifier: 
+  displayName: "Ng\u01B0ng \u0110\u1ECDng Th\u1EDDi Gian"
+  description: "M\u1EDF ra l\xE3nh \u0111\u1ECBa Za Warudo: To\xE0n b\u1ED9 qu\xE1i
+    v\u1EADt v\xE0 \u0111\u1EA1n bay b\u1ECB \u0111\xF3ng b\u0103ng th\u1EDDi gian
+    100%. Ng\u01B0\u1EDDi ch\u01A1i t\u1EF1 do ch\xE9m \u0111\xE1nh t\xEDch l\u0169y
+    s\xE1t th\u01B0\u01A1ng n\xE9n, b\u1ED9c ph\xE1t t\u1EADn di\u1EC7t \u0111\u1ED3ng
+    lo\u1EA1t khi l\xE3nh \u0111\u1ECBa k\u1EBFt th\xFAc."
+  icon: {fileID: 1238464337, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  cost: 5
+  unlockedByDefault: 0
+  skillType: 4
+  upgradeData:
+    upgradeType: 29
+    cooldown: 20
+    damageScaleData:
+      phyiscal: 1.25
+      elemental: 1.25
+      chillDuration: 3
+      chillSlowMulitplier: 0.2
+      burnDuratin: 3
+      burnDamageScale: 1
+      shockDuration: 3
+      shockDamageScale: 1
+      shockCharge: 0.4

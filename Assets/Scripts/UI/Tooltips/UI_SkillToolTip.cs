@@ -18,7 +18,7 @@ public class UI_SkillToolTip : UI_ToolTip
     [SerializeField] private string notMetConditionHex;
     [SerializeField] private string importantInfoHex;
     [SerializeField] private Color exampleColor;
-    [SerializeField] private string lockedSkillText = "You've taken a diffrent path - this skill is now locked.";
+    [SerializeField] private string lockedSkillText = "Bạn đã chọn nhánh khác - kỹ năng này hiện bị khóa.";
 
     private Coroutine textEffectCo;
 
@@ -43,7 +43,7 @@ public class UI_SkillToolTip : UI_ToolTip
 
         skillName.text = skillData.displayName;
         skillDescription.text = skillData.description;
-        skillCooldown.text = "Cooldown: "+ skillData.upgradeData.cooldown + " s.";
+        skillCooldown.text = "Hồi chiêu: " + skillData.upgradeData.cooldown + " giây";
 
         if (node == null)
         {
@@ -85,10 +85,10 @@ public class UI_SkillToolTip : UI_ToolTip
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.AppendLine("Requirements:");
+        sb.AppendLine("Yêu cầu:");
 
         string costColor = skillTree.EnoughSkillPoints(skillCost) ? metConditionHex : notMetConditionHex;
-        string costText = $"- {skillCost} skill point(s)";
+        string costText = $"- {skillCost} điểm kỹ năng";
         string finalCostText = GetColoredText(costColor, costText);
 
         sb.AppendLine(finalCostText);
@@ -109,7 +109,7 @@ public class UI_SkillToolTip : UI_ToolTip
 
 
         sb.AppendLine(); // spacing
-        sb.AppendLine(GetColoredText(importantInfoHex,"Locks out: "));
+        sb.AppendLine(GetColoredText(importantInfoHex, "Khóa nhánh: "));
 
         foreach (var node in conflictNodes)
         {

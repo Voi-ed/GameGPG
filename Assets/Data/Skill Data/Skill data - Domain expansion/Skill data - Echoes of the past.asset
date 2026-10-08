@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Echoes of the past
   m_EditorClassIdentifier: 
-  displayName: Echoes of the past
-  description: Each enemy trapped in the time warp is struck by multiple time echoes.
+  displayName: Âm Vang Quá Khứ
+  description: 'Mỗi kẻ địch bị giam trong vùng thời gian sẽ bị tấn công dồn dập bởi nhiều ảo ảnh thời gian.'
   icon: {fileID: 1560387317, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 4
   unlockedByDefault: 0

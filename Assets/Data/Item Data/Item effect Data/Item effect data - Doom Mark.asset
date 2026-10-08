@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8014, type: 3}
+  m_Name: Item effect data - Doom Mark
+  m_EditorClassIdentifier: 
+  effectDescription: Đòn đánh có 25% tỷ lệ nguyền rủa kẻ địch bằng Dấu Ấn Diệt Vong, phát nổ sau 2s gây 45 Sát thương diện rộng.
+  procChance: 0.25
+  delay: 2
+  detonationDamage: 45
+  blastRadius: 3
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
+  skullMarkVfxPrefab: {fileID: 5985634496115995773, guid: 8d0aea821fec49fc984f2cd3d2f4310b, type: 3}
+  explosionVfxPrefab: {fileID: 3832130983257212487, guid: a40acf272f6f52343bc6e6a5872bed07, type: 3}
+

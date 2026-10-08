@@ -235,9 +235,12 @@ public class UI : MonoBehaviour
 
     public void HideAllTooltips()
     {
-        itemToolTip.ShowToolTip(false, null);
-        skillToolTip.ShowToolTip(false, null);
-        statToolTip.ShowToolTip(false, null);
+        if (itemToolTip != null)
+            itemToolTip.ShowToolTip(false, null);
+        if (skillToolTip != null)
+            skillToolTip.ShowToolTip(false, null);
+        if (statToolTip != null)
+            statToolTip.ShowToolTip(false, null);
     }
 
     private void SetTooltipsAsLastSibling()

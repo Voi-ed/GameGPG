@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - The chainsaw
   m_EditorClassIdentifier: 
-  displayName: The chainsaw
-  description: The sword spins like a raging chainsaw, dealing damage to nearby enemies
-    for N seconds.
+  displayName: Lưỡi Cưa Bão Tố
+  description: 'Thanh kiếm xoay tròn liên tục như một lưỡi cưa cuồng bạo, gây sát thương liên tiếp lên kẻ địch xung quanh.'
   icon: {fileID: -611442429, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 2
   unlockedByDefault: 0

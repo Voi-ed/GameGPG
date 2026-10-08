@@ -19,7 +19,7 @@ MonoBehaviour:
   dropChance: 31.3
   maxDropChance: 50.8
   craftRecipe: []
-  itemName: Scroll of Vengeance
+  itemName: Cuộn Báo Thù
   itemIcon: {fileID: -1541025665, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 4
   maxStackSize: 5

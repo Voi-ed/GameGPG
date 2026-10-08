@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f2a3b4c5d6e7f8091a2b3c4d5e6f77, type: 3}
+  m_Name: ItemSet - Shadow Assassin
+  m_EditorClassIdentifier: 
+  setName: Sát Thủ Bóng Đêm
+  overrideVfxColor: 0
+  setVfxColor: {r: 0.60784316, g: 0.31764707, b: 0.8784314, a: 1}
+  twoPieceModifiers:
+  - statType: 6
+    value: 0.15
+  - statType: 15
+    value: 0.1
+  fourPieceModifiers:
+  - statType: 8
+    value: 0.15
+  - statType: 9
+    value: 0.35
+  fourPieceEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8018, type: 2}

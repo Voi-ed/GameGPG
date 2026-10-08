@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Time warp
   m_EditorClassIdentifier: 
-  displayName: Time warp
-  description: Create a field that drastically slows all enemies caught within.
+  displayName: Vùng Thời Gian
+  description: 'Tạo ra một vùng không gian làm chậm cực mạnh tất cả kẻ địch bên trong.'
   icon: {fileID: -248090357, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 4
   unlockedByDefault: 0

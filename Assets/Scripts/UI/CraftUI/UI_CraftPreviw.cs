@@ -28,7 +28,7 @@ public class UI_CraftPreviw : MonoBehaviour
     {
         if (itemToCraft == null)
         {
-            buttonText.text = "Pick an item.";
+            buttonText.text = "Chọn vật phẩm.";
             return;
         }
 

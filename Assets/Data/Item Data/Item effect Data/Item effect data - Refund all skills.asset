@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c408eb9b3dd7b7e4d925f69b0ce6727c, type: 3}
   m_Name: Item effect data - Refund all skills
   m_EditorClassIdentifier: 
-  effectDescription: 'Reset all skills.
+  effectDescription: Tẩy và hoàn trả lại toàn bộ điểm kỹ năng đã cộng.
 
     Refund all skill points.'

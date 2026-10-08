@@ -25,66 +25,66 @@ public class UI_StatToolTip : UI_ToolTip
         {
             // Major Attributes
             case StatType.Strength:
-                return "Increases physical damage by 1 per point." +
-                       "\n Increases critical power by 0.5% per point.";
+                return "Tăng 1 sát thương vật lý mỗi điểm." +
+                       "\nTăng 0.5% sát thương chí mạng mỗi điểm.";
             case StatType.Agility:
-                return "Increases critical chance by 0.3% per point." +
-                       "\n Increases evasion by 0.5% per point.";
+                return "Tăng 0.3% tỷ lệ chí mạng mỗi điểm." +
+                       "\nTăng 0.5% né tránh mỗi điểm.";
             case StatType.Intelligence:
-                return "Increases elemental resistances by 0.5% per point." +
-                        "\n Adds 1 elemental damage per point as a bonus. " +
-                        "\n If all elements have 0 damage, the bonus will not be applied.";
+                return "Tăng 0.5% kháng nguyên tố mỗi điểm." +
+                       "\nThêm 1 sát thương nguyên tố mỗi điểm thưởng." +
+                       "\nNếu tất cả nguyên tố đều bằng 0, điểm thưởng sẽ không được áp dụng.";
             case StatType.Vitality:
-                return "Increases maximum health by 5 per point" +
-                       "\n Increases armor by 1 per point.";
+                return "Tăng 5 máu tối đa mỗi điểm." +
+                       "\nTăng 1 giáp mỗi điểm.";
 
             // Physical Damage
             case StatType.Damage:
-                return "Determines the physical damage of your attacks.";
+                return "Quyết định lượng sát thương vật lý trong các đòn đánh của bạn.";
             case StatType.CritChance:
-                return "Chance for your attacks to critically strike.";
+                return "Tỷ lệ đòn đánh gây sát thương chí mạng.";
             case StatType.CritPower:
-                return "Increases the damage dealt by critical strikes.";
+                return "Tăng lượng sát thương gây ra từ các đòn đánh chí mạng.";
             case StatType.ArmorReduction:
-                return "Percent of armor that will be ignored by your attacks.";
+                return "Phần trăm giáp của mục tiêu sẽ bị bỏ qua khi bạn tấn công.";
             case StatType.AttackSpeed:
-                return "Determines how quickly you can attack.";
+                return "Quyết định tốc độ vung đòn và tấn công của bạn.";
 
             // Defense
             case StatType.MaxHealth:
-                return "Determines how much total health you have.";
+                return "Tổng lượng sinh lực tối đa của nhân vật.";
             case StatType.HealthRegen:
-                return "Amount of health restored per second.";
+                return "Lượng máu được hồi phục mỗi giây.";
             case StatType.Armor:
-                return "Reduces incoming physical damage."
-                    + "\n Armor mitigation is Limited at 85%."
-                    + "Current mitigation is: " + playerStats.GetArmorMitigation(0) * 100 + "%.";
+                return "Giảm sát thương vật lý nhận vào."
+                    + "\nGiảm thiểu tối đa 85%."
+                    + "\nGiảm thiểu hiện tại: " + playerStats.GetArmorMitigation(0) * 100 + "%.";
             case StatType.Evasion:
-                return "Chance to completely avoid attacks." + "\n Limited at 85%.";
+                return "Tỷ lệ né tránh hoàn toàn đòn tấn công." + "\nTối đa 85%.";
 
             // Elemental Damage
             case StatType.IceDamage:
-                return "Determines the ice damage of your attacks.";
+                return "Quyết định lượng sát thương Băng trong đòn đánh.";
             case StatType.FireDamage:
-                return "Determines the fire damage of your attacks.";
+                return "Quyết định lượng sát thương Lửa trong đòn đánh.";
             case StatType.LightningDamage:
-                return "Determines the lightning damage of your attacks.";
+                return "Quyết định lượng sát thương Sét trong đòn đánh.";
             case StatType.ElementalDamage:
                 return
-                    "Elemental damage combines all three elements. " +
-                    "\n The highest element applies corresponding element status effect and full damage. " +
-                    "\n The other two elements contribute 50% of their damage as a bonus.";
+                    "Sát thương nguyên tố kết hợp cả ba hệ Lửa, Băng và Sét." +
+                    "\nNguyên tố có chỉ số cao nhất sẽ áp dụng hiệu ứng và 100% sát thương." +
+                    "\nHai nguyên tố còn lại đóng góp 50% sát thương như sát thương cộng thêm.";
 
             // Elemental Resistances
             case StatType.IceResistance:
-                return "Reduces ice damage taken.";
+                return "Giảm sát thương Băng phải gánh chịu.";
             case StatType.FireResistance:
-                return "Reduces fire damage taken.";
+                return "Giảm sát thương Lửa phải gánh chịu.";
             case StatType.LightningResistance:
-                return "Reduces lightning damage taken.";
+                return "Giảm sát thương Sét phải gánh chịu.";
 
             default:
-                return "No tooltip avalible for this stat.";
+                return "Chưa có thông tin mô tả cho chỉ số này.";
         }
     }
 }

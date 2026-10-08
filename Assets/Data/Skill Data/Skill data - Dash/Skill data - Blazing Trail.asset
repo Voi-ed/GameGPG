@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
+  m_Name: Skill data - Blazing Trail
+  m_EditorClassIdentifier: 
+  displayName: "V\u1EC7t L\u1EEDa H\u1ECFa Ng\u1EE5c"
+  description: "Khi l\u01B0\u1EDBt \u0111\u1EC3 l\u1EA1i m\u1ED9t v\u1EC7t l\u1EEDa
+    thi\xEAu \u0111\u1ED1t m\u1EB7t \u0111\u1EA5t trong 3 gi\xE2y. K\u1EBB \u0111\u1ECBch
+    b\u01B0\u1EDBc qua g\xE1nh ch\u1ECBu s\xE1t th\u01B0\u01A1ng L\u1EEDa li\xEAn
+    t\u1EE5c."
+  icon: {fileID: 2134030973, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  cost: 2
+  unlockedByDefault: 0
+  skillType: 0
+  upgradeData:
+    upgradeType: 25
+    cooldown: 4
+    damageScaleData:
+      phyiscal: 0.3
+      elemental: 1
+      chillDuration: 3
+      chillSlowMulitplier: 0.2
+      burnDuratin: 3
+      burnDamageScale: 1.2
+      shockDuration: 3
+      shockDamageScale: 1
+      shockCharge: 0.4

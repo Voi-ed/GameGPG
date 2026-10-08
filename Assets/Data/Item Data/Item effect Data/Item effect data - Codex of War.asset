@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5b6467e8713ec4e81047b9588602d3, type: 3}
+  m_Name: Item effect data - Codex of War
+  m_EditorClassIdentifier: 
+  effectDescription: Cổ thư chiến tranh tăng +15 Sức mạnh và +25 Sát thương trong 60 giây.
+  buffsToApply:
+  - type: 2
+    value: 15
+  - type: 7
+    value: 25
+  duration: 60
+  source: CodexOfWarBuff

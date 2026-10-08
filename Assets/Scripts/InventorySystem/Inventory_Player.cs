@@ -77,6 +77,8 @@ public class Inventory_Player : Inventory_Base
         slot.equipedItem.AddModifiers(player.stats);
         slot.equipedItem.AddItemEffect(player);
 
+        UpdateSetBonuses();
+
         player.health.SetHealthToPercent(savaedHealthPercent);
         RemoveOneItem(itemToEquip);
     }
@@ -97,8 +99,95 @@ public class Inventory_Player : Inventory_Base
         itemToUnequip.RemoveModifiers(player.stats);
         itemToUnequip.RemoveItemEffect();
 
+        UpdateSetBonuses();
+
         player.health.SetHealthToPercent(savedHealthPercent);
         AddItem(itemToUnequip);
+    }
+
+    private Dictionary<ItemSetDataSO, int> activeSetCounts = new Dictionary<ItemSetDataSO, int>();
+    private List<ItemEffect_DataSO> activeSetEffects = new List<ItemEffect_DataSO>();
+
+    private void UpdateSetBonuses()
+    {
+        Dictionary<ItemSetDataSO, int> currentCounts = new Dictionary<ItemSetDataSO, int>();
+
+        foreach (var slot in equipList)
+        {
+            if (slot.HasItem() && slot.equipedItem.itemData is EquipmentDataSO equipData && equipData.itemSet != null)
+            {
+                ItemSetDataSO set = equipData.itemSet;
+                if (!currentCounts.ContainsKey(set))
+                    currentCounts[set] = 0;
+                currentCounts[set]++;
+            }
+        }
+
+        foreach (var kvp in activeSetCounts)
+        {
+            ItemSetDataSO set = kvp.Key;
+            int oldCount = kvp.Value;
+            int newCount = currentCounts.ContainsKey(set) ? currentCounts[set] : 0;
+
+            if (oldCount >= 2 && newCount < 2)
+            {
+                RemoveSetModifiers(set.twoPieceModifiers, $"SetBonus_{set.name}_2Piece");
+            }
+
+            if (oldCount >= 4 && newCount < 4)
+            {
+                RemoveSetModifiers(set.fourPieceModifiers, $"SetBonus_{set.name}_4Piece");
+                if (set.fourPieceEffect != null && activeSetEffects.Contains(set.fourPieceEffect))
+                {
+                    set.fourPieceEffect.Unsubscribe();
+                    activeSetEffects.Remove(set.fourPieceEffect);
+                }
+            }
+        }
+
+        foreach (var kvp in currentCounts)
+        {
+            ItemSetDataSO set = kvp.Key;
+            int newCount = kvp.Value;
+            int oldCount = activeSetCounts.ContainsKey(set) ? activeSetCounts[set] : 0;
+
+            if (newCount >= 2 && oldCount < 2)
+            {
+                ApplySetModifiers(set.twoPieceModifiers, $"SetBonus_{set.name}_2Piece");
+            }
+
+            if (newCount >= 4 && oldCount < 4)
+            {
+                ApplySetModifiers(set.fourPieceModifiers, $"SetBonus_{set.name}_4Piece");
+                if (set.fourPieceEffect != null && !activeSetEffects.Contains(set.fourPieceEffect))
+                {
+                    set.fourPieceEffect.BindSource(player, null, set);
+                    activeSetEffects.Add(set.fourPieceEffect);
+                }
+            }
+        }
+
+        activeSetCounts = currentCounts;
+    }
+
+    private void ApplySetModifiers(ItemModifier[] modifiers, string source)
+    {
+        if (modifiers == null) return;
+        foreach (var mod in modifiers)
+        {
+            Stat stat = player.stats.GetStatByType(mod.statType);
+            stat?.AddModifier(mod.value, source);
+        }
+    }
+
+    private void RemoveSetModifiers(ItemModifier[] modifiers, string source)
+    {
+        if (modifiers == null) return;
+        foreach (var mod in modifiers)
+        {
+            Stat stat = player.stats.GetStatByType(mod.statType);
+            stat?.RemoveModifier(source);
+        }
     }
 
     public override void SaveData(ref GameData data)
@@ -167,6 +256,7 @@ public class Inventory_Player : Inventory_Base
             slot.equipedItem.AddItemEffect(player);
         }
 
+        UpdateSetBonuses();
         TriggerUpdateUI();
     }
 }

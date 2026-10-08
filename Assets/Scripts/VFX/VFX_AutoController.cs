@@ -46,7 +46,7 @@ public class VFX_AutoController : MonoBehaviour
 
     private IEnumerator FadeCo()
     {
-        Color targetColor = Color.white;
+        Color targetColor = sr != null ? sr.color : Color.white;
 
         while (targetColor.a > 0)
         {

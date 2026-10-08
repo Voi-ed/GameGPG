@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8002, type: 3}
+  m_Name: Item effect data - Berserk on Low Health
+  m_EditorClassIdentifier: 
+  effectDescription: Khi Máu dưới 50%, nhận +25 Sát thương. Khi Máu dưới 25%, nhận thêm +50 Sát thương và +30% Tốc độ đánh.
+  tier1Threshold: 0.5
+  tier1DamageBonus: 25
+  tier2Threshold: 0.25
+  tier2DamageBonus: 50
+  tier2AttackSpeedBonus: 0.3
+  berserkAuraPrefab: {fileID: 0}
+  fireHitPrefab: {fileID: 4021103657954561961, guid: 65de1f9b1c5a4e11a2dae36258aa601b, type: 3}

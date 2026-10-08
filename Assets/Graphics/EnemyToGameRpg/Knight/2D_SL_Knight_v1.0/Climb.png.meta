@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -157,10 +157,10 @@ TextureImporter:
       name: Climb_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 127
-        width: 21
-        height: 50
+        x: 0
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +179,10 @@ TextureImporter:
       name: Climb_1
       rect:
         serializedVersion: 2
-        x: 182
+        x: 128
         y: 128
-        width: 21
-        height: 46
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: Climb_2
       rect:
         serializedVersion: 2
-        x: 54
-        y: 65
-        width: 21
-        height: 45
+        x: 0
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: Climb_3
       rect:
         serializedVersion: 2
-        x: 183
-        y: 63
-        width: 20
-        height: 50
+        x: 128
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: Climb_4
       rect:
         serializedVersion: 2
-        x: 54
+        x: 0
         y: 0
-        width: 20
-        height: 45
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: Climb_5
       rect:
         serializedVersion: 2
-        x: 182
-        y: 2
-        width: 21
-        height: 44
+        x: 128
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,7 +289,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1850f649892f34971b8f73e0e681b009
     internalID: 0
     vertices: []
     indices: 

@@ -12,7 +12,7 @@ public class Entity_Stats : MonoBehaviour
 
     protected virtual void Awake()
     {
-
+        ApplyDefaultStatSetup();
     }
 
     public void AdjustStatSetup(Stat_ResourceGroup resourceGroup, Stat_OffenseGroup offenseGroup, Stat_DefenseGroup defenseGroup, float penalty,float increase)
@@ -50,6 +50,7 @@ public class Entity_Stats : MonoBehaviour
         float iceDamage = offense.iceDamage.GetValue();
         float lightningDamage = offense.lightningDamage.GetValue();
         float bonusElementalDamage = major.intelligence.GetValue(); // Bonus elemental damage from Intelligence +1 per INT
+        float extraElemental = offense.elementalDamage != null ? offense.elementalDamage.GetValue() : 0;
 
         float highestDamage = fireDamage;
         element = ElementType.Fire;
@@ -78,7 +79,7 @@ public class Entity_Stats : MonoBehaviour
         float bonusLightning = (lightningDamage == highestDamage) ? 0 : lightningDamage * .5f;
 
         float weakerElementsDamage = bonusFire + bonusIce + bonusLightning;
-        float finalDamage = highestDamage + weakerElementsDamage + bonusElementalDamage;
+        float finalDamage = highestDamage + weakerElementsDamage + bonusElementalDamage + extraElemental;
 
 
         return finalDamage * scaleFactor;
@@ -206,6 +207,11 @@ public class Entity_Stats : MonoBehaviour
             case StatType.IceResistance: return defense.iceRes;
             case StatType.FireResistance: return defense.fireRes;
             case StatType.LightningResistance: return defense.lightningRes;
+
+            case StatType.ElementalDamage:
+                if (offense.elementalDamage == null)
+                    offense.elementalDamage = new Stat();
+                return offense.elementalDamage;
 
             default:
                 Debug.LogWarning($"StatType {type} not implemented yet.");

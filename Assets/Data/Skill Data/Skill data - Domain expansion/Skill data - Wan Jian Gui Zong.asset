@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
+  m_Name: Skill data - Wan Jian Gui Zong
+  m_EditorClassIdentifier: 
+  displayName: "V\u1EA1n Ki\u1EBFm Quy T\xF4ng"
+  description: "Nh\xE2n v\u1EADt bay v\xFAt l\xEAn kh\xF4ng trung l\u01A1 l\u1EEDng,
+    tri\u1EC7u h\u1ED3i ki\u1EBFm tr\u1EADn V\u1EA1n Ki\u1EBFm Quy T\xF4ng. H\xE0ng
+    lo\u1EA1t phi ki\u1EBFm u\u1ED1n l\u01B0\u1EE3n v\xF2ng cung tr\xEAn b\u1EA7u
+    tr\u1EDDi r\u1ED3i kh\xF3a m\u1EE5c ti\xEAu, d\u1ED3n d\u1EADp lao s\u1EA5m
+    s\xE9t xu\u1ED1ng c\xE0n qu\xE9t m\u1ECDi k\u1EBB \u0111\u1ECBch b\xEAn d\u01B0\u1EDBi."
+  icon: {fileID: 1249187385, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  cost: 5
+  unlockedByDefault: 0
+  skillType: 4
+  upgradeData:
+    upgradeType: 30
+    cooldown: 25
+    damageScaleData:
+      phyiscal: 0.65
+      elemental: 0.65
+      chillDuration: 3
+      chillSlowMulitplier: 0.2
+      burnDuratin: 3
+      burnDamageScale: 1
+      shockDuration: 3
+      shockDamageScale: 1
+      shockCharge: 0.4

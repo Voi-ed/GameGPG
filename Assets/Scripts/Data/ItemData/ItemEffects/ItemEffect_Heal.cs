@@ -13,5 +13,7 @@ public class ItemEffect_Heal : ItemEffect_DataSO
         float healAmount = player.stats.GetMaxHealth() * healPercent;
 
         player.health.IncreaseHealth(healAmount);
+        player.vfx?.PlayHealVfx();
     }
 }
+

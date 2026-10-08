@@ -19,7 +19,7 @@ MonoBehaviour:
   dropChance: 50.8
   maxDropChance: 50.8
   craftRecipe: []
-  itemName: Wooden log
+  itemName: Khúc Gỗ
   itemIcon: {fileID: 535671940, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 0
   maxStackSize: 5

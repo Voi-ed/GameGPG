@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Endless possibility
   m_EditorClassIdentifier: 
-  displayName: Endless possibility
-  description: The Time echo has a 30% chance to duplicate itself.
+  displayName: Khả Năng Vô Tận
+  description: 'Ảo ảnh thời gian có 30% cơ hội tự nhân đôi chính nó.'
   icon: {fileID: 900550846, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 2
   unlockedByDefault: 0

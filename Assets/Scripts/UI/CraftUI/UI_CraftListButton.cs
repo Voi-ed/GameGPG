@@ -16,17 +16,24 @@ public class UI_CraftListButton : MonoBehaviour
             return;
         }
 
+        if (craftSlots == null)
+            return;
+
         foreach (var slot in craftSlots)
         {
             slot.gameObject.SetActive(false);
         }
 
-        for (int i = 0; i < craftData.itemList.Length; i++)
+        int count = Mathf.Min(craftData.itemList.Length, craftSlots.Length);
+        for (int i = 0; i < count; i++)
         {
             ItemDataSO itemData = craftData.itemList[i];
 
-            craftSlots[i].gameObject.SetActive(true);
-            craftSlots[i].SetupButton(itemData);
+            if (itemData != null)
+            {
+                craftSlots[i].gameObject.SetActive(true);
+                craftSlots[i].SetupButton(itemData);
+            }
         }
     }
 }

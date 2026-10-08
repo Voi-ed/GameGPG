@@ -66,15 +66,24 @@ public class Entity_VFX : MonoBehaviour
             timeTracker = timeTracker + imageEchoInterval;
         }
     }
-    private void CreateImageEcho()
+    public void CreateImageEcho(Color? tintColor = null)
     {
+        if (imageEchoPrefab == null)
+            return;
+
         Vector3 position = entity.anim.transform.position;
         float scale = entity.anim.transform.localScale.x;
 
         GameObject imageEcho = Instantiate(imageEchoPrefab, position, transform.rotation);
 
         imageEcho.transform.localScale = new Vector3(scale, scale, scale);  
-        imageEcho.GetComponentInChildren<SpriteRenderer>().sprite = sr.sprite;
+        SpriteRenderer echoSr = imageEcho.GetComponentInChildren<SpriteRenderer>();
+        if (echoSr != null)
+        {
+            echoSr.sprite = sr.sprite;
+            if (tintColor.HasValue)
+                echoSr.color = tintColor.Value;
+        }
     }
 
     public void PlayOnStatusVfx(float duration, ElementType element)
@@ -160,4 +169,21 @@ public class Entity_VFX : MonoBehaviour
         yield return new WaitForSeconds(onDamageVfxDuration);
         sr.material = originalMaterial;
     }
+
+    public void PlayHealVfx()
+    {
+        CreateImageEcho(new Color(0.2f, 1f, 0.4f, 0.8f));
+        StartCoroutine(HealFlashCo());
+    }
+
+    private IEnumerator HealFlashCo()
+    {
+        if (sr == null) yield break;
+        Color original = sr.color;
+        sr.color = new Color(0.35f, 1f, 0.55f, 1f);
+        yield return new WaitForSeconds(0.25f);
+        if (sr != null)
+            sr.color = original;
+    }
 }
+

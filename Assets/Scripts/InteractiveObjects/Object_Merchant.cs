@@ -39,16 +39,26 @@ public class Object_Merchant : Object_NPC, IInteractable
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.GetComponent<Player>() == null)
+            return;
+
         base.OnTriggerEnter2D(collision);
-        inventory = player.GetComponent<Inventory_Player>();
+        if (player != null)
+            inventory = player.GetComponent<Inventory_Player>();
         merchant.SetInventory(inventory);
     }
 
     protected override void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.GetComponent<Player>() == null)
+            return;
+
         base.OnTriggerExit2D(collision);
-        ui.HideAllTooltips();
-        ui.OpenMerchantUI(false);
+        if (ui != null)
+        {
+            ui.HideAllTooltips();
+            ui.OpenMerchantUI(false);
+        }
     }
 
 }

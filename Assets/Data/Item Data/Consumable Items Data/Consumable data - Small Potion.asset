@@ -19,7 +19,7 @@ MonoBehaviour:
   dropChance: 77.4
   maxDropChance: 77.4
   craftRecipe: []
-  itemName: Small Potion
+  itemName: Bình Máu Nhỏ
   itemIcon: {fileID: 1313642841, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 4
   maxStackSize: 5

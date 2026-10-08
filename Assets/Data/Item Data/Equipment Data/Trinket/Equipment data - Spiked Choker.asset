@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3601a9b10d5dd49ba5b79a3fad07d6, type: 3}
+  m_Name: Equipment data - Spiked Choker
+  m_EditorClassIdentifier: 
+  saveId: d1c2d3e4f5a60718293a4b5c6d7e8f04
+  itemPrice: 280
+  minStackSizeAtShop: 1
+  maxStackSizeAtShop: 1
+  itemRarity: 600
+  dropChance: 65
+  maxDropChance: 65
+  craftRecipe:
+  - itemData: {fileID: 11400000, guid: f88ea2266177d07488ab38cccbe79d18, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8010, type: 2}
+  - itemData: {fileID: 11400000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f02, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8010, type: 2}
+  itemName: Vòng Cổ Gai Sắt
+  itemIcon: {fileID: 1697508904, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  itemType: 3
+  maxStackSize: 1
+  itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8010, type: 2}
+  modifiers:
+  - statType: 7
+    value: 6
+  - statType: 15
+    value: 0.08
+  itemSet: {fileID: 11400000, guid: c1c2d3e4f5a60718293a4b5c6d7e8f11, type: 2}

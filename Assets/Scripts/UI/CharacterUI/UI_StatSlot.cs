@@ -23,6 +23,9 @@ public class UI_StatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         ui = GetComponentInParent<UI>();
         rect = GetComponent<RectTransform>();
         playerStats = FindFirstObjectByType<Player_Stats>();
+
+        if (statName != null)
+            statName.text = GetStatNameByType(statSlotType);
     }
 
 
@@ -147,31 +150,31 @@ public class UI_StatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         switch (type)
         {
-            case StatType.MaxHealth: return "Max Health";
-            case StatType.HealthRegen: return "Health Regeneration";
-            case StatType.Armor: return "Armor";
-            case StatType.Evasion: return "Evasion";
+            case StatType.MaxHealth: return "Máu tối đa";
+            case StatType.HealthRegen: return "Hồi phục máu";
+            case StatType.Armor: return "Giáp";
+            case StatType.Evasion: return "Né tránh";
 
-            case StatType.Strength: return "Strength";
-            case StatType.Agility: return "Agility";
-            case StatType.Intelligence: return "Intelligence";
-            case StatType.Vitality: return "Vitality";
+            case StatType.Strength: return "Sức mạnh";
+            case StatType.Agility: return "Nhanh nhẹn";
+            case StatType.Intelligence: return "Trí tuệ";
+            case StatType.Vitality: return "Thể lực";
 
-            case StatType.AttackSpeed: return "Attack Speed";
-            case StatType.Damage: return "Damage";
-            case StatType.CritChance: return "Critical Chance";
-            case StatType.CritPower: return "Critical Power";
-            case StatType.ArmorReduction: return "Armor Reduction";
+            case StatType.AttackSpeed: return "Tốc độ đánh";
+            case StatType.Damage: return "Sát thương";
+            case StatType.CritChance: return "Tỷ lệ chí mạng";
+            case StatType.CritPower: return "Sát thương chí mạng";
+            case StatType.ArmorReduction: return "Xuyên giáp";
 
-            case StatType.FireDamage: return "Fire Damage";
-            case StatType.IceDamage: return "Ice Damage";
-            case StatType.LightningDamage: return "Lightning Damage";
-            case StatType.ElementalDamage: return "Elemental Damage";
+            case StatType.FireDamage: return "Sát thương Lửa";
+            case StatType.IceDamage: return "Sát thương Băng";
+            case StatType.LightningDamage: return "Sát thương Sét";
+            case StatType.ElementalDamage: return "Sát thương Nguyên tố";
 
-            case StatType.IceResistance: return "Ice Resistance";
-            case StatType.FireResistance: return "Fire Resistance";
-            case StatType.LightningResistance: return "Lightning Resistance";
-            default: return "Unknown Stat";
+            case StatType.IceResistance: return "Kháng Băng";
+            case StatType.FireResistance: return "Kháng Lửa";
+            case StatType.LightningResistance: return "Kháng Sét";
+            default: return "Chỉ số không xác định";
         }
     }
 

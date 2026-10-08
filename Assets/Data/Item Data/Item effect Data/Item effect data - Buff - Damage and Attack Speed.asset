@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5b6467e8713ec4e81047b9588602d3, type: 3}
   m_Name: Item effect data - Buff - Damage and Attack Speed
   m_EditorClassIdentifier: 
-  effectDescription: Grants +40 Damage and +15% Attack speed for 20 seconds.
+  effectDescription: Tăng +40 Sát thương và +15% Tốc độ đánh trong 20 giây.
   buffsToApply:
   - type: 7
     value: 40

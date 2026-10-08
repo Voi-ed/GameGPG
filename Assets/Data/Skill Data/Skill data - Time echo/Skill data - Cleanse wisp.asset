@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Cleanse wisp
   m_EditorClassIdentifier: 
-  displayName: Cleanse wisp
-  description: The healing wisp remove all negative status effects.
+  displayName: Đom Đóm Thanh Tẩy
+  description: 'Đốm sáng trị liệu loại bỏ toàn bộ hiệu ứng trạng thái tiêu cực trên người bạn.'
   icon: {fileID: 1893721086, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 3
   unlockedByDefault: 0

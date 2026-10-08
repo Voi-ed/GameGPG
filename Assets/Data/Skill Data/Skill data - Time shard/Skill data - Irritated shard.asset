@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Irritated shard
   m_EditorClassIdentifier: 
-  displayName: Irritated shard
-  description: Shard will fly towards closest enemy
+  displayName: Mảnh Vỡ Truy Kích
+  description: 'Mảnh vỡ thời gian sẽ tự động bay về phía kẻ địch ở gần nhất.'
   icon: {fileID: 1184643374, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 2
   unlockedByDefault: 0

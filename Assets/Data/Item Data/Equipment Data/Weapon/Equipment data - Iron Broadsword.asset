@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3601a9b10d5dd49ba5b79a3fad07d6, type: 3}
+  m_Name: Equipment data - Iron Broadsword
+  m_EditorClassIdentifier: 
+  saveId: d1c2d3e4f5a60718293a4b5c6d7e8f16
+  itemPrice: 150
+  minStackSizeAtShop: 1
+  maxStackSizeAtShop: 1
+  itemRarity: 100
+  dropChance: 65
+  maxDropChance: 65
+  craftRecipe:
+  - itemData: {fileID: 11400000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f01, type: 2}
+    stackSize: 3
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: 8dfbb5bea1f3d45449459c5a23d76b84, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
+  itemName: Trọng Kiếm Sắt
+  itemIcon: {fileID: 1249187385, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  itemType: 1
+  maxStackSize: 1
+  itemEffect: {fileID: 0}
+  modifiers:
+  - statType: 7
+    value: 12
+  - statType: 2
+    value: 3
+  itemSet: {fileID: 0}

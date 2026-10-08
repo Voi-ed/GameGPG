@@ -14,6 +14,8 @@ public class ElementalEffectData
     public float shockDamage;
     public float shockCharge;
 
+    public ElementalEffectData() { }
+
     public ElementalEffectData(Entity_Stats entityStats,DamageScaleData damageScale)
     {
         chillDuration = damageScale.chillDuration;

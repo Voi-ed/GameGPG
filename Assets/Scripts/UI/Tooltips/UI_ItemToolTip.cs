@@ -30,16 +30,28 @@ public class UI_ItemToolTip : UI_ToolTip
         int price = buyPrice ? itemToShow.buyPrice : Mathf.FloorToInt(itemToShow.sellPrice);
         int totalPrice = price * itemToShow.stackSize;
 
-        string fullStackPrice = ($"Price:{price}x{itemToShow.stackSize} - {totalPrice}g.");
-        string singleStackPrice = ($"Price:{price}g.");
+        string fullStackPrice = ($"Giá: {price} x {itemToShow.stackSize} - {totalPrice} vàng");
+        string singleStackPrice = ($"Giá: {price} vàng");
 
-        
         itemPrice.text = itemToShow.stackSize > 1 ? fullStackPrice : singleStackPrice;
-        itemType.text = itemToShow.itemData.itemType.ToString();
+        itemType.text = GetItemTypeName(itemToShow.itemData.itemType);
         itemInfo.text = itemToShow.GetItemInfo();
 
         string color = GetColorByRarity(itemToShow.itemData.itemRarity);
-        itemName.text = GetColoredText(color,itemToShow.itemData.itemName);
+        itemName.text = GetColoredText(color, itemToShow.itemData.itemName);
+    }
+
+    private string GetItemTypeName(ItemType type)
+    {
+        switch (type)
+        {
+            case ItemType.Material: return "Nguyên liệu";
+            case ItemType.Weapon: return "Vũ khí";
+            case ItemType.Armor: return "Áo giáp";
+            case ItemType.Trinket: return "Phụ kiện";
+            case ItemType.Consumable: return "Tiêu hao";
+            default: return type.ToString();
+        }
     }
 
     private string GetColorByRarity(ItemRarity rarity)

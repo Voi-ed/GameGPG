@@ -12,11 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Found fragment
   m_EditorClassIdentifier: 
-  displayName: Found fragment
-  description: 'Create a time shard on arrival.
-
-    (Inherits all upgrades of Time
-    shard Ability)'
+  displayName: Mảnh Vỡ Tiếp Bước
+  description: 'Tạo ra một mảnh vỡ thời gian tại điểm đến sau khi lướt xong. (Kế thừa toàn bộ nâng cấp của kỹ năng Mảnh Vỡ Thời Gian)'
   icon: {fileID: 522679889, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 3
   unlockedByDefault: 0

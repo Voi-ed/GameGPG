@@ -21,11 +21,11 @@ MonoBehaviour:
   craftRecipe:
   - itemData: {fileID: 11400000, guid: 45c4b1c1b037fc34785f05b61e2d61ad, type: 2}
     stackSize: 1
-    itemEffect: {fileID: 0}
+    itemEffect: {fileID: 11400000, guid: 421e58f733a71194c9499bc734648b63, type: 2}
   - itemData: {fileID: 11400000, guid: 25e8fb1711e1395409be395f0e331b1a, type: 2}
     stackSize: 1
-    itemEffect: {fileID: 0}
-  itemName: Dracula's Fang
+    itemEffect: {fileID: 11400000, guid: 421e58f733a71194c9499bc734648b63, type: 2}
+  itemName: Nanh Quỷ Dracula
   itemIcon: {fileID: -1348553608, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 1
   maxStackSize: 1

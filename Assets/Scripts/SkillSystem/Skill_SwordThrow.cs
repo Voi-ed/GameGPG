@@ -3,7 +3,7 @@ using UnityEngine;
 public class Skill_SwordThrow : Skill_Base
 {
 
-    private SkillObject_Sword currentSword;
+    public SkillObject_Sword currentSword { get; private set; }
     private float currentThrowPower;
 
     [Header("Regular Sword Uprgade")]
@@ -31,6 +31,16 @@ public class Skill_SwordThrow : Skill_Base
     public float bounceSpeed = 12;
     [Range(0, 10)]
     [SerializeField] private float bounceThrowPower = 5;
+
+    [Header("Thunder Sword Upgrade")]
+    [SerializeField] private GameObject thunderSwordPrefab;
+    [Range(0, 10)]
+    [SerializeField] private float thunderThrowPower = 6;
+
+    [Header("Frost Sword Upgrade")]
+    [SerializeField] private GameObject frostSwordPrefab;
+    [Range(0, 10)]
+    [SerializeField] private float frostThrowPower = 6;
 
 
     [Header("Trajectory prediction")]
@@ -75,8 +85,15 @@ public class Skill_SwordThrow : Skill_Base
 
     private GameObject GetSwordPrefab()
     {
-        if (Unlocked(SkillUpgradeType.SwordThrow))
-            return swordPrefab;
+        if (Unlocked(SkillUpgradeType.SwordThrow_Frost))
+        {
+            return frostSwordPrefab;
+        }
+
+        if (Unlocked(SkillUpgradeType.SwordThrow_Thunder))
+        {
+            return thunderSwordPrefab;
+        }
 
         if (Unlocked(SkillUpgradeType.SwordThrow_Pierce))
             return pierceSwordPrefab;
@@ -86,6 +103,9 @@ public class Skill_SwordThrow : Skill_Base
 
         if (Unlocked(SkillUpgradeType.SwordThrow_Bounce))
             return bounceSwordPrefab;
+
+        if (Unlocked(SkillUpgradeType.SwordThrow))
+            return swordPrefab;
 
         Debug.Log("No valied sword upgrade selected!");
         return null;
@@ -107,6 +127,12 @@ public class Skill_SwordThrow : Skill_Base
             case SkillUpgradeType.SwordThrow_Bounce:
                 currentThrowPower = bounceThrowPower;
                 break;
+            case SkillUpgradeType.SwordThrow_Thunder:
+                currentThrowPower = thunderThrowPower;
+                break;
+            case SkillUpgradeType.SwordThrow_Frost:
+                currentThrowPower = frostThrowPower;
+                break;
         }
 
     }
@@ -125,7 +151,7 @@ public class Skill_SwordThrow : Skill_Base
     {
         float scaledThrowPower = currentThrowPower * 10;
 
-        // This gives us the initial velocity — the starting speed and direction of the throw.
+        // This gives us the initial velocity â€” the starting speed and direction of the throw.
         Vector2 initialVelocity = direction * scaledThrowPower;
 
         // Gravity pulls the sword down over time. The longer it's in the air, the more it drops.

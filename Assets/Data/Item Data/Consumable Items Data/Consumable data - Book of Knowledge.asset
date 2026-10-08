@@ -19,7 +19,7 @@ MonoBehaviour:
   dropChance: 4.1
   maxDropChance: 65
   craftRecipe: []
-  itemName: Book of Knowledge
+  itemName: Sách Tri Thức
   itemIcon: {fileID: 192901702, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 4
   maxStackSize: 20

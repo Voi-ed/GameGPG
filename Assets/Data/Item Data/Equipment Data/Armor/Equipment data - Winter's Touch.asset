@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b3601a9b10d5dd49ba5b79a3fad07d6, type: 3}
   m_Name: Equipment data - Winter's Touch
   m_EditorClassIdentifier: 
-  itemName: Winter's Touch
+  itemName: Chạm Băng Giá
   itemIcon: {fileID: -451399156, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 2
   maxStackSize: 1

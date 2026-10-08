@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - MIrror shard
   m_EditorClassIdentifier: 
-  displayName: MIrror shard
-  description: 'Time shard now has 3 charges. '
+  displayName: Mảnh Gương Nhân Bản
+  description: 'Mảnh vỡ thời gian giờ đây có thể tích trữ tối đa 3 điểm kích hoạt.'
   icon: {fileID: -947979763, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 3
   unlockedByDefault: 0

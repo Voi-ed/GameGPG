@@ -7,6 +7,9 @@ public class EquipmentDataSO : ItemDataSO
 {
     [Header("Item modifiers")]
     public ItemModifier[] modifiers;
+
+    [Header("Item Set")]
+    public ItemSetDataSO itemSet;
 }
 
 [Serializable]

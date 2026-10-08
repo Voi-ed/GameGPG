@@ -27,6 +27,16 @@ Kỹ năng này định hình phương thức cộng tác hiệu quả, an toàn
    - Đặt ra tiêu chí thành công rõ ràng để tự kiểm tra trước khi báo cáo hoàn tất.
    - Rà soát tính toàn vẹn: null check, serialization Unity, event invoke và lifecycle.
 
+5. **Performance & Direct Serialization First (Hiệu năng tối ưu & Cấm dùng Resources.Load)**:
+   - **Tuyệt đối KHÔNG tự ý dùng `Resources.Load`**: Không dùng `Resources.Load` runtime trong combat, skill, VFX, âm thanh hay ItemEffect. Thư mục `Resources/` bị cấm dùng cho tài nguyên gameplay vì gây khựng khung hình (frame spike/hitching), phình to build và làm chậm khởi động game.
+   - **Phương án tối ưu và đơn giản nhất**: Luôn dùng **Direct Serialization** (`[SerializeField] private GameObject xxxPrefab;`), gán trực tiếp tham chiếu qua Inspector hoặc file `.asset`/Prefab. Truy xuất $O(1)$, nạp sẵn vào RAM cùng asset, đảm bảo mượt mà 60+ FPS lúc giao tranh.
+   - **Code tối giản**: Code chỉ cần `if (prefab != null) Instantiate(prefab, ...);`, không viết thêm hàm loader hay tra cứu string phức tạp.
+
+6. **Quản Lý VFX Cho Item & Skill (Quy Chuẩn Thư Mục `Vfx_UseItem`)**:
+   - **Bảo toàn 100% VFX gốc**: Tuyệt đối KHÔNG sửa đổi, ghi đè hay tham chiếu lộn xộn trực tiếp từ các thư mục pack ngoài (Asset Store / vendor packages).
+   - **Bắt buộc Copy vào `Vfx_UseItem`**: Mọi VFX được lựa chọn để sử dụng cho Item Effects, Set Đồ hay Skills đều PHẢI được **Copy từ bản gốc** và đặt vào thư mục chuyên biệt: `Assets/Prefab/Vfx_UseItem/` (hoặc `Assets/Vfx_UseItem/`).
+   - **Tham chiếu chuẩn hóa**: Tất cả ScriptableObject (`.asset`) và Inspector chỉ trỏ tham chiếu tới các Prefab nằm trong thư mục `Vfx_UseItem/`. Điều này đảm bảo dự án module hóa, dễ dàng tùy biến thuộc tính hạt (loop, scale, timing) mà không ảnh hưởng tài nguyên gốc, đồng thời dễ dọn dẹp và theo dõi.
+
 ---
 
 ## 2. Nguyên Tắc Hợp Tác Với Sếp (Collaboration Principles)
@@ -48,6 +58,16 @@ Kỹ năng này định hình phương thức cộng tác hiệu quả, an toàn
    - Tuyệt đối cẩn trọng khi đụng vào các trường `public` hoặc `[SerializeField]`, tránh đổi tên biến làm mất reference trong Inspector, Prefab, Scene và `.asset`.
    - Giữ nguyên `saveId` (GUID) và logic `OnValidate()` trong các ScriptableObject.
    - Giữ nguyên comments, docstrings và cấu trúc code không liên quan.
+
+5. **Tiêu Chuẩn Giải Pháp (Hiệu năng cao nhất & Đơn giản nhất)**:
+   - Khi thiết kế bất kỳ tính năng, kỹ năng hay vật phẩm nào, luôn luôn chọn giải pháp **đơn giản nhất** và **tối ưu hiệu năng nhất** (KISS + Performance-First).
+   - Tuyệt đối không dùng các cơ chế gián tiếp hay tốn kém runtime như `Resources.Load`, quét component (`GetComponent` / `Find`) liên tục trong Update/Combat, hay các cấu trúc dữ liệu thừa thãi.
+   - Ưu tiên Direct Serialization (`[SerializeField]`), cached references tại `Awake`/`Start`, và Event-driven pattern.
+
+6. **Xin Phép Trước Khi Chỉnh Sửa Bất Kỳ Prefab Nào (Strict Prefab Modification Approval)**:
+   - **Tuyệt đối không tự ý sửa đổi bất cứ Prefab nào**: Dù là Prefab nhân vật (`Player`), quái vật (`Enemy`), kỹ năng (`SkillObjects`), giao diện (`UI`), hay các hiệu ứng hình ảnh (`VFX` / `Vfx_UseItem`).
+   - Mọi thao tác can thiệp vào file `.prefab` (bao gồm: thêm/bớt Component, thay đổi Transform/Scale, chỉnh sửa Collider, đổi Material/Shader, bật tắt cờ Particle System như `looping`, gán Script...) **BẮT BUỘC PHẢI BÁO CÁO RÕ VÀ ĐƯỢC SẾP PHÊ DUYỆT TRƯỚC**.
+   - Chỉ được phép mở hoặc chỉnh sửa file Prefab khi sếp đã ra lệnh đồng ý cụ thể.
 
 ---
 

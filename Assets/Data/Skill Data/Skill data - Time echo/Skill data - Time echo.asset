@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Time echo
   m_EditorClassIdentifier: 
-  displayName: Time echo
-  description: 'Create a time echo of yourself.
-
-    The echo will distracts enemies.'
+  displayName: Ảo Ảnh Thời Gian
+  description: 'Tạo ra một ảo ảnh thời gian của bản thân để đánh lạc hướng kẻ địch.'
   icon: {fileID: -7293604, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 1
   unlockedByDefault: 0

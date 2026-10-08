@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Catch this!
   m_EditorClassIdentifier: 
-  displayName: Catch this!
-  description: Throw your sword to damage enemies. Sword will apply status effects.
-    You can have only one active sword at a tme.
+  displayName: Đỡ Lấy Này!
+  description: 'Ném kiếm gây sát thương lên kẻ địch và áp dụng hiệu ứng nguyên tố. Chỉ có thể có 1 thanh kiếm hoạt động cùng lúc.'
   icon: {fileID: -2048434906, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 1
   unlockedByDefault: 0

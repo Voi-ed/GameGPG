@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8006, type: 3}
+  m_Name: Item effect data - Predator on Kill
+  m_EditorClassIdentifier: 
+  effectDescription: Khi hạ gục một kẻ địch, hồi 6% Máu tối đa và tăng +12 Sát thương trong 8 giây.
+  healPercent: 0.06
+  damageBonus: 12
+  buffDuration: 8
+  maxDistance: 15
+  soulEscapeVfxPrefab: {fileID: 5642766282230003982, guid: 75a04348293f48ce95228cce4fa92de5, type: 3}

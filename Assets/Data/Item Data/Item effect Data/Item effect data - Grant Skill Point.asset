@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1039f49409a17104daabec97d997068c, type: 3}
   m_Name: Item effect data - Grant Skill Point
   m_EditorClassIdentifier: 
-  effectDescription: Grants 1 skill point.
+  effectDescription: Nhận ngay 1 điểm kỹ năng.
   pointsToAdd: 1

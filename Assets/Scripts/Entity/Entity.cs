@@ -11,7 +11,7 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public Collider2D col { get; private set; }
     public Entity_SFX sfx { get; private set; }
-    protected StateMachine stateMachine;
+    public StateMachine stateMachine { get; protected set; }
 
 
     private bool facingRight = true;

@@ -6,12 +6,13 @@ public class Entity_Health : MonoBehaviour, IDamageable
 {
     public event Action OnTakingDamage;
     public event Action OnHealthUpdate;
+    public event Action OnEvasion;
 
 
     private Slider healthBar;
     private Entity entity;
     private Entity_VFX entityVfx;
-    private Entity_Stats entityStats;
+    protected Entity_Stats entityStats;
     private Entity_DropManager dropManager;
 
     private bool miniHealthBarActive;
@@ -66,6 +67,7 @@ public class Entity_Health : MonoBehaviour, IDamageable
         if (AttackEvaded())
         {
             Debug.Log($"{gameObject.name} evaded the attack!");
+            OnEvasion?.Invoke();
             return false;
         }
 
@@ -87,9 +89,16 @@ public class Entity_Health : MonoBehaviour, IDamageable
         return true;
     }
 
+    public void NotifyTakingDamage(float totalDamage)
+    {
+        lastDamageTaken = totalDamage;
+        entityVfx?.PlayOnDamageVfx();
+        OnTakingDamage?.Invoke();
+    }
+
     public void SetCanTakeDamage(bool canTakeDamage) => this.canTakeDamage = canTakeDamage;
 
-    private bool AttackEvaded()
+    protected bool AttackEvaded()
     {
         if(entityStats == null)
             return false;

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Phantom Recall
   m_EditorClassIdentifier: 
-  displayName: Phantom Recall
-  description: Press skill button again, to change places with shard you created.
+  displayName: Hoán Đổi Vị Trí
+  description: 'Nhấn nút kỹ năng một lần nữa để hoán đổi vị trí của bạn với mảnh vỡ vừa tạo.'
   icon: {fileID: -195789106, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 2
   unlockedByDefault: 0

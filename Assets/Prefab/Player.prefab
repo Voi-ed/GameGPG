@@ -160,6 +160,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4959368856779774103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1254836493095851214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8474423373592709584}
+  m_Layer: 7
+  m_Name: GroundPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8474423373592709584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254836493095851214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4959368856779774103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374140415013141453
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +681,9 @@ MonoBehaviour:
   skillType: 0
   upgradeType: 0
   cooldown: 3
+  fireTrailPrefab: {fileID: 7100000000000000001, guid: d1e2f3a4b5c6d7e8f90123456789abcd, type: 3}
+  fireTrailInterval: 0.06
+  fireExplosionPrefab: {fileID: 7200000000000000001, guid: bc0716ca3d2514aaa9c06ec24e332b4f, type: 3}
 --- !u!114 &8084732844834992943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,6 +736,10 @@ MonoBehaviour:
   bounceCount: 5
   bounceSpeed: 12
   bounceThrowPower: 4.55
+  thunderSwordPrefab: {fileID: 7300000000000000001, guid: d3e4f5a6b7c8d9e0f123456789abcdef, type: 3}
+  thunderThrowPower: 6
+  frostSwordPrefab: {fileID: 7400000000000000001, guid: d019cc81fb8884425a018107ae40beb8, type: 3}
+  frostThrowPower: 6
   predictionDot: {fileID: 4862837515150490428, guid: 999d4123ec0e32243bbbf2d892459d63, type: 3}
   numberOfDots: 20
   spaceBetweenDots: 0.05
@@ -751,6 +789,13 @@ MonoBehaviour:
   echoCastDomainSlow: 1
   echoCastDomainDuration: 6
   healthToRestoreWithEcho: 0.05
+  chronoStasisDomainPrefab: {fileID: 1684291037929920000, guid: edaf15f028fb4033b356ddb182276714, type: 3}
+  stasisDuration: 5
+  stasisBurstMultiplier: 1.25
+  flyingSwordPrefab: {fileID: 1000000000000001, guid: d7c3b1a9e5f24860b41c9a8e2f3d5b7a, type: 3}
+  swordsToCast: 45
+  swordBarrageDomainSlow: 0.85
+  swordBarrageDomainDuration: 5
   maxDomainSize: 20
   expandSpeed: 5
 --- !u!1 &7566861989324100011
@@ -802,6 +847,7 @@ Transform:
   - {fileID: 3330104731121551538}
   - {fileID: 9119209451912592213}
   - {fileID: 902808852011774235}
+  - {fileID: 8474423373592709584}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8405265872060402481
@@ -868,6 +914,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4959368856779774103}
   primaryWallCheck: {fileID: 493542544154815175}
   secondaryWallCheck: {fileID: 7913006580151602976}
+  groundPos: {fileID: 0}
   attackVelocity:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
@@ -976,6 +1023,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   counterRecovery: 0.4
+  whatIsCounterable:
+    serializedVersion: 2
+    m_Bits: 2304
 --- !u!114 &6534155588746563301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,6 +1065,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631caecb7f19e63498abbfd4062eb048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageEchoInterval: 0.08
+  imageEchoPrefab: {fileID: 3013030631492103651, guid: 6fb5646cb6d638a478c3c567687e9539, type: 3}
   onDamageMaterial: {fileID: 2100000, guid: c92512a543c5a94499df3cc98251d3a9, type: 2}
   onDamageVfxDuration: 0.15
   hitVfxColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1023,8 +1075,6 @@ MonoBehaviour:
   chillVfx: {r: 0.42352942, g: 0.69803923, b: 1, a: 1}
   burnVfx: {r: 1, g: 0, b: 0, a: 1}
   shockVfx: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  imageEchoInterval: 0.08
-  imageEchoPrefab: {fileID: 3013030631492103651, guid: 6fb5646cb6d638a478c3c567687e9539, type: 3}
 --- !u!114 &626524063579701930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,7 +1090,7 @@ MonoBehaviour:
   defaultStatSetup: {fileID: 11400000, guid: 8b4cb8613fb020444954a235eec851dd, type: 2}
   resources:
     maxHealth:
-      baseValue: 100
+      baseValue: 1400
       modifiers: []
     healthRegen:
       baseValue: 0
@@ -1050,7 +1100,7 @@ MonoBehaviour:
       baseValue: 1
       modifiers: []
     damage:
-      baseValue: 10
+      baseValue: 1
       modifiers: []
     critPower:
       baseValue: 150
@@ -1068,6 +1118,9 @@ MonoBehaviour:
       baseValue: 0
       modifiers: []
     lightningDamage:
+      baseValue: 0
+      modifiers: []
+    elementalDamage:
       baseValue: 0
       modifiers: []
   defense:
@@ -1115,7 +1168,7 @@ MonoBehaviour:
   dropData: {fileID: 0}
   maxRarityAmount: 1200
   maxItemsToDrop: 3
-  chanceToLooseItem: 90
+  chanceToLooseItem: 100
 --- !u!114 &4422213722905681848
 MonoBehaviour:
   m_ObjectHideFlags: 0

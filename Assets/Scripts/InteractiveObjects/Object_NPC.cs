@@ -65,12 +65,18 @@ public class Object_NPC : MonoBehaviour, IInteractable
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.GetComponent<Player>() == null)
+            return;
+
         player = collision.transform;
         interactToolTip.SetActive(true);
     }
 
     protected virtual void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.GetComponent<Player>() == null)
+            return;
+
         interactToolTip.SetActive(false);
     }
 

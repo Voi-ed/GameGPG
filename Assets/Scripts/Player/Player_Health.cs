@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class Player_Health : Entity_Health
 {
     private Player player;
+    public Func<bool> canPreventDeath;
+    public event Action OnDeathPrevented;
 
     protected override void Awake()
     {
@@ -18,13 +21,13 @@ public class Player_Health : Entity_Health
 
     protected override void Die()
     {
+        if (canPreventDeath != null && canPreventDeath.Invoke())
+        {
+            OnDeathPrevented?.Invoke();
+            return;
+        }
+
         base.Die();
-
-
         player.ui.OpenDeathScreenUI();
-        //GameManager.instance.SetLastPlayerPosition(transform.position);
-        //GameManager.instance.RestartScene();
-
-       
     }
 }

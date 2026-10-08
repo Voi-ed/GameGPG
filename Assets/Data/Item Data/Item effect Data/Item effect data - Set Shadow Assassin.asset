@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8018, type: 3}
+  m_Name: Item effect data - Set Shadow Assassin
+  m_EditorClassIdentifier: 
+  effectDescription: "Sát Thủ Bóng Đêm: Đòn chém từ sau lưng kẻ địch gây thêm 50% Sát thương và bùng nổ vệt máu. Khi nhận sát thương lúc Máu dưới 50%, lập tức kích hoạt Thuật Thế Thân: để lại tàn ảnh và bom khói, dịch chuyển ra sau lưng kẻ tấn công và tàng hình 1s, đòn đánh kế tiếp tăng 150% Sát thương Bạo Kích (Hồi chiêu 15s). Đòn đánh vào mục tiêu dưới 35% Máu gây thêm 75% Sát thương (Kết Liễu)."
+  executeThreshold: 0.35
+  bonusDamagePercent: 0.75
+  executeHitVfxPrefab: {fileID: 4306488877223958017, guid: 77eca6d33f504428b45bdc42c3a1c7b3, type: 3}
+  backstabBonusDamage: 0.5
+  bloodVfxPrefab: {fileID: 5669246471909640947, guid: f23ec604941248bc94d2e17ecd0c550c, type: 3}
+  substitutionHpThreshold: 0.5
+  substitutionCooldown: 15
+  stealthDuration: 1
+  revengeCritMultiplier: 1.5
+  backstabOffset: 1
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
+  smokeVfxPrefab: {fileID: 154177629633427826, guid: b91714c68dab5f246a3c029e1c12ad15, type: 3}
+  slashVfxPrefab: {fileID: 4021103657954561961, guid: 65de1f9b1c5a4e11a2dae36258aa601b, type: 3}
+
+

@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdfdfbc5df2c414e952a12e3fc10d6f, type: 3}
   m_Name: Skill data - Quick dash
   m_EditorClassIdentifier: 
-  displayName: Quick dash
-  description: 'Dash to avoid attacks.
-
-    You cannot take damage while dashing.'
+  displayName: Lướt Nhanh
+  description: 'Lướt nhanh để né tránh đòn đánh. Bạn không nhận sát thương trong lúc đang lướt.'
   icon: {fileID: 900771226, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   cost: 0
   unlockedByDefault: 1

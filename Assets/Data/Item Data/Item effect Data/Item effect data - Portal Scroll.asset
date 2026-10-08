@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940ba25cfbc90d145866d28ba99acb6b, type: 3}
   m_Name: Item effect data - Portal Scroll
   m_EditorClassIdentifier: 
-  effectDescription: 'Opens portal to the camp. '
+  effectDescription: Mở cổng dịch chuyển tức thời đưa người chơi trở về căn cứ doanh trại.

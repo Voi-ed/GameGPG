@@ -49,6 +49,10 @@ public class Enemy : Entity
     public float GetMoveSpeed() => moveSpeed * activeSlowMultiplier;
     public float GetBattleMoveSpeed() => battleMoveSpeed * activeSlowMultiplier;
 
+    public bool isTimeFrozen { get; private set; }
+    private float preFreezeAnimSpeed = 1f;
+    private float preFreezeGravityScale = 1f;
+
     protected override void Awake()
     {
         base.Awake();
@@ -57,6 +61,41 @@ public class Enemy : Entity
         combat = GetComponent<Entity_Combat>();
         vfx = GetComponent<Entity_VFX>();
     }
+
+    protected override void Update()
+    {
+        if (isTimeFrozen)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        base.Update();
+    }
+
+    public void FreezeInTime(bool freeze)
+    {
+        isTimeFrozen = freeze;
+
+        if (freeze)
+        {
+            StopSlowDown();
+
+            preFreezeAnimSpeed = 1f;
+            preFreezeGravityScale = rb.gravityScale;
+
+            anim.speed = 0f;
+            rb.gravityScale = 0f;
+            rb.linearVelocity = Vector2.zero;
+        }
+        else
+        {
+            anim.speed = preFreezeAnimSpeed > 0 ? preFreezeAnimSpeed : 1f;
+            rb.gravityScale = preFreezeGravityScale > 0 ? preFreezeGravityScale : 1f;
+            activeSlowMultiplier = 1f;
+        }
+    }
+
 
     public void MakeUntargetable(bool canBeTargeted)
     {
@@ -93,10 +132,24 @@ public class Enemy : Entity
 
     public void EnableCounterWindow(bool enable) => canBeStunned = enable;
 
+    public virtual void ApplyStun(float duration)
+    {
+        if (health != null && health.isDead)
+            return;
+
+        if (stunnedState == null || stateMachine == null)
+            return;
+
+        stunnedDuration = duration;
+        stateMachine.ChangeState(stunnedState);
+    }
+
+    public static event System.Action<Enemy> OnEnemyDeath;
+
     public override void EntityDeath()
     {
         base.EntityDeath();
-
+        OnEnemyDeath?.Invoke(this);
         stateMachine.ChangeState(deadState);
     }
 

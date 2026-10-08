@@ -19,7 +19,7 @@ MonoBehaviour:
   dropChance: 16.2
   maxDropChance: 65
   craftRecipe: []
-  itemName: Ring of luck
+  itemName: Nhẫn May Mắn
   itemIcon: {fileID: -600305260, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 3
   maxStackSize: 1

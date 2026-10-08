@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f47b443faf82d42896228f4a9aa661, type: 3}
   m_Name: Item effect data - Ice blast on taking damage
   m_EditorClassIdentifier: 
-  effectDescription: When you take damage and your health falls below 25%, unleash
-    a cold explosion dealing 150 Ice damage to nearby enemies. Cooldown 40s.
+  effectDescription: Khi nhận sát thương và Máu giảm xuống dưới 25%, giải phóng vụ nổ hàn băng gây 150 Sát thương Băng lên kẻ địch xung quanh (Hồi chiêu 40s).
   effectData:
     chillDuration: 3
     chillSlowMultiplier: 0.6
@@ -28,5 +27,6 @@ MonoBehaviour:
     m_Bits: 256
   healthPercentTrigger: 0.25
   cooldown: 40
-  iceBlastVfx: {fileID: 4857719438303256378, guid: 143f7ab4153d2f04bb4170f5cca4ce88, type: 3}
-  onHitVfx: {fileID: 6112724607161003390, guid: a092b215b1103c34982cf4ba009e0fed, type: 3}
+  iceBlastVfx: {fileID: 5112403345868107898, guid: b034354eb9f5496894405ee402011a66, type: 3}
+  onHitVfx: {fileID: 912987784779688644, guid: 143f7ab4153d2f04bb4170f5cca4ce88, type: 3}
+
