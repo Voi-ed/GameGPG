@@ -27,7 +27,7 @@ MonoBehaviour:
     stackSize: 1
     itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8013, type: 2}
   itemName: Vòng Lam Ngọc
-  itemIcon: {fileID: 395298878, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  itemIcon: {fileID: 21300000, guid: 6d3b0599097004947ab4ff33ecfd2bcf, type: 3}
   itemType: 3
   maxStackSize: 1
   itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8013, type: 2}

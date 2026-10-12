@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Equipment data - Winter's Touch
   m_EditorClassIdentifier: 
   itemName: Chạm Băng Giá
-  itemIcon: {fileID: -451399156, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  itemIcon: {fileID: 21300000, guid: 97d919b2725cb4515be46dfd5fe1df34, type: 3}
   itemType: 2
   maxStackSize: 1
   itemEffect: {fileID: 11400000, guid: 584819de561a8474faaf7dd11f13c060, type: 2}

@@ -41,6 +41,7 @@ public class Enemy : Entity
 
     [Header("Player detection")]
     [SerializeField] private LayerMask whatIsPlayer;
+    public LayerMask WhatIsPlayer => whatIsPlayer;
     [SerializeField] private Transform playerCheck;
     [SerializeField] private float playerCheckDistance = 10;
     public Transform player { get; private set; }

@@ -27,8 +27,10 @@ public class Enemy_Reaper : Enemy, ICounterable
     [SerializeField] private BoxCollider2D arenaBounds;
     [SerializeField] private float offsetCenterY = 1.725f;
     [SerializeField] private float chanceToTeleport = .25f;
+    [SerializeField] private float minTeleportDistanceFromPlayer = 3.5f;
     private float defaultTeleportChance;
     public bool teleporTrigger { get; private set; }
+    private Coroutine castSpellCoroutine;
 
     protected override void Awake()
     {
@@ -51,10 +53,25 @@ public class Enemy_Reaper : Enemy, ICounterable
     {
         base.Start();
 
-        arenaBounds.transform.parent = null;
+        if (arenaBounds != null)
+            arenaBounds.transform.parent = null;
+
         defaultTeleportChance = chanceToTeleport;
 
         stateMachine.Initialize(idleState);
+    }
+
+    public override void TryEnterBattleState(Transform player)
+    {
+        // Không ngắt ngang khi Reaper đang thực hiện các đòn quan trọng hoặc đang bị choáng/chết
+        if (stateMachine.currentState == reaperAttackState ||
+            stateMachine.currentState == reaperSpellCastState ||
+            stateMachine.currentState == reaperTeleportState ||
+            stateMachine.currentState == stunnedState ||
+            stateMachine.currentState == deadState)
+            return;
+
+        base.TryEnterBattleState(player);
     }
 
     public void HandleCounter()
@@ -62,35 +79,73 @@ public class Enemy_Reaper : Enemy, ICounterable
         if (CanBeCountered == false)
             return;
 
+        StopCastingSpell();
         stateMachine.ChangeState(stunnedState);
+    }
+
+    public override void ApplyStun(float duration)
+    {
+        StopCastingSpell();
+        base.ApplyStun(duration);
+    }
+
+    public override void EntityDeath()
+    {
+        StopCastingSpell();
+        base.EntityDeath();
     }
 
     public override void SpecialAttack()
     {
-        StartCoroutine(CastSpellCo());
+        StopCastingSpell();
+        castSpellCoroutine = StartCoroutine(CastSpellCo());
+    }
+
+    public void StopCastingSpell()
+    {
+        if (castSpellCoroutine != null)
+        {
+            StopCoroutine(castSpellCoroutine);
+            castSpellCoroutine = null;
+        }
     }
 
     private IEnumerator CastSpellCo()
     {
         if (playerScript == null)
-            playerScript = player.GetComponent<Player>();
+        {
+            Transform p = player != null ? player : (Player.instance != null ? Player.instance.transform : null);
+            if (p != null)
+                playerScript = p.GetComponent<Player>();
+        }
+
+        WaitForSeconds wait = new WaitForSeconds(spellCastRate);
 
         for (int i = 0; i < amountToCast; i++)
         {
-            bool playerMoving = playerScript.rb.linearVelocity.magnitude > 0;
+            if (playerScript == null)
+                break;
+
+            // Chỉ dự đoán hướng khi người chơi đang di chuyển ngang (tránh nhảy/rơi tự do bị tính là đang chạy)
+            bool playerMoving = Mathf.Abs(playerScript.rb.linearVelocity.x) > 0.1f;
 
             float xOffset = playerMoving ? playerOffsetPrediction.x * playerScript.facingDir : 0;
-            Vector3 spellPosition = player.transform.position + new Vector3(xOffset, playerOffsetPrediction.y);
+            Vector3 spellPosition = playerScript.transform.position + new Vector3(xOffset, playerOffsetPrediction.y);
 
-            Enemy_ReaperSpell spell
-                = Instantiate(spellCastPrefab, spellPosition, Quaternion.identity).GetComponent<Enemy_ReaperSpell>();
+            if (spellCastPrefab != null)
+            {
+                GameObject spellObj = Instantiate(spellCastPrefab, spellPosition, Quaternion.identity);
+                if (spellObj.TryGetComponent<Enemy_ReaperSpell>(out var spell))
+                {
+                    spell.SetupSpell(combat, spellDamageScale);
+                }
+            }
 
-            spell.SetupSpell(combat, spellDamageScale);
-
-            yield return new WaitForSeconds(spellCastRate);
+            yield return wait;
         }
 
         SetSpellCastPreformed(true);
+        castSpellCoroutine = null;
     }
     public void SetSpellCastPreformed(bool spellCastStatus) => spellCastPreformed = spellCastStatus;
     public bool CanDoSpellCast() => Time.time > lastTimeCastedSpells + spellCastStateCooldown;
@@ -112,13 +167,21 @@ public class Enemy_Reaper : Enemy, ICounterable
 
     public Vector3 FindTeleportPoint()
     {
+        if (arenaBounds == null)
+            return transform.position;
+
         int maxAttampts = 10;
-        float bossWithColliderHalf = col.bounds.size.x / 2;
+        float bossWithColliderHalf = col != null ? col.bounds.size.x / 2 : 1f;
+        Transform playerTarget = player != null ? player : (Player.instance != null ? Player.instance.transform : null);
 
         for (int i = 0; i < maxAttampts; i++)
         {
             float randomX = Random.Range(arenaBounds.bounds.min.x + bossWithColliderHalf,
                                          arenaBounds.bounds.max.x - bossWithColliderHalf);
+
+            // Tránh teleport xuất hiện quá sát hoặc chồng đè lên người player
+            if (playerTarget != null && Mathf.Abs(randomX - playerTarget.position.x) < minTeleportDistanceFromPlayer)
+                continue;
 
             Vector2 raycastPoint = new Vector2(randomX, arenaBounds.bounds.max.y);
 
@@ -127,7 +190,6 @@ public class Enemy_Reaper : Enemy, ICounterable
             if (hit.collider != null)
                 return hit.point + new Vector2(0, offsetCenterY);
         }
-
 
         return transform.position;
     }

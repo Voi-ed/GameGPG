@@ -74,7 +74,7 @@ public class Entity_Combat : MonoBehaviour
             return; // skip target, go to next target
 
         DamageScaleData damageScale = damageScaleData == null ? basicAttackScale : damageScaleData;
-        AttackData attackData = stats.GetAttackData(basicAttackScale);
+        AttackData attackData = stats.GetAttackData(damageScale);
         Entity_StatusHandler statusHandler = target.GetComponent<Entity_StatusHandler>();
 
 

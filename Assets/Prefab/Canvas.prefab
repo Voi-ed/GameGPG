@@ -43965,12 +43965,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2750634281503284837}
+  - {fileID: 8800000000000000402}
+  - {fileID: 7317977528319558487}
+  - {fileID: 5475404332139754473}
   - {fileID: 6067943594955644289}
   - {fileID: 3922860554527605050}
   - {fileID: 8800000000000000202}
-  - {fileID: 5475404332139754473}
-  - {fileID: 7317977528319558487}
-  - {fileID: 8800000000000000402}
   m_Father: {fileID: 8990506351970827222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -50395,10 +50395,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3298091286970645025}
+  - {fileID: 5358423322143214649}
   - {fileID: 5790057745658190654}
   - {fileID: 2069566909822654504}
   - {fileID: 8037004221732508895}
-  - {fileID: 5358423322143214649}
   m_Father: {fileID: 8990506351970827222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -100283,10 +100283,10 @@ RectTransform:
   - {fileID: 164577417919525392}
   - {fileID: 4989021812165604728}
   - {fileID: 4594785482707570836}
-  - {fileID: 4433710744325998303}
-  - {fileID: 1329390185811668559}
   - {fileID: 1009828102113718614}
   - {fileID: 8219750644410312016}
+  - {fileID: 4433710744325998303}
+  - {fileID: 1329390185811668559}
   m_Father: {fileID: 8990506351970827222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -122010,7 +122010,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthRect: {fileID: 5017609429051418857}
   healthSlider: {fileID: 4423463938067834699}
+  ghostHealthSlider: {fileID: 0}
+  fillImage: {fileID: 0}
   healthText: {fileID: 488999432656965479}
+  baseBarWidth: 220
+  minBarWidth: 180
+  maxBarWidth: 360
+  widthPerHealthPoint: 0.5
+  mainFillDuration: 0.2
+  ghostDelay: 0.35
+  ghostDuration: 0.45
+  enableHitShake: 1
+  enableLowHpPulse: 1
+  lowHpThreshold: 0.3
   yOffsetQuickItemParent: 150
   quickItemOptionsParent: {fileID: 1843928711653949233}
 --- !u!1 &8795051391705950282

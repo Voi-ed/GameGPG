@@ -38,6 +38,7 @@ public class Enemy_ReaperSpellCastState : EnemyState
     public override void Exit()
     {
         base.Exit();
+        enemyReaper.StopCastingSpell();
         anim.SetBool("spellCast_Performed", false);
     }
 }

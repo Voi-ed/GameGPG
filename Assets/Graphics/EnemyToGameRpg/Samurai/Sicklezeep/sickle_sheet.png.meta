@@ -115,7 +115,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -129,7 +129,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -220,10 +220,10 @@ TextureImporter:
       name: sickle_sheet_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 271
-        width: 31
-        height: 38
+        x: 0
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: sickle_sheet_1
       rect:
         serializedVersion: 2
-        x: 176
-        y: 271
-        width: 31
-        height: 39
+        x: 128
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,10 +264,10 @@ TextureImporter:
       name: sickle_sheet_2
       rect:
         serializedVersion: 2
-        x: 304
-        y: 271
-        width: 31
-        height: 39
+        x: 256
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: sickle_sheet_3
       rect:
         serializedVersion: 2
-        x: 432
-        y: 271
-        width: 31
-        height: 39
+        x: 384
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: sickle_sheet_4
       rect:
         serializedVersion: 2
-        x: 560
-        y: 271
-        width: 31
-        height: 38
+        x: 512
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +330,10 @@ TextureImporter:
       name: sickle_sheet_5
       rect:
         serializedVersion: 2
-        x: 688
-        y: 271
-        width: 31
-        height: 38
+        x: 640
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +352,10 @@ TextureImporter:
       name: sickle_sheet_6
       rect:
         serializedVersion: 2
-        x: 49
-        y: 207
-        width: 29
-        height: 38
+        x: 0
+        y: 192
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,10 +374,10 @@ TextureImporter:
       name: sickle_sheet_7
       rect:
         serializedVersion: 2
-        x: 178
-        y: 207
-        width: 28
-        height: 39
+        x: 128
+        y: 192
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: sickle_sheet_8
       rect:
         serializedVersion: 2
-        x: 305
-        y: 207
-        width: 29
-        height: 39
+        x: 256
+        y: 192
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,10 +418,10 @@ TextureImporter:
       name: sickle_sheet_9
       rect:
         serializedVersion: 2
-        x: 432
-        y: 207
-        width: 31
-        height: 39
+        x: 384
+        y: 192
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,10 +440,10 @@ TextureImporter:
       name: sickle_sheet_10
       rect:
         serializedVersion: 2
-        x: 560
-        y: 207
-        width: 31
-        height: 37
+        x: 512
+        y: 192
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: sickle_sheet_11
       rect:
         serializedVersion: 2
-        x: 47
-        y: 143
-        width: 30
-        height: 36
+        x: 0
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,10 +484,10 @@ TextureImporter:
       name: sickle_sheet_12
       rect:
         serializedVersion: 2
-        x: 175
-        y: 143
-        width: 30
-        height: 39
+        x: 128
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -506,10 +506,10 @@ TextureImporter:
       name: sickle_sheet_13
       rect:
         serializedVersion: 2
-        x: 303
-        y: 144
-        width: 30
-        height: 38
+        x: 256
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -528,10 +528,10 @@ TextureImporter:
       name: sickle_sheet_14
       rect:
         serializedVersion: 2
-        x: 432
-        y: 143
-        width: 31
-        height: 38
+        x: 384
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -550,10 +550,10 @@ TextureImporter:
       name: sickle_sheet_15
       rect:
         serializedVersion: 2
-        x: 560
-        y: 143
-        width: 31
-        height: 37
+        x: 512
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,10 +572,10 @@ TextureImporter:
       name: sickle_sheet_16
       rect:
         serializedVersion: 2
-        x: 47
-        y: 79
-        width: 33
-        height: 36
+        x: 0
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -594,10 +594,10 @@ TextureImporter:
       name: sickle_sheet_17
       rect:
         serializedVersion: 2
-        x: 177
-        y: 79
-        width: 51
-        height: 37
+        x: 128
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,10 +616,10 @@ TextureImporter:
       name: sickle_sheet_18
       rect:
         serializedVersion: 2
-        x: 305
-        y: 79
-        width: 52
-        height: 37
+        x: 256
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -638,10 +638,10 @@ TextureImporter:
       name: sickle_sheet_19
       rect:
         serializedVersion: 2
-        x: 434
-        y: 79
-        width: 51
-        height: 46
+        x: 384
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -660,10 +660,10 @@ TextureImporter:
       name: sickle_sheet_20
       rect:
         serializedVersion: 2
-        x: 572
-        y: 79
-        width: 41
-        height: 45
+        x: 512
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -682,10 +682,10 @@ TextureImporter:
       name: sickle_sheet_21
       rect:
         serializedVersion: 2
-        x: 700
-        y: 79
-        width: 42
-        height: 46
+        x: 640
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -704,10 +704,10 @@ TextureImporter:
       name: sickle_sheet_22
       rect:
         serializedVersion: 2
-        x: 826
-        y: 79
-        width: 44
-        height: 43
+        x: 768
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -726,10 +726,10 @@ TextureImporter:
       name: sickle_sheet_23
       rect:
         serializedVersion: 2
-        x: 49
-        y: 15
-        width: 29
-        height: 36
+        x: 0
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -748,10 +748,10 @@ TextureImporter:
       name: sickle_sheet_24
       rect:
         serializedVersion: 2
-        x: 146
-        y: 15
-        width: 77
-        height: 36
+        x: 128
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -770,10 +770,10 @@ TextureImporter:
       name: sickle_sheet_25
       rect:
         serializedVersion: 2
-        x: 275
-        y: 15
-        width: 75
-        height: 36
+        x: 256
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -792,10 +792,10 @@ TextureImporter:
       name: sickle_sheet_26
       rect:
         serializedVersion: 2
-        x: 411
-        y: 15
-        width: 69
-        height: 36
+        x: 384
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -814,7 +814,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: eb407157811d645d584e26ff3fb4a5cf
     internalID: 0
     vertices: []
     indices: 

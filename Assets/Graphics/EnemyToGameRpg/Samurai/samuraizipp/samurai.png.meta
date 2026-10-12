@@ -97,7 +97,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -111,7 +111,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -202,10 +202,10 @@ TextureImporter:
       name: samurai_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 271
-        width: 41
-        height: 31
+        x: 0
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,10 +224,10 @@ TextureImporter:
       name: samurai_1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 271
-        width: 41
-        height: 31
+        x: 128
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: samurai_2
       rect:
         serializedVersion: 2
-        x: 288
-        y: 271
-        width: 41
-        height: 32
+        x: 256
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: samurai_3
       rect:
         serializedVersion: 2
-        x: 416
-        y: 271
-        width: 41
-        height: 32
+        x: 384
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,10 +290,10 @@ TextureImporter:
       name: samurai_4
       rect:
         serializedVersion: 2
-        x: 544
-        y: 271
-        width: 41
-        height: 32
+        x: 512
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,10 +312,10 @@ TextureImporter:
       name: samurai_5
       rect:
         serializedVersion: 2
-        x: 31
-        y: 207
-        width: 43
-        height: 28
+        x: 0
+        y: 192
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,10 +334,10 @@ TextureImporter:
       name: samurai_6
       rect:
         serializedVersion: 2
-        x: 159
-        y: 207
-        width: 43
-        height: 28
+        x: 128
+        y: 192
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,10 +356,10 @@ TextureImporter:
       name: samurai_7
       rect:
         serializedVersion: 2
-        x: 272
-        y: 207
-        width: 93
-        height: 35
+        x: 256
+        y: 192
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +378,10 @@ TextureImporter:
       name: samurai_8
       rect:
         serializedVersion: 2
-        x: 415
-        y: 207
-        width: 79
-        height: 35
+        x: 384
+        y: 192
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,10 +400,10 @@ TextureImporter:
       name: samurai_9
       rect:
         serializedVersion: 2
-        x: 39
-        y: 143
-        width: 36
-        height: 38
+        x: 0
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -422,10 +422,10 @@ TextureImporter:
       name: samurai_10
       rect:
         serializedVersion: 2
-        x: 166
-        y: 143
-        width: 37
-        height: 37
+        x: 128
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -444,10 +444,10 @@ TextureImporter:
       name: samurai_11
       rect:
         serializedVersion: 2
-        x: 294
-        y: 143
-        width: 70
-        height: 44
+        x: 256
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,10 +466,10 @@ TextureImporter:
       name: samurai_12
       rect:
         serializedVersion: 2
-        x: 430
-        y: 143
-        width: 63
-        height: 45
+        x: 384
+        y: 128
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,10 +488,10 @@ TextureImporter:
       name: samurai_13
       rect:
         serializedVersion: 2
-        x: 50
-        y: 79
-        width: 50
-        height: 31
+        x: 0
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -510,10 +510,10 @@ TextureImporter:
       name: samurai_14
       rect:
         serializedVersion: 2
-        x: 178
-        y: 79
-        width: 51
-        height: 31
+        x: 128
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -532,10 +532,10 @@ TextureImporter:
       name: samurai_15
       rect:
         serializedVersion: 2
-        x: 311
-        y: 79
-        width: 57
-        height: 31
+        x: 256
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -554,10 +554,10 @@ TextureImporter:
       name: samurai_16
       rect:
         serializedVersion: 2
-        x: 439
-        y: 79
-        width: 57
-        height: 31
+        x: 384
+        y: 64
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -576,10 +576,10 @@ TextureImporter:
       name: samurai_17
       rect:
         serializedVersion: 2
-        x: 32
-        y: 15
-        width: 41
-        height: 31
+        x: 0
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -598,10 +598,10 @@ TextureImporter:
       name: samurai_18
       rect:
         serializedVersion: 2
-        x: 160
-        y: 15
-        width: 41
-        height: 28
+        x: 128
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -620,10 +620,10 @@ TextureImporter:
       name: samurai_19
       rect:
         serializedVersion: 2
-        x: 288
-        y: 15
-        width: 41
-        height: 28
+        x: 256
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -642,10 +642,10 @@ TextureImporter:
       name: samurai_20
       rect:
         serializedVersion: 2
-        x: 416
-        y: 15
-        width: 41
-        height: 28
+        x: 384
+        y: 0
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,7 +664,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5f0b2295d945e42aea14008041f61580
     internalID: 0
     vertices: []
     indices: 

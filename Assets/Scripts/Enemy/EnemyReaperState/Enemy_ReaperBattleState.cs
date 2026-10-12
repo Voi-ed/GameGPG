@@ -22,7 +22,10 @@ public class Enemy_ReaperBattleState : Enemy_BattleState
         UpdateAnimationParameters();
 
         if (stateTimer < 0)
+        {
             stateMachine.ChangeState(enemyReaper.reaperTeleportState);
+            return;
+        }
 
         if (enemy.PlayerDetected())
             UpdateTargetIfNeeded();

@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -157,10 +157,10 @@ TextureImporter:
       name: explosion_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 12
-        width: 51
-        height: 33
+        x: 0
+        y: 0
+        width: 123
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +179,10 @@ TextureImporter:
       name: explosion_1
       rect:
         serializedVersion: 2
-        x: 144
-        y: 39
-        width: 12
-        height: 6
+        x: 123
+        y: 0
+        width: 123
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: explosion_2
       rect:
         serializedVersion: 2
-        x: 166
-        y: 14
-        width: 57
-        height: 34
+        x: 246
+        y: 0
+        width: 123
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: explosion_3
       rect:
         serializedVersion: 2
-        x: 288
-        y: 16
-        width: 33
-        height: 33
+        x: 369
+        y: 0
+        width: 123
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,55 +241,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: explosion_4
-      rect:
-        serializedVersion: 2
-        x: 412
-        y: 0
-        width: 28
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 74f4433104cdd9bb0800000000000000
-      internalID: -4927540249515241657
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_5
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 6
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7cd61e150b693ee40800000000000000
-      internalID: 5684552838703836615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b7503ed3ec6314b228c88dc73f0df537
     internalID: 0
     vertices: []
     indices: 
@@ -303,8 +259,6 @@ TextureImporter:
       explosion_1: -5243772346084840235
       explosion_2: -4009157606203222040
       explosion_3: 3730887761424324059
-      explosion_4: -4927540249515241657
-      explosion_5: 5684552838703836615
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

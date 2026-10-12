@@ -24,7 +24,7 @@ MonoBehaviour:
     stackSize: 1
     itemEffect: {fileID: 0}
   itemName: Nhẫn Sinh Mệnh
-  itemIcon: {fileID: -600305260, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  itemIcon: {fileID: 21300000, guid: 402b59defb20842ac8e0b21646aa4d2c, type: 3}
   itemType: 3
   maxStackSize: 1
   itemEffect: {fileID: 0}

@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -151,10 +151,10 @@ TextureImporter:
       name: forrest_mage_0
       rect:
         serializedVersion: 2
-        x: 43
+        x: 0
         y: 0
-        width: 26
-        height: 36
+        width: 123
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,77 +169,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: forrest_mage_1
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 0
-        width: 20
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 33629cb9a708aff70800000000000000
-      internalID: 9221824451082528307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forrest_mage_2
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 29
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d829e41c6e8ccda30800000000000000
-      internalID: 4241485842487349901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forrest_mage_3
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 11
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc527e054a94ae730800000000000000
-      internalID: 4029113786717119949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7e34412f8ce9f465eaf9bf3285f62a94
     internalID: 0
     vertices: []
     indices: 
@@ -250,9 +184,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       forrest_mage_0: 2588084238578454764
-      forrest_mage_1: 9221824451082528307
-      forrest_mage_2: 4241485842487349901
-      forrest_mage_3: 4029113786717119949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

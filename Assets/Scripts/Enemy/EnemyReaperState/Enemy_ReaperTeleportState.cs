@@ -11,7 +11,8 @@ public class Enemy_ReaperTeleportState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        enemyReaper.MakeUntargetable(true);
+        enemy.SetVelocity(0f, 0f);
+        enemyReaper.MakeUntargetable(false);
     }
 
     public override void Update()
@@ -21,6 +22,14 @@ public class Enemy_ReaperTeleportState : EnemyState
         if (enemyReaper.teleporTrigger)
         {
             enemyReaper.transform.position = enemyReaper.FindTeleportPoint();
+
+            Transform playerTarget = enemyReaper.player != null ? enemyReaper.player : (Player.instance != null ? Player.instance.transform : null);
+            if (playerTarget != null)
+            {
+                int dir = playerTarget.position.x > enemyReaper.transform.position.x ? 1 : -1;
+                enemyReaper.HandleFlip(dir);
+            }
+
             enemyReaper.SetTeleportTrigger(false);
         }
 
@@ -36,6 +45,6 @@ public class Enemy_ReaperTeleportState : EnemyState
     public override void Exit()
     {
         base.Exit();
-        enemyReaper.MakeUntargetable(false);
+        enemyReaper.MakeUntargetable(true);
     }
 }

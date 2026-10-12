@@ -21,7 +21,7 @@ MonoBehaviour:
   maxDropChance: 65
   craftRecipe: []
   itemName: Nhẫn Tàn Tro
-  itemIcon: {fileID: 395298878, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  itemIcon: {fileID: 21300000, guid: d331c5f3d738e4d9bb39fa5d33bee17d, type: 3}
   itemType: 3
   maxStackSize: 1
   itemEffect: {fileID: 0}

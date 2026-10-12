@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -163,10 +163,10 @@ TextureImporter:
       name: forrest_mage_death_0
       rect:
         serializedVersion: 2
-        x: 36
+        x: 0
         y: 0
-        width: 51
-        height: 48
+        width: 123
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,10 +185,10 @@ TextureImporter:
       name: forrest_mage_death_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 28
-        width: 6
-        height: 6
+        x: 123
+        y: 0
+        width: 123
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,9 +207,9 @@ TextureImporter:
       name: forrest_mage_death_2
       rect:
         serializedVersion: 2
-        x: 159
+        x: 246
         y: 0
-        width: 55
+        width: 123
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: forrest_mage_death_3
       rect:
         serializedVersion: 2
-        x: 202
-        y: 28
-        width: 6
-        height: 6
+        x: 369
+        y: 0
+        width: 123
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,9 +251,9 @@ TextureImporter:
       name: forrest_mage_death_4
       rect:
         serializedVersion: 2
-        x: 282
+        x: 492
         y: 0
-        width: 59
+        width: 123
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: forrest_mage_death_5
       rect:
         serializedVersion: 2
-        x: 405
+        x: 615
         y: 0
-        width: 59
-        height: 61
+        width: 123
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,55 +291,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: forrest_mage_death_6
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac1cf102faa203250800000000000000
-      internalID: 5922280441638797770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forrest_mage_death_7
-      rect:
-        serializedVersion: 2
-        x: 651
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f626cba3becaca9a0800000000000000
-      internalID: -6220406859002781073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0c56df51a74704a2fae95414cbc55eb4
     internalID: 0
     vertices: []
     indices: 
@@ -355,8 +311,6 @@ TextureImporter:
       forrest_mage_death_3: -8513133269108169401
       forrest_mage_death_4: 8145736510606994555
       forrest_mage_death_5: 6311919182261460314
-      forrest_mage_death_6: 5922280441638797770
-      forrest_mage_death_7: -6220406859002781073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

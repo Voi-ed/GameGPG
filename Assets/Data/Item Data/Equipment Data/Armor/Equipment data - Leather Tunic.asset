@@ -24,7 +24,7 @@ MonoBehaviour:
     stackSize: 3
     itemEffect: {fileID: 0}
   itemName: Áo Choàng Da
-  itemIcon: {fileID: -1406257154, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  itemIcon: {fileID: 21300000, guid: 3b7305ecf22dc453091755f904e0634c, type: 3}
   itemType: 2
   maxStackSize: 1
   itemEffect: {fileID: 0}
