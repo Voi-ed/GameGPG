@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "L\xF4i Ki\u1EBFm \u0110o\u1EA1t M\u1EC7nh"
   description: "Ph\xF3ng thanh ki\u1EBFm t\xEDch \u0111i\u1EC7n. Khi c\u1EAFm \u0111\u1EA5t tri\u1EC7u h\u1ED3i s\u1EA5m s\xE9t gi\xE1ng xu\u1ED1ng v\xE0 li\xEAn t\u1EE5c gi\u1EADt \u0111i\u1EC7n lan qua c\xE1c m\u1EE5c ti\xEAu xung quanh. Khi g\u1ECDi ki\u1EBFm v\u1EC1, ki\u1EBFm x\xE9 gi\xF3 gi\u1EADt s\xE9t thi\xEAu \u0111\u1ED1t m\u1ECDi k\u1EBB \u0111\u1ECBch tr\xEAn \u0111\u01B0\u1EDDng bay."
-  icon: {fileID: -1700736812, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -41970534257140035, guid: b2ee3b79dbbea4b6db9e37c1f19150b4, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 3

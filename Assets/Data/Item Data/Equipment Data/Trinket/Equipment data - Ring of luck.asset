@@ -20,7 +20,7 @@ MonoBehaviour:
   maxDropChance: 65
   craftRecipe: []
   itemName: Nhẫn May Mắn
-  itemIcon: {fileID: 21300000, guid: 0fee1adca948a448bb86cc4467f08796, type: 3}
+  itemIcon: {fileID: -898135606, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 3
   maxStackSize: 1
   itemEffect: {fileID: 0}

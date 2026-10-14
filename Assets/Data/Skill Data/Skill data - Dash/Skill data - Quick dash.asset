@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Lướt Nhanh
   description: 'Lướt nhanh để né tránh đòn đánh. Bạn không nhận sát thương trong lúc đang lướt.'
-  icon: {fileID: 900771226, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 2960402581040015946, guid: 1cea4ceffdf294b288180a9fb23a2e82, type: 3}
   cost: 0
   unlockedByDefault: 1
   skillType: 0

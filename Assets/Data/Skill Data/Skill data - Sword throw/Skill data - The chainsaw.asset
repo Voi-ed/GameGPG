@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Lưỡi Cưa Bão Tố
   description: 'Thanh kiếm xoay tròn liên tục như một lưỡi cưa cuồng bạo, gây sát thương liên tiếp lên kẻ địch xung quanh.'
-  icon: {fileID: -611442429, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -8248641632619851740, guid: 1eed90f637ddb4c009049c98f4579b67, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 3

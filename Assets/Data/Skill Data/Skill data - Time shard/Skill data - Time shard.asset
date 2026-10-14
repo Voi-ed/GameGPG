@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Mảnh Vỡ Thời Gian
   description: 'Tạo ra một mảnh vỡ chứa ma pháp nguyên tố. Phát nổ khi kẻ địch chạm vào hoặc khi hết thời gian tồn tại.'
-  icon: {fileID: 1779770775, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 5953923354035733431, guid: b85f67242185d46a9a039f072416d21c, type: 3}
   cost: 1
   unlockedByDefault: 0
   skillType: 2

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Vùng Thời Gian
   description: 'Tạo ra một vùng không gian làm chậm cực mạnh tất cả kẻ địch bên trong.'
-  icon: {fileID: -248090357, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 4955433702879726381, guid: 9f76b8756f33347a0b5134de120b4ca6, type: 3}
   cost: 4
   unlockedByDefault: 0
   skillType: 4

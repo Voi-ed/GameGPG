@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Hoán Đổi Vị Trí
   description: 'Nhấn nút kỹ năng một lần nữa để hoán đổi vị trí của bạn với mảnh vỡ vừa tạo.'
-  icon: {fileID: -195789106, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -6888370067028216198, guid: a44ff0c42b7ea472a80fd3430ab43982, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 2

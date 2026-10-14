@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Bước Chân Ảo Ảnh
   description: 'Tạo ra một ảo ảnh thời gian tại vị trí trước khi lướt. (Kế thừa toàn bộ nâng cấp của kỹ năng Ảo Ảnh Thời Gian)'
-  icon: {fileID: 2145447606, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 6051461806625355020, guid: 65f37e0a3738a4509af0b5e1478df3fc, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 0

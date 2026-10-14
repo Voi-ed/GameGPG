@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Kiếm Xuyên Thấu
   description: 'Phóng thanh kiếm bay thẳng về phía trước, xuyên qua nhiều kẻ địch trên đường bay.'
-  icon: {fileID: -1493271087, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 8869632123777608474, guid: f0708b7500593457aa980a87f0c0603b, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 3

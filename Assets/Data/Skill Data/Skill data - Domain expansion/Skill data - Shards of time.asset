@@ -16,7 +16,7 @@ MonoBehaviour:
   description: "M\u1ED7i k\u1EBB \u0111\u1ECBch b\u1ECB giam trong v\xF9ng th\u1EDDi
     gian s\u1EBD b\u1ECB b\u1EAFn ph\xE1 b\u1EDFi nhi\u1EC1u m\u1EA3nh v\u1EE1 th\u1EDDi
     gian."
-  icon: {fileID: 1540406971, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -1485282433491618599, guid: 4c87c8608a68b4a1da16aa2996972034, type: 3}
   cost: 4
   unlockedByDefault: 0
   skillType: 4

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Mảnh Gương Nhân Bản
   description: 'Mảnh vỡ thời gian giờ đây có thể tích trữ tối đa 3 điểm kích hoạt.'
-  icon: {fileID: -947979763, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -2664783550769548753, guid: 632ebe14611c540509cb873df63f65ef, type: 3}
   cost: 3
   unlockedByDefault: 0
   skillType: 2

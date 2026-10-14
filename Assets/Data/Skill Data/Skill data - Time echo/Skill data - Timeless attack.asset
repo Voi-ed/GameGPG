@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Đòn Đánh Kế Thừa
   description: 'Ảo ảnh thời gian có thể thực hiện 1 đòn tấn công.'
-  icon: {fileID: 452752024, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 2381718968514813875, guid: 20a72e4deb2244f42a7a7542f962cb79, type: 3}
   cost: 0
   unlockedByDefault: 0
   skillType: 1

@@ -18,7 +18,7 @@ MonoBehaviour:
     100%. Ng\u01B0\u1EDDi ch\u01A1i t\u1EF1 do ch\xE9m \u0111\xE1nh t\xEDch l\u0169y
     s\xE1t th\u01B0\u01A1ng n\xE9n, b\u1ED9c ph\xE1t t\u1EADn di\u1EC7t \u0111\u1ED3ng
     lo\u1EA1t khi l\xE3nh \u0111\u1ECBa k\u1EBFt th\xFAc."
-  icon: {fileID: 1238464337, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 8066946747507999253, guid: f35328b14a8d94d00a6b9f47ec374f77, type: 3}
   cost: 5
   unlockedByDefault: 0
   skillType: 4

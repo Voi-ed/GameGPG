@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Bão Đòn Ảo Ảnh
   description: 'Ảo ảnh thời gian có thể thực hiện 3 đòn tấn công liên tiếp.'
-  icon: {fileID: 1194482098, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -7833240276873349136, guid: 48ac5fa36bffb4d29bcbd31808fd320f, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 1

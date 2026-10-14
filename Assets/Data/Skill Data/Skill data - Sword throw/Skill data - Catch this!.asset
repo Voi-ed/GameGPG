@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Đỡ Lấy Này!
   description: 'Ném kiếm gây sát thương lên kẻ địch và áp dụng hiệu ứng nguyên tố. Chỉ có thể có 1 thanh kiếm hoạt động cùng lúc.'
-  icon: {fileID: -2048434906, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -6507131735005809567, guid: f14b061c0e2e441b0b5b832af853a657, type: 3}
   cost: 1
   unlockedByDefault: 0
   skillType: 3

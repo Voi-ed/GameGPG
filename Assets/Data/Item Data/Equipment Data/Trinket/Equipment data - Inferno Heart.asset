@@ -21,7 +21,7 @@ MonoBehaviour:
   maxDropChance: 65
   craftRecipe: []
   itemName: Trái Tim Viêm Ma
-  itemIcon: {fileID: 21300000, guid: c48aa9b06bcf5437cabedbdbb64aed6b, type: 3}
+  itemIcon: {fileID: 1581172181, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 3
   maxStackSize: 1
   itemEffect: {fileID: 0}

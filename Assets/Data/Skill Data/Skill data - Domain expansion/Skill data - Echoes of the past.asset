@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Âm Vang Quá Khứ
   description: 'Mỗi kẻ địch bị giam trong vùng thời gian sẽ bị tấn công dồn dập bởi nhiều ảo ảnh thời gian.'
-  icon: {fileID: 1560387317, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 989123813363763071, guid: befa5f4db83754eea8c058d67aa3bf59, type: 3}
   cost: 4
   unlockedByDefault: 0
   skillType: 4

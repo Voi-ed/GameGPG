@@ -27,7 +27,7 @@ MonoBehaviour:
     stackSize: 2
     itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8002, type: 2}
   itemName: Rìu Chiến Cuồng Nộ
-  itemIcon: {fileID: 21300000, guid: d1797e30f0aca4f02a22dcd94c64dc5f, type: 3}
+  itemIcon: {fileID: 590669037, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 1
   maxStackSize: 1
   itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8002, type: 2}

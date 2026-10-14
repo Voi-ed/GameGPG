@@ -27,7 +27,7 @@ MonoBehaviour:
     stackSize: 1
     itemEffect: {fileID: 0}
   itemName: Trọng Kiếm Sắt
-  itemIcon: {fileID: 21300000, guid: f76b00e7b034d4c6e8f0f2fe720f85ea, type: 3}
+  itemIcon: {fileID: 1249187385, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 1
   maxStackSize: 1
   itemEffect: {fileID: 0}

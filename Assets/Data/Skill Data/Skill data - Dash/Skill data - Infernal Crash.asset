@@ -18,7 +18,7 @@ MonoBehaviour:
     v\xE0 L\xC0M CHO\xC1NG (Stun) k\u1EBB \u0111\u1ECBch 1.5s. \u0110\u1ED3ng th\u1EDDi
     k\xEDch n\u1ED5 d\xE2y chuy\u1EC1n to\xE0n b\u1ED9 v\u1EC7t l\u1EEDa sau l\u01B0ng,
     h\u1EA5t tung k\u1EBB \u0111\u1ECBch b\xE1m \u0111u\u1ED5i."
-  icon: {fileID: -1778065067, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 4808244930049875026, guid: 7b2a76e73638f4a5f8730f89c525db75, type: 3}
   cost: 3
   unlockedByDefault: 0
   skillType: 0

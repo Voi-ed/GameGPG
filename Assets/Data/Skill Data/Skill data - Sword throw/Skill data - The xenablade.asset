@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Kiếm Nảy Liên Hoàn
   description: 'Thanh kiếm bật nảy liên tục giữa các mục tiêu, gây sát thương mỗi lần chạm trúng.'
-  icon: {fileID: -600305260, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 5757751276978669553, guid: 6e9dd00e3c8594103b67f398b4059de8, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 3

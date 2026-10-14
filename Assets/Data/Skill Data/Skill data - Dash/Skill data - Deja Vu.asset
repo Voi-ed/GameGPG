@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Ký Ức Tái Hiện
   description: 'Tạo ra một ảo ảnh thời gian tại điểm đến sau khi lướt xong. (Kế thừa toàn bộ nâng cấp của kỹ năng Ảo Ảnh Thời Gian)'
-  icon: {fileID: 1805549052, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 8620324437368578327, guid: 206c31eedb3e841ff9886a8678387888, type: 3}
   cost: 3
   unlockedByDefault: 0
   skillType: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Ảo Ảnh Thời Gian
   description: 'Tạo ra một ảo ảnh thời gian của bản thân để đánh lạc hướng kẻ địch.'
-  icon: {fileID: -7293604, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 8664860301577263764, guid: a5493f65451114505a61c4c418eb814a, type: 3}
   cost: 1
   unlockedByDefault: 0
   skillType: 1

@@ -19,7 +19,7 @@ MonoBehaviour:
     t\u1EE5c v\xE0 \u0111\xF3ng b\u0103ng k\u1EBB \u0111\u1ECBch. Khi g\u1ECDi ki\u1EBFm
     v\u1EC1, ki\u1EBFm x\xE9 b\u0103ng k\xEDch n\u1ED5 b\u1EA1o k\xEDch l\xEAn c\xE1c
     m\u1EE5c ti\xEAu b\u1ECB \u0111\xF3ng b\u0103ng."
-  icon: {fileID: -1585429683, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -8012215477537734712, guid: aea7d17b318484a348f322a2370f0b00, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 3

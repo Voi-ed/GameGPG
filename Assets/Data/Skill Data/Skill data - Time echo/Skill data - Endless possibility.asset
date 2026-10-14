@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Khả Năng Vô Tận
   description: 'Ảo ảnh thời gian có 30% cơ hội tự nhân đôi chính nó.'
-  icon: {fileID: 900550846, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 8950671513123133910, guid: 010b1aab89e314a12bfb69e55fe1c1f3, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 1

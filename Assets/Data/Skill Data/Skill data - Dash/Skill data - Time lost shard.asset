@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Mảnh Vỡ Thất Lạc
   description: 'Tạo ra một mảnh vỡ thời gian trước khi lướt. (Kế thừa toàn bộ nâng cấp của kỹ năng Mảnh Vỡ Thời Gian)'
-  icon: {fileID: 610253578, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -3180619178420385107, guid: 3f5b3a0676c2840daa808351e5723f99, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 0

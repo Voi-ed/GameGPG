@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Mảnh Vỡ Tiếp Bước
   description: 'Tạo ra một mảnh vỡ thời gian tại điểm đến sau khi lướt xong. (Kế thừa toàn bộ nâng cấp của kỹ năng Mảnh Vỡ Thời Gian)'
-  icon: {fileID: 522679889, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -4111228882293134515, guid: dd1e11641b4484e4c92aaf204a12deaa, type: 3}
   cost: 3
   unlockedByDefault: 0
   skillType: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Mảnh Vỡ Truy Kích
   description: 'Mảnh vỡ thời gian sẽ tự động bay về phía kẻ địch ở gần nhất.'
-  icon: {fileID: 1184643374, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: 6810289884213664739, guid: fa7e187a4b5314dc5846dc4cc68562fd, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 2

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Đom Đóm Hồi Máu
   description: 'Khi ảo ảnh bị tiêu diệt, giải phóng một đốm sáng trị liệu bay về phía bạn và hồi máu khi chạm vào.'
-  icon: {fileID: -1830470593, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
+  icon: {fileID: -1045133410153605164, guid: 7c68533e1052a4afba5a4ec86061da54, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 1
