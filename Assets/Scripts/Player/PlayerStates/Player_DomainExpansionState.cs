@@ -39,8 +39,10 @@ public class Player_DomainExpansionState : PlayerState
             if (stateTimer < 0)
             {
                 isLevitating = false;
-                rb.gravityScale = originalGravity;
-                stateMachine.ChangeState(player.idleState);
+                if (player.groundDetected)
+                    stateMachine.ChangeState(player.idleState);
+                else
+                    stateMachine.ChangeState(player.fallState);
             }
         }
     }
@@ -49,6 +51,8 @@ public class Player_DomainExpansionState : PlayerState
     {
         base.Exit();
         createdDomain = false;
+        isLevitating = false;
+        rb.gravityScale = originalGravity;
         player.health.SetCanTakeDamage(true);
     }
 
@@ -72,6 +76,6 @@ public class Player_DomainExpansionState : PlayerState
         RaycastHit2D hit =
             Physics2D.Raycast(player.transform.position, Vector2.up, player.riseMaxDistance, player.whatIsGround);
 
-        return hit.collider != null ? hit.distance - 1 : player.riseMaxDistance;
+        return hit.collider != null ? Mathf.Max(0, hit.distance - 1) : player.riseMaxDistance;
     }
 }

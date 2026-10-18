@@ -6,8 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Map/1_Village & Camp.unity
+    guid: c5f6a5f98b6de4771b99250f3afb0a7a
+  - enabled: 1
+    path: Assets/Scenes/Map/2_Forest Green.unity
+    guid: 35a5b0a8e37c1410d9f91abff24dcfdc
+  - enabled: 1
+    path: Assets/Scenes/Map/3_Swamp.unity
+    guid: 2262b129cba3e46bc899b66cbfb43b51
+  - enabled: 1
+    path: Assets/Scenes/Map/4_Caves.unity
+    guid: e50ff24939c2d4c9ca18fd69374f70de
+  - enabled: 1
+    path: Assets/Scenes/Map/5_Castle Dungeon.unity
+    guid: 45fc6561169704795a7d5b6e5171a333
+  - enabled: 1
+    path: Assets/Scenes/Map/6_Inferno Underworld.unity
+    guid: e268404bb1b3c4b8ebaa77ea70dcaf87
+  - enabled: 1
+    path: Assets/Scenes/Map/7_Wasteland.unity
+    guid: a410233e456a9450db1840eeba590d36
+  - enabled: 1
+    path: Assets/Scenes/Map/8_Metroidvania Ruins.unity
+    guid: d8f073f35d4324ec19deade44f9d00bc
   - enabled: 1
     path: Assets/Scenes/Level_0.unity
     guid: af2bf564342f8f34a9640a963e59831b
@@ -18,8 +39,8 @@ EditorBuildSettings:
     path: Assets/Scenes/LeveL_2.unity
     guid: 58dc8e0d749c43f4bb04243758901072
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 3dd8b407339bdfa4bb8450c550069483
+    path: Assets/Scenes/SampleScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

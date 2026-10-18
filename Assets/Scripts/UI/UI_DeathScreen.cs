@@ -4,7 +4,7 @@ public class UI_DeathScreen : MonoBehaviour
 {
     public void GoToCampBTN()
     {
-        GameManager.instance.ChangeScene("Level_0", RespawnType.NonSpecific);
+        GameManager.instance.ChangeScene("1_Village & Camp", RespawnType.NonSpecific);
     }
 
     public void GoToCheckpointBTN()

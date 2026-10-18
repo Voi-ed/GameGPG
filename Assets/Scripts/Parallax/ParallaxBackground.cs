@@ -10,13 +10,37 @@ public class ParallaxBackground : MonoBehaviour
 
     private void Awake()
     {
-        mainCamera = Camera.main;
-        cameraHalfWidth = mainCamera.orthographicSize * mainCamera.aspect;
+        FindCamera();
         InitializeLayers();
+    }
+
+    private void Start()
+    {
+        if (mainCamera == null)
+        {
+            FindCamera();
+            InitializeLayers();
+        }
+    }
+
+    private void FindCamera()
+    {
+        mainCamera = Camera.main;
+        if (mainCamera != null)
+        {
+            cameraHalfWidth = mainCamera.orthographicSize * mainCamera.aspect;
+            lastCameraPositionX = mainCamera.transform.position.x;
+        }
     }
 
     private void FixedUpdate()
     {
+        if (mainCamera == null)
+        {
+            FindCamera();
+            if (mainCamera == null) return;
+        }
+
         float currentCameraPositionX = mainCamera.transform.position.x;
         float distanceToMove = currentCameraPositionX - lastCameraPositionX;
         lastCameraPositionX = currentCameraPositionX;
@@ -24,16 +48,29 @@ public class ParallaxBackground : MonoBehaviour
         float cameraLeftEdge = currentCameraPositionX - cameraHalfWidth;
         float cameraRightEdge = currentCameraPositionX + cameraHalfWidth;
 
+        if (backgroundLayers == null) return;
         foreach (ParallaxLayer layer in backgroundLayers)
         {
-            layer.Move(distanceToMove);
-            layer.LoopBackground(cameraLeftEdge, cameraRightEdge);
+            if (layer != null)
+            {
+                layer.Move(distanceToMove);
+                layer.LoopBackground(cameraLeftEdge, cameraRightEdge);
+            }
         }
     }
 
-    private void InitializeLayers()
+    public void InitializeLayers()
     {
+        if (backgroundLayers == null) return;
         foreach (ParallaxLayer layer in backgroundLayers)
-            layer.CalculateImageWidth();
+        {
+            if (layer != null)
+                layer.CalculateImageWidth();
+        }
+    }
+
+    public void SetLayers(ParallaxLayer[] layers)
+    {
+        backgroundLayers = layers;
     }
 }

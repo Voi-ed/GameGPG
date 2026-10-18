@@ -12,8 +12,8 @@ public class Player_CounterAttackState : PlayerState
     {
         base.Enter();
 
-        stateTimer = combat.GetCounterRecoveryDuration();
         counteredSombody = combat.CounterAttackPerformed();
+        stateTimer = counteredSombody ? 1.0f : combat.GetCounterRecoveryDuration();
 
         anim.SetBool("counterAttackPerformed", counteredSombody);
     }
@@ -23,11 +23,16 @@ public class Player_CounterAttackState : PlayerState
         base.Update();
         player.SetVelocity(0, rb.linearVelocity.y);
 
-
         if (triggerCalled)
             stateMachine.ChangeState(player.idleState);
 
-        if (stateTimer < 0 && counteredSombody == false)
+        if (stateTimer < 0)
             stateMachine.ChangeState(player.idleState);
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        anim.SetBool("counterAttackPerformed", false);
     }
 }

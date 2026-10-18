@@ -136,6 +136,13 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
     public void LoadData(GameData data)
     {
         activeQuests.Clear();
+        completedQuests.Clear();
+
+        if (questDatabase == null)
+        {
+            Debug.LogWarning("Quest database is not assigned in Player_QuestManager!");
+            return;
+        }
 
         foreach (var entry in data.activeQuests)
         {
@@ -155,20 +162,40 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
 
             activeQuests.Add(questToLoad);
         }
+
+        foreach (var entry in data.completedQuests)
+        {
+            string questSaveId = entry.Key;
+
+            QuestDataSO questDataSO = questDatabase.GetQuestById(questSaveId);
+
+            if (questDataSO == null)
+            {
+                Debug.Log(questSaveId + " was not found in the database!");
+                continue;
+            }
+
+            QuestData completedQuest = new QuestData(questDataSO);
+            completedQuest.currentAmount = questDataSO.requiredAmount;
+            completedQuests.Add(completedQuest);
+        }
     }
 
     public void SaveData(ref GameData data)
     {
         data.activeQuests.Clear();
+        data.completedQuests.Clear();
 
         foreach (var quest in activeQuests)
         {
-            data.activeQuests.Add(quest.questDataSO.questSaveId, quest.currentAmount);
+            if (quest != null && quest.questDataSO != null)
+                data.activeQuests[quest.questDataSO.questSaveId] = quest.currentAmount;
         }
 
         foreach (var quest in completedQuests)
         {
-            data.completedQuests.Add(quest.questDataSO.questSaveId, true);
+            if (quest != null && quest.questDataSO != null)
+                data.completedQuests[quest.questDataSO.questSaveId] = true;
         }
     }
 }

@@ -52,7 +52,42 @@ public class UI_SkillSlot : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
         StartCoroutine(CooldownCo(cooldown));
     }
 
-    public void ResetCooldown() => cooldownImage.fillAmount = 0;
+    public void ResetCooldown()
+    {
+        StopAllCoroutines();
+        if (cooldownImage != null)
+            cooldownImage.fillAmount = 0;
+    }
+
+    public void ResumeCooldown(float remainingDuration, float totalDuration)
+    {
+        if (remainingDuration <= 0 || totalDuration <= 0)
+        {
+            ResetCooldown();
+            return;
+        }
+
+        StopAllCoroutines();
+        StartCoroutine(ResumeCooldownCo(remainingDuration, totalDuration));
+    }
+
+    private IEnumerator ResumeCooldownCo(float remainingDuration, float totalDuration)
+    {
+        float timePassed = totalDuration - remainingDuration;
+        if (cooldownImage != null)
+            cooldownImage.fillAmount = remainingDuration / totalDuration;
+
+        while (timePassed < totalDuration)
+        {
+            timePassed += Time.deltaTime;
+            if (cooldownImage != null)
+                cooldownImage.fillAmount = 1f - (timePassed / totalDuration);
+            yield return null;
+        }
+
+        if (cooldownImage != null)
+            cooldownImage.fillAmount = 0;
+    }
 
     private IEnumerator CooldownCo(float duration)
     {
@@ -61,11 +96,13 @@ public class UI_SkillSlot : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
         while (timePassed < duration)
         {
             timePassed = timePassed + Time.deltaTime;
-            cooldownImage.fillAmount = 1f - (timePassed / duration);
+            if (cooldownImage != null)
+                cooldownImage.fillAmount = 1f - (timePassed / duration);
             yield return null;
         }
 
-        cooldownImage.fillAmount = 0;
+        if (cooldownImage != null)
+            cooldownImage.fillAmount = 0;
     }
 
     public void OnPointerExit(PointerEventData eventData)

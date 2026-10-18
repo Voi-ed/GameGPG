@@ -10,19 +10,33 @@ public class ParallaxLayer
     private float imageFullWidth;
     private float imageHalfWidth;
 
+    public ParallaxLayer(Transform background, float parallaxMultiplier, float imageWidthOffset = 10)
+    {
+        this.background = background;
+        this.parallaxMultiplier = parallaxMultiplier;
+        this.imageWidthOffset = imageWidthOffset;
+    }
+
     public void CalculateImageWidth()
     {
-        imageFullWidth = background.GetComponent<SpriteRenderer>().bounds.size.x;
-        imageHalfWidth = imageFullWidth / 2;
+        if (background == null) return;
+        SpriteRenderer sr = background.GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            imageFullWidth = sr.bounds.size.x;
+            imageHalfWidth = imageFullWidth / 2;
+        }
     }
 
     public void Move(float distanceToMove)
     {
-        background.position += Vector3.right * (distanceToMove * parallaxMultiplier);
+        if (background != null)
+            background.position += Vector3.right * (distanceToMove * parallaxMultiplier);
     }
 
     public void LoopBackground(float cameraLefteEdge, float cameraRightEdge)
     {
+        if (background == null || imageFullWidth <= 0) return;
         float imageRightEdge = (background.position.x + imageHalfWidth) - imageWidthOffset;
         float imageLeftEdge = (background.position.x - imageHalfWidth) + imageWidthOffset;
 

@@ -174,6 +174,7 @@ public class SkillObject_SwordFrost : SkillObject_Sword
             return;
         }
 
+        comebackTimer += Time.deltaTime;
         float distance = Vector2.Distance(transform.position, playerTransform.position);
         transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, comebackSpeed * Time.deltaTime);
 
@@ -183,7 +184,7 @@ public class SkillObject_SwordFrost : SkillObject_Sword
 
         DamageEnemiesOnReturnPath();
 
-        if (distance < 0.6f)
+        if (distance < 0.6f || comebackTimer >= maxComebackDuration)
             Destroy(gameObject);
     }
 

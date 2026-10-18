@@ -1,0 +1,2001 @@
+fileFormatVersion: 2
+guid: bb375ab8833b1451193f0612d0a19c55
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7321788608125735363
+    second: CastleTiles_0
+  - first:
+      213: -808129043313994178
+    second: CastleTiles_1
+  - first:
+      213: -4424512587213013759
+    second: CastleTiles_2
+  - first:
+      213: -342185118660890718
+    second: CastleTiles_3
+  - first:
+      213: 5901021226131080409
+    second: CastleTiles_4
+  - first:
+      213: -8618981927513215182
+    second: CastleTiles_5
+  - first:
+      213: 1470924205014244806
+    second: CastleTiles_6
+  - first:
+      213: 8292703661772906484
+    second: CastleTiles_7
+  - first:
+      213: 5000649111933902168
+    second: CastleTiles_8
+  - first:
+      213: -4906594146307748198
+    second: CastleTiles_9
+  - first:
+      213: 7866652791578824748
+    second: CastleTiles_10
+  - first:
+      213: -6437924511730663072
+    second: CastleTiles_11
+  - first:
+      213: -4424010993358857944
+    second: CastleTiles_12
+  - first:
+      213: -7910735197603019623
+    second: CastleTiles_13
+  - first:
+      213: -3224761888467162156
+    second: CastleTiles_14
+  - first:
+      213: -3134032462856711689
+    second: CastleTiles_15
+  - first:
+      213: -8260683496981752425
+    second: CastleTiles_16
+  - first:
+      213: 2339186320374880220
+    second: CastleTiles_17
+  - first:
+      213: 8355924891719345466
+    second: CastleTiles_18
+  - first:
+      213: 7401075980834893043
+    second: CastleTiles_19
+  - first:
+      213: -6423301687286395914
+    second: CastleTiles_20
+  - first:
+      213: -1506226242668635273
+    second: CastleTiles_21
+  - first:
+      213: -7888613725386141909
+    second: CastleTiles_22
+  - first:
+      213: 8118965440808294092
+    second: CastleTiles_23
+  - first:
+      213: 312755753359156934
+    second: CastleTiles_24
+  - first:
+      213: 5430900780592187049
+    second: CastleTiles_25
+  - first:
+      213: 9152045947558932672
+    second: CastleTiles_26
+  - first:
+      213: -2861102869696042502
+    second: CastleTiles_27
+  - first:
+      213: -2455073829534478976
+    second: CastleTiles_28
+  - first:
+      213: 8965221250100788219
+    second: CastleTiles_29
+  - first:
+      213: 1748737395722392981
+    second: CastleTiles_30
+  - first:
+      213: -3093873076132778362
+    second: CastleTiles_31
+  - first:
+      213: 1331626727852178529
+    second: CastleTiles_32
+  - first:
+      213: 1003775906451574913
+    second: CastleTiles_33
+  - first:
+      213: 8623815728752008583
+    second: CastleTiles_34
+  - first:
+      213: 5475134191595047798
+    second: CastleTiles_35
+  - first:
+      213: 3613509354283239151
+    second: CastleTiles_36
+  - first:
+      213: 472506196000005992
+    second: CastleTiles_37
+  - first:
+      213: -8697443856504879145
+    second: CastleTiles_38
+  - first:
+      213: 5540965721794888951
+    second: CastleTiles_39
+  - first:
+      213: 8196787352694384830
+    second: CastleTiles_40
+  - first:
+      213: 7204439609975005367
+    second: CastleTiles_41
+  - first:
+      213: -5867299682193648555
+    second: CastleTiles_42
+  - first:
+      213: 2464247120034303518
+    second: CastleTiles_43
+  - first:
+      213: 173529133366371021
+    second: CastleTiles_44
+  - first:
+      213: 8513705820043757302
+    second: CastleTiles_45
+  - first:
+      213: 7451408960020860791
+    second: CastleTiles_46
+  - first:
+      213: 5288352193771047145
+    second: CastleTiles_47
+  - first:
+      213: -8523515922992552495
+    second: CastleTiles_48
+  - first:
+      213: 8789834786931189106
+    second: CastleTiles_49
+  - first:
+      213: 5020899262106180422
+    second: CastleTiles_50
+  - first:
+      213: -8037909282236566329
+    second: CastleTiles_51
+  - first:
+      213: -5877228744369268204
+    second: CastleTiles_52
+  - first:
+      213: -1970368098510163840
+    second: CastleTiles_53
+  - first:
+      213: 8712481085044626156
+    second: CastleTiles_54
+  - first:
+      213: -843264793177557263
+    second: CastleTiles_55
+  - first:
+      213: 1147140114556135068
+    second: CastleTiles_56
+  - first:
+      213: -4597722177543620663
+    second: CastleTiles_57
+  - first:
+      213: -8357363589108501509
+    second: CastleTiles_58
+  - first:
+      213: -1550738253339481298
+    second: CastleTiles_59
+  - first:
+      213: -33125389198955954
+    second: CastleTiles_60
+  - first:
+      213: -9007048026225830173
+    second: CastleTiles_61
+  - first:
+      213: 1304658002295091939
+    second: CastleTiles_62
+  - first:
+      213: 1952438974577479886
+    second: CastleTiles_63
+  - first:
+      213: 6207770975026147314
+    second: CastleTiles_64
+  - first:
+      213: -6521686102082995433
+    second: CastleTiles_65
+  - first:
+      213: 1607371682369734542
+    second: CastleTiles_66
+  - first:
+      213: 3180955440832035168
+    second: CastleTiles_67
+  - first:
+      213: -166569845827709964
+    second: CastleTiles_68
+  - first:
+      213: 6649016722521330346
+    second: CastleTiles_69
+  - first:
+      213: 1646099098248108479
+    second: CastleTiles_70
+  - first:
+      213: -9156655639191993921
+    second: CastleTiles_71
+  - first:
+      213: -6804756838846626766
+    second: CastleTiles_72
+  - first:
+      213: -5265929828045774016
+    second: CastleTiles_73
+  - first:
+      213: 5934868503081554904
+    second: CastleTiles_74
+  - first:
+      213: -8563118830477840024
+    second: CastleTiles_75
+  - first:
+      213: 8859524199073415125
+    second: CastleTiles_76
+  - first:
+      213: 5915786349739121988
+    second: CastleTiles_77
+  - first:
+      213: 2425610530022231987
+    second: CastleTiles_78
+  - first:
+      213: 8613862953111619323
+    second: CastleTiles_79
+  - first:
+      213: 5648853964693021216
+    second: CastleTiles_80
+  - first:
+      213: 8180972631816633631
+    second: CastleTiles_81
+  - first:
+      213: -1568453646340499736
+    second: CastleTiles_82
+  - first:
+      213: -59696508463690711
+    second: CastleTiles_83
+  - first:
+      213: 4414688469658853396
+    second: CastleTiles_84
+  - first:
+      213: 6714300846767460518
+    second: CastleTiles_85
+  - first:
+      213: 5101147444612403332
+    second: CastleTiles_86
+  - first:
+      213: -9216464526201204252
+    second: CastleTiles_87
+  - first:
+      213: 7416566869364411696
+    second: CastleTiles_88
+  - first:
+      213: 91105191256913086
+    second: CastleTiles_89
+  - first:
+      213: 8847406498131986467
+    second: CastleTiles_90
+  - first:
+      213: 8856091244846731601
+    second: CastleTiles_91
+  - first:
+      213: -2812564178111213374
+    second: CastleTiles_92
+  - first:
+      213: 6674342513839963155
+    second: CastleTiles_93
+  - first:
+      213: -1181869309096550144
+    second: CastleTiles_94
+  - first:
+      213: -7193197323325025768
+    second: CastleTiles_95
+  - first:
+      213: 3170661752887358752
+    second: CastleTiles_96
+  - first:
+      213: 566815344496088845
+    second: CastleTiles_97
+  - first:
+      213: -2180864300681182353
+    second: CastleTiles_98
+  - first:
+      213: 1164798971475615990
+    second: CastleTiles_99
+  - first:
+      213: 1206483557773020051
+    second: CastleTiles_100
+  - first:
+      213: 5626658120565528319
+    second: CastleTiles_101
+  - first:
+      213: 7016438881814633383
+    second: CastleTiles_102
+  - first:
+      213: 5055717739247217412
+    second: CastleTiles_103
+  - first:
+      213: -4450819903123519192
+    second: CastleTiles_104
+  - first:
+      213: 6514402617515363648
+    second: CastleTiles_105
+  - first:
+      213: 4371972549100703304
+    second: CastleTiles_106
+  - first:
+      213: -5063284232131842451
+    second: CastleTiles_107
+  - first:
+      213: 7230105405140302512
+    second: CastleTiles_108
+  - first:
+      213: 4215324245462969605
+    second: CastleTiles_109
+  - first:
+      213: -6598555511457694345
+    second: CastleTiles_110
+  - first:
+      213: 6688176652808581302
+    second: CastleTiles_111
+  - first:
+      213: 5793661893142118871
+    second: CastleTiles_112
+  - first:
+      213: 748061918866044658
+    second: CastleTiles_113
+  - first:
+      213: -274569367510410512
+    second: CastleTiles_114
+  - first:
+      213: 962782664858040437
+    second: CastleTiles_115
+  - first:
+      213: 5578733233964930275
+    second: CastleTiles_116
+  - first:
+      213: 2792087111106478166
+    second: CastleTiles_117
+  - first:
+      213: -7221634723296589513
+    second: CastleTiles_118
+  - first:
+      213: 6426400852967058381
+    second: CastleTiles_119
+  - first:
+      213: 7568424278554289861
+    second: CastleTiles_120
+  - first:
+      213: 1569799167828826057
+    second: CastleTiles_121
+  - first:
+      213: -9065989638117513869
+    second: CastleTiles_122
+  - first:
+      213: -418671691505744114
+    second: CastleTiles_123
+  - first:
+      213: -2094248885432041222
+    second: CastleTiles_124
+  - first:
+      213: 7726490560826452455
+    second: CastleTiles_125
+  - first:
+      213: -6981381563737643432
+    second: CastleTiles_126
+  - first:
+      213: 2431522350358619980
+    second: CastleTiles_127
+  - first:
+      213: 6656618669173564741
+    second: CastleTiles_128
+  - first:
+      213: 5408648919391862896
+    second: CastleTiles_129
+  - first:
+      213: -227982424676600286
+    second: CastleTiles_130
+  - first:
+      213: 2775966521657277126
+    second: CastleTiles_131
+  - first:
+      213: 4285109812762591939
+    second: CastleTiles_132
+  - first:
+      213: -3970456529277193351
+    second: CastleTiles_133
+  - first:
+      213: 7285604528389897639
+    second: CastleTiles_134
+  - first:
+      213: 7796230708307878602
+    second: CastleTiles_135
+  - first:
+      213: 2752364462535164868
+    second: CastleTiles_136
+  - first:
+      213: -6933395488585968618
+    second: CastleTiles_137
+  - first:
+      213: -3383296181906043602
+    second: CastleTiles_138
+  - first:
+      213: 6899400271401316075
+    second: CastleTiles_139
+  - first:
+      213: -5466238782744114631
+    second: CastleTiles_140
+  - first:
+      213: -4987430056525013695
+    second: CastleTiles_141
+  - first:
+      213: -2093697979551139687
+    second: CastleTiles_142
+  - first:
+      213: -2252924985572346968
+    second: CastleTiles_143
+  - first:
+      213: 3769280306583069459
+    second: CastleTiles_144
+  - first:
+      213: 6123428563573634881
+    second: CastleTiles_145
+  - first:
+      213: -5158064054700346941
+    second: CastleTiles_146
+  - first:
+      213: -2868119721175819730
+    second: CastleTiles_147
+  - first:
+      213: 9193228755231183909
+    second: CastleTiles_148
+  - first:
+      213: 4800625006223495984
+    second: CastleTiles_149
+  - first:
+      213: 482061075647518097
+    second: CastleTiles_150
+  - first:
+      213: 6095182753897071880
+    second: CastleTiles_151
+  - first:
+      213: -4101127771943744247
+    second: CastleTiles_152
+  - first:
+      213: -1011660689517724750
+    second: CastleTiles_153
+  - first:
+      213: 1672332427078464411
+    second: CastleTiles_154
+  - first:
+      213: -6637052995781599136
+    second: CastleTiles_155
+  - first:
+      213: 2398807136596462049
+    second: CastleTiles_156
+  - first:
+      213: 3010368330678080962
+    second: CastleTiles_157
+  - first:
+      213: 3166542114150061764
+    second: CastleTiles_158
+  - first:
+      213: 8886517543200851739
+    second: CastleTiles_159
+  - first:
+      213: 4476481533840495092
+    second: CastleTiles_160
+  - first:
+      213: 2702584108142487430
+    second: CastleTiles_161
+  - first:
+      213: 4277575274600863103
+    second: CastleTiles_162
+  - first:
+      213: 2495015599423437875
+    second: CastleTiles_163
+  - first:
+      213: -2285625461953960029
+    second: CastleTiles_164
+  - first:
+      213: -5659582618016453070
+    second: CastleTiles_165
+  - first:
+      213: 9049346536205579449
+    second: CastleTiles_166
+  - first:
+      213: 6662657768962843745
+    second: CastleTiles_167
+  - first:
+      213: -4849428845612287416
+    second: CastleTiles_168
+  - first:
+      213: 4971129032342211235
+    second: CastleTiles_169
+  - first:
+      213: -4259779827293375754
+    second: CastleTiles_170
+  - first:
+      213: 6844510849443901929
+    second: CastleTiles_171
+  - first:
+      213: 8692003130407363818
+    second: CastleTiles_172
+  - first:
+      213: -1499018149688834036
+    second: CastleTiles_173
+  - first:
+      213: 7769427672472344308
+    second: CastleTiles_174
+  - first:
+      213: 482429584236351914
+    second: CastleTiles_175
+  - first:
+      213: 5960259177148668226
+    second: CastleTiles_176
+  - first:
+      213: 1901334376426069931
+    second: CastleTiles_177
+  - first:
+      213: -3651751329445602926
+    second: CastleTiles_178
+  - first:
+      213: -1416097424076549269
+    second: CastleTiles_179
+  - first:
+      213: 2699506386592673885
+    second: CastleTiles_180
+  - first:
+      213: -1957022887597972113
+    second: CastleTiles_181
+  - first:
+      213: 823302424932092959
+    second: CastleTiles_182
+  - first:
+      213: 272781748706630995
+    second: CastleTiles_183
+  - first:
+      213: -2872894906029762957
+    second: CastleTiles_184
+  - first:
+      213: 9136723898478501750
+    second: CastleTiles_185
+  - first:
+      213: -2521311876236580488
+    second: CastleTiles_186
+  - first:
+      213: 8129185345007339287
+    second: CastleTiles_187
+  - first:
+      213: 2639935292762261671
+    second: CastleTiles_188
+  - first:
+      213: 7484214898912743125
+    second: CastleTiles_189
+  - first:
+      213: -5826320022865388502
+    second: CastleTiles_190
+  - first:
+      213: -4599794586981609040
+    second: CastleTiles_191
+  - first:
+      213: -6047600425152003316
+    second: CastleTiles_192
+  - first:
+      213: -3512366883452349572
+    second: CastleTiles_193
+  - first:
+      213: 2420846582503755213
+    second: CastleTiles_194
+  - first:
+      213: -2163098143408111809
+    second: CastleTiles_195
+  - first:
+      213: -3016338530936810013
+    second: CastleTiles_196
+  - first:
+      213: -9078270677770004720
+    second: CastleTiles_197
+  - first:
+      213: 474100901885448312
+    second: CastleTiles_198
+  - first:
+      213: -661725938533469789
+    second: CastleTiles_199
+  - first:
+      213: 7701198688726963301
+    second: CastleTiles_200
+  - first:
+      213: 8394366708532605902
+    second: CastleTiles_201
+  - first:
+      213: 3948229642387004724
+    second: CastleTiles_202
+  - first:
+      213: 2712086401419783545
+    second: CastleTiles_203
+  - first:
+      213: -7005555389007597032
+    second: CastleTiles_204
+  - first:
+      213: 2416894259312653435
+    second: CastleTiles_205
+  - first:
+      213: 8731680866176161561
+    second: CastleTiles_206
+  - first:
+      213: 7295390037725273567
+    second: CastleTiles_207
+  - first:
+      213: 9049147978885065126
+    second: CastleTiles_208
+  - first:
+      213: 6118420055142758828
+    second: CastleTiles_209
+  - first:
+      213: 799417392317246814
+    second: CastleTiles_210
+  - first:
+      213: -1972744737256587934
+    second: CastleTiles_211
+  - first:
+      213: -2520205260474379344
+    second: CastleTiles_212
+  - first:
+      213: -8091503283010653235
+    second: CastleTiles_213
+  - first:
+      213: -6384440832644932128
+    second: CastleTiles_214
+  - first:
+      213: -3723144290908470456
+    second: CastleTiles_215
+  - first:
+      213: -8561554275477839747
+    second: CastleTiles_216
+  - first:
+      213: 7277332341033768097
+    second: CastleTiles_217
+  - first:
+      213: 9183764830459560129
+    second: CastleTiles_218
+  - first:
+      213: -2421121084043213362
+    second: CastleTiles_219
+  - first:
+      213: -6883603859879422088
+    second: CastleTiles_220
+  - first:
+      213: -8984049895623303985
+    second: CastleTiles_221
+  - first:
+      213: 6515021320857920459
+    second: CastleTiles_222
+  - first:
+      213: 670447682476735612
+    second: CastleTiles_223
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CastleTiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0a0317a81f67883a3942a3affc7919
+      internalID: 7321788608125735363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a5d996e9a6ad696e9fc55216056ad3
+      internalID: -808129043313994178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d629fae3661ac382baeb3fc057b5363f
+      internalID: -4424512587213013759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca73ec3a6efa7790f5daa8c27edfed43
+      internalID: -342185118660890718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85dc7acf0ad3c1d080f04b729e045f6f
+      internalID: 5901021226131080409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a0189478963d0f5d8d56eb325a165c
+      internalID: -8618981927513215182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a9bdb522ee4dbf82d1a959b8f00dde
+      internalID: 1470924205014244806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee6d2bff4dee6086a1f891683ed7887
+      internalID: 8292703661772906484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a49fab9b7f939faf4bdb40cffc013e7
+      internalID: 5000649111933902168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17d191c12b1d59ac8c9da30b9a0197a6
+      internalID: -4906594146307748198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2e6d837d028cd85e5b4523ac1d4b2d
+      internalID: 7866652791578824748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd281576f8391da28541bad1e52ee20
+      internalID: -6437924511730663072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41af230a167742f7a7003ded8ce285e4
+      internalID: -4424010993358857944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a5bd588c44f000552550921e2f949e
+      internalID: -7910735197603019623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9983d5a2640bbeeec02a938f6ccd4383
+      internalID: -3224761888467162156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f8e33f7bc7865c10db28208db40009
+      internalID: -3134032462856711689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0810cf15f3c9c2681314a47bc442b8
+      internalID: -8260683496981752425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 713ba10cd776ea7360b9bb427f6ae93f
+      internalID: 2339186320374880220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d381f0d2a90f80ca789c635ef2a179e2
+      internalID: 8355924891719345466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60806666c20dcdbbf1c729a93229aff
+      internalID: 7401075980834893043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171f256d346e13bc9c9566c654910e3e
+      internalID: -6423301687286395914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f602eb39f8265584ee9dc4383b3f5a32
+      internalID: -1506226242668635273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207bca5d44fd8f420ecde6545a99c16c
+      internalID: -7888613725386141909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_23
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90648ed14ecd1dade428923b785212c5
+      internalID: 8118965440808294092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077214cde74988e6ffd199dcb018809f
+      internalID: 312755753359156934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a6195f8b6c2d138c2dd8ae6b418b69e
+      internalID: 5430900780592187049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e268679629c38a0ac755a8a570f115fe
+      internalID: 9152045947558932672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7778d758140eb01595e4ca2085f3694a
+      internalID: -2861102869696042502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c3ce47c4ac5b4b79b3f094ebdc29e5
+      internalID: -2455073829534478976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce86b931203db519ce6ee4b0c886e27
+      internalID: 8965221250100788219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5784630641b37dd3f1258d25ab1679f
+      internalID: 1748737395722392981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0790512422ca01490b6a26efb154bf1a
+      internalID: -3093873076132778362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e213f179e77d8f89e0cd415370abd036
+      internalID: 1331626727852178529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68867b3b24c70bb10df765bf6dcd04a7
+      internalID: 1003775906451574913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da76146a596797464c0f5b955740bdd
+      internalID: 8623815728752008583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_35
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6bcda7d3065404e9bec415cc3180fc
+      internalID: 5475134191595047798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_36
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f98ba2956431f61cc583bd3b4bd9a2
+      internalID: 3613509354283239151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_37
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966ae036c9fde36f8e7ef01d9e0a53f6
+      internalID: 472506196000005992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_38
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831b294f161361b42829ce5a049f8c48
+      internalID: -8697443856504879145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bf530b6cdd2f215829a04ef2f3ad6e0
+      internalID: 5540965721794888951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6bfed1ddf27f9ae9e4c444d501ac56
+      internalID: 8196787352694384830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73386a27b7d7e3c2560e88a226cffc6b
+      internalID: 7204439609975005367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95d78e724b53a1112d3e3eae47239d4c
+      internalID: -5867299682193648555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a8f4aa2a0779e2ec55def2be5aa4f7c
+      internalID: 2464247120034303518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_44
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ab086fba2ef01e6e133715f5379f9ea
+      internalID: 173529133366371021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_45
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c4cc05548715aaefcea471e948ecbd6
+      internalID: 8513705820043757302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_46
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 679a42ef83139fd98462b3b4de4d7e53
+      internalID: 7451408960020860791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6abdc71ae9feb223bb0cdaf654726626
+      internalID: 5288352193771047145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_48
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313aca40e3924e03341634267eda586c
+      internalID: -8523515922992552495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b362e7b87f19d021116b71fd01ba9fd
+      internalID: 8789834786931189106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleTiles_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4601018e3277f77f4cc07848f8115e2
+      internalID: 5020899262106180422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a5fef589e5e71483eb4205a9740a5607
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CastleTiles_0: 7321788608125735363
+      CastleTiles_1: -808129043313994178
+      CastleTiles_10: 7866652791578824748
+      CastleTiles_11: -6437924511730663072
+      CastleTiles_12: -4424010993358857944
+      CastleTiles_13: -7910735197603019623
+      CastleTiles_14: -3224761888467162156
+      CastleTiles_15: -3134032462856711689
+      CastleTiles_16: -8260683496981752425
+      CastleTiles_17: 2339186320374880220
+      CastleTiles_18: 8355924891719345466
+      CastleTiles_19: 7401075980834893043
+      CastleTiles_2: -4424512587213013759
+      CastleTiles_20: -6423301687286395914
+      CastleTiles_21: -1506226242668635273
+      CastleTiles_22: -7888613725386141909
+      CastleTiles_23: 8118965440808294092
+      CastleTiles_24: 312755753359156934
+      CastleTiles_25: 5430900780592187049
+      CastleTiles_26: 9152045947558932672
+      CastleTiles_27: -2861102869696042502
+      CastleTiles_28: -2455073829534478976
+      CastleTiles_29: 8965221250100788219
+      CastleTiles_3: -342185118660890718
+      CastleTiles_30: 1748737395722392981
+      CastleTiles_31: -3093873076132778362
+      CastleTiles_32: 1331626727852178529
+      CastleTiles_33: 1003775906451574913
+      CastleTiles_34: 8623815728752008583
+      CastleTiles_35: 5475134191595047798
+      CastleTiles_36: 3613509354283239151
+      CastleTiles_37: 472506196000005992
+      CastleTiles_38: -8697443856504879145
+      CastleTiles_39: 5540965721794888951
+      CastleTiles_4: 5901021226131080409
+      CastleTiles_40: 8196787352694384830
+      CastleTiles_41: 7204439609975005367
+      CastleTiles_42: -5867299682193648555
+      CastleTiles_43: 2464247120034303518
+      CastleTiles_44: 173529133366371021
+      CastleTiles_45: 8513705820043757302
+      CastleTiles_46: 7451408960020860791
+      CastleTiles_47: 5288352193771047145
+      CastleTiles_48: -8523515922992552495
+      CastleTiles_49: 8789834786931189106
+      CastleTiles_5: -8618981927513215182
+      CastleTiles_50: 5020899262106180422
+      CastleTiles_6: 1470924205014244806
+      CastleTiles_7: 8292703661772906484
+      CastleTiles_8: 5000649111933902168
+      CastleTiles_9: -4906594146307748198
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

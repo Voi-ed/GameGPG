@@ -13,4 +13,12 @@ public class Player_DeadState : PlayerState
         input.Disable();
         rb.simulated = false;
     }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        rb.simulated = true;
+        input.Enable();
+    }
 }

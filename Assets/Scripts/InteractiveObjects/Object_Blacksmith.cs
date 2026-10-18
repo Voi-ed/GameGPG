@@ -6,7 +6,6 @@ public class Object_Blacksmith : Object_NPC, IInteractable
     private Inventory_Player inventory;
     private Inventory_Storage storage;
 
-
     protected override void Awake()
     {
         base.Awake();

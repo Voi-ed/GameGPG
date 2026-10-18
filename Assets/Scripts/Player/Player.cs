@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
@@ -66,6 +67,13 @@ public class Player : Entity
     public Vector2 moveInput { get; private set; }
     public Vector2 mousePosition { get; private set; }
 
+    private float defaultMoveSpeed;
+    private float defaultJumpForce;
+    private float defaultAnimSpeed;
+    private Vector2 defaultWallJump;
+    private Vector2 defaultJumpAttack;
+    private Vector2[] defaultAttackVelocity;
+
     protected override void Awake()
     {
         base.Awake();
@@ -97,7 +105,8 @@ public class Player : Entity
         }
 
         input = new PlayerInputSet();
-        ui.SetupControlsUI(input);
+        if (ui != null)
+            ui.SetupControlsUI(input);
 
         idleState = new Player_IdleState(this, stateMachine, "idle");
         moveState = new Player_MoveState(this, stateMachine, "move");
@@ -118,43 +127,50 @@ public class Player : Entity
     {
         base.Start();
         stateMachine.Initialize(idleState);
+
+        defaultMoveSpeed = moveSpeed;
+        defaultJumpForce = jumpForce;
+        defaultAnimSpeed = anim != null ? anim.speed : 1f;
+        defaultWallJump = wallJumpForce;
+        defaultJumpAttack = jumpAttackVelocity;
+        if (attackVelocity != null)
+            defaultAttackVelocity = (Vector2[])attackVelocity.Clone();
     }
 
     public void TeleportPlayer(Vector3 position) => transform.position = position;
 
     protected override IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
     {
-        float originalMoveSpeed = moveSpeed;
-        float originalJumpForce = jumpForce;
-        float originalAnimSpeed = anim.speed;
-        Vector2 originalWallJump = wallJumpForce;
-        Vector2 originalJumpAttack = jumpAttackVelocity;
-        Vector2[] originalAttackVelocity = attackVelocity;
-
         float speedMultiplier = 1 - slowMultiplier;
 
-        moveSpeed = moveSpeed * speedMultiplier;
-        jumpForce = jumpForce * speedMultiplier;
-        anim.speed = anim.speed * speedMultiplier;
-        wallJumpForce = wallJumpForce * speedMultiplier;
-        jumpAttackVelocity = jumpAttackVelocity * speedMultiplier;
+        moveSpeed = defaultMoveSpeed * speedMultiplier;
+        jumpForce = defaultJumpForce * speedMultiplier;
+        if (anim != null) anim.speed = defaultAnimSpeed * speedMultiplier;
+        wallJumpForce = defaultWallJump * speedMultiplier;
+        jumpAttackVelocity = defaultJumpAttack * speedMultiplier;
 
-        for (int i = 0; i < attackVelocity.Length; i++)
+        if (defaultAttackVelocity != null && attackVelocity != null)
         {
-            attackVelocity[i] = attackVelocity[i] * speedMultiplier;
+            for (int i = 0; i < attackVelocity.Length; i++)
+            {
+                attackVelocity[i] = defaultAttackVelocity[i] * speedMultiplier;
+            }
         }
 
         yield return new WaitForSeconds(duration);
 
-        moveSpeed = originalMoveSpeed;
-        jumpForce = originalJumpForce;
-        anim.speed = originalAnimSpeed;
-        wallJumpForce = originalWallJump;
-        jumpAttackVelocity = originalJumpAttack;
+        moveSpeed = defaultMoveSpeed;
+        jumpForce = defaultJumpForce;
+        if (anim != null) anim.speed = defaultAnimSpeed;
+        wallJumpForce = defaultWallJump;
+        jumpAttackVelocity = defaultJumpAttack;
 
-        for (int i = 0; i < attackVelocity.Length; i++)
+        if (defaultAttackVelocity != null && attackVelocity != null)
         {
-            attackVelocity[i] = originalAttackVelocity[i];
+            for (int i = 0; i < attackVelocity.Length; i++)
+            {
+                attackVelocity[i] = defaultAttackVelocity[i];
+            }
         }
     }
 
@@ -177,6 +193,13 @@ public class Player : Entity
     private IEnumerator EnterAttackStateWithDelayCo()
     {
         yield return new WaitForEndOfFrame();
+
+        if (health != null && health.isDead)
+            yield break;
+
+        if (stateMachine.currentState == deadState)
+            yield break;
+
         stateMachine.ChangeState(basicAttackState);
     }
 
@@ -188,7 +211,7 @@ public class Player : Entity
 
         foreach (var target in objectsAround)
         {
-            IInteractable interactable = target.GetComponent<IInteractable>();
+            IInteractable interactable = target.GetComponent<IInteractable>() ?? target.GetComponentInParent<IInteractable>();
             if (interactable == null) continue;
 
             float distance = Vector2.Distance(transform.position, target.transform.position);
@@ -203,29 +226,72 @@ public class Player : Entity
         if (closest == null)
             return;
 
-        closest.GetComponent<IInteractable>().Interact();
+        IInteractable finalInteractable = closest.GetComponent<IInteractable>() ?? closest.GetComponentInParent<IInteractable>();
+        finalInteractable?.Interact();
     }
 
     private void OnEnable()
     {
+        if (input == null)
+            input = new PlayerInputSet();
+
         input.Enable();
 
-        input.Player.Mouse.performed += ctx => mousePosition = ctx.ReadValue<Vector2>();
+        input.Player.Mouse.performed += HandleMousePosition;
 
-        input.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        input.Player.Movement.canceled += ctx => moveInput = Vector2.zero;
+        input.Player.Movement.performed += HandleMovement;
+        input.Player.Movement.canceled += HandleMovementCanceled;
 
-        input.Player.Spell.performed += ctx => skillManager.shard.TryUseSkill();
-        input.Player.Spell.performed += ctx => skillManager.timeEcho.TryUseSkill();
+        input.Player.Spell.performed += HandleSpell;
 
-        input.Player.Interact.performed += ctx => TryInteract();
+        input.Player.Interact.performed += HandleInteract;
 
-        input.Player.QuickItemSlot_1.performed += ctx => inventory.TryUseQuickItemInSlot(1);
-        input.Player.QuickItemSlot_2.performed += ctx => inventory.TryUseQuickItemInSlot(2);
+        input.Player.QuickItemSlot_1.performed += HandleQuickItem1;
+        input.Player.QuickItemSlot_2.performed += HandleQuickItem2;
     }
 
     private void OnDisable()
     {
-        input.Disable();
+        if (input != null)
+        {
+            input.Player.Mouse.performed -= HandleMousePosition;
+
+            input.Player.Movement.performed -= HandleMovement;
+            input.Player.Movement.canceled -= HandleMovementCanceled;
+
+            input.Player.Spell.performed -= HandleSpell;
+
+            input.Player.Interact.performed -= HandleInteract;
+
+            input.Player.QuickItemSlot_1.performed -= HandleQuickItem1;
+            input.Player.QuickItemSlot_2.performed -= HandleQuickItem2;
+
+            input.Disable();
+        }
+    }
+
+    private void HandleMousePosition(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => mousePosition = ctx.ReadValue<Vector2>();
+    private void HandleMovement(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
+    private void HandleMovementCanceled(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => moveInput = Vector2.zero;
+    private void HandleInteract(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => TryInteract();
+    private void HandleQuickItem1(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => inventory?.TryUseQuickItemInSlot(1);
+    private void HandleQuickItem2(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => inventory?.TryUseQuickItemInSlot(2);
+
+    private void HandleSpell(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+    {
+        if (skillManager == null)
+            return;
+
+        if (skillManager.timeEcho != null && skillManager.timeEcho.CanUseSkill())
+            skillManager.timeEcho.TryUseSkill();
+        else if (skillManager.shard != null && skillManager.shard.CanUseSkill())
+            skillManager.shard.TryUseSkill();
+    }
+
+    private void OnDestroy()
+    {
+        OnPlayerDeath = null;
+        if (instance == this)
+            instance = null;
     }
 }

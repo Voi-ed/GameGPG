@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.instance.StartBGM(musicGroupName);
+        if (AudioManager.instance != null)
+            AudioManager.instance.StartBGM(musicGroupName);
     }
 }

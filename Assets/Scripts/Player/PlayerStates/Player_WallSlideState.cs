@@ -1,4 +1,4 @@
- using UnityEngine;
+using UnityEngine;
 
 public class Player_WallSlideState : PlayerState
 {
@@ -11,27 +11,49 @@ public class Player_WallSlideState : PlayerState
         base.Update();
         HandleWallSlide();
 
-
         if (input.Player.Jump.WasPressedThisFrame())
+        {
             stateMachine.ChangeState(player.wallJumpState);
+            return;
+        }
 
         if (player.wallDetected == false)
+        {
             stateMachine.ChangeState(player.fallState);
+            return;
+        }
+
+        if (player.moveInput.x != 0 && (int)player.moveInput.x != player.facingDir)
+        {
+            player.Flip();
+            stateMachine.ChangeState(player.fallState);
+            return;
+        }
 
         if (player.groundDetected)
         {
             stateMachine.ChangeState(player.idleState);
 
-            if(player.facingDir != player.moveInput.x)
+            if (player.moveInput.x != 0 && player.facingDir != (int)player.moveInput.x)
                 player.Flip();
         }
     }
 
     private void HandleWallSlide()
     {
+        float maxSlideSpeed = player.jumpForce * player.wallSlideSlowMultiplier;
+        float yVelocity = rb.linearVelocity.y;
+
         if (player.moveInput.y < 0)
-            player.SetVelocity(player.moveInput.x, rb.linearVelocity.y);
+        {
+            yVelocity = Mathf.Min(yVelocity, -maxSlideSpeed);
+        }
         else
-            player.SetVelocity(player.moveInput.x, rb.linearVelocity.y * player.wallSlideSlowMultiplier);
+        {
+            if (yVelocity < -maxSlideSpeed)
+                yVelocity = -maxSlideSpeed;
+        }
+
+        player.SetVelocity(0, yVelocity);
     }
 }

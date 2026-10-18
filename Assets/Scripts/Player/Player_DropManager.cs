@@ -34,8 +34,7 @@ public class Player_DropManager : Entity_DropManager
                 var item = equip.GetEquipedItem();
 
                 CreateItemDrop(item.itemData);
-                inventory.UnequipItem(item);
-                inventory.RemoveFullStack(item);
+                inventory.UnequipAndDiscardItem(equip);
             }
         }
     }

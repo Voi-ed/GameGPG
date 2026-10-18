@@ -78,9 +78,12 @@ public class Inventory_Base : MonoBehaviour , ISaveable
 
     public void RemoveFullStack(Inventory_Item itemToRemove)
     {
-        for (int i = 0; i < itemToRemove.stackSize; i++)
+        if (itemToRemove == null)
+            return;
+
+        if (itemList.Remove(itemToRemove))
         {
-            RemoveOneItem(itemToRemove);
+            OnInventoryChange?.Invoke();
         }
     }
 

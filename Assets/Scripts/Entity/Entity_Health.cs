@@ -155,6 +155,13 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
     public float GetCurrentHealth() => currentHealth;
 
+    public void SetCurrentHealth(float health)
+    {
+        float max = entityStats != null ? entityStats.GetMaxHealth() : health;
+        currentHealth = Mathf.Clamp(health, 0, max);
+        OnHealthUpdate?.Invoke();
+    }
+
     private void UpdateHealthBar()
     {
         if (healthBar == null)

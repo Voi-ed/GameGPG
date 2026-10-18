@@ -1,0 +1,3026 @@
+fileFormatVersion: 2
+guid: aed327dccdf2a4f0aa3b3a49601f9260
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5870730036670953407
+    second: Wasteland-Files_0
+  - first:
+      213: 7775741361626251309
+    second: Wasteland-Files_1
+  - first:
+      213: 4390317410311576653
+    second: Wasteland-Files_2
+  - first:
+      213: -6427015851912114265
+    second: Wasteland-Files_3
+  - first:
+      213: -3466350563228649834
+    second: Wasteland-Files_4
+  - first:
+      213: -2766966171284690372
+    second: Wasteland-Files_5
+  - first:
+      213: 216660629273667332
+    second: Wasteland-Files_6
+  - first:
+      213: -7020415209177045695
+    second: Wasteland-Files_7
+  - first:
+      213: -6088391980302592583
+    second: Wasteland-Files_8
+  - first:
+      213: -6286006164926189787
+    second: Wasteland-Files_9
+  - first:
+      213: 3999861468731874797
+    second: Wasteland-Files_10
+  - first:
+      213: -3375058323247724289
+    second: Wasteland-Files_11
+  - first:
+      213: -4363324926715718147
+    second: Wasteland-Files_12
+  - first:
+      213: -2775843767566410722
+    second: Wasteland-Files_13
+  - first:
+      213: 6015422063223331023
+    second: Wasteland-Files_14
+  - first:
+      213: -3441396822746296839
+    second: Wasteland-Files_15
+  - first:
+      213: 7095396359947427591
+    second: Wasteland-Files_16
+  - first:
+      213: 491745610230049813
+    second: Wasteland-Files_17
+  - first:
+      213: 5229986653160340097
+    second: Wasteland-Files_18
+  - first:
+      213: 3388696991447995342
+    second: Wasteland-Files_19
+  - first:
+      213: 5272580435954353836
+    second: Wasteland-Files_20
+  - first:
+      213: -8924934706714062198
+    second: Wasteland-Files_21
+  - first:
+      213: -2311598703648108343
+    second: Wasteland-Files_22
+  - first:
+      213: -7805320562231705434
+    second: Wasteland-Files_23
+  - first:
+      213: 933587752074962170
+    second: Wasteland-Files_24
+  - first:
+      213: 28357846184499323
+    second: Wasteland-Files_25
+  - first:
+      213: 8076228477566011075
+    second: Wasteland-Files_26
+  - first:
+      213: -7729811185678765463
+    second: Wasteland-Files_27
+  - first:
+      213: -7208659382408696926
+    second: Wasteland-Files_28
+  - first:
+      213: 4514736258985633649
+    second: Wasteland-Files_29
+  - first:
+      213: 3484211609448959759
+    second: Wasteland-Files_30
+  - first:
+      213: 3293927446642928525
+    second: Wasteland-Files_31
+  - first:
+      213: 5319866774136625075
+    second: Wasteland-Files_32
+  - first:
+      213: 453107659419594369
+    second: Wasteland-Files_33
+  - first:
+      213: 3430489817187303297
+    second: Wasteland-Files_34
+  - first:
+      213: 6995004395307049697
+    second: Wasteland-Files_35
+  - first:
+      213: 7661532064113095178
+    second: Wasteland-Files_36
+  - first:
+      213: -8757032426494918917
+    second: Wasteland-Files_37
+  - first:
+      213: -9177481623681152628
+    second: Wasteland-Files_38
+  - first:
+      213: 8492698060974041951
+    second: Wasteland-Files_39
+  - first:
+      213: 2359279426166284233
+    second: Wasteland-Files_40
+  - first:
+      213: 577042551761334428
+    second: Wasteland-Files_41
+  - first:
+      213: 2664808721848999882
+    second: Wasteland-Files_42
+  - first:
+      213: -622322393395628353
+    second: Wasteland-Files_43
+  - first:
+      213: -8135600288474633460
+    second: Wasteland-Files_44
+  - first:
+      213: -5395439764289972093
+    second: Wasteland-Files_45
+  - first:
+      213: 5138921801662811806
+    second: Wasteland-Files_46
+  - first:
+      213: 2510183069083124015
+    second: Wasteland-Files_47
+  - first:
+      213: 8743902919519372761
+    second: Wasteland-Files_48
+  - first:
+      213: 551045429815171084
+    second: Wasteland-Files_49
+  - first:
+      213: -1384898579552715563
+    second: Wasteland-Files_50
+  - first:
+      213: -7520783594874784670
+    second: Wasteland-Files_51
+  - first:
+      213: -1360475998049998897
+    second: Wasteland-Files_52
+  - first:
+      213: 2898590822221702623
+    second: Wasteland-Files_53
+  - first:
+      213: 9086291040475746731
+    second: Wasteland-Files_54
+  - first:
+      213: 8732839986524465366
+    second: Wasteland-Files_55
+  - first:
+      213: 145992900211118138
+    second: Wasteland-Files_56
+  - first:
+      213: -261260288372647218
+    second: Wasteland-Files_57
+  - first:
+      213: -5806512997750640763
+    second: Wasteland-Files_58
+  - first:
+      213: 8683886100370037275
+    second: Wasteland-Files_59
+  - first:
+      213: -5531446889452146698
+    second: Wasteland-Files_60
+  - first:
+      213: 3051013267826379898
+    second: Wasteland-Files_61
+  - first:
+      213: 7014985983448005340
+    second: Wasteland-Files_62
+  - first:
+      213: -6771812911423498515
+    second: Wasteland-Files_63
+  - first:
+      213: -7984419481885601126
+    second: Wasteland-Files_64
+  - first:
+      213: 1610719491918841884
+    second: Wasteland-Files_65
+  - first:
+      213: -5516455404450772521
+    second: Wasteland-Files_66
+  - first:
+      213: -2175450976647908136
+    second: Wasteland-Files_67
+  - first:
+      213: -5806132179181265663
+    second: Wasteland-Files_68
+  - first:
+      213: 617071875978663295
+    second: Wasteland-Files_69
+  - first:
+      213: 7326924205375646047
+    second: Wasteland-Files_70
+  - first:
+      213: -3660731764429237019
+    second: Wasteland-Files_71
+  - first:
+      213: 2843498050018031807
+    second: Wasteland-Files_72
+  - first:
+      213: 1375367393049431009
+    second: Wasteland-Files_73
+  - first:
+      213: 1844881095132541591
+    second: Wasteland-Files_74
+  - first:
+      213: -5209944010296269633
+    second: Wasteland-Files_75
+  - first:
+      213: -5137720996068027501
+    second: Wasteland-Files_76
+  - first:
+      213: -7461659520261816676
+    second: Wasteland-Files_77
+  - first:
+      213: 5325564220540577785
+    second: Wasteland-Files_78
+  - first:
+      213: -7037274994267423197
+    second: Wasteland-Files_79
+  - first:
+      213: 4069095553600393570
+    second: Wasteland-Files_80
+  - first:
+      213: -6197605711197089121
+    second: Wasteland-Files_81
+  - first:
+      213: -8197739875568211720
+    second: Wasteland-Files_82
+  - first:
+      213: 2972862333468913769
+    second: Wasteland-Files_83
+  - first:
+      213: 5042554360151069946
+    second: Wasteland-Files_84
+  - first:
+      213: -1904213044876374186
+    second: Wasteland-Files_85
+  - first:
+      213: 4644050292376896322
+    second: Wasteland-Files_86
+  - first:
+      213: -1257756803481839150
+    second: Wasteland-Files_87
+  - first:
+      213: 7411268011083308445
+    second: Wasteland-Files_88
+  - first:
+      213: -6212544496190720784
+    second: Wasteland-Files_89
+  - first:
+      213: -7305240218950779103
+    second: Wasteland-Files_90
+  - first:
+      213: -1362463838205307817
+    second: Wasteland-Files_91
+  - first:
+      213: 7610183796649840156
+    second: Wasteland-Files_92
+  - first:
+      213: -272949196143225387
+    second: Wasteland-Files_93
+  - first:
+      213: 4673166188155531216
+    second: Wasteland-Files_94
+  - first:
+      213: 5653502162124088302
+    second: Wasteland-Files_95
+  - first:
+      213: 183450893681125817
+    second: Wasteland-Files_96
+  - first:
+      213: 304107690952613585
+    second: Wasteland-Files_97
+  - first:
+      213: -7083156041218922670
+    second: Wasteland-Files_98
+  - first:
+      213: -4941589586516123589
+    second: Wasteland-Files_99
+  - first:
+      213: 4631804067707979019
+    second: Wasteland-Files_100
+  - first:
+      213: -2475835768190109845
+    second: Wasteland-Files_101
+  - first:
+      213: -715348279806041802
+    second: Wasteland-Files_102
+  - first:
+      213: -7796168954979678146
+    second: Wasteland-Files_103
+  - first:
+      213: -6217469764548544453
+    second: Wasteland-Files_104
+  - first:
+      213: -1753265773278745589
+    second: Wasteland-Files_105
+  - first:
+      213: 9061007591542776907
+    second: Wasteland-Files_106
+  - first:
+      213: 8784065309664423726
+    second: Wasteland-Files_107
+  - first:
+      213: -1700241412848181466
+    second: Wasteland-Files_108
+  - first:
+      213: 5767326648991728404
+    second: Wasteland-Files_109
+  - first:
+      213: -4915392768264621708
+    second: Wasteland-Files_110
+  - first:
+      213: -8052701049808798431
+    second: Wasteland-Files_111
+  - first:
+      213: 8084137515651739473
+    second: Wasteland-Files_112
+  - first:
+      213: -1901142364910719816
+    second: Wasteland-Files_113
+  - first:
+      213: 3708312846294917528
+    second: Wasteland-Files_114
+  - first:
+      213: 7184376979581739793
+    second: Wasteland-Files_115
+  - first:
+      213: -798225944782903391
+    second: Wasteland-Files_116
+  - first:
+      213: 8717614093507573917
+    second: Wasteland-Files_117
+  - first:
+      213: 3564471118547863419
+    second: Wasteland-Files_118
+  - first:
+      213: 7291670814155346036
+    second: Wasteland-Files_119
+  - first:
+      213: -4767563624224459190
+    second: Wasteland-Files_120
+  - first:
+      213: -1184345805590789528
+    second: Wasteland-Files_121
+  - first:
+      213: -2205685669551261453
+    second: Wasteland-Files_122
+  - first:
+      213: 4928490170876011413
+    second: Wasteland-Files_123
+  - first:
+      213: -2363397398917883575
+    second: Wasteland-Files_124
+  - first:
+      213: 9016280468547324439
+    second: Wasteland-Files_125
+  - first:
+      213: -3903109863373830279
+    second: Wasteland-Files_126
+  - first:
+      213: 6968247406781544215
+    second: Wasteland-Files_127
+  - first:
+      213: -7844995668596173914
+    second: Wasteland-Files_128
+  - first:
+      213: -8784358015747430788
+    second: Wasteland-Files_129
+  - first:
+      213: 4499701335952408570
+    second: Wasteland-Files_130
+  - first:
+      213: -2768619332556087195
+    second: Wasteland-Files_131
+  - first:
+      213: 5953121928449406123
+    second: Wasteland-Files_132
+  - first:
+      213: -2628124839066138499
+    second: Wasteland-Files_133
+  - first:
+      213: 7668554447508963596
+    second: Wasteland-Files_134
+  - first:
+      213: -8036551047334951650
+    second: Wasteland-Files_135
+  - first:
+      213: 7759035330726760605
+    second: Wasteland-Files_136
+  - first:
+      213: -5489899427618274677
+    second: Wasteland-Files_137
+  - first:
+      213: -4037649007150196012
+    second: Wasteland-Files_138
+  - first:
+      213: 5419424522716753214
+    second: Wasteland-Files_139
+  - first:
+      213: -1640794493837743570
+    second: Wasteland-Files_140
+  - first:
+      213: 6179555621967985719
+    second: Wasteland-Files_141
+  - first:
+      213: -4272224934226899689
+    second: Wasteland-Files_142
+  - first:
+      213: -1835305795456346397
+    second: Wasteland-Files_143
+  - first:
+      213: 5158908222884754934
+    second: Wasteland-Files_144
+  - first:
+      213: 1908938993173466977
+    second: Wasteland-Files_145
+  - first:
+      213: -5720443903692038985
+    second: Wasteland-Files_146
+  - first:
+      213: -8438156044856960653
+    second: Wasteland-Files_147
+  - first:
+      213: -5693563043753334510
+    second: Wasteland-Files_148
+  - first:
+      213: 659345351670544772
+    second: Wasteland-Files_149
+  - first:
+      213: 733538888269334255
+    second: Wasteland-Files_150
+  - first:
+      213: -5501946891421589342
+    second: Wasteland-Files_151
+  - first:
+      213: -3018680288798156821
+    second: Wasteland-Files_152
+  - first:
+      213: 8110717163736098934
+    second: Wasteland-Files_153
+  - first:
+      213: -7862392505862418035
+    second: Wasteland-Files_154
+  - first:
+      213: 5834946905424955854
+    second: Wasteland-Files_155
+  - first:
+      213: -4462199380248190872
+    second: Wasteland-Files_156
+  - first:
+      213: -764888566295748249
+    second: Wasteland-Files_157
+  - first:
+      213: 4408622905868547554
+    second: Wasteland-Files_158
+  - first:
+      213: -5641841576531636844
+    second: Wasteland-Files_159
+  - first:
+      213: 7172936121333078662
+    second: Wasteland-Files_160
+  - first:
+      213: 1607153184443011860
+    second: Wasteland-Files_161
+  - first:
+      213: 177071853936374913
+    second: Wasteland-Files_162
+  - first:
+      213: 6543408738834526332
+    second: Wasteland-Files_163
+  - first:
+      213: -6455381730082349775
+    second: Wasteland-Files_164
+  - first:
+      213: -6895887190214380400
+    second: Wasteland-Files_165
+  - first:
+      213: -1923215730121142310
+    second: Wasteland-Files_166
+  - first:
+      213: 5809661469129984211
+    second: Wasteland-Files_167
+  - first:
+      213: -5163552046921730479
+    second: Wasteland-Files_168
+  - first:
+      213: 1930020276506706581
+    second: Wasteland-Files_169
+  - first:
+      213: -570710080043468181
+    second: Wasteland-Files_170
+  - first:
+      213: 8235385366104241832
+    second: Wasteland-Files_171
+  - first:
+      213: -1414545781577716926
+    second: Wasteland-Files_172
+  - first:
+      213: -2467902333687607296
+    second: Wasteland-Files_173
+  - first:
+      213: 6456884588688797909
+    second: Wasteland-Files_174
+  - first:
+      213: -7380405307561516405
+    second: Wasteland-Files_175
+  - first:
+      213: -8296836167994884635
+    second: Wasteland-Files_176
+  - first:
+      213: 3417319011499442770
+    second: Wasteland-Files_177
+  - first:
+      213: -5719513985906752726
+    second: Wasteland-Files_178
+  - first:
+      213: 7859036180393717772
+    second: Wasteland-Files_179
+  - first:
+      213: -5705842819422646420
+    second: Wasteland-Files_180
+  - first:
+      213: -1641443937231798194
+    second: Wasteland-Files_181
+  - first:
+      213: 7150693396605638825
+    second: Wasteland-Files_182
+  - first:
+      213: 4153066419766659405
+    second: Wasteland-Files_183
+  - first:
+      213: 6831988200763671496
+    second: Wasteland-Files_184
+  - first:
+      213: -221360482044231681
+    second: Wasteland-Files_185
+  - first:
+      213: -3323335801242632289
+    second: Wasteland-Files_186
+  - first:
+      213: 7896214514191374485
+    second: Wasteland-Files_187
+  - first:
+      213: 7965941928628036484
+    second: Wasteland-Files_188
+  - first:
+      213: -6344498237593646213
+    second: Wasteland-Files_189
+  - first:
+      213: 2261506083202450370
+    second: Wasteland-Files_190
+  - first:
+      213: -8028987329483499396
+    second: Wasteland-Files_191
+  - first:
+      213: -1389922689560347839
+    second: Wasteland-Files_192
+  - first:
+      213: 894887050654798858
+    second: Wasteland-Files_193
+  - first:
+      213: 2802713468640255964
+    second: Wasteland-Files_194
+  - first:
+      213: 8080499701927150706
+    second: Wasteland-Files_195
+  - first:
+      213: 2815304361207354224
+    second: Wasteland-Files_196
+  - first:
+      213: 7398014044897158836
+    second: Wasteland-Files_197
+  - first:
+      213: -481202922807383347
+    second: Wasteland-Files_198
+  - first:
+      213: -1182503747932585561
+    second: Wasteland-Files_199
+  - first:
+      213: -6185981605053899028
+    second: Wasteland-Files_200
+  - first:
+      213: -6742990852094296772
+    second: Wasteland-Files_201
+  - first:
+      213: 5848361877603844797
+    second: Wasteland-Files_202
+  - first:
+      213: -8733792155674781882
+    second: Wasteland-Files_203
+  - first:
+      213: -5391330523680355940
+    second: Wasteland-Files_204
+  - first:
+      213: -4606407769642284488
+    second: Wasteland-Files_205
+  - first:
+      213: 405836310063297500
+    second: Wasteland-Files_206
+  - first:
+      213: 1296700643589453197
+    second: Wasteland-Files_207
+  - first:
+      213: -1509774511343054179
+    second: Wasteland-Files_208
+  - first:
+      213: -1194659002342382614
+    second: Wasteland-Files_209
+  - first:
+      213: 4455101854604116709
+    second: Wasteland-Files_210
+  - first:
+      213: 3247022879655200443
+    second: Wasteland-Files_211
+  - first:
+      213: -3920055696721319744
+    second: Wasteland-Files_212
+  - first:
+      213: -6430795745723617687
+    second: Wasteland-Files_213
+  - first:
+      213: 3034862026710871768
+    second: Wasteland-Files_214
+  - first:
+      213: 6555266711592607281
+    second: Wasteland-Files_215
+  - first:
+      213: 4199136531109912511
+    second: Wasteland-Files_216
+  - first:
+      213: -3038943737740188607
+    second: Wasteland-Files_217
+  - first:
+      213: -6728439568994724941
+    second: Wasteland-Files_218
+  - first:
+      213: 2095660240235852875
+    second: Wasteland-Files_219
+  - first:
+      213: -6336106657672864747
+    second: Wasteland-Files_220
+  - first:
+      213: -1053790713957330336
+    second: Wasteland-Files_221
+  - first:
+      213: -1376137216037221448
+    second: Wasteland-Files_222
+  - first:
+      213: -4414197601116714884
+    second: Wasteland-Files_223
+  - first:
+      213: 3479945158251108372
+    second: Wasteland-Files_224
+  - first:
+      213: 8786327712151132318
+    second: Wasteland-Files_225
+  - first:
+      213: -1700815948142193051
+    second: Wasteland-Files_226
+  - first:
+      213: 7873468387648299332
+    second: Wasteland-Files_227
+  - first:
+      213: -3794100131463000862
+    second: Wasteland-Files_228
+  - first:
+      213: -3514489395919329418
+    second: Wasteland-Files_229
+  - first:
+      213: -7503585422591097944
+    second: Wasteland-Files_230
+  - first:
+      213: 5229143909646974943
+    second: Wasteland-Files_231
+  - first:
+      213: -2757777330631444379
+    second: Wasteland-Files_232
+  - first:
+      213: 871034291874522240
+    second: Wasteland-Files_233
+  - first:
+      213: -4694673434801555550
+    second: Wasteland-Files_234
+  - first:
+      213: -4399913165419354662
+    second: Wasteland-Files_235
+  - first:
+      213: 6150095879372001913
+    second: Wasteland-Files_236
+  - first:
+      213: -8911673694039902165
+    second: Wasteland-Files_237
+  - first:
+      213: -2243420171247911792
+    second: Wasteland-Files_238
+  - first:
+      213: -2358444243582504206
+    second: Wasteland-Files_239
+  - first:
+      213: 8000462411048387462
+    second: Wasteland-Files_240
+  - first:
+      213: -5735231973050318188
+    second: Wasteland-Files_241
+  - first:
+      213: 3001617071142784171
+    second: Wasteland-Files_242
+  - first:
+      213: 8188919874320934451
+    second: Wasteland-Files_243
+  - first:
+      213: 1461914230611676076
+    second: Wasteland-Files_244
+  - first:
+      213: 1425927668436117203
+    second: Wasteland-Files_245
+  - first:
+      213: 6572179039586151001
+    second: Wasteland-Files_246
+  - first:
+      213: -7604130896552448824
+    second: Wasteland-Files_247
+  - first:
+      213: 1819435240210584238
+    second: Wasteland-Files_248
+  - first:
+      213: 3314176322003363585
+    second: Wasteland-Files_249
+  - first:
+      213: -2181730489162672727
+    second: Wasteland-Files_250
+  - first:
+      213: -9010159302426962874
+    second: Wasteland-Files_251
+  - first:
+      213: -2719608406540556405
+    second: Wasteland-Files_252
+  - first:
+      213: -5723161008261648360
+    second: Wasteland-Files_253
+  - first:
+      213: 480088254678201372
+    second: Wasteland-Files_254
+  - first:
+      213: -3512989021946852908
+    second: Wasteland-Files_255
+  - first:
+      213: 3482763302784554157
+    second: Wasteland-Files_256
+  - first:
+      213: -7980729927872780242
+    second: Wasteland-Files_257
+  - first:
+      213: 2108593918543930613
+    second: Wasteland-Files_258
+  - first:
+      213: 8766547301547765923
+    second: Wasteland-Files_259
+  - first:
+      213: 4310690906971326581
+    second: Wasteland-Files_260
+  - first:
+      213: 3411659539663544567
+    second: Wasteland-Files_261
+  - first:
+      213: -4097141585850082382
+    second: Wasteland-Files_262
+  - first:
+      213: -4676278299509454871
+    second: Wasteland-Files_263
+  - first:
+      213: -432058629832359571
+    second: Wasteland-Files_264
+  - first:
+      213: 3913113988245302557
+    second: Wasteland-Files_265
+  - first:
+      213: 4849750502649555140
+    second: Wasteland-Files_266
+  - first:
+      213: 2219450444179505326
+    second: Wasteland-Files_267
+  - first:
+      213: -1205082173240190350
+    second: Wasteland-Files_268
+  - first:
+      213: -1745650247942415341
+    second: Wasteland-Files_269
+  - first:
+      213: -7693665573445895463
+    second: Wasteland-Files_270
+  - first:
+      213: 639605874828083913
+    second: Wasteland-Files_271
+  - first:
+      213: 6303653923873075791
+    second: Wasteland-Files_272
+  - first:
+      213: -3990152398457429448
+    second: Wasteland-Files_273
+  - first:
+      213: -6301585478767923668
+    second: Wasteland-Files_274
+  - first:
+      213: -7772983516445203218
+    second: Wasteland-Files_275
+  - first:
+      213: 8777143482251807372
+    second: Wasteland-Files_276
+  - first:
+      213: -3667236620687488010
+    second: Wasteland-Files_277
+  - first:
+      213: 7826097328127642449
+    second: Wasteland-Files_278
+  - first:
+      213: 3127491438139538852
+    second: Wasteland-Files_279
+  - first:
+      213: 4728209204000267575
+    second: Wasteland-Files_280
+  - first:
+      213: 550190375902939408
+    second: Wasteland-Files_281
+  - first:
+      213: -3241210995115411434
+    second: Wasteland-Files_282
+  - first:
+      213: -3914961238939454561
+    second: Wasteland-Files_283
+  - first:
+      213: -1320955356476362418
+    second: Wasteland-Files_284
+  - first:
+      213: 2823416765197526268
+    second: Wasteland-Files_285
+  - first:
+      213: -4512384379816499143
+    second: Wasteland-Files_286
+  - first:
+      213: 3988713825316084054
+    second: Wasteland-Files_287
+  - first:
+      213: -919423725586297126
+    second: Wasteland-Files_288
+  - first:
+      213: -7426336724346995249
+    second: Wasteland-Files_289
+  - first:
+      213: 3468281347449936749
+    second: Wasteland-Files_290
+  - first:
+      213: -764465454599857139
+    second: Wasteland-Files_291
+  - first:
+      213: -5072227151638793399
+    second: Wasteland-Files_292
+  - first:
+      213: 1737379725776632045
+    second: Wasteland-Files_293
+  - first:
+      213: -4205918498456073545
+    second: Wasteland-Files_294
+  - first:
+      213: 7463342007357071466
+    second: Wasteland-Files_295
+  - first:
+      213: 5631480711791250282
+    second: Wasteland-Files_296
+  - first:
+      213: 7149941857895614841
+    second: Wasteland-Files_297
+  - first:
+      213: 7171739103848000224
+    second: Wasteland-Files_298
+  - first:
+      213: -8055142057920294256
+    second: Wasteland-Files_299
+  - first:
+      213: 1244951195978869690
+    second: Wasteland-Files_300
+  - first:
+      213: -2857665637025350143
+    second: Wasteland-Files_301
+  - first:
+      213: -3453318565606417696
+    second: Wasteland-Files_302
+  - first:
+      213: 3276040581216259200
+    second: Wasteland-Files_303
+  - first:
+      213: 8443884815089897932
+    second: Wasteland-Files_304
+  - first:
+      213: -5879947812643256994
+    second: Wasteland-Files_305
+  - first:
+      213: 2312233146141803101
+    second: Wasteland-Files_306
+  - first:
+      213: -4387641288594591377
+    second: Wasteland-Files_307
+  - first:
+      213: -2713489608578155694
+    second: Wasteland-Files_308
+  - first:
+      213: 8571297614214775176
+    second: Wasteland-Files_309
+  - first:
+      213: -391777390574385751
+    second: Wasteland-Files_310
+  - first:
+      213: 4138089328751892805
+    second: Wasteland-Files_311
+  - first:
+      213: 1630095751453558869
+    second: Wasteland-Files_312
+  - first:
+      213: 7438473196275678370
+    second: Wasteland-Files_313
+  - first:
+      213: 3141099084659190586
+    second: Wasteland-Files_314
+  - first:
+      213: -403330362428606425
+    second: Wasteland-Files_315
+  - first:
+      213: -2942520083279757460
+    second: Wasteland-Files_316
+  - first:
+      213: 4613968049207352303
+    second: Wasteland-Files_317
+  - first:
+      213: 5144762215501280362
+    second: Wasteland-Files_318
+  - first:
+      213: -923663909834618809
+    second: Wasteland-Files_319
+  - first:
+      213: 4112053449436255728
+    second: Wasteland-Files_320
+  - first:
+      213: 1628697774485977008
+    second: Wasteland-Files_321
+  - first:
+      213: 191880135328685887
+    second: Wasteland-Files_322
+  - first:
+      213: -4099684143207382924
+    second: Wasteland-Files_323
+  - first:
+      213: 6208702284250004113
+    second: Wasteland-Files_324
+  - first:
+      213: -2648057723528388981
+    second: Wasteland-Files_325
+  - first:
+      213: -6296477393526333758
+    second: Wasteland-Files_326
+  - first:
+      213: 4723859431835328491
+    second: Wasteland-Files_327
+  - first:
+      213: 2714713002911790391
+    second: Wasteland-Files_328
+  - first:
+      213: -4231475611976705298
+    second: Wasteland-Files_329
+  - first:
+      213: 4173553281161300313
+    second: Wasteland-Files_330
+  - first:
+      213: -6381981879179343442
+    second: Wasteland-Files_331
+  - first:
+      213: -856422361630499456
+    second: Wasteland-Files_332
+  - first:
+      213: 742874087496626661
+    second: Wasteland-Files_333
+  - first:
+      213: 6562061305360134085
+    second: Wasteland-Files_334
+  - first:
+      213: 9140278888328374228
+    second: Wasteland-Files_335
+  - first:
+      213: 7697794214718932541
+    second: Wasteland-Files_336
+  - first:
+      213: -16071915140061397
+    second: Wasteland-Files_337
+  - first:
+      213: -2362627634358185368
+    second: Wasteland-Files_338
+  - first:
+      213: -4753782915191842019
+    second: Wasteland-Files_339
+  - first:
+      213: 6026244493331661820
+    second: Wasteland-Files_340
+  - first:
+      213: 792445339709682240
+    second: Wasteland-Files_341
+  - first:
+      213: 6214757077472117445
+    second: Wasteland-Files_342
+  - first:
+      213: -722219172345953667
+    second: Wasteland-Files_343
+  - first:
+      213: 4562151499656423664
+    second: Wasteland-Files_344
+  - first:
+      213: -5820817843304214448
+    second: Wasteland-Files_345
+  - first:
+      213: -1163450306324063044
+    second: Wasteland-Files_346
+  - first:
+      213: 1158734676403097207
+    second: Wasteland-Files_347
+  - first:
+      213: -4824180418285435809
+    second: Wasteland-Files_348
+  - first:
+      213: 8190189547501444345
+    second: Wasteland-Files_349
+  - first:
+      213: 8314360129489692063
+    second: Wasteland-Files_350
+  - first:
+      213: 1263759734152150397
+    second: Wasteland-Files_351
+  - first:
+      213: 238875918146937506
+    second: Wasteland-Files_352
+  - first:
+      213: -544559233339343179
+    second: Wasteland-Files_353
+  - first:
+      213: 8268946424381981210
+    second: Wasteland-Files_354
+  - first:
+      213: 2900361147149533948
+    second: Wasteland-Files_355
+  - first:
+      213: 6498975619127611089
+    second: Wasteland-Files_356
+  - first:
+      213: 7258153375522775671
+    second: Wasteland-Files_357
+  - first:
+      213: 6838596764842145714
+    second: Wasteland-Files_358
+  - first:
+      213: 7453502389485516942
+    second: Wasteland-Files_359
+  - first:
+      213: 1248274005066469539
+    second: Wasteland-Files_360
+  - first:
+      213: 4200379388171104975
+    second: Wasteland-Files_361
+  - first:
+      213: 1401179215721860549
+    second: Wasteland-Files_362
+  - first:
+      213: 5330573717894979509
+    second: Wasteland-Files_363
+  - first:
+      213: -2787906077673060969
+    second: Wasteland-Files_364
+  - first:
+      213: 4591074728723358026
+    second: Wasteland-Files_365
+  - first:
+      213: -993354936385888509
+    second: Wasteland-Files_366
+  - first:
+      213: -4599855511303570983
+    second: Wasteland-Files_367
+  - first:
+      213: 2084568982973202669
+    second: Wasteland-Files_368
+  - first:
+      213: -139012257643175505
+    second: Wasteland-Files_369
+  - first:
+      213: -6884808473357209573
+    second: Wasteland-Files_370
+  - first:
+      213: 7632868483013509205
+    second: Wasteland-Files_371
+  - first:
+      213: 5345633618844523378
+    second: Wasteland-Files_372
+  - first:
+      213: 8837905755451903542
+    second: Wasteland-Files_373
+  - first:
+      213: -4222657675799863724
+    second: Wasteland-Files_374
+  - first:
+      213: -730308686173441925
+    second: Wasteland-Files_375
+  - first:
+      213: 844365785383552559
+    second: Wasteland-Files_376
+  - first:
+      213: 9121008248343501635
+    second: Wasteland-Files_377
+  - first:
+      213: -4433503852596710071
+    second: Wasteland-Files_378
+  - first:
+      213: -42293532534247689
+    second: Wasteland-Files_379
+  - first:
+      213: -5471883430515724075
+    second: Wasteland-Files_380
+  - first:
+      213: -6015451444646119296
+    second: Wasteland-Files_381
+  - first:
+      213: 7062510390558757184
+    second: Wasteland-Files_382
+  - first:
+      213: -3163777171868073986
+    second: Wasteland-Files_383
+  - first:
+      213: 3092637115103649701
+    second: Wasteland-Files_384
+  - first:
+      213: -1524191208586509277
+    second: Wasteland-Files_385
+  - first:
+      213: -8631518325696224563
+    second: Wasteland-Files_386
+  - first:
+      213: -3444739461174347549
+    second: Wasteland-Files_387
+  - first:
+      213: 51908742422517348
+    second: Wasteland-Files_388
+  - first:
+      213: 4787046860255116164
+    second: Wasteland-Files_389
+  - first:
+      213: -7868901435021228419
+    second: Wasteland-Files_390
+  - first:
+      213: -4737768007323693141
+    second: Wasteland-Files_391
+  - first:
+      213: 245215032839875710
+    second: Wasteland-Files_392
+  - first:
+      213: 5590246199589062355
+    second: Wasteland-Files_393
+  - first:
+      213: -2878220553527566368
+    second: Wasteland-Files_394
+  - first:
+      213: 6294224511461491668
+    second: Wasteland-Files_395
+  - first:
+      213: -3767262345799737674
+    second: Wasteland-Files_396
+  - first:
+      213: -5568439935017542811
+    second: Wasteland-Files_397
+  - first:
+      213: -1424437165730187361
+    second: Wasteland-Files_398
+  - first:
+      213: -730958301788041491
+    second: Wasteland-Files_399
+  - first:
+      213: 1784980627344156034
+    second: Wasteland-Files_400
+  - first:
+      213: 4614031937030430573
+    second: Wasteland-Files_401
+  - first:
+      213: 3827482581286121015
+    second: Wasteland-Files_402
+  - first:
+      213: 3640085913619971533
+    second: Wasteland-Files_403
+  - first:
+      213: -5738312943454246372
+    second: Wasteland-Files_404
+  - first:
+      213: 2727364161193129756
+    second: Wasteland-Files_405
+  - first:
+      213: 2839240295742172764
+    second: Wasteland-Files_406
+  - first:
+      213: 9108171635063918429
+    second: Wasteland-Files_407
+  - first:
+      213: -3906689577187394091
+    second: Wasteland-Files_408
+  - first:
+      213: 7023729635845891235
+    second: Wasteland-Files_409
+  - first:
+      213: -5485689875358725825
+    second: Wasteland-Files_410
+  - first:
+      213: 630602087178994169
+    second: Wasteland-Files_411
+  - first:
+      213: -4737232457565311929
+    second: Wasteland-Files_412
+  - first:
+      213: 763840558134462455
+    second: Wasteland-Files_413
+  - first:
+      213: 829426755530446869
+    second: Wasteland-Files_414
+  - first:
+      213: -4720870535725464314
+    second: Wasteland-Files_415
+  - first:
+      213: 2340412055272985732
+    second: Wasteland-Files_416
+  - first:
+      213: -2704326065419136646
+    second: Wasteland-Files_417
+  - first:
+      213: 1775314517913774320
+    second: Wasteland-Files_418
+  - first:
+      213: 9079218650201163449
+    second: Wasteland-Files_419
+  - first:
+      213: -6871419042655154027
+    second: Wasteland-Files_420
+  - first:
+      213: 1790603855763606163
+    second: Wasteland-Files_421
+  - first:
+      213: -8596891578012088644
+    second: Wasteland-Files_422
+  - first:
+      213: 5057467999430008443
+    second: Wasteland-Files_423
+  - first:
+      213: -7853453328143506696
+    second: Wasteland-Files_424
+  - first:
+      213: -992816838614121870
+    second: Wasteland-Files_425
+  - first:
+      213: -9151818164147727992
+    second: Wasteland-Files_426
+  - first:
+      213: 5455554501110919188
+    second: Wasteland-Files_427
+  - first:
+      213: 2853283690799832758
+    second: Wasteland-Files_428
+  - first:
+      213: -7907083297481571729
+    second: Wasteland-Files_429
+  - first:
+      213: -3930891952514168055
+    second: Wasteland-Files_430
+  - first:
+      213: -8656151214767374024
+    second: Wasteland-Files_431
+  - first:
+      213: 1914710509386743956
+    second: Wasteland-Files_432
+  - first:
+      213: 4101045325126045847
+    second: Wasteland-Files_433
+  - first:
+      213: 8578644261134298442
+    second: Wasteland-Files_434
+  - first:
+      213: -357986440302341777
+    second: Wasteland-Files_435
+  - first:
+      213: 4192682228193622349
+    second: Wasteland-Files_436
+  - first:
+      213: 3049978720883649394
+    second: Wasteland-Files_437
+  - first:
+      213: -8205550088224355068
+    second: Wasteland-Files_438
+  - first:
+      213: -8316876631634499370
+    second: Wasteland-Files_439
+  - first:
+      213: -7723271487104110550
+    second: Wasteland-Files_440
+  - first:
+      213: 302600090569995182
+    second: Wasteland-Files_441
+  - first:
+      213: -3442086314461041631
+    second: Wasteland-Files_442
+  - first:
+      213: -8641695448698704161
+    second: Wasteland-Files_443
+  - first:
+      213: -7491165411724758372
+    second: Wasteland-Files_444
+  - first:
+      213: -4750658383266790698
+    second: Wasteland-Files_445
+  - first:
+      213: -8793403111310031555
+    second: Wasteland-Files_446
+  - first:
+      213: -423761197262125959
+    second: Wasteland-Files_447
+  - first:
+      213: 1844677841462003865
+    second: Wasteland-Files_448
+  - first:
+      213: -2400434902616768721
+    second: Wasteland-Files_449
+  - first:
+      213: -2153097144560356007
+    second: Wasteland-Files_450
+  - first:
+      213: -1867757027985419690
+    second: Wasteland-Files_451
+  - first:
+      213: -7113631731317911245
+    second: Wasteland-Files_452
+  - first:
+      213: -1058914409384111224
+    second: Wasteland-Files_453
+  - first:
+      213: 6191055055117977636
+    second: Wasteland-Files_454
+  - first:
+      213: 6599629203767396868
+    second: Wasteland-Files_455
+  - first:
+      213: 2833964111482606064
+    second: Wasteland-Files_456
+  - first:
+      213: -2994922203151354228
+    second: Wasteland-Files_457
+  - first:
+      213: 6658892000758970585
+    second: Wasteland-Files_458
+  - first:
+      213: -8768326474931730832
+    second: Wasteland-Files_459
+  - first:
+      213: -4289987334369815279
+    second: Wasteland-Files_460
+  - first:
+      213: -5443410162235657746
+    second: Wasteland-Files_461
+  - first:
+      213: -1310839879211537508
+    second: Wasteland-Files_462
+  - first:
+      213: 1783282712183085749
+    second: Wasteland-Files_463
+  - first:
+      213: 3403585743735999748
+    second: Wasteland-Files_464
+  - first:
+      213: -8471767410151305352
+    second: Wasteland-Files_465
+  - first:
+      213: 8712476010428852075
+    second: Wasteland-Files_466
+  - first:
+      213: -2938017876967595318
+    second: Wasteland-Files_467
+  - first:
+      213: -5486616255872138937
+    second: Wasteland-Files_468
+  - first:
+      213: -6367528497752440698
+    second: Wasteland-Files_469
+  - first:
+      213: -41400517841110772
+    second: Wasteland-Files_470
+  - first:
+      213: 5614576446605740817
+    second: Wasteland-Files_471
+  - first:
+      213: 1259150804986902295
+    second: Wasteland-Files_472
+  - first:
+      213: -6079189706496508616
+    second: Wasteland-Files_473
+  - first:
+      213: -9023850800712260209
+    second: Wasteland-Files_474
+  - first:
+      213: -431716622357466588
+    second: Wasteland-Files_475
+  - first:
+      213: 7170073872721274691
+    second: Wasteland-Files_476
+  - first:
+      213: -5420174632930515307
+    second: Wasteland-Files_477
+  - first:
+      213: 7376837389854728527
+    second: Wasteland-Files_478
+  - first:
+      213: -7312773395523370593
+    second: Wasteland-Files_479
+  - first:
+      213: 4671402582129292877
+    second: Wasteland-Files_480
+  - first:
+      213: -2542066344333208855
+    second: Wasteland-Files_481
+  - first:
+      213: -2877902853557290360
+    second: Wasteland-Files_482
+  - first:
+      213: 4513171730956912864
+    second: Wasteland-Files_483
+  - first:
+      213: -3020885419785624935
+    second: Wasteland-Files_484
+  - first:
+      213: -6002219989903205300
+    second: Wasteland-Files_485
+  - first:
+      213: -1331974581328346879
+    second: Wasteland-Files_486
+  - first:
+      213: -2135723979099294258
+    second: Wasteland-Files_487
+  - first:
+      213: -2370911437189255407
+    second: Wasteland-Files_488
+  - first:
+      213: 7898723670280400737
+    second: Wasteland-Files_489
+  - first:
+      213: -3205071582585039311
+    second: Wasteland-Files_490
+  - first:
+      213: -4355187394753462677
+    second: Wasteland-Files_491
+  - first:
+      213: -4493631883513656228
+    second: Wasteland-Files_492
+  - first:
+      213: -7805979115106313807
+    second: Wasteland-Files_493
+  - first:
+      213: 2392300913398445078
+    second: Wasteland-Files_494
+  - first:
+      213: -8765475685877276612
+    second: Wasteland-Files_495
+  - first:
+      213: 5660982487226837586
+    second: Wasteland-Files_496
+  - first:
+      213: 1920665676789717567
+    second: Wasteland-Files_497
+  - first:
+      213: -6635593798451599230
+    second: Wasteland-Files_498
+  - first:
+      213: 1146056547699931933
+    second: Wasteland-Files_499
+  - first:
+      213: 340711299268274077
+    second: Wasteland-Files_500
+  - first:
+      213: 8265756948848872928
+    second: Wasteland-Files_501
+  - first:
+      213: -7896190420450853734
+    second: Wasteland-Files_502
+  - first:
+      213: 5075577794522670329
+    second: Wasteland-Files_503
+  - first:
+      213: -8137077638319423448
+    second: Wasteland-Files_504
+  - first:
+      213: 9001277792699316854
+    second: Wasteland-Files_505
+  - first:
+      213: 1393005375283952143
+    second: Wasteland-Files_506
+  - first:
+      213: -2567848567878135800
+    second: Wasteland-Files_507
+  - first:
+      213: 3356909909813285683
+    second: Wasteland-Files_508
+  - first:
+      213: -427458677460090182
+    second: Wasteland-Files_509
+  - first:
+      213: 1469577057960147383
+    second: Wasteland-Files_510
+  - first:
+      213: 494128874656743575
+    second: Wasteland-Files_511
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wasteland-Files_0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 317aab3db8c5cd0366fec5ce6d7f61e0
+      internalID: -5870730036670953407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327e3f21b9176daddf51435a8e96a32c
+      internalID: 7775741361626251309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b70734d702b75a096c4d69f4a0e5c6e
+      internalID: 4390317410311576653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc79e940c0e2b0b4d666912e994c4e2
+      internalID: -6427015851912114265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b72e9d93461f7b7336c44bf7a12de665
+      internalID: -3466350563228649834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_5
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82cc571256b4e1394e58e01885123319
+      internalID: -2766966171284690372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16f1ff9d5274144b7da6a23f0c0d198
+      internalID: 216660629273667332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c431d0135f4c52fd22e334596d19a763
+      internalID: -7020415209177045695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_8
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c6ce96dd0ec37fb2062871d8b13959
+      internalID: -6088391980302592583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_9
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3971f5e828037cb9c02a63917166b77f
+      internalID: -6286006164926189787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93729943c9871d2a30894c68c60c66a6
+      internalID: 3999861468731874797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_11
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f48ba5d9fc8bb93f2b82f84553fd14
+      internalID: -3375058323247724289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fd52bac48befc5d7d1444ac6b188bef
+      internalID: -4363324926715718147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ef9ba7bef4846a491bb309102f76b9
+      internalID: -2775843767566410722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_14
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21609b4cdf9f4f13b6b56f3b4e85084
+      internalID: 6015422063223331023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_15
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a420944ef124408aa729d20378dc663
+      internalID: -3441396822746296839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_16
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e551a61a67e5a4552bcb7fa5111068c7
+      internalID: 7095396359947427591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_17
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ef71a73daa44fa19fe6b491c0c6973
+      internalID: 491745610230049813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ad430d224cd43daa9f635c793d2895
+      internalID: 5229986653160340097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e46566389df43a296d0463241e607b
+      internalID: 3388696991447995342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_20
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55f8bdf93b1342d69c951c50e323900
+      internalID: 5272580435954353836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719e54db9f02f4c65bf83c2353226cce
+      internalID: -8924934706714062198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_22
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb18d9837bc444a1fb45dd1cd9eb2281
+      internalID: -2311598703648108343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_23
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd552e51fb464561b900be4c9730dc3
+      internalID: -7805320562231705434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_24
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e28fa7583c444f84aaab2ea912766b5
+      internalID: 933587752074962170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_25
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecd9064ae25a453c99400b16c9e0e68
+      internalID: 28357846184499323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf6336b8390d4dca95cedeb38eaa6a0
+      internalID: 8076228477566011075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_27
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdb90b55a11e421a849a8e7eef0f7d0
+      internalID: -7729811185678765463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_28
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4baece05bde49f8b770e1d2ea602a1
+      internalID: -7208659382408696926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_29
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11e8fda8d3724b7ba7aadcc959efcbc
+      internalID: 4514736258985633649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_30
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72887e98a59a4438685813d98d304314
+      internalID: 3484211609448959759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09246b04b901d4505a962d27f61c54f6
+      internalID: 3293927446642928525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_32
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4782e7eb174034507a076912a64f9ec0
+      internalID: 5319866774136625075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_33
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db93b712730784289a6ecaa7783022da
+      internalID: 453107659419594369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886fb646f018949f195e24a5e66859ae
+      internalID: 3430489817187303297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_35
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f36cdd137ab2d478c811163c7e20b52f
+      internalID: 6995004395307049697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_36
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc806b334b0543e8aa33b6f5b15bd75
+      internalID: 7661532064113095178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_37
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdff54107958a4665942ec5f90420651
+      internalID: -8757032426494918917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710ef757d965c4966b05be70ee8bdfd2
+      internalID: -9177481623681152628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_39
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d26be4150c143f48ddd74b7a1b0378
+      internalID: 8492698060974041951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_40
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beda7fc1958ee43528aeb5a7dfa7a730
+      internalID: 2359279426166284233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_41
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f2922369a414b598b7a1d228646b05
+      internalID: 577042551761334428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_42
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de25d2e917d7d4bba828a947505c8625
+      internalID: 2664808721848999882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_43
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f43dc89c363b420e9061bde64e98d28
+      internalID: -622322393395628353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_44
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1af1bc7fb8ae4ea3959fd0b9dc7645e
+      internalID: -8135600288474633460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_45
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6a8e6e89922a4947b7095e6238c554c
+      internalID: -5395439764289972093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481a8f6cd0e7e4946912f1b1df72cf77
+      internalID: 5138921801662811806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_47
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b23363447e2c4278a8e3e734f2a0f9d
+      internalID: 2510183069083124015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_48
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee080352fed814c248c9c88fa843ba23
+      internalID: 8743902919519372761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_49
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7fa4e3207094d15bb2189b9bf24333
+      internalID: 551045429815171084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_50
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e15f111c12794a25887d4682fcdde39
+      internalID: -1384898579552715563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_51
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5354041b836464121ab4099475a4c50b
+      internalID: -7520783594874784670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_52
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f642a5ef83d420e87f6dc4e928e422
+      internalID: -1360475998049998897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_53
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6f6722bbb26498ea1e94a5291fb2ab
+      internalID: 2898590822221702623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_54
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7153bc8aa5421459bbecbb654ce78e23
+      internalID: 9086291040475746731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_55
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6543e5253dc4239a5743b0c09ce191
+      internalID: 8732839986524465366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_56
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8df4dee57f046a3b46f73b1b9da7a4
+      internalID: 145992900211118138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasteland-Files_57
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0939b50118d34dbaaaa59a8182b4264
+      internalID: -261260288372647218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b0d330e1bbc644c51b82dccca5e0270c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Wasteland-Files_0: -5870730036670953407
+      Wasteland-Files_1: 7775741361626251309
+      Wasteland-Files_10: 3999861468731874797
+      Wasteland-Files_11: -3375058323247724289
+      Wasteland-Files_12: -4363324926715718147
+      Wasteland-Files_13: -2775843767566410722
+      Wasteland-Files_14: 6015422063223331023
+      Wasteland-Files_15: -3441396822746296839
+      Wasteland-Files_16: 7095396359947427591
+      Wasteland-Files_17: 491745610230049813
+      Wasteland-Files_18: 5229986653160340097
+      Wasteland-Files_19: 3388696991447995342
+      Wasteland-Files_2: 4390317410311576653
+      Wasteland-Files_20: 5272580435954353836
+      Wasteland-Files_21: -8924934706714062198
+      Wasteland-Files_22: -2311598703648108343
+      Wasteland-Files_23: -7805320562231705434
+      Wasteland-Files_24: 933587752074962170
+      Wasteland-Files_25: 28357846184499323
+      Wasteland-Files_26: 8076228477566011075
+      Wasteland-Files_27: -7729811185678765463
+      Wasteland-Files_28: -7208659382408696926
+      Wasteland-Files_29: 4514736258985633649
+      Wasteland-Files_3: -6427015851912114265
+      Wasteland-Files_30: 3484211609448959759
+      Wasteland-Files_31: 3293927446642928525
+      Wasteland-Files_32: 5319866774136625075
+      Wasteland-Files_33: 453107659419594369
+      Wasteland-Files_34: 3430489817187303297
+      Wasteland-Files_35: 6995004395307049697
+      Wasteland-Files_36: 7661532064113095178
+      Wasteland-Files_37: -8757032426494918917
+      Wasteland-Files_38: -9177481623681152628
+      Wasteland-Files_39: 8492698060974041951
+      Wasteland-Files_4: -3466350563228649834
+      Wasteland-Files_40: 2359279426166284233
+      Wasteland-Files_41: 577042551761334428
+      Wasteland-Files_42: 2664808721848999882
+      Wasteland-Files_43: -622322393395628353
+      Wasteland-Files_44: -8135600288474633460
+      Wasteland-Files_45: -5395439764289972093
+      Wasteland-Files_46: 5138921801662811806
+      Wasteland-Files_47: 2510183069083124015
+      Wasteland-Files_48: 8743902919519372761
+      Wasteland-Files_49: 551045429815171084
+      Wasteland-Files_5: -2766966171284690372
+      Wasteland-Files_50: -1384898579552715563
+      Wasteland-Files_51: -7520783594874784670
+      Wasteland-Files_52: -1360475998049998897
+      Wasteland-Files_53: 2898590822221702623
+      Wasteland-Files_54: 9086291040475746731
+      Wasteland-Files_55: 8732839986524465366
+      Wasteland-Files_56: 145992900211118138
+      Wasteland-Files_57: -261260288372647218
+      Wasteland-Files_6: 216660629273667332
+      Wasteland-Files_7: -7020415209177045695
+      Wasteland-Files_8: -6088391980302592583
+      Wasteland-Files_9: -6286006164926189787
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

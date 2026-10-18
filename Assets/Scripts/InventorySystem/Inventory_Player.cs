@@ -105,6 +105,21 @@ public class Inventory_Player : Inventory_Base
         AddItem(itemToUnequip);
     }
 
+    public void UnequipAndDiscardItem(Inventory_EquipmentSlot slot)
+    {
+        if (slot == null || slot.HasItem() == false)
+            return;
+
+        var itemToDiscard = slot.equipedItem;
+        slot.equipedItem = null;
+
+        itemToDiscard.RemoveModifiers(player.stats);
+        itemToDiscard.RemoveItemEffect();
+
+        UpdateSetBonuses();
+        TriggerUpdateUI();
+    }
+
     private Dictionary<ItemSetDataSO, int> activeSetCounts = new Dictionary<ItemSetDataSO, int>();
     private List<ItemEffect_DataSO> activeSetEffects = new List<ItemEffect_DataSO>();
 
