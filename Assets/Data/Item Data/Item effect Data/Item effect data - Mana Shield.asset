@@ -15,4 +15,4 @@ MonoBehaviour:
   effectDescription: Tạo lá chắn ma pháp hấp thụ tối đa 60 sát thương nhận vào (Tự sạc lại sau 8 giây).
   maxShieldAmount: 60
   rechargeDelay: 8
-  shieldVfxPrefab: {fileID: 0}
+  shieldVfxPrefab: {fileID: 100001, guid: a3c63283ccc54a23a43fffa6970b7268, type: 3}

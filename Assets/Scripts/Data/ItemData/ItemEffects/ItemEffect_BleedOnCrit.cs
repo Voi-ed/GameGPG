@@ -37,8 +37,8 @@ public class ItemEffect_BleedOnCrit : ItemEffect_DataSO
         GameObject critPrefab = GetCritHitPrefab();
         if (critPrefab != null)
         {
-            GameObject vfx = Instantiate(critPrefab, target.position, Quaternion.identity);
-            Destroy(vfx, 2f);
+            GameObject vfx = InstantiateVfx(critPrefab, target.position, Quaternion.identity);
+            DestroyVfx(vfx, 2f);
         }
 
         IDamageable damageable = target.GetComponent<IDamageable>();
@@ -62,8 +62,8 @@ public class ItemEffect_BleedOnCrit : ItemEffect_DataSO
             GameObject tickPrefab = GetBleedTickPrefab();
             if (tickPrefab != null && target != null)
             {
-                GameObject vfx = Instantiate(tickPrefab, target.position, Quaternion.identity);
-                Destroy(vfx, 2f);
+                GameObject vfx = InstantiateVfx(tickPrefab, target.position, Quaternion.identity);
+                DestroyVfx(vfx, 2f);
             }
         }
     }

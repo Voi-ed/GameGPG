@@ -894,6 +894,7 @@ MonoBehaviour:
   burnVfx: {r: 0.98039216, g: 0.27058825, b: 0.14509805, a: 1}
   shockVfx: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackAlert: {fileID: 660569188544595017}
+  stunVfxPrefab: {fileID: 5659291355382750488, guid: 5dd8b49ba4534a35a9f658476d8faa1b, type: 3}
 --- !u!114 &5355425005083011612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,9 +997,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDropPrefab: {fileID: 2736169520582809571, guid: 3db9e2cc8d65a6a4a867ca2a5440825e, type: 3}
-  dropData: {fileID: 11400000, guid: 53202fea4f3bc0a40829e9c2d34d4477, type: 2}
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0007, type: 2}
   maxRarityAmount: 1200
-  maxItemsToDrop: 0
+  maxItemsToDrop: 2
 --- !u!114 &855354000011645817
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,13 @@ MonoBehaviour:
   itemRarity: 250
   dropChance: 75.0
   maxDropChance: 75.0
-  craftRecipe: []
+  craftRecipe:
+  - itemData: {fileID: 11400000, guid: 8dfbb5bea1f3d45449459c5a23d76b84, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: 25e8fb1711e1395409be395f0e331b1a, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
   itemName: Bít Tết Thịt Thú
   itemIcon: {fileID: 1469136959, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 4

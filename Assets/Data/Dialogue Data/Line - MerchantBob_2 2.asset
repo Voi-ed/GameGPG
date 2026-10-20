@@ -15,8 +15,8 @@ MonoBehaviour:
   dialogueGroupName: Merchant Bob
   speaker: {fileID: 11400000, guid: ca34c7dbd73516c4f88685ff4da95a71, type: 2}
   textLine:
-  - 'You came to the right place! '
-  playerChoiceAnswer: About the job...
+  - "Cậu tìm đúng chỗ rồi đấy! Đang có việc cần người giải quyết đây."
+  playerChoiceAnswer: "Về công việc và nhiệm vụ..."
   choiceLines:
   - {fileID: 11400000, guid: a6e4cfea3d4b0db468858616c9997b06, type: 2}
   - {fileID: 11400000, guid: b613a163251182c49bf3f119d44a33cf, type: 2}

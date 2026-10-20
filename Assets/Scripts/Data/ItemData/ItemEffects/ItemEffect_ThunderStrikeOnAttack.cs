@@ -43,8 +43,8 @@ public class ItemEffect_ThunderStrikeOnAttack : ItemEffect_DataSO
         GameObject prefab = GetVfxPrefab();
         if (prefab != null)
         {
-            GameObject vfx = Instantiate(prefab, targetPos, Quaternion.identity);
-            Destroy(vfx, 2f);
+            GameObject vfx = InstantiateVfx(prefab, targetPos, Quaternion.identity);
+            DestroyVfx(vfx, 2f);
         }
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(targetPos, splashRadius, whatIsEnemy);

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d8a5b69fe50e74a86d57021af5634c, type: 3}
+  m_Name: Line - Joanna_Intro
+  m_EditorClassIdentifier: 
+  dialogueGroupName: Joanna
+  speaker: {fileID: 11400000, guid: d1a10002000000000000000000000002, type: 2}
+  textLine:
+  - "Dừng bước, nhà thám hiểm! Phía trước là vùng tiền đồn hoang tàn đầy rẫy hiểm nguy."
+  - "Là đội trưởng gác cổng, ta phải đảm bảo không ai bước vào cõi chết mà thiếu sự chuẩn bị!"
+  playerChoiceAnswer: 
+  choiceLines:
+  - {fileID: 11400000, guid: d1a10002000000000000000000000010, type: 2}
+  - {fileID: 11400000, guid: d1a10002000000000000000000000011, type: 2}
+  - {fileID: 11400000, guid: d1a10002000000000000000000000012, type: 2}
+  actionLine: 
+  actionType: 5

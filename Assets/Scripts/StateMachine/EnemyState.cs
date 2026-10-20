@@ -57,4 +57,10 @@ public class EnemyState : EntityState
             anim.SetFloat(XVelocityHash, rb.linearVelocity.x);
         }
     }
+
+    public override void SyncAttackSpeed()
+    {
+        float attackSpeed = enemy != null ? enemy.GetAttackSpeedMultiplier() : (stats != null ? stats.offense.attackSpeed.GetValue() : 1f);
+        anim.SetFloat("attackSpeedMultiplier", attackSpeed);
+    }
 }

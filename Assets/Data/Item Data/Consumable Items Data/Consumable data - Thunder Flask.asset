@@ -19,7 +19,13 @@ MonoBehaviour:
   itemRarity: 480
   dropChance: 52.0
   maxDropChance: 52.0
-  craftRecipe: []
+  craftRecipe:
+  - itemData: {fileID: 11400000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f04, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f02, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
   itemName: Bình Lôi Điện
   itemIcon: {fileID: -1984520502, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 4

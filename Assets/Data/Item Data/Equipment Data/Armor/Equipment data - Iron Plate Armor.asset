@@ -22,10 +22,10 @@ MonoBehaviour:
   craftRecipe:
   - itemData: {fileID: 11400000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f02, type: 2}
     stackSize: 4
-    itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8004, type: 2}
-  - itemData: {fileID: 11400000, guid: f88ea2266177d07488ab38cccbe79d18, type: 2}
-    stackSize: 1
-    itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8004, type: 2}
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f07, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
   itemName: Đại Giáp Sắt
   itemIcon: {fileID: -1549321216, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 2

@@ -13,8 +13,9 @@ public class Enemy_StunnedState : EnemyState
     {
         base.Enter();
 
-        vfx.EnableAttackAlert(false);
+        vfx?.EnableAttackAlert(false);
         enemy.EnableCounterWindow(false);
+        vfx?.PlayStunVfx(true);
 
         stateTimer = enemy.stunnedDuration;
         rb.linearVelocity = new Vector2(enemy.stunnedVelocity.x * -enemy.facingDir, enemy.stunnedVelocity.y);
@@ -26,5 +27,11 @@ public class Enemy_StunnedState : EnemyState
 
         if (stateTimer < 0)
             stateMachine.ChangeState(enemy.idleState);
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        vfx?.PlayStunVfx(false);
     }
 }

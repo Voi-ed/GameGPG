@@ -10,6 +10,7 @@ public class Object_Buff : MonoBehaviour
     [SerializeField] private BuffEffectData[] buffs;
     [SerializeField] private string buffName;
     [SerializeField] private float buffDuration = 4;
+    [SerializeField] private GameObject buffVfxPrefab;
 
 
     [Header("Floaty movement")]
@@ -33,8 +34,14 @@ public class Object_Buff : MonoBehaviour
         statsToModify = collision.GetComponent<Player_Stats>();
 
 
-        if (statsToModify.CanApplyBuffOf(buffName))
+        if (statsToModify != null && statsToModify.CanApplyBuffOf(buffName))
         {
+            if (buffVfxPrefab != null)
+            {
+                Player player = collision.GetComponent<Player>();
+                player?.vfx?.CreateEffectOf(buffVfxPrefab, player.transform, true);
+            }
+
             statsToModify.ApplyBuff(buffs, buffDuration, buffName);
             Destroy(gameObject);
         }

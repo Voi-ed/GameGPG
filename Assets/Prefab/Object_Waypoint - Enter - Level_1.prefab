@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6587149263153612741}
   - component: {fileID: 3321621961748990409}
   m_Layer: 9
-  m_Name: Object_Waypoint - Enter - Level_1
+  m_Name: "Object_Waypoint - [Ti\u1EBFn t\u1EDBi: 1_Village & Camp]"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,10 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be72543b43334f4a928d45173c4c30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transferToScene: Level_1
-  waypointType: 0
-  conntedWaypoint: 1
-  respwanPoint: {fileID: 0}
+  direction: 0
+  loopPlaylist: 1
+  respawnPoint: {fileID: 0}
+  triggerCooldown: 1
+  targetSceneDebug: 1_Village & Camp
+  effectiveDirectionDebug: 1
   canBeTriggered: 1
 --- !u!61 &3321621961748990409
 BoxCollider2D:
@@ -381,7 +383,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1379488757
-  m_SortingLayer: -4
+  m_SortingLayer: -6
   m_SortingOrder: -5
   m_Sprite: {fileID: -7539416166122308838, guid: 1657a69882a5ca34495d499deeeabfef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -70,8 +70,8 @@ public class ItemEffect_BerserkOnLowHealth : ItemEffect_DataSO
         GameObject hitPrefab = GetHitPrefab();
         if (hitPrefab != null)
         {
-            GameObject vfx = Instantiate(hitPrefab, target.position, Quaternion.identity);
-            Destroy(vfx, 2f);
+            GameObject vfx = InstantiateVfx(hitPrefab, target.position, Quaternion.identity);
+            DestroyVfx(vfx, 2f);
         }
     }
 

@@ -38,8 +38,8 @@ public class ItemEffect_DoomMark : ItemEffect_DataSO
         GameObject skullPrefab = GetSkullPrefab();
         if (skullPrefab != null)
         {
-            GameObject skullVfx = Instantiate(skullPrefab, target.position + Vector3.up * 1.2f, Quaternion.identity, target);
-            Destroy(skullVfx, delay + 0.5f);
+            GameObject skullVfx = InstantiateVfx(skullPrefab, target.position + Vector3.up * 1.2f, Quaternion.identity, target);
+            DestroyVfx(skullVfx, delay + 0.5f);
         }
 
         player.StartCoroutine(DoomExplosionRoutine(target));
@@ -54,14 +54,14 @@ public class ItemEffect_DoomMark : ItemEffect_DataSO
         GameObject expPrefab = GetExplosionPrefab();
         if (expPrefab != null)
         {
-            GameObject vfx = Instantiate(expPrefab, blastPos, Quaternion.identity);
+            GameObject vfx = InstantiateVfx(expPrefab, blastPos, Quaternion.identity);
             Renderer[] renderers = vfx.GetComponentsInChildren<Renderer>(true);
             foreach (var r in renderers)
             {
                 r.sortingLayerName = "Player";
                 r.sortingOrder = 55;
             }
-            Destroy(vfx, 2.5f);
+            DestroyVfx(vfx, 2.5f);
         }
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(blastPos, blastRadius, whatIsEnemy);

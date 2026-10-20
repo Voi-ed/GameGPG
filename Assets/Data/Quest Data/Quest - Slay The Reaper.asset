@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61094b76dde8cd4b9c1811b7318e5f4, type: 3}
+  m_Name: Quest - Slay The Reaper
+  m_EditorClassIdentifier: 
+  questSaveId: a7410cb2a51143a5b09b5e268c50c001
+  questType: 0
+  questName: "Trảm Sát Lưỡi Hái Tử Thần"
+  description: "Tử Thần Reaper xuất hiện từ hư không gieo rắc nỗi khiếp sợ cùng cực. Tiêu diệt con trùm nguy hiểm này để mang lại bình yên cho vùng đất hoang vu!"
+  questGoal: "- Trảm sát Tử Thần Reaper : "
+  questTargetId: enemy_reaper
+  requiredAmount: 1
+  itemToDeliver: {fileID: 0}
+  rewardType: 2
+  rewardItems:
+  - itemData: {fileID: 11400000, guid: 37c0b3204301de74c9bfbc5950b936b8, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f04, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: f1a2b3c4d5e6f708192a3b4c5d6e7f15, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}

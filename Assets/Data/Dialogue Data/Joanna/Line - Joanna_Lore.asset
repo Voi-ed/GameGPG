@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d8a5b69fe50e74a86d57021af5634c, type: 3}
+  m_Name: Line - Joanna_Lore
+  m_EditorClassIdentifier: 
+  dialogueGroupName: Joanna
+  speaker: {fileID: 11400000, guid: d1a10002000000000000000000000002, type: 2}
+  textLine:
+  - "Phía trước là vùng đất bị tha hóa bởi bóng tối. Lũ Skeleton mang giáp xương cứng cáp, hãy dùng đòn chí mạng hoặc ma thuật để xuyên phá chúng!"
+  - "Hãy quan sát kỹ nhịp tấn công của chúng. Đỡ đòn hoặc lướt né đúng thời điểm là chìa khóa để sống sót!"
+  playerChoiceAnswer: "Kể cho tôi về lũ quái vật bên ngoài tiền đồn."
+  choiceLines: []
+  actionLine: 
+  actionType: 0

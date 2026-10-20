@@ -30,10 +30,17 @@ public class Enemy_ReaperBattleState : Enemy_BattleState
         if (enemy.PlayerDetected())
             UpdateTargetIfNeeded();
         
-        if (WithinAttackRange() && enemy.PlayerDetected() && CanAttack())
+        if (WithinAttackRange() && enemy.PlayerDetected())
         {
-            lastTimeAttacked = Time.time;
-            stateMachine.ChangeState(enemyReaper.reaperAttackState);
+            if (CanAttack())
+            {
+                lastTimeAttacked = Time.time;
+                stateMachine.ChangeState(enemyReaper.reaperAttackState);
+            }
+            else
+            {
+                enemy.SetVelocity(0, rb.linearVelocity.y);
+            }
         }
         else
         {

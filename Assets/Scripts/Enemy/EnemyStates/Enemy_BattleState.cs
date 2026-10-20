@@ -48,10 +48,18 @@ public class Enemy_BattleState : EnemyState
         if (BattleTimeIsOver())
             stateMachine.ChangeState(enemy.idleState);
 
-        if (WithinAttackRange() && enemy.PlayerDetected() && CanAttack())
+        if (WithinAttackRange() && enemy.PlayerDetected())
         {
-            lastTimeAttacked = Time.time;
-            stateMachine.ChangeState(enemy.attackState);
+            if (CanAttack())
+            {
+                lastTimeAttacked = Time.time;
+                stateMachine.ChangeState(enemy.attackState);
+            }
+            else
+            {
+                // Đã vào tầm đánh nhưng đang chờ hồi chiêu: Dừng lại giữ cự ly offset, không húc thẳng vào người chơi
+                enemy.SetVelocity(0, rb.linearVelocity.y);
+            }
         }
         else
         {
@@ -61,7 +69,7 @@ public class Enemy_BattleState : EnemyState
         
     }
 
-    protected bool CanAttack() => Time.time > lastTimeAttacked + enemy.attackCooldown;
+    protected bool CanAttack() => Time.time > lastTimeAttacked + enemy.GetAttackCooldown();
 
     protected void UpdateTargetIfNeeded()
     {
@@ -81,7 +89,7 @@ public class Enemy_BattleState : EnemyState
 
     protected bool BattleTimeIsOver() => Time.time > lastTimeWasInBattle + enemy.battleTimeDuration;
 
-    protected bool WithinAttackRange() => DistanceToPlayer() < enemy.attackDistance;
+    protected bool WithinAttackRange() => DistanceToPlayer() < enemy.GetAttackDistance();
     protected bool ShouldRetreat() => DistanceToPlayer() < enemy.minRetreatDistance;
 
     protected float DistanceToPlayer()

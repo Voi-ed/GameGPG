@@ -28,17 +28,33 @@ public class Entity_DropManager : MonoBehaviour
         List<ItemDataSO> itemsToDrop = RollDrops();
         int amountToDrop = Mathf.Min(itemsToDrop.Count, maxItemsToDrop);
 
+        List<Collider2D> spawnedColliders = new List<Collider2D>();
         for (int i = 0; i < amountToDrop; i++)
         {
-            CreateItemDrop(itemsToDrop[i]);
+            GameObject newItem = CreateItemDrop(itemsToDrop[i]);
+            if (newItem != null)
+            {
+                Collider2D newCol = newItem.GetComponent<Collider2D>();
+                if (newCol != null)
+                {
+                    foreach (var oldCol in spawnedColliders)
+                    {
+                        if (oldCol != null)
+                            Physics2D.IgnoreCollision(newCol, oldCol, true);
+                    }
+                    spawnedColliders.Add(newCol);
+                }
+            }
         }
 
     }
 
-    public void CreateItemDrop(ItemDataSO itemToDrop)
+    public GameObject CreateItemDrop(ItemDataSO itemToDrop)
     {
-        GameObject newItem = Instantiate(itemDropPrefab,transform.position,Quaternion.identity);
+        Vector3 spawnPos = transform.position + new Vector3(Random.Range(-0.25f, 0.25f), 0.5f, 0);
+        GameObject newItem = Instantiate(itemDropPrefab, spawnPos, Quaternion.identity);
         newItem.GetComponent<Object_ItemPickup>().SetupItem(itemToDrop);
+        return newItem;
     }
 
     public List<ItemDataSO> RollDrops()

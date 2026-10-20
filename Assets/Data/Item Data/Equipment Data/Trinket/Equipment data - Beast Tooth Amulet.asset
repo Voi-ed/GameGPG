@@ -20,12 +20,15 @@ MonoBehaviour:
   dropChance: 65
   maxDropChance: 65
   craftRecipe:
-  - itemData: {fileID: 11400000, guid: f88ea2266177d07488ab38cccbe79d18, type: 2}
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f05, type: 2}
+    stackSize: 3
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f03, type: 2}
     stackSize: 2
-    itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8006, type: 2}
-  - itemData: {fileID: 11400000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f02, type: 2}
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: 8dfbb5bea1f3d45449459c5a23d76b84, type: 2}
     stackSize: 1
-    itemEffect: {fileID: 11400000, guid: b1b2c3d4e5f60718293a4b5c6d7e8006, type: 2}
+    itemEffect: {fileID: 0}
   itemName: Bùa Nanh Thú
   itemIcon: {fileID: 1697508904, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 3

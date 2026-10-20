@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d8a5b69fe50e74a86d57021af5634c, type: 3}
+  m_Name: Line - Joanna_Quests
+  m_EditorClassIdentifier: 
+  dialogueGroupName: Joanna
+  speaker: {fileID: 11400000, guid: d1a10002000000000000000000000002, type: 2}
+  textLine: []
+  playerChoiceAnswer: "Có nhiệm vụ canh gác hay diệt quái nào cần tôi giúp không?"
+  choiceLines: []
+  actionLine: "Đội tiền đồn đang chịu sức ép lớn. Nếu cậu có dũng khí, hãy nhận lệnh tuần tra tiêu diệt lũ quái này!"
+  actionType: 3

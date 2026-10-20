@@ -143,9 +143,9 @@ public class ItemEffect_SetShadowAssassin : ItemEffect_DataSO
         GameObject smokePrefab = GetSmokeVfxPrefab();
         if (smokePrefab != null)
         {
-            GameObject smoke = Instantiate(smokePrefab, oldPos, Quaternion.identity);
+            GameObject smoke = InstantiateVfx(smokePrefab, oldPos, Quaternion.identity);
             ApplySortingLayer(smoke, "Player", 45);
-            Destroy(smoke, 2f);
+            DestroyVfx(smoke, 2f);
         }
 
         // 3. Spawn Decoy Silhouette at old position
@@ -277,9 +277,9 @@ public class ItemEffect_SetShadowAssassin : ItemEffect_DataSO
             GameObject bloodPrefab = GetBloodVfxPrefab();
             if (bloodPrefab != null)
             {
-                GameObject blood = Instantiate(bloodPrefab, target.position, Quaternion.identity);
+                GameObject blood = InstantiateVfx(bloodPrefab, target.position, Quaternion.identity);
                 ApplySortingLayer(blood, "Player", 65);
-                Destroy(blood, 1.5f);
+                DestroyVfx(blood, 1.5f);
             }
 
             Debug.Log($"<color=#FF0044>[Set Sát Thủ] CHÉM SAU LƯNG TÓE MÁU! Gây thêm {backstabBonus:F1} Sát thương!</color>");
@@ -303,9 +303,9 @@ public class ItemEffect_SetShadowAssassin : ItemEffect_DataSO
             GameObject slashPrefab = GetSlashVfxPrefab();
             if (slashPrefab != null)
             {
-                GameObject slash = Instantiate(slashPrefab, target.position, Quaternion.identity);
+                GameObject slash = InstantiateVfx(slashPrefab, target.position, Quaternion.identity);
                 ApplySortingLayer(slash, "Player", 70);
-                Destroy(slash, 1.5f);
+                DestroyVfx(slash, 1.5f);
             }
 
             Debug.Log($"<color=#D154FF>[Set Sát Thủ] ĐÒN PHỤC THÙ! Phản kích từ bóng tối gây thêm {revengeBonus:F1} Sát thương!</color>");
@@ -327,9 +327,9 @@ public class ItemEffect_SetShadowAssassin : ItemEffect_DataSO
             GameObject hitCross = GetExecuteHitPrefab();
             if (hitCross != null)
             {
-                GameObject cross = Instantiate(hitCross, target.position, Quaternion.identity);
+                GameObject cross = InstantiateVfx(hitCross, target.position, Quaternion.identity);
                 ApplySortingLayer(cross, "Player", 75);
-                Destroy(cross, 2f);
+                DestroyVfx(cross, 2f);
             }
 
             Debug.Log($"<color=red>[Set Sát Thủ] KẾT LIỄU! Mục tiêu < 35% Máu -> Gây thêm {executeBonus:F1} Sát thương!</color>");

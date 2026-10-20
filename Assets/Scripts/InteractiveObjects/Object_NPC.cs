@@ -22,13 +22,17 @@ public class Object_NPC : MonoBehaviour, IInteractable
     protected virtual void Awake()
     {
         ui = FindFirstObjectByType<UI>();
-        startPosition = interactToolTip.transform.position;
-        interactToolTip.SetActive(false);
+        if (interactToolTip != null)
+        {
+            startPosition = interactToolTip.transform.position;
+            interactToolTip.SetActive(false);
+        }
     }
 
     protected virtual void Start()
     {
-        questManager = Player.instance.questManager;
+        if (Player.instance != null)
+            questManager = Player.instance.questManager;
     }
 
     protected virtual void Update()
@@ -39,7 +43,7 @@ public class Object_NPC : MonoBehaviour, IInteractable
 
     private void HandleToolTipFloat()
     {
-        if (interactToolTip.activeSelf)
+        if (interactToolTip != null && interactToolTip.activeSelf)
         {
             float yOffset = Mathf.Sin(Time.time * floatSpeed) * floatRange;
             interactToolTip.transform.position = startPosition + new Vector3(0, yOffset);
@@ -69,7 +73,11 @@ public class Object_NPC : MonoBehaviour, IInteractable
             return;
 
         player = collision.transform;
-        interactToolTip.SetActive(true);
+        if (interactToolTip != null)
+        {
+            startPosition = interactToolTip.transform.position;
+            interactToolTip.SetActive(true);
+        }
     }
 
     protected virtual void OnTriggerExit2D(Collider2D collision)
@@ -77,11 +85,16 @@ public class Object_NPC : MonoBehaviour, IInteractable
         if (collision.GetComponent<Player>() == null)
             return;
 
-        interactToolTip.SetActive(false);
+        if (interactToolTip != null)
+            interactToolTip.SetActive(false);
     }
 
     public virtual void Interact()
     {
-        questManager.AddProgress(npcTargetQuestId);
+        if (questManager == null && Player.instance != null)
+            questManager = Player.instance.questManager;
+
+        if (questManager != null && !string.IsNullOrEmpty(npcTargetQuestId))
+            questManager.AddProgress(npcTargetQuestId);
     }
 }

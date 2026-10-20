@@ -19,7 +19,13 @@ MonoBehaviour:
   itemRarity: 500
   dropChance: 50.0
   maxDropChance: 50.0
-  craftRecipe: []
+  craftRecipe:
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f05, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f06, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
   itemName: Dược Liệu Cuồng Chiến
   itemIcon: {fileID: -89025661, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 4

@@ -11,12 +11,12 @@ public class Entity_AnimationTriggers : MonoBehaviour
         entityCombat = GetComponentInParent<Entity_Combat>();
     }
 
-    private void CurrentStateTrigger()
+    protected virtual void CurrentStateTrigger()
     {
         entity.CurrentStateAnimationTrigger();
     }
 
-    private void AttackTrigger()
+    protected virtual void AttackTrigger()
     {
         entityCombat.PerformAttack();
     }

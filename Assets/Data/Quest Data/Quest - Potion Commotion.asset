@@ -14,12 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questSaveId: f1bb98f65cc03334d8b8644b77c4840f
   questType: 2
-  questName: Potion Commotion
-  description: Oi! I promised Martha some health potions, but I've got me hands full.
-    Be a gem and fetch em for me, would ye? Bring 'em to me - I'll pass 'em along.
-    Be in a hurry tho, she gets cranky when I take too long with the help she really
-    needs.
-  questGoal: '- Deliver health potions to Bob : '
+  questName: Rắc Rối Thuốc Hồi Máu
+  description: "Này anh bạn! Ta lỡ hứa đem vài bình thuốc hồi máu cho Martha, mà giờ tay chân ta bận túi bụi rồi. Làm ơn kiếm giúp ta 4 bình được không? Đem lại đây cho ta rồi ta chuyển qua cho bà ấy. Nhanh lên nhé, bà ấy mà đợi lâu là nổi cáu lên đấy!"
+  questGoal: "- Giao thuốc hồi máu cho Bob : "
   questTargetId: 
   requiredAmount: 4
   itemToDeliver: {fileID: 11400000, guid: 065f37ce5c41a6743872917707d13aef, type: 2}

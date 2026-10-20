@@ -15,11 +15,10 @@ MonoBehaviour:
   dialogueGroupName: Merchant Bob
   speaker: {fileID: 11400000, guid: ca34c7dbd73516c4f88685ff4da95a71, type: 2}
   textLine:
-  - If this takes longer than a pint, I'm busy.
-  - Ah, good to see an old friend - though yer barley outta diapers. What can I get
-    ye?
-  - Joe took me tools again. I swear, I'll bury that bastard...
-  - If ye brake it, you buy it. If I break it... well, that's a traidition.
+  - "Nói nhanh lên nào, nếu lâu hơn một hớp bia thì ta bận lắm đấy nhé!"
+  - "A, gặp lại bạn cũ thật tốt - dù trông cậu vẫn như vừa dứt sữa ấy. Cần mua bán gì nào?"
+  - "Lão thợ rèn Joe lại cuỗm mất đồ nghề của ta rồi. Ta thề có ngày ta chôn sống lão..."
+  - "Làm hỏng là phải đền tiền đấy nhé! Còn nếu ta làm vỡ... à thì, đó là truyền thống rồi!"
   actionLine: 
   actionType: 5
   choiceLines:

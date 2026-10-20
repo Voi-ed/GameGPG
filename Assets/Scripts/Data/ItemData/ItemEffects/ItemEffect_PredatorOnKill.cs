@@ -47,8 +47,8 @@ public class ItemEffect_PredatorOnKill : ItemEffect_DataSO
         GameObject prefab = GetVfxPrefab();
         if (prefab != null)
         {
-            GameObject vfx = Instantiate(prefab, deadEnemy.transform.position, Quaternion.identity);
-            Destroy(vfx, 3f);
+            GameObject vfx = InstantiateVfx(prefab, deadEnemy.transform.position, Quaternion.identity);
+            DestroyVfx(vfx, 3f);
         }
     }
 }

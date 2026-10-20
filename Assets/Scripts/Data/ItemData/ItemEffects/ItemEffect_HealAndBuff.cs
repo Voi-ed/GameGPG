@@ -12,6 +12,7 @@ public class ItemEffect_HealAndBuff : ItemEffect_DataSO
     [SerializeField] private BuffEffectData[] buffsToApply;
     [SerializeField] private float duration = 60f;
     [SerializeField] private string source = Guid.NewGuid().ToString();
+    [SerializeField] private GameObject buffVfxPrefab;
 
     public override bool CanBeUsed(Player player)
     {
@@ -41,6 +42,9 @@ public class ItemEffect_HealAndBuff : ItemEffect_DataSO
 
         if (buffsToApply != null && buffsToApply.Length > 0)
         {
+            if (buffVfxPrefab != null)
+                player.vfx?.CreateEffectOf(buffVfxPrefab, player.transform, true);
+
             player.stats.ApplyBuff(buffsToApply, duration, source);
         }
 

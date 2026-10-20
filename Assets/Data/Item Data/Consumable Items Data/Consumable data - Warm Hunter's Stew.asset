@@ -19,7 +19,13 @@ MonoBehaviour:
   itemRarity: 280
   dropChance: 72.0
   maxDropChance: 72.0
-  craftRecipe: []
+  craftRecipe:
+  - itemData: {fileID: 11400000, guid: 25e8fb1711e1395409be395f0e331b1a, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f01, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
   itemName: Súp Thợ Săn Ấm Áp
   itemIcon: {fileID: 1032616671, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 4

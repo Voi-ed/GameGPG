@@ -5,15 +5,24 @@ using UnityEngine;
 public class ItemEffect_Heal : ItemEffect_DataSO
 {
     [SerializeField] private float healPercent = .1f;
+    [SerializeField] private GameObject healVfxPrefab;
 
     public override void ExecuteEffect()
     {
         Player player = FindFirstObjectByType<Player>();
+        if (player == null) return;
 
         float healAmount = player.stats.GetMaxHealth() * healPercent;
 
         player.health.IncreaseHealth(healAmount);
-        player.vfx?.PlayHealVfx();
+        if (healVfxPrefab != null)
+        {
+            player.vfx?.CreateEffectOf(healVfxPrefab, player.transform, true);
+        }
+        else
+        {
+            player.vfx?.PlayHealVfx();
+        }
     }
 }
 

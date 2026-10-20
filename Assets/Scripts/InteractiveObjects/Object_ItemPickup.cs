@@ -10,6 +10,24 @@ public class Object_ItemPickup : MonoBehaviour
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D col;
+
+    private bool hasLanded = false;
+    private float timeSinceSpawn = 0f;
+
+    private void Awake()
+    {
+        if (sr == null) sr = GetComponent<SpriteRenderer>();
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
+        if (col == null) col = GetComponent<Collider2D>();
+
+        if (rb != null)
+        {
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+            if (rb.mass < 1f) rb.mass = 1f;
+        }
+    }
+
     private void OnValidate()
     {
         if (itemData == null)
@@ -19,29 +37,107 @@ public class Object_ItemPickup : MonoBehaviour
         SetupVisuals();
     }
 
-
     public void SetupItem(ItemDataSO itemData)
     {
         this.itemData = itemData;
         SetupVisuals();
 
-        float xDropForce = Random.Range(-dropForce.x, dropForce.x);
-        rb.linearVelocity = new Vector2(xDropForce, dropForce.y);
-        col.isTrigger = false;
-    }
+        // Bỏ qua va chạm giữa các item drop xung quanh để không bị lực nén ép văng xuyên sàn
+        if (col != null)
+        {
+            Collider2D[] nearby = Physics2D.OverlapCircleAll(transform.position, 2f);
+            foreach (var other in nearby)
+            {
+                if (other != null && other != col && other.GetComponent<Object_ItemPickup>() != null)
+                {
+                    Physics2D.IgnoreCollision(col, other, true);
+                }
+            }
+        }
 
+        hasLanded = false;
+        timeSinceSpawn = 0f;
+        col.isTrigger = false;
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            float xDropForce = Random.Range(-dropForce.x, dropForce.x);
+            rb.linearVelocity = new Vector2(xDropForce, dropForce.y);
+        }
+    }
 
     private void SetupVisuals()
     {
-        sr.sprite = itemData.itemIcon;
-        gameObject.name = "Object_ItemPickup - " + itemData.itemName;
+        if (sr != null && itemData != null)
+            sr.sprite = itemData.itemIcon;
+        if (itemData != null)
+            gameObject.name = "Object_ItemPickup - " + itemData.itemName;
+    }
+
+    private void Update()
+    {
+        if (hasLanded) return;
+
+        timeSinceSpawn += Time.deltaTime;
+
+        // Cơ chế bảo vệ: Raycast kiểm tra mặt sàn ngay dưới chân khi item đang rơi xuống
+        if (timeSinceSpawn > 0.2f && rb != null && rb.linearVelocity.y <= 0.1f)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.45f, LayerMask.GetMask("Ground"));
+            if (hit.collider != null)
+            {
+                LandOnGround(hit.point.y + (col != null ? col.bounds.extents.y : 0.35f));
+            }
+        }
+
+        // Phòng trường hợp kẹt hoặc rơi quá lâu
+        if (timeSinceSpawn > 4f)
+        {
+            LandOnGround(transform.position.y);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") && col.isTrigger == false)
+        // Bỏ qua va chạm giữa các item pickup
+        if (collision.gameObject.GetComponent<Object_ItemPickup>() != null)
         {
+            Physics2D.IgnoreCollision(col, collision.collider, true);
+            return;
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") && !hasLanded)
+        {
+            // Chỉ tiếp đất và freeze khi tiếp xúc với mặt trên sàn (normal.y > 0.3f)
+            // Tránh freeze khi đụng mép dưới hoặc trần sàn đá
+            bool landedFromAbove = false;
+            for (int i = 0; i < collision.contactCount; i++)
+            {
+                if (collision.GetContact(i).normal.y > 0.3f)
+                {
+                    landedFromAbove = true;
+                    break;
+                }
+            }
+
+            if (landedFromAbove || (rb != null && rb.linearVelocity.y <= 0.2f))
+            {
+                LandOnGround(transform.position.y);
+            }
+        }
+    }
+
+    private void LandOnGround(float targetY)
+    {
+        if (hasLanded) return;
+        hasLanded = true;
+
+        transform.position = new Vector3(transform.position.x, targetY, transform.position.z);
+        if (col != null)
             col.isTrigger = true;
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
@@ -70,3 +166,4 @@ public class Object_ItemPickup : MonoBehaviour
         }
     }
 }
+

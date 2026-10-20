@@ -22,6 +22,26 @@ public partial class GameManager : MonoBehaviour, ISaveable
         private set => _instance = value;
     }
 
+    private VFX_PoolManager _vfxPool;
+    public VFX_PoolManager vfxPool
+    {
+        get
+        {
+            if (_vfxPool == null)
+            {
+                _vfxPool = GetComponentInChildren<VFX_PoolManager>();
+                if (_vfxPool == null)
+                {
+                    GameObject poolObj = new GameObject("VFX_PoolManager");
+                    poolObj.transform.SetParent(transform);
+                    _vfxPool = poolObj.AddComponent<VFX_PoolManager>();
+                }
+            }
+            return _vfxPool;
+        }
+        private set => _vfxPool = value;
+    }
+
     private Vector3 lastPlayerPosition;
     private string lastScenePlayed;
     private bool dataLoaded;
@@ -37,6 +57,12 @@ public partial class GameManager : MonoBehaviour, ISaveable
 
         _instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // Đảm bảo vfxPool luôn được khởi tạo sẵn khi GameManager thức dậy
+        if (_vfxPool == null)
+        {
+            _ = vfxPool;
+        }
     }
 
     public void ContinuePlay()

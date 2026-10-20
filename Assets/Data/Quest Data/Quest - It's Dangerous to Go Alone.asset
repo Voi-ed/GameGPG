@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: Quest - It's Dangerous to Go Alone
   m_EditorClassIdentifier: 
   questSaveId: b5daaee0fa2ebbf43b3da3de6a038461
-  questName: It's Dangerous to Go Alone
-  description: 'Since you''re just startin'' your adventure, you''ll need somethin''
-    to train with. I bought a sword off some wierd fella - looked half mad, but the
-    blade was decent. Wait, where''d I put it? Agh, right! Forgot it at Joe''s. Go
-    talk to the blacksmith - he''s holdin'' onto weapon worthy of a hero like you. '
-  questGoal: '- Talk to Blacksmith Joe'
+  questName: Đi Một Mình Thật Nguy Hiểm
+  description: "Cậu vừa mới bắt đầu chuyến phiêu lưu thì phải có vũ khí tử tế phòng thân chứ. Ta vừa mua được một thanh kiếm từ một gã kỳ dị - trông gã như điên khùng nhưng lưỡi kiếm thì bén ngót. Ơ mà ta để nó ở đâu nhỉ? À phải rồi! Bỏ quên bên chỗ Joe rồi. Cậu qua nói chuyện với lão thợ rèn Joe để lấy thanh kiếm xứng đáng với một vị anh hùng nhé."
+  questGoal: "- Nói chuyện với thợ rèn Joe"
   questTargetId: blacksmith_joe
   requiredAmount: 1
   rewardType: 0

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDescription: Hồi phục 60% Máu tối đa ngay lập tức.
   healPercent: 0.6
+  healVfxPrefab: {fileID: 100001, guid: 843943f402a244649690144a77a0ee2b, type: 3}

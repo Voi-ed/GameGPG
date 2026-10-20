@@ -19,4 +19,4 @@ MonoBehaviour:
   tier2DamageBonus: 50
   tier2AttackSpeedBonus: 0.3
   berserkAuraPrefab: {fileID: 0}
-  fireHitPrefab: {fileID: 4021103657954561961, guid: 65de1f9b1c5a4e11a2dae36258aa601b, type: 3}
+  fireHitPrefab: {fileID: 4553287630450876385, guid: c2eebdf065f14f78ac556c04574e3c03, type: 3}

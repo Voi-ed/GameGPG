@@ -20,3 +20,4 @@ MonoBehaviour:
     value: 0.15
   duration: 25
   source: ThunderFlaskBuff
+  buffVfxPrefab: {fileID: 100001, guid: 43b2884ef349454abde15417ada93e28, type: 3}

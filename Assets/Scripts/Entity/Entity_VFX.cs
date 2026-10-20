@@ -74,7 +74,18 @@ public class Entity_VFX : MonoBehaviour
         Vector3 position = entity.anim.transform.position;
         float scale = entity.anim.transform.localScale.x;
 
-        GameObject imageEcho = Instantiate(imageEchoPrefab, position, transform.rotation);
+        GameObject imageEcho = null;
+        if (GameManager.instance != null && GameManager.instance.vfxPool != null)
+        {
+            imageEcho = GameManager.instance.vfxPool.Get(imageEchoPrefab, position, transform.rotation);
+        }
+        else
+        {
+            imageEcho = Instantiate(imageEchoPrefab, position, transform.rotation);
+        }
+
+        if (imageEcho == null)
+            return;
 
         imageEcho.transform.localScale = new Vector3(scale, scale, scale);  
         SpriteRenderer echoSr = imageEcho.GetComponentInChildren<SpriteRenderer>();
@@ -131,10 +142,25 @@ public class Entity_VFX : MonoBehaviour
     public void CreateOnHitVFX(Transform target,bool isCrit,ElementType element)
     {
         GameObject hitPrefab = isCrit ? critHitVfx : hitVfx;
-        GameObject vfx = Instantiate(hitPrefab, target.position, Quaternion.identity);
+        if (hitPrefab == null || target == null)
+            return;
+
+        GameObject vfx = null;
+        if (GameManager.instance != null && GameManager.instance.vfxPool != null)
+        {
+            vfx = GameManager.instance.vfxPool.Get(hitPrefab, target.position, Quaternion.identity);
+        }
+        else
+        {
+            vfx = Instantiate(hitPrefab, target.position, Quaternion.identity);
+        }
+
+        if (vfx == null)
+            return;
+
         //vfx.GetComponentInChildren<SpriteRenderer>().color = GetElementColor(element);
 
-        if (entity.facingDir == -1 && isCrit)
+        if (entity != null && entity.facingDir == -1 && isCrit)
             vfx.transform.Rotate(0, 180, 0);
     }
 

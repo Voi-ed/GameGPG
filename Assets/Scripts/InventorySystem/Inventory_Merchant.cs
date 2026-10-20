@@ -64,6 +64,9 @@ public class Inventory_Merchant : Inventory_Base
     public void FillShopList()
     {
         itemList.Clear();
+        if (shopData == null || shopData.itemList == null)
+            return;
+
         List<Inventory_Item> possibleItems = new List<Inventory_Item>();
 
         foreach (var itemData in shopData.itemList)

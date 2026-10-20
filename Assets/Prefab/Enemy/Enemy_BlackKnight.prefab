@@ -839,6 +839,7 @@ MonoBehaviour:
   burnVfx: {r: 0.98039216, g: 0.27058825, b: 0.14509805, a: 1}
   shockVfx: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackAlert: {fileID: 2042248363782785010}
+  stunVfxPrefab: {fileID: 5659291355382750488, guid: 5dd8b49ba4534a35a9f658476d8faa1b, type: 3}
 --- !u!114 &8063310732481831893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,9 +945,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDropPrefab: {fileID: 2736169520582809571, guid: 3db9e2cc8d65a6a4a867ca2a5440825e, type: 3}
-  dropData: {fileID: 11400000, guid: 53202fea4f3bc0a40829e9c2d34d4477, type: 2}
-  maxRarityAmount: 1200
-  maxItemsToDrop: 0
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0009, type: 2}
+  maxRarityAmount: 1500
+  maxItemsToDrop: 3
 --- !u!114 &8332700108315399327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,7 +1004,7 @@ MonoBehaviour:
   groundCheck: {fileID: 3002934570628671167}
   primaryWallCheck: {fileID: 1895423994906110646}
   secondaryWallCheck: {fileID: 0}
-  questTargetId: 
+  questTargetId: enemy_black_knight
   battleMoveSpeed: 3
   attackDistance: 2
   attackCooldown: 0.5

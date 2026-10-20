@@ -47,8 +47,21 @@ public class Enemy : Entity
     public Transform player { get; private set; }
     public float activeSlowMultiplier { get; private set; } = 1;
 
-    public float GetMoveSpeed() => moveSpeed * activeSlowMultiplier;
-    public float GetBattleMoveSpeed() => battleMoveSpeed * activeSlowMultiplier;
+    [Header("Randomized Offset Details")]
+    public float attackDistanceOffset { get; private set; }
+    public float moveSpeedVariation { get; private set; } = 1f;
+    public float attackSpeedVariation { get; private set; } = 1f;
+    public float attackCooldownVariation { get; private set; } = 1f;
+
+    public float GetMoveSpeed() => moveSpeed * activeSlowMultiplier * moveSpeedVariation;
+    public float GetBattleMoveSpeed() => battleMoveSpeed * activeSlowMultiplier * moveSpeedVariation;
+    public float GetAttackDistance() => Mathf.Max(0.8f, attackDistance + attackDistanceOffset);
+    public float GetAttackCooldown() => Mathf.Max(0.2f, (attackCooldown * attackCooldownVariation) + Random.Range(-0.06f, 0.1f));
+    public float GetAttackSpeedMultiplier()
+    {
+        float baseSpeed = (stats != null && stats.offense != null) ? stats.offense.attackSpeed.GetValue() : 1f;
+        return baseSpeed * attackSpeedVariation;
+    }
 
     public bool isTimeFrozen { get; private set; }
     private float preFreezeAnimSpeed = 1f;
@@ -61,6 +74,24 @@ public class Enemy : Entity
         stats = GetComponent<Entity_Stats>();
         combat = GetComponent<Entity_Combat>();
         vfx = GetComponent<Entity_VFX>();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+
+        // Độ lệch cự ly, tốc độ di chuyển và tốc độ ra đòn ngẫu nhiên nhẹ giữa các con quái
+        attackDistanceOffset = Random.Range(-0.3f, 0.45f);
+        moveSpeedVariation = Random.Range(0.92f, 1.08f);
+        attackSpeedVariation = Random.Range(0.88f, 1.15f);
+        attackCooldownVariation = Random.Range(0.85f, 1.25f);
+
+        // Đảm bảo độ sâu hình ảnh hiển thị trước sau không bị chập nháy
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.sortingOrder += Mathf.Abs(GetInstanceID()) % 5;
+        }
     }
 
     protected override void Update()

@@ -45,14 +45,14 @@ public class ItemEffect_FlameSlash : ItemEffect_DataSO
             GameObject prefab = GetVfxPrefab();
             if (prefab != null)
             {
-                GameObject vfx = Instantiate(prefab, target.position, Quaternion.identity);
+                GameObject vfx = InstantiateVfx(prefab, target.position, Quaternion.identity);
                 Renderer[] renderers = vfx.GetComponentsInChildren<Renderer>(true);
                 foreach (var r in renderers)
                 {
                     r.sortingLayerName = "Default";
                     r.sortingOrder = 50;
                 }
-                Destroy(vfx, 1.5f);
+                DestroyVfx(vfx, 1.5f);
             }
         }
     }

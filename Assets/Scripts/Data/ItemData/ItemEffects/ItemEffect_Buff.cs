@@ -8,6 +8,7 @@ public class ItemEffect_Buff : ItemEffect_DataSO
     [SerializeField] private BuffEffectData[] buffsToApply;
     [SerializeField] private float duration;
     [SerializeField] private string source = Guid.NewGuid().ToString();
+    [SerializeField] private GameObject buffVfxPrefab;
 
     
     public override bool CanBeUsed(Player player)
@@ -27,7 +28,12 @@ public class ItemEffect_Buff : ItemEffect_DataSO
 
     public override void ExecuteEffect()
     {
-        player.stats.ApplyBuff(buffsToApply,duration,source);
+        if (buffVfxPrefab != null && player != null)
+        {
+            player.vfx?.CreateEffectOf(buffVfxPrefab, player.transform, true);
+        }
+
+        player.stats.ApplyBuff(buffsToApply, duration, source);
         player = null;
     }
 }

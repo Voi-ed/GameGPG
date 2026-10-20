@@ -47,11 +47,17 @@ TagManager:
   - name: Chest
     uniqueID: 551191945
     locked: 0
+  - name: Vfx_Back
+    uniqueID: 342172419
+    locked: 0
   - name: Enemy
     uniqueID: 3500169307
     locked: 0
   - name: Player
     uniqueID: 1831899741
+    locked: 0
+  - name: Vfx_Front
+    uniqueID: 3912837199
     locked: 0
   - name: Default
     uniqueID: 0

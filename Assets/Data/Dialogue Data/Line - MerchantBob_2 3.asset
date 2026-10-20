@@ -16,7 +16,7 @@ MonoBehaviour:
   speaker: {fileID: 11400000, guid: ca34c7dbd73516c4f88685ff4da95a71, type: 2}
   textLine:
   - 
-  playerChoiceAnswer: I have to go
+  playerChoiceAnswer: "Tôi phải đi rồi. Hẹn gặp lại sau!"
   choiceLines: []
-  actionLine: Sure, lad!
+  actionLine: "Đi đường cẩn thận nhé, chàng trai!"
   actionType: 6

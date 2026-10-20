@@ -19,7 +19,16 @@ MonoBehaviour:
   itemRarity: 600
   dropChance: 65
   maxDropChance: 65
-  craftRecipe: []
+  craftRecipe:
+  - itemData: {fileID: 11400000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f02, type: 2}
+    stackSize: 3
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f06, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: b1a2c3d4e5f60718293a4b5c6d7e8f02, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
   itemName: Hỏa Long Kiếm
   itemIcon: {fileID: -1348553608, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 1

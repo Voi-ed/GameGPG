@@ -60,8 +60,8 @@ public class ItemEffect_SetInfernoOverlord : ItemEffect_DataSO
             GameObject burstPrefab = GetImpactPrefab();
             if (burstPrefab != null)
             {
-                GameObject burst = Instantiate(burstPrefab, center, Quaternion.identity);
-                Destroy(burst, 2f);
+                GameObject burst = InstantiateVfx(burstPrefab, center, Quaternion.identity);
+                DestroyVfx(burst, 2f);
             }
 
             // 2. Deal Area Fire Damage

@@ -5,6 +5,7 @@ public class Entity_Combat : MonoBehaviour
 {
     public event Action<float> OnDoingPhysicalDamage;
     public event Action<AttackData, Transform> OnDoingDamage;
+    public event Action OnAttackTriggered;
 
     private Entity_SFX sfx;
     private Entity_VFX vfx;
@@ -28,6 +29,7 @@ public class Entity_Combat : MonoBehaviour
 
     public void PerformAttack()
     {
+        OnAttackTriggered?.Invoke();
         bool targetGotHit = false;
 
         foreach (var target in GetDetectedColliders(whatIsTarget))

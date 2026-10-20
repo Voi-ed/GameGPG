@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61094b76dde8cd4b9c1811b7318e5f4, type: 3}
+  m_Name: Quest - Knight Cref Duel
+  m_EditorClassIdentifier: 
+  questSaveId: fa93c0c23e0c40689bc902e7a0b43b11
+  questType: 0
+  questName: "Thử Thách Hiệp Sĩ Cref"
+  description: "Knight Cref kiêu ngạo mang khiên giáp nặng nề đang chặn đường độc đạo. Hãy đánh bại 2 tên hiệp sĩ này để chứng minh bản lĩnh của cậu!"
+  questGoal: "- Tiêu diệt Knight Cref : "
+  questTargetId: enemy_knight_cref
+  requiredAmount: 2
+  itemToDeliver: {fileID: 0}
+  rewardType: 2
+  rewardItems:
+  - itemData: {fileID: 11400000, guid: f1a2b3c4d5e6f708192a3b4c5d6e7f02, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f02, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: f1a2b3c4d5e6f708192a3b4c5d6e7f06, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}

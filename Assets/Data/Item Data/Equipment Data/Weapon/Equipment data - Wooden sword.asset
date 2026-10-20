@@ -22,9 +22,6 @@ MonoBehaviour:
   - itemData: {fileID: 11400000, guid: ba4c8a3adc5a565468bf55de6e2681b5, type: 2}
     stackSize: 3
     itemEffect: {fileID: 0}
-  - itemData: {fileID: 11400000, guid: 8dfbb5bea1f3d45449459c5a23d76b84, type: 2}
-    stackSize: 2
-    itemEffect: {fileID: 0}
   itemName: Kiếm Gỗ
   itemIcon: {fileID: -2048434906, guid: 7ae0115109b4a6f42a4f7ad59397d09b, type: 3}
   itemType: 1

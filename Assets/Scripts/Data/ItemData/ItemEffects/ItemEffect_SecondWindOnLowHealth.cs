@@ -55,8 +55,8 @@ public class ItemEffect_SecondWindOnLowHealth : ItemEffect_DataSO
             // Optional fallback prefab if explicitly configured
             if (secondWindVfxPrefab != null)
             {
-                GameObject vfx = Instantiate(secondWindVfxPrefab, player.transform.position, Quaternion.identity);
-                Destroy(vfx, 1.5f);
+                GameObject vfx = InstantiateVfx(secondWindVfxPrefab, player.transform.position, Quaternion.identity);
+                DestroyVfx(vfx, 1.5f);
             }
         }
     }

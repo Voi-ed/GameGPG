@@ -39,8 +39,8 @@ public class ItemEffect_PhantomDash : ItemEffect_DataSO
         GameObject prefab = GetVfxPrefab();
         if (prefab != null)
         {
-            GameObject vfx = Instantiate(prefab, player.transform.position, Quaternion.identity);
-            Destroy(vfx, 2f);
+            GameObject vfx = InstantiateVfx(prefab, player.transform.position, Quaternion.identity);
+            DestroyVfx(vfx, 2f);
         }
     }
 }
