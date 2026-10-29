@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -86,6 +86,10 @@ public class UI_Dialogue : MonoBehaviour
             case DialogueActionType.OpenCraft:
                 ui.SwitchToInGameUI();
                 ui.OpenCraftUI(true);
+                break;
+            case DialogueActionType.OpenBossChallenge:
+                ui.SwitchToInGameUI();
+                ui.OpenBossChallengeUI(true);
                 break;
             case DialogueActionType.CloseDialogue:
                 ui.SwitchToInGameUI();

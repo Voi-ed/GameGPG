@@ -7,6 +7,7 @@ public class Entity_Health : MonoBehaviour, IDamageable
     public event Action OnTakingDamage;
     public event Action OnHealthUpdate;
     public event Action OnEvasion;
+    public event Action OnDeath;
 
 
     private Slider healthBar;
@@ -68,10 +69,11 @@ public class Entity_Health : MonoBehaviour, IDamageable
         {
             Debug.Log($"{gameObject.name} evaded the attack!");
             OnEvasion?.Invoke();
+            DamageTextManager.instance?.ShowMissText(GetDamageTextPosition());
             return false;
         }
 
-        Entity_Stats attackerStats = damageDealer.GetComponent<Entity_Stats>();
+        Entity_Stats attackerStats = damageDealer != null ? damageDealer.GetComponent<Entity_Stats>() : null;
         float armorReduction = attackerStats != null ? attackerStats.GetArmorReduction() : 0;
         float mitigation = entityStats != null ? entityStats.GetArmorMitigation(armorReduction) : 0;
         float resistance = entityStats != null ? entityStats.GetElementalResistance(element) : 0;
@@ -79,11 +81,14 @@ public class Entity_Health : MonoBehaviour, IDamageable
         float physicalDamageTaken = damage * (1 - mitigation);
         float elementalDamageTaken = elementalDamage * (1 - resistance);
 
-        TakeKnockback(damageDealer, physicalDamageTaken);
+        if (damageDealer != null)
+            TakeKnockback(damageDealer, physicalDamageTaken);
         ReduceHealth(physicalDamageTaken + elementalDamageTaken);
 
         lastDamageTaken = physicalDamageTaken + elementalDamageTaken;
 
+        bool isCrit = attackerStats != null && attackerStats.ConsumeLastHitCrit();
+        DamageTextManager.instance?.ShowDamageText(GetDamageTextPosition(), lastDamageTaken, isCrit, element);
 
         OnTakingDamage?.Invoke();
         return true;
@@ -93,7 +98,17 @@ public class Entity_Health : MonoBehaviour, IDamageable
     {
         lastDamageTaken = totalDamage;
         entityVfx?.PlayOnDamageVfx();
+        DamageTextManager.instance?.ShowDamageText(GetDamageTextPosition(), totalDamage, false, ElementType.None);
         OnTakingDamage?.Invoke();
+    }
+
+    public virtual Vector3 GetDamageTextPosition()
+    {
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+            return new Vector3(col.bounds.center.x, col.bounds.max.y + 0.2f, 0);
+
+        return transform.position + Vector3.up * 1.5f;
     }
 
     public void SetCanTakeDamage(bool canTakeDamage) => this.canTakeDamage = canTakeDamage;
@@ -141,6 +156,7 @@ public class Entity_Health : MonoBehaviour, IDamageable
     protected virtual void Die()
     {
         isDead = true;
+        OnDeath?.Invoke();
         entity?.EntityDeath();
         dropManager?.DropItems();
     }
@@ -179,6 +195,9 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
     private void TakeKnockback(Transform damageDealer, float finalDamage)
     {
+        if (damageDealer == null)
+            return;
+
         Vector2 knockback = CalculateKnockback(finalDamage, damageDealer);
         float duration = CalculateDuration(finalDamage);
 

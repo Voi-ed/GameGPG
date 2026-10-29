@@ -17,7 +17,7 @@ MonoBehaviour:
   textLine:
   - "Phía trước là vùng đất bị tha hóa bởi bóng tối. Lũ Skeleton mang giáp xương cứng cáp, hãy dùng đòn chí mạng hoặc ma thuật để xuyên phá chúng!"
   - "Hãy quan sát kỹ nhịp tấn công của chúng. Đỡ đòn hoặc lướt né đúng thời điểm là chìa khóa để sống sót!"
-  playerChoiceAnswer: "Kể cho tôi về lũ quái vật bên ngoài tiền đồn."
+  playerChoiceAnswer: "Tiêu diệt Boss (Đấu Trường)."
   choiceLines: []
-  actionLine: 
-  actionType: 0
+  actionLine: "Ngươi muốn bước vào Đấu Trường để tiêu diệt lũ Boss sao? Hãy hạ gục từng con một, mở đường tới Đại Ma Vương!"
+  actionType: 7

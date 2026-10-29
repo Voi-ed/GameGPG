@@ -307,6 +307,64 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 3988990853174730298, guid: 4823f54d638fa49d0b4e6360ce6c2503, type: 3}
   m_PrefabInstance: {fileID: 249755970}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &300233370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300233372}
+  - component: {fileID: 300233371}
+  m_Layer: 0
+  m_Name: SpawnPoint_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &300233371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300233370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0aff507c525439b980e4d84b7bfa7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnStart: 1
+  respawnCooldown: 20
+  minPlayerDistance: 8
+  requireOffscreen: 0
+  randomizeOnRespawn: 1
+  initialFacing: 0
+  customEnemyPrefab: {fileID: 0}
+  spawnVfxPrefab: {fileID: 0}
+  samuraiZippPrefab: {fileID: 5334568574400740619, guid: 26e489fefe45d41668a89170879fc124, type: 3}
+  samuraiZippWeight: 45
+  sicklezeepPrefab: {fileID: 8322730007406095408, guid: f49abb652fc0c42b5bc030e169b74d73, type: 3}
+  sicklezeepWeight: 35
+  skeletonPrefab: {fileID: 6409625887082432548, guid: bf4305a5f17a41745ac68d0ebde48a14, type: 3}
+  skeletonWeight: 20
+--- !u!4 &300233372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300233370}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.66, y: 2.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1632374816}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &474220767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -973,6 +1031,232 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f97e63da1f514e1285785fe375c2d16, type: 3}
+--- !u!1 &1632374814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1632374816}
+  - component: {fileID: 1632374815}
+  m_Layer: 0
+  m_Name: EnemySpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1632374815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632374814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39404e35a4ba44559b16f4ed0fee73f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 2059658949}
+  - {fileID: 1849507726}
+  - {fileID: 300233371}
+  showGizmoLinks: 1
+  gizmoLinkColor: {r: 0.2, g: 0.8, b: 1, a: 0.4}
+--- !u!4 &1632374816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632374814}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2059658950}
+  - {fileID: 1849507727}
+  - {fileID: 300233372}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1849507725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849507727}
+  - component: {fileID: 1849507726}
+  m_Layer: 0
+  m_Name: SpawnPoint_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1849507726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849507725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0aff507c525439b980e4d84b7bfa7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnStart: 1
+  respawnCooldown: 20
+  minPlayerDistance: 8
+  requireOffscreen: 0
+  randomizeOnRespawn: 1
+  initialFacing: 0
+  customEnemyPrefab: {fileID: 0}
+  spawnVfxPrefab: {fileID: 0}
+  samuraiZippPrefab: {fileID: 5334568574400740619, guid: 26e489fefe45d41668a89170879fc124, type: 3}
+  samuraiZippWeight: 45
+  sicklezeepPrefab: {fileID: 8322730007406095408, guid: f49abb652fc0c42b5bc030e169b74d73, type: 3}
+  sicklezeepWeight: 35
+  skeletonPrefab: {fileID: 6409625887082432548, guid: bf4305a5f17a41745ac68d0ebde48a14, type: 3}
+  skeletonWeight: 20
+--- !u!4 &1849507727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849507725}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.94, y: 1.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1632374816}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1996944538
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.088281
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.7545197
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.025889471
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785907874766071641, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_Name
+      value: ___ GAME MANAGER ___
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+--- !u!1 &2059658948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2059658950}
+  - component: {fileID: 2059658949}
+  m_Layer: 0
+  m_Name: SpawnPoint_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2059658949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059658948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0aff507c525439b980e4d84b7bfa7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnStart: 1
+  respawnCooldown: 20
+  minPlayerDistance: 8
+  requireOffscreen: 0
+  randomizeOnRespawn: 1
+  initialFacing: 0
+  customEnemyPrefab: {fileID: 0}
+  spawnVfxPrefab: {fileID: 0}
+  samuraiZippPrefab: {fileID: 5334568574400740619, guid: 26e489fefe45d41668a89170879fc124, type: 3}
+  samuraiZippWeight: 45
+  sicklezeepPrefab: {fileID: 8322730007406095408, guid: f49abb652fc0c42b5bc030e169b74d73, type: 3}
+  sicklezeepWeight: 35
+  skeletonPrefab: {fileID: 6409625887082432548, guid: bf4305a5f17a41745ac68d0ebde48a14, type: 3}
+  skeletonWeight: 20
+--- !u!4 &2059658950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059658948}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.34, y: 0.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1632374816}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -986,3 +1270,5 @@ SceneRoots:
   - {fileID: 710330158}
   - {fileID: 1004533335}
   - {fileID: 249755970}
+  - {fileID: 1996944538}
+  - {fileID: 1632374816}

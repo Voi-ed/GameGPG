@@ -42,7 +42,9 @@ public class ItemEffect_PredatorOnKill : ItemEffect_DataSO
         {
             new BuffEffectData { type = StatType.Damage, value = damageBonus }
         };
-        player.stats.ApplyBuff(buffs, buffDuration, PREDATOR_SOURCE);
+        Sprite icon = sourceItem != null ? sourceItem.itemIcon : null;
+        string buffName = sourceItem != null ? sourceItem.itemName : "Kẻ Săn Mồi";
+        player.stats.ApplyBuff(buffs, buffDuration, PREDATOR_SOURCE, icon, buffName, effectDescription);
 
         GameObject prefab = GetVfxPrefab();
         if (prefab != null)

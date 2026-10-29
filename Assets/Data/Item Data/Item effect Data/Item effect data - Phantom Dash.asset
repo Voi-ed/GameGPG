@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8007, type: 3}
   m_Name: Item effect data - Phantom Dash
   m_EditorClassIdentifier: 
-  effectDescription: Khi kết thúc cú Lướt (Dash), triệu hồi một bóng ma phân thân chém địch tại điểm đến (Hồi chiêu 3s).
-  cooldown: 3
+  effectDescription: Khi kết thúc cú Lướt (Dash), tàng hình trong 1.5 giây để dễ dàng vòng ra sau lưng địch. Đòn tấn công từ tàng hình gây thêm 35% sát thương (Hồi chiêu 4s).
+  stealthDuration: 1.5
+  cooldown: 4
+  ambushBonusPercent: 0.35
   phantomTrailVfxPrefab: {fileID: 6710139492206580332, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}

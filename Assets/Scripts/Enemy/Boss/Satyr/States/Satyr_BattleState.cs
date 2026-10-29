@@ -25,6 +25,9 @@ public class Satyr_BattleState : Enemy_BattleState
         stateTimer -= Time.deltaTime;
         UpdateAnimationParameters();
 
+        if (enemy.PlayerDetected())
+            UpdateTargetIfNeeded();
+
         if (player == null)
         {
             player = satyr.GetPlayerTarget();

@@ -15,6 +15,8 @@ public class Player_DashState : PlayerState
 
         skillManager.dash.OnStartEffect();
         player.vfx.DoImageEchoEffect(player.dashDuration);
+        if (AudioManager.instance != null)
+            AudioManager.instance.PlayGlobalSFX("player_dash");
 
         dashDir = player.moveInput.x != 0 ? ((int)player.moveInput.x) : player.facingDir;
         stateTimer = player.dashDuration;

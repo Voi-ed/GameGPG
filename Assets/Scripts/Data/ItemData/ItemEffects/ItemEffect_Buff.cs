@@ -28,12 +28,24 @@ public class ItemEffect_Buff : ItemEffect_DataSO
 
     public override void ExecuteEffect()
     {
+        if (player == null)
+            player = Player.instance != null ? Player.instance : UnityEngine.Object.FindFirstObjectByType<Player>();
+
         if (buffVfxPrefab != null && player != null)
         {
             player.vfx?.CreateEffectOf(buffVfxPrefab, player.transform, true);
         }
 
-        player.stats.ApplyBuff(buffsToApply, duration, source);
+        if (player != null && player.stats != null)
+        {
+            Sprite icon = sourceItem != null ? sourceItem.itemIcon : null;
+            string buffName = sourceItem != null ? sourceItem.itemName : source;
+            player.stats.ApplyBuff(buffsToApply, duration, source, icon, buffName, effectDescription);
+
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlayGlobalSFX("buff_activate");
+        }
+
         player = null;
     }
 }

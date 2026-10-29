@@ -239,12 +239,12 @@ public class Enemy : Entity
 
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         Player.OnPlayerDeath += HandlePlayerDeath;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
        Player.OnPlayerDeath -= HandlePlayerDeath;  
     }

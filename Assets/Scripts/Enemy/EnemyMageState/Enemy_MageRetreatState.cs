@@ -15,8 +15,8 @@ public class Enemy_MageRetreatState : EnemyState
     {
         base.Enter();
 
-        if (player == null)
-            player = enemy.GetPlayerReference();
+        if (player == null && enemyMage != null)
+            player = enemyMage.GetPlayerTarget();
 
         startPosition = enemy.transform.position;
 
@@ -30,22 +30,26 @@ public class Enemy_MageRetreatState : EnemyState
     {
         base.Update();
 
-        bool rechedMaxDistance = Vector2.Distance(enemy.transform.position, startPosition) > enemyMage.retreatMaxDistance;
+        bool reachedMaxDistance = Vector2.Distance(enemy.transform.position, startPosition) > enemyMage.retreatMaxDistance;
 
-        if (rechedMaxDistance || enemyMage.CantMoveBackwards())
+        if (reachedMaxDistance || enemyMage.CantMoveBackwards())
             stateMachine.ChangeState(enemyMage.mageSpellCastState);
     }
+
     public override void Exit()
     {
         base.Exit();
         enemy.vfx.StopImageEchoEffect();
-        enemy.MakeUntargetable(false);
+        enemy.MakeUntargetable(true);
     }
 
     protected int DirectionToPlayer()
     {
+        if (player == null && enemyMage != null)
+            player = enemyMage.GetPlayerTarget();
+
         if (player == null)
-            return 0;
+            return enemy.facingDir;
 
         return player.position.x > enemy.transform.position.x ? 1 : -1;
     }

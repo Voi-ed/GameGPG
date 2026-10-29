@@ -6,6 +6,7 @@ public class Enemy_BattleState : EnemyState
     protected Transform lastTarget;
     protected float lastTimeWasInBattle;
     protected float lastTimeAttacked = float.NegativeInfinity;
+    private static float lastRoarTime = -10f;
 
     public Enemy_BattleState(Enemy enemy, StateMachine stateMachine, string animBoolName) : base(enemy, stateMachine, animBoolName)
     {
@@ -19,6 +20,16 @@ public class Enemy_BattleState : EnemyState
 
         if (player == null)
             player = enemy.GetPlayerReference();
+
+        if (Time.time - lastRoarTime > 3.0f && Random.value < 0.7f && AudioManager.instance != null)
+        {
+            lastRoarTime = Time.time;
+            AudioSource source = enemy.GetComponentInChildren<AudioSource>();
+            if (source != null)
+                AudioManager.instance.PlaySFX("monster_roar", source, 15f);
+            else
+                AudioManager.instance.PlayGlobalSFX("monster_roar");
+        }
 
         if (ShouldRetreat())
         {
@@ -89,8 +100,8 @@ public class Enemy_BattleState : EnemyState
 
     protected bool BattleTimeIsOver() => Time.time > lastTimeWasInBattle + enemy.battleTimeDuration;
 
-    protected bool WithinAttackRange() => DistanceToPlayer() < enemy.GetAttackDistance();
-    protected bool ShouldRetreat() => DistanceToPlayer() < enemy.minRetreatDistance;
+    protected virtual bool WithinAttackRange() => DistanceToPlayer() < enemy.GetAttackDistance();
+    protected virtual bool ShouldRetreat() => DistanceToPlayer() < enemy.minRetreatDistance;
 
     protected float DistanceToPlayer()
     {

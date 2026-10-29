@@ -8,5 +8,6 @@ public enum DialogueActionType
     OpenQuest,
     GetQuestReward,
     PlayerMakeChoice,
-    CloseDialogue
+    CloseDialogue,
+    OpenBossChallenge
 }

@@ -173,15 +173,18 @@ public partial class GameManager
         if (type == RespawnType.Portal)
         {
             Object_Portal portal = Object_Portal.instnace;
-            if (portal == null)
-                return Vector3.zero;
+            if (portal != null)
+            {
+                Vector3 position = portal.GetPosition();
 
-            Vector3 position = portal.GetPosition();
+                portal.SetTrigger(false);
+                portal.DisableIfNeeded();
 
-            portal.SetTrigger(false);
-            portal.DisableIfNeeded();
+                return position;
+            }
 
-            return position;
+            // Fallback an toàn: nếu map đích chưa đặt Object_Portal thì tìm Checkpoint/Waypoint
+            return GetNewPlayerPosition(RespawnType.NonSpecific);
         }
 
         if (type == RespawnType.NonSpecific)

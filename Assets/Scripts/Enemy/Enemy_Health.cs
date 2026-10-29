@@ -4,12 +4,15 @@ public class Enemy_Health : Entity_Health
 {
     private Enemy enemy;
     private Player_QuestManager questManager;
+    private AudioSource audioSource;
+    private float lastHurtSoundTime;
 
     protected override void Start()
     {
         base.Start();
 
         enemy = GetComponent<Enemy>();
+        audioSource = GetComponentInChildren<AudioSource>();
         questManager = Player.instance.questManager;
     }
 
@@ -34,7 +37,7 @@ public class Enemy_Health : Entity_Health
             stasisReceiver.RecordDamage(physicalDamageTaken, elementalDamageTaken, element, damageDealer);
             NotifyTakingDamage(physicalDamageTaken + elementalDamageTaken);
 
-            if (damageDealer != null && damageDealer.GetComponent<Player>() != null)
+            if (damageDealer != null && (damageDealer.GetComponent<Player>() != null || damageDealer.GetComponent<SkillObject_TimeEcho>() != null))
                 enemy.TryEnterBattleState(damageDealer);
 
             return true;
@@ -45,7 +48,16 @@ public class Enemy_Health : Entity_Health
         if (wasHit == false)
             return false;
 
-        if (damageDealer != null && damageDealer.GetComponent<Player>() != null)
+        if (!isDead && Time.time - lastHurtSoundTime > 0.35f && AudioManager.instance != null)
+        {
+            lastHurtSoundTime = Time.time;
+            if (audioSource != null)
+                AudioManager.instance.PlaySFX("monster_hurt", audioSource, 15f);
+            else
+                AudioManager.instance.PlayGlobalSFX("monster_hurt");
+        }
+
+        if (damageDealer != null && (damageDealer.GetComponent<Player>() != null || damageDealer.GetComponent<SkillObject_TimeEcho>() != null))
             enemy.TryEnterBattleState(damageDealer);
 
         return true;    
@@ -54,6 +66,15 @@ public class Enemy_Health : Entity_Health
     protected override void Die()
     {
         base.Die();
+
+        if (AudioManager.instance != null)
+        {
+            var audioSource = GetComponentInChildren<AudioSource>();
+            if (audioSource != null)
+                AudioManager.instance.PlaySFX("monster_die", audioSource, 15f);
+            else
+                AudioManager.instance.PlayGlobalSFX("monster_die");
+        }
 
         questManager.AddProgress(enemy.questTargetId);
     }

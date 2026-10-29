@@ -728,6 +728,232 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 240a5ad2871f3d74e970724df7014414, type: 3}
+--- !u!1 &790149574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790149576}
+  - component: {fileID: 790149575}
+  m_Layer: 0
+  m_Name: EnemySpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &790149575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790149574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39404e35a4ba44559b16f4ed0fee73f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 1445432357}
+  - {fileID: 1042722476}
+  - {fileID: 1130426485}
+  showGizmoLinks: 1
+  gizmoLinkColor: {r: 0.2, g: 0.8, b: 1, a: 0.4}
+--- !u!4 &790149576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790149574}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1445432358}
+  - {fileID: 1042722477}
+  - {fileID: 1130426486}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &933240212
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.088281
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.7545197
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.025889471
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982682321474645809, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785907874766071641, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+      propertyPath: m_Name
+      value: ___ GAME MANAGER ___
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2f6af1b4f21a451e99cf5d7fe844a56, type: 3}
+--- !u!1 &1042722475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1042722477}
+  - component: {fileID: 1042722476}
+  m_Layer: 0
+  m_Name: SpawnPoint_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1042722476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042722475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c85a2616a4b475ba1daf28eda9eadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnStart: 1
+  respawnCooldown: 20
+  minPlayerDistance: 8
+  requireOffscreen: 0
+  randomizeOnRespawn: 1
+  initialFacing: 0
+  customEnemyPrefab: {fileID: 0}
+  spawnVfxPrefab: {fileID: 0}
+  knightFootmanPrefab: {fileID: 7332811441265927214, guid: e2cad99ffda9848669849b537b91c50f, type: 3}
+  knightFootmanWeight: 50
+  knightCrefPrefab: {fileID: 5430582344197419741, guid: 8a6445d312e584b5b93776313fac9190, type: 3}
+  knightCrefWeight: 25
+  magePrefab: {fileID: 5403739060828821623, guid: 4a4428411eb3487439ef8c5a47188f88, type: 3}
+  mageWeight: 25
+--- !u!4 &1042722477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042722475}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.87, y: 3.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 790149576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1130426484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130426486}
+  - component: {fileID: 1130426485}
+  m_Layer: 0
+  m_Name: SpawnPoint_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1130426485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130426484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c85a2616a4b475ba1daf28eda9eadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnStart: 1
+  respawnCooldown: 20
+  minPlayerDistance: 8
+  requireOffscreen: 0
+  randomizeOnRespawn: 1
+  initialFacing: 0
+  customEnemyPrefab: {fileID: 0}
+  spawnVfxPrefab: {fileID: 0}
+  knightFootmanPrefab: {fileID: 7332811441265927214, guid: e2cad99ffda9848669849b537b91c50f, type: 3}
+  knightFootmanWeight: 50
+  knightCrefPrefab: {fileID: 5430582344197419741, guid: 8a6445d312e584b5b93776313fac9190, type: 3}
+  knightCrefWeight: 25
+  magePrefab: {fileID: 5403739060828821623, guid: 4a4428411eb3487439ef8c5a47188f88, type: 3}
+  mageWeight: 25
+--- !u!4 &1130426486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130426484}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.79, y: 2.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 790149576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1218474461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -842,6 +1068,64 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f97e63da1f514e1285785fe375c2d16, type: 3}
+--- !u!1 &1445432356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1445432358}
+  - component: {fileID: 1445432357}
+  m_Layer: 0
+  m_Name: SpawnPoint_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1445432357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445432356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c85a2616a4b475ba1daf28eda9eadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnStart: 1
+  respawnCooldown: 20
+  minPlayerDistance: 8
+  requireOffscreen: 0
+  randomizeOnRespawn: 1
+  initialFacing: 0
+  customEnemyPrefab: {fileID: 0}
+  spawnVfxPrefab: {fileID: 0}
+  knightFootmanPrefab: {fileID: 7332811441265927214, guid: e2cad99ffda9848669849b537b91c50f, type: 3}
+  knightFootmanWeight: 50
+  knightCrefPrefab: {fileID: 5430582344197419741, guid: 8a6445d312e584b5b93776313fac9190, type: 3}
+  knightCrefWeight: 25
+  magePrefab: {fileID: 5403739060828821623, guid: 4a4428411eb3487439ef8c5a47188f88, type: 3}
+  mageWeight: 25
+--- !u!4 &1445432358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445432356}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.88, y: 2.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 790149576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1489207200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -986,3 +1270,5 @@ SceneRoots:
   - {fileID: 74054693}
   - {fileID: 507098473}
   - {fileID: 1489207200}
+  - {fileID: 933240212}
+  - {fileID: 790149576}

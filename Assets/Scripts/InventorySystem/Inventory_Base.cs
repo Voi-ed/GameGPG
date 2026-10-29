@@ -23,12 +23,13 @@ public class Inventory_Base : MonoBehaviour , ISaveable
     {
         Inventory_Item consumable = itemList.Find(item => item == itemToUse);
 
-        if (consumable == null)
+        if (consumable == null || consumable.itemEffect == null)
             return;
+
+        consumable.itemEffect.BindSource(player, consumable.itemData);
 
         if (consumable.itemEffect.CanBeUsed(player) == false)
             return;
-
 
         consumable.itemEffect.ExecuteEffect();
 

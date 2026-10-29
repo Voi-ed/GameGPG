@@ -8,6 +8,8 @@ public class Player_DomainExpansionState : PlayerState
 
     private bool isLevitating;
     private bool createdDomain;
+    private float riseTimeoutTimer;
+    private const float MAX_RISE_TIME = 0.75f; // Thời gian tối đa để bay lên trước khi bắt buộc Levitate
 
     public Player_DomainExpansionState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -17,22 +19,44 @@ public class Player_DomainExpansionState : PlayerState
     {
         base.Enter();
 
+        // 1. Triệt tiêu ngay lập tức mọi hiệu ứng Knockback từ đòn đánh trước
+        player.StopKnockback();
+
         originalPosition = player.transform.position;
         originalGravity = rb.gravityScale;
         maxDistanceToGoUp = GetAvalibaleRiseDistance();
 
-        player.SetVelocity(0, player.riseSpeed);
+        // 2. Miễn nhiễm sát thương tuyệt đối khi chuẩn bị mở Lãnh Địa
         player.health.SetCanTakeDamage(false);
+
+        // 3. Tắt trọng lực ngay để bay thẳng đứng mượt mà, không bị gravity kéo trễ
+        rb.gravityScale = 0f;
+        rb.linearVelocity = new Vector2(0, player.riseSpeed);
+
+        isLevitating = false;
+        createdDomain = false;
+        riseTimeoutTimer = MAX_RISE_TIME;
     }
 
     public override void Update()
     {
         base.Update();
 
-        if (Vector2.Distance(originalPosition, player.transform.position) >= maxDistanceToGoUp && isLevitating == false)
-            Levitate();
+        if (!isLevitating)
+        {
+            // Duy trì vận tốc bay lên đều đặn
+            rb.linearVelocity = new Vector2(0, player.riseSpeed);
+            riseTimeoutTimer -= Time.deltaTime;
 
-        if (isLevitating)
+            float currentDistance = Vector2.Distance(originalPosition, player.transform.position);
+
+            // Đạt độ cao tối đa HOẶC hết thời gian bay lên (tránh kẹt trần nhà / vật cản / dính đòn trước đó)
+            if (currentDistance >= maxDistanceToGoUp || riseTimeoutTimer <= 0f)
+            {
+                Levitate();
+            }
+        }
+        else
         {
             skillManager.domainExpansion.DoSpellCasting();
 
@@ -67,6 +91,9 @@ public class Player_DomainExpansionState : PlayerState
         if (createdDomain == false)
         {
             createdDomain = true;
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlayGlobalSFX("domain_expansion");
+
             skillManager.domainExpansion.CreateDomain();
         }
     }

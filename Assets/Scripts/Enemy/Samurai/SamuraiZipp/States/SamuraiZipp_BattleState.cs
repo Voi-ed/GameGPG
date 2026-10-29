@@ -29,13 +29,13 @@ public class SamuraiZipp_BattleState : Enemy_BattleState
 
         float distToPlayer = DistanceToPlayer();
 
-        if (player != null && distToPlayer <= 10f)
-        {
-            UpdateBattleTimer();
-        }
-        else if (enemy.PlayerDetected())
+        if (enemy.PlayerDetected())
         {
             UpdateTargetIfNeeded();
+            UpdateBattleTimer();
+        }
+        else if (player != null && distToPlayer <= 10f)
+        {
             UpdateBattleTimer();
         }
 

@@ -19,11 +19,17 @@ public class Entity_SFX : MonoBehaviour
 
     public void PlayAttackHit()
     {
+        if (AudioManager.instance == null || string.IsNullOrEmpty(attackHit))
+            return;
+
         AudioManager.instance.PlaySFX(attackHit, audioSource, soundDistance);
     }
 
     public void PlayAttackMiss()
     {
+        if (AudioManager.instance == null || string.IsNullOrEmpty(attackMiss))
+            return;
+
         AudioManager.instance.PlaySFX(attackMiss, audioSource, soundDistance);
     }
 

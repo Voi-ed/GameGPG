@@ -17,6 +17,7 @@ public class UI_SkillSlot : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
     [SerializeField] private Image cooldownImage;
     [SerializeField] private string inputKeyName;
     [SerializeField] private TextMeshProUGUI inputKeyText;
+    [SerializeField] private TextMeshProUGUI chargesText;
     [SerializeField] private GameObject conflictSlot;
 
     private void Awake()
@@ -44,6 +45,15 @@ public class UI_SkillSlot : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
 
         if(conflictSlot != null)
             conflictSlot.SetActive(false);
+
+        if (selectedSkill != null && selectedSkill.upgradeData != null && selectedSkill.upgradeData.upgradeType == SkillUpgradeType.Shard_Multicast)
+        {
+            EnsureChargesText();
+        }
+        else
+        {
+            ClearCharges();
+        }
     }
 
     public void StartCooldown(float cooldown)
@@ -55,6 +65,81 @@ public class UI_SkillSlot : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
     public void ResetCooldown()
     {
         StopAllCoroutines();
+        if (cooldownImage != null)
+            cooldownImage.fillAmount = 0;
+    }
+
+    private void EnsureChargesText()
+    {
+        if (chargesText != null)
+            return;
+
+        Transform existing = transform.Find("ChargesText");
+        if (existing != null)
+        {
+            chargesText = existing.GetComponent<TextMeshProUGUI>();
+            if (chargesText != null)
+                return;
+        }
+
+        GameObject chargesObj = new GameObject("ChargesText", typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
+        chargesObj.transform.SetParent(transform, false);
+        chargesObj.transform.SetAsLastSibling();
+
+        RectTransform rt = chargesObj.GetComponent<RectTransform>();
+        rt.anchorMin = new Vector2(1, 1);
+        rt.anchorMax = new Vector2(1, 1);
+        rt.pivot = new Vector2(1, 1);
+        rt.anchoredPosition = new Vector2(-6, -6);
+        rt.sizeDelta = new Vector2(36, 36);
+
+        chargesText = chargesObj.GetComponent<TextMeshProUGUI>();
+        if (inputKeyText != null)
+        {
+            chargesText.font = inputKeyText.font;
+            chargesText.fontSharedMaterial = inputKeyText.fontSharedMaterial;
+        }
+
+        chargesText.fontSize = 22;
+        chargesText.fontStyle = FontStyles.Bold;
+        chargesText.alignment = TextAlignmentOptions.TopRight;
+        chargesText.color = Color.white;
+        chargesText.enableWordWrapping = false;
+        chargesText.raycastTarget = false;
+        chargesText.outlineColor = Color.black;
+        chargesText.outlineWidth = 0.25f;
+    }
+
+    public void UpdateCharges(int current, int max)
+    {
+        EnsureChargesText();
+        if (chargesText == null)
+            return;
+
+        chargesText.gameObject.SetActive(true);
+        chargesText.text = current.ToString();
+
+        if (current <= 0)
+        {
+            chargesText.color = new Color(1f, 0.4f, 0.4f, 1f);
+        }
+        else
+        {
+            chargesText.color = Color.white;
+        }
+    }
+
+    public void SetChargeCooldownFill(float fillAmount)
+    {
+        if (cooldownImage != null)
+            cooldownImage.fillAmount = Mathf.Clamp01(fillAmount);
+    }
+
+    public void ClearCharges()
+    {
+        if (chargesText != null)
+            chargesText.gameObject.SetActive(false);
+
         if (cooldownImage != null)
             cooldownImage.fillAmount = 0;
     }

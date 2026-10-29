@@ -12,6 +12,10 @@ public class AudioDatabaseSO : ScriptableObject
     public List<AudioClipData> levelMusic;
 
 
+    [Header("SFX & Jingles")]
+    public List<AudioClipData> sfx;
+    public List<AudioClipData> jingles;
+
     private Dictionary<string, AudioClipData> clipCollection;
 
     private void OnEnable()
@@ -22,18 +26,26 @@ public class AudioDatabaseSO : ScriptableObject
         AddToCollection(uiAudio);
         AddToCollection(mainMenuMusic);
         AddToCollection(levelMusic);
+        AddToCollection(sfx);
+        AddToCollection(jingles);
     }
 
     public AudioClipData Get(string groupName)
     {
-        return clipCollection.TryGetValue(groupName, out var data) ? data : null;
+        if (clipCollection == null)
+            OnEnable();
+
+        return clipCollection != null && clipCollection.TryGetValue(groupName, out var data) ? data : null;
     }
 
     private void AddToCollection(List<AudioClipData> listToAdd)
     {
+        if (listToAdd == null)
+            return;
+
         foreach (var data in listToAdd)
         {
-            if (data != null && clipCollection.ContainsKey(data.audioName) == false)
+            if (data != null && string.IsNullOrEmpty(data.audioName) == false && clipCollection.ContainsKey(data.audioName) == false)
             {
                 clipCollection.Add(data.audioName, data);
             }

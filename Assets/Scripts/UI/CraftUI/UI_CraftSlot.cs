@@ -19,6 +19,13 @@ public class UI_CraftSlot : MonoBehaviour
         craftItemName.text = craftData.itemName;
     }
 
-    public void UpdateCraftPreviw() => craftPreviw.UpdateCraftPreviw(itemToCraft);
+    public void UpdateCraftPreviw()
+    {
+        if (craftPreviw == null)
+            craftPreviw = GetComponentInParent<UI_Craft>()?.GetComponentInChildren<UI_CraftPreviw>(true);
+
+        if (craftPreviw != null)
+            craftPreviw.UpdateCraftPreviw(itemToCraft);
+    }
 
 }

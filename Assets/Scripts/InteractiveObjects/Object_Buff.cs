@@ -42,7 +42,8 @@ public class Object_Buff : MonoBehaviour
                 player?.vfx?.CreateEffectOf(buffVfxPrefab, player.transform, true);
             }
 
-            statsToModify.ApplyBuff(buffs, buffDuration, buffName);
+            Sprite icon = GetComponentInChildren<SpriteRenderer>()?.sprite;
+            statsToModify.ApplyBuff(buffs, buffDuration, buffName, icon, buffName);
             Destroy(gameObject);
         }
     }

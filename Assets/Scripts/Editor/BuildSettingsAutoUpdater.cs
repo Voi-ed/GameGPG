@@ -26,6 +26,7 @@ public static class BuildSettingsAutoUpdater
             "Assets/Scenes/Map/6_Inferno Underworld.unity",
             "Assets/Scenes/Map/7_Wasteland.unity",
             "Assets/Scenes/Map/8_Metroidvania Ruins.unity",
+            "Assets/Scenes/Map/BattleScene.unity",
             "Assets/Scenes/Level_0.unity",
             "Assets/Scenes/LeveL_1.unity",
             "Assets/Scenes/LeveL_2.unity",

@@ -185,9 +185,44 @@ public class Enemy_MartialHero : Enemy, ICounterable
         }
     }
 
+    public SkillObject_TimeEcho FindNearbyTimeEcho(float radius = 10f)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius, WhatIsPlayer);
+        SkillObject_TimeEcho closestEcho = null;
+        float minDistance = float.MaxValue;
+
+        foreach (var col in colliders)
+        {
+            SkillObject_TimeEcho echo = col.GetComponent<SkillObject_TimeEcho>();
+            if (echo == null)
+                continue;
+
+            Entity_Health echoHealth = echo.GetComponent<Entity_Health>();
+            if (echoHealth != null && echoHealth.isDead)
+                continue;
+
+            Animator echoAnim = echo.GetComponentInChildren<Animator>();
+            if (echoAnim != null && !echoAnim.gameObject.activeInHierarchy)
+                continue;
+
+            float dist = Vector2.Distance(transform.position, echo.transform.position);
+            if (dist < minDistance)
+            {
+                minDistance = dist;
+                closestEcho = echo;
+            }
+        }
+
+        return closestEcho;
+    }
+
     public Transform GetPlayerTarget()
     {
-        if (Player.instance != null)
+        SkillObject_TimeEcho nearbyEcho = FindNearbyTimeEcho(10f);
+        if (nearbyEcho != null)
+            return nearbyEcho.transform;
+
+        if (Player.instance != null && Player.instance.health != null && !Player.instance.health.isDead)
             return Player.instance.transform;
 
         return GetPlayerReference();

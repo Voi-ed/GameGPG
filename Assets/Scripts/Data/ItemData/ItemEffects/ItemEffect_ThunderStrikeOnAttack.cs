@@ -38,7 +38,8 @@ public class ItemEffect_ThunderStrikeOnAttack : ItemEffect_DataSO
             return;
 
         lastTimeTriggered = Time.time;
-        Vector3 targetPos = target != null ? target.position : player.transform.position;
+        Player effectivePlayer = (player != null) ? player : (Player.instance != null ? Player.instance : FindFirstObjectByType<Player>());
+        Vector3 targetPos = target != null ? target.position : (effectivePlayer != null ? effectivePlayer.transform.position : Vector3.zero);
 
         GameObject prefab = GetVfxPrefab();
         if (prefab != null)
@@ -47,13 +48,22 @@ public class ItemEffect_ThunderStrikeOnAttack : ItemEffect_DataSO
             DestroyVfx(vfx, 2f);
         }
 
+        Transform dealerTransform = effectivePlayer != null ? effectivePlayer.transform : target;
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(targetPos, splashRadius, whatIsEnemy);
         foreach (var col in hitEnemies)
         {
+            if (col == null)
+                continue;
+
+            // Bỏ qua nếu là chính người chơi
+            if (effectivePlayer != null && col.gameObject == effectivePlayer.gameObject)
+                continue;
+
             IDamageable damageable = col.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                damageable.TakeDamage(0, lightningDamage, ElementType.Lightning, player.transform);
+                damageable.TakeDamage(0, lightningDamage, ElementType.Lightning, dealerTransform);
             }
         }
     }

@@ -15,6 +15,10 @@ public class Enemy_Mage : Enemy, ICounterable
     [SerializeField] private float spellCastCooldown = .3f;
     public bool spellCastPerformed { get; private set; }
     [Space]
+    public float spellCooldown = 4.5f;
+    public float lastTimeCastSpell { get; set; } = float.NegativeInfinity;
+    public bool CanCastSpell() => Time.time > lastTimeCastSpell + spellCooldown;
+    [Space]
     public float retreatCooldown = 5;
     public float retreatMaxDistance = 8;
     public float retreatSpeed = 15;
@@ -44,28 +48,90 @@ public class Enemy_Mage : Enemy, ICounterable
     {
         base.Start();
 
+        // Đảm bảo layer luôn là Enemy để Player luôn tấn công và gây sát thương được
+        MakeUntargetable(true);
+
+        // Đảm bảo hitbox đánh cận chiến của gậy phép bao trọn cự ly đánh, không bị chém hụt gió
+        if (combat != null)
+        {
+            combat.TargetCheckRadius = Mathf.Max(combat.TargetCheckRadius, 1.25f);
+        }
+
         stateMachine.Initialize(idleState);
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        MakeUntargetable(true);
+    }
+
+    public Transform GetPlayerTarget()
+    {
+        if (player != null)
+            return player;
+
+        Transform detected = GetPlayerReference();
+        if (detected != null)
+            return detected;
+
+        if (Player.instance != null)
+            return Player.instance.transform;
+
+        return null;
     }
 
     public void SetSpellCastPerformed(bool performed) => spellCastPerformed = performed;
 
+    private Coroutine castSpellCoroutine;
+
     public override void SpecialAttack()
     {
-        StartCoroutine(CastSpellCo());
+        if (castSpellCoroutine != null)
+            StopCoroutine(castSpellCoroutine);
+
+        castSpellCoroutine = StartCoroutine(CastSpellCo());
+    }
+
+    public void StopCastingSpell()
+    {
+        if (castSpellCoroutine != null)
+        {
+            StopCoroutine(castSpellCoroutine);
+            castSpellCoroutine = null;
+        }
+        SetSpellCastPerformed(true);
     }
 
     private IEnumerator CastSpellCo()
     {
+        Transform target = GetPlayerTarget();
+        if (target == null)
+        {
+            SetSpellCastPerformed(true);
+            castSpellCoroutine = null;
+            yield break;
+        }
+
         for (int i = 0; i < amountToCast; i++)
         {
-            Enemy_MageProjectile projectile
-                = Instantiate(spellPrefab, spellStartPosition.position, Quaternion.identity).GetComponent<Enemy_MageProjectile>();
+            if (spellPrefab == null)
+                break;
 
-            projectile.SetupProjectile(player.transform, combat);
+            Vector3 spawnPos = spellStartPosition != null ? spellStartPosition.position : transform.position;
+            GameObject spellObj = Instantiate(spellPrefab, spawnPos, Quaternion.identity);
+            Enemy_MageProjectile projectile = spellObj.GetComponent<Enemy_MageProjectile>();
+
+            if (projectile != null)
+            {
+                projectile.SetupProjectile(target, combat);
+            }
+
             yield return new WaitForSeconds(spellCastCooldown);
         }
 
         SetSpellCastPerformed(true);
+        castSpellCoroutine = null;
     }
 
     public void HandleCounter()

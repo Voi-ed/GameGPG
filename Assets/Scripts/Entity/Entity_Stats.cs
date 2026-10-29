@@ -110,6 +110,15 @@ public class Entity_Stats : MonoBehaviour
         return finalResistance;
     }
 
+    public bool lastHitWasCrit { get; private set; }
+
+    public bool ConsumeLastHitCrit()
+    {
+        bool crit = lastHitWasCrit;
+        lastHitWasCrit = false;
+        return crit;
+    }
+
     public float GetPhyiscalDamage(out bool isCrit, float scaleFactor = 1)
     {
         float baseDamage = GetBaseDamage();
@@ -117,6 +126,7 @@ public class Entity_Stats : MonoBehaviour
         float critPower = GetCritPower() / 100; // Total crit power as multiplier ( e.g 150 / 100 = 1.5f - multiplier)
 
         isCrit = Random.Range(0, 100) < critChance;
+        lastHitWasCrit = isCrit;
         float finalDamage = isCrit ? baseDamage * critPower : baseDamage;
 
         return finalDamage * scaleFactor;

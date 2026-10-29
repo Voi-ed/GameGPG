@@ -38,14 +38,23 @@ public class ItemEffect_HealAndBuff : ItemEffect_DataSO
             float healAmount = player.stats.GetMaxHealth() * healPercent;
             player.health.IncreaseHealth(healAmount);
             player.vfx?.PlayHealVfx();
+
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlayGlobalSFX("potion_drink");
+        }
+        else if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayGlobalSFX("buff_activate");
         }
 
-        if (buffsToApply != null && buffsToApply.Length > 0)
+        if (buffsToApply != null && buffsToApply.Length > 0 && player != null && player.stats != null)
         {
             if (buffVfxPrefab != null)
                 player.vfx?.CreateEffectOf(buffVfxPrefab, player.transform, true);
 
-            player.stats.ApplyBuff(buffsToApply, duration, source);
+            Sprite icon = sourceItem != null ? sourceItem.itemIcon : null;
+            string buffName = sourceItem != null ? sourceItem.itemName : source;
+            player.stats.ApplyBuff(buffsToApply, duration, source, icon, buffName, effectDescription);
         }
 
         player = null;

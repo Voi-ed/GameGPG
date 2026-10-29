@@ -86,6 +86,16 @@ public class Entity : MonoBehaviour
         slowDownCo = null;
     }
 
+    public void StopKnockback()
+    {
+        if (knockbackCo != null)
+        {
+            StopCoroutine(knockbackCo);
+            knockbackCo = null;
+        }
+        isKnocked = false;
+    }
+
     public void ReciveKnockback(Vector2 knockback, float duration)
     {
         if(knockbackCo != null)

@@ -16,6 +16,10 @@ public class Player_GroundedState : PlayerState
         if (input.Player.Jump.WasPressedThisFrame())
             stateMachine.ChangeState(player.jumpState);
 
+        // Khóa các chiêu thức của Hiệp Sĩ khi đang hóa rồng
+        if (Player_DragonForm.instance != null && Player_DragonForm.instance.IsDragonForm)
+            return;
+
         if (input.Player.Attack.WasPressedThisFrame())
             stateMachine.ChangeState(player.basicAttackState);
 

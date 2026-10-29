@@ -17,6 +17,7 @@ public class Entity_Combat : MonoBehaviour
     [SerializeField] private Transform targetCheck;
     public Transform TargetCheck => targetCheck;
     [SerializeField] private float targetCheckRadius = 1;
+    public float TargetCheckRadius { get => targetCheckRadius; set => targetCheckRadius = value; }
     [SerializeField] private LayerMask whatIsTarget;
 
 
@@ -35,12 +36,16 @@ public class Entity_Combat : MonoBehaviour
         foreach (var target in GetDetectedColliders(whatIsTarget))
         {
             IDamageable damageable = target.GetComponent<IDamageable>();
+            if (damageable == null)
+                damageable = target.GetComponentInParent<IDamageable>();
 
             if (damageable == null)
                 continue; // skip target, go to next target
 
             AttackData attackData = stats.GetAttackData(basicAttackScale);
             Entity_StatusHandler statusHandler = target.GetComponent<Entity_StatusHandler>();
+            if (statusHandler == null)
+                statusHandler = target.GetComponentInParent<Entity_StatusHandler>();
 
 
             float physicalDamage = attackData.phyiscalDamage;
@@ -71,6 +76,8 @@ public class Entity_Combat : MonoBehaviour
 
 
         IDamageable damageable = target.GetComponent<IDamageable>();
+        if (damageable == null)
+            damageable = target.GetComponentInParent<IDamageable>();
 
         if (damageable == null)
             return; // skip target, go to next target
@@ -78,6 +85,8 @@ public class Entity_Combat : MonoBehaviour
         DamageScaleData damageScale = damageScaleData == null ? basicAttackScale : damageScaleData;
         AttackData attackData = stats.GetAttackData(damageScale);
         Entity_StatusHandler statusHandler = target.GetComponent<Entity_StatusHandler>();
+        if (statusHandler == null)
+            statusHandler = target.GetComponentInParent<Entity_StatusHandler>();
 
 
         float physicalDamage = attackData.phyiscalDamage;

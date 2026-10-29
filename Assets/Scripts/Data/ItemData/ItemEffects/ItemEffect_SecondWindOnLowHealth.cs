@@ -47,7 +47,9 @@ public class ItemEffect_SecondWindOnLowHealth : ItemEffect_DataSO
             {
                 new BuffEffectData { type = StatType.Armor, value = armorBonus }
             };
-            player.stats.ApplyBuff(buffs, buffDuration, SECOND_WIND_SOURCE);
+            Sprite icon = sourceItem != null ? sourceItem.itemIcon : null;
+            string buffName = sourceItem != null ? sourceItem.itemName : "Ý Chí Bất Diệt";
+            player.stats.ApplyBuff(buffs, buffDuration, SECOND_WIND_SOURCE, icon, buffName, effectDescription);
 
             // Sleek code-driven green heal burst feedback (xanh lá cây)
             player.vfx?.PlayHealVfx();

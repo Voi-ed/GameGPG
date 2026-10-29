@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827985cac5dcbe14da108be2e9ba9e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultStatSetup: {fileID: 11400000, guid: 5e11709fdb4158448aabbb7715ca501f, type: 2}
+  defaultStatSetup: {fileID: 11400000, guid: 216856b472314b00b3d388efc99cfeb7, type: 2}
   resources:
     maxHealth:
       baseValue: 1000

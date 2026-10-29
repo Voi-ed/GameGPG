@@ -13,7 +13,7 @@ public class MartialHero_BattleState : Enemy_BattleState
     {
         base.Enter();
 
-        if (player == null && martialHero != null)
+        if (martialHero != null)
             player = martialHero.GetPlayerTarget();
 
         if (player != null)
@@ -24,19 +24,17 @@ public class MartialHero_BattleState : Enemy_BattleState
     {
         stateTimer -= Time.deltaTime;
 
-        if (player == null && martialHero != null)
+        if (martialHero != null)
             player = martialHero.GetPlayerTarget();
 
         float distToPlayer = DistanceToPlayer();
 
-        // Luôn duy trì Battle Timer nếu Player còn trong phạm vi chiến đấu (10m)
-        if (player != null && distToPlayer <= 10f)
+        if (enemy.PlayerDetected())
         {
             UpdateBattleTimer();
         }
-        else if (enemy.PlayerDetected())
+        else if (player != null && distToPlayer <= 10f)
         {
-            UpdateTargetIfNeeded();
             UpdateBattleTimer();
         }
 

@@ -10,6 +10,8 @@ public class Player_JumpState : Player_AiredState
     {
         base.Enter();
 
+        if (AudioManager.instance != null)
+            AudioManager.instance.PlayGlobalSFX("player_jump");
 
         player.SetVelocity(rb.linearVelocity.x, player.jumpForce);
     }

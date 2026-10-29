@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Map/8_Metroidvania Ruins.unity
     guid: d8f073f35d4324ec19deade44f9d00bc
   - enabled: 1
+    path: Assets/Scenes/Map/BattleScene.unity
+    guid: 302799c8e75e147719173ffef19d940c
+  - enabled: 1
     path: Assets/Scenes/Level_0.unity
     guid: af2bf564342f8f34a9640a963e59831b
   - enabled: 1

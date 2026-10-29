@@ -152,9 +152,38 @@ public class Object_ItemPickup : MonoBehaviour
         Inventory_Item itemToAdd = new Inventory_Item(itemData);
         Inventory_Storage storage = inventory.storage;
 
+        if (storage == null)
+            storage = FindFirstObjectByType<Inventory_Storage>();
+
         if (itemData.itemType == ItemType.Material)
         {
-            storage.AddMaterialToStash(itemToAdd);
+            if (storage != null)
+            {
+                storage.AddMaterialToStash(itemToAdd);
+            }
+            else
+            {
+                // Khi ở BattleScene hoặc map quái không có rương Storage, tự động cất thẳng vào SaveManager
+                if (SaveManager.instance != null && SaveManager.instance.GetGameData() != null)
+                {
+                    var materialsDict = SaveManager.instance.GetGameData().storageMaterials;
+                    if (materialsDict != null)
+                    {
+                        if (materialsDict.TryGetValue(itemData.saveId, out int currentCount))
+                            materialsDict[itemData.saveId] = currentCount + 1;
+                        else
+                            materialsDict[itemData.saveId] = 1;
+                    }
+                }
+                else if (inventory.CanAddItem(itemToAdd))
+                {
+                    inventory.AddItem(itemToAdd);
+                }
+            }
+
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlayGlobalSFX("item_pickup");
+
             Destroy(gameObject);
             return;
         }
@@ -162,6 +191,10 @@ public class Object_ItemPickup : MonoBehaviour
         if (inventory.CanAddItem(itemToAdd))
         {
             inventory.AddItem(itemToAdd);
+
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlayGlobalSFX("item_pickup");
+
             Destroy(gameObject);
         }
     }

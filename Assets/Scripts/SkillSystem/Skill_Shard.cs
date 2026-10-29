@@ -17,6 +17,7 @@ public class Skill_Shard : Skill_Base
     [SerializeField] private int maxCharges = 3;
     [SerializeField] private int currentCharges;
     [SerializeField] private bool isRecharging;
+    private float rechargeTimer;
 
     [Header("Teleport Shard Upgrade")]
     [SerializeField] private float shardExistDuration = 10;
@@ -31,6 +32,69 @@ public class Skill_Shard : Skill_Base
         playerHealth = GetComponentInParent<Entity_Health>();
     }
 
+    private void Start()
+    {
+        if (Unlocked(SkillUpgradeType.Shard_Multicast))
+        {
+            currentCharges = maxCharges;
+            UpdateChargesUI();
+        }
+    }
+
+    private UI_SkillSlot GetSkillSlot() => player?.ui?.inGameUI?.GetSkillSlot(skillType);
+
+    public void UpdateChargesUI()
+    {
+        var slot = GetSkillSlot();
+        if (slot != null && Unlocked(SkillUpgradeType.Shard_Multicast))
+        {
+            slot.UpdateCharges(currentCharges, maxCharges);
+        }
+    }
+
+    public override void SetSkillUpgrade(SkillDataSO skillData)
+    {
+        base.SetSkillUpgrade(skillData);
+
+        if (Unlocked(SkillUpgradeType.Shard_Multicast))
+        {
+            currentCharges = maxCharges;
+            if (isRecharging)
+            {
+                StopAllCoroutines();
+                isRecharging = false;
+            }
+            UpdateChargesUI();
+        }
+        else
+        {
+            var slot = GetSkillSlot();
+            if (slot != null)
+                slot.ClearCharges();
+        }
+    }
+
+    public override bool CanUseSkill()
+    {
+        if (upgradeType == SkillUpgradeType.None)
+            return false;
+
+        if (Unlocked(SkillUpgradeType.Shard_Multicast))
+            return currentCharges > 0;
+
+        return base.CanUseSkill();
+    }
+
+    public override void ReduceCooldownBy(float cooldownReduction)
+    {
+        base.ReduceCooldownBy(cooldownReduction);
+
+        if (Unlocked(SkillUpgradeType.Shard_Multicast) && isRecharging)
+        {
+            rechargeTimer += cooldownReduction;
+        }
+    }
+
     public void CreateShard()
     {
         float detonateTime = GetDetonateTime();
@@ -38,6 +102,9 @@ public class Skill_Shard : Skill_Base
         GameObject shard = Instantiate(shardPrefab, transform.position, Quaternion.identity);
         currentShard = shard.GetComponent<SkillObject_Shard>();
         currentShard.SetupShard(this);
+
+        if (AudioManager.instance != null)
+            AudioManager.instance.PlayGlobalSFX("skill_shard_throw");
 
         if (Unlocked(SkillUpgradeType.Shard_Teleport) || Unlocked(SkillUpgradeType.Shard_TeleportHpRewind))
             currentShard.OnExplode += ForceCooldown;
@@ -51,6 +118,9 @@ public class Skill_Shard : Skill_Base
 
         GameObject shard = Instantiate(shardPrefab, transform.position, Quaternion.identity);
         shard.GetComponent<SkillObject_Shard>().SetupShard(this, detonateTime, canMove, shardSpeed, target);
+
+        if (AudioManager.instance != null)
+            AudioManager.instance.PlayGlobalSFX("skill_shard_throw");
     }
 
     public void CreateDomainShard(Transform target)
@@ -127,6 +197,8 @@ public class Skill_Shard : Skill_Base
         currentShard.MoveTowardsClosestTarget(shardSpeed);
         currentCharges--;
 
+        UpdateChargesUI();
+
         if (isRecharging == false)
             StartCoroutine(ShardRechargeCo());
     }
@@ -134,12 +206,28 @@ public class Skill_Shard : Skill_Base
     private IEnumerator ShardRechargeCo()
     {
         isRecharging = true;
+        float cd = Mathf.Max(0.1f, cooldown);
 
         while (currentCharges < maxCharges)
         {
-            yield return new WaitForSeconds(cooldown);
+            rechargeTimer = 0f;
+            while (rechargeTimer < cd)
+            {
+                rechargeTimer += Time.deltaTime;
+                var slot = GetSkillSlot();
+                if (slot != null)
+                    slot.SetChargeCooldownFill(1f - (rechargeTimer / cd));
+
+                yield return null;
+            }
+
             currentCharges++;
+            UpdateChargesUI();
         }
+
+        var s = GetSkillSlot();
+        if (s != null)
+            s.SetChargeCooldownFill(0f);
 
         isRecharging = false;
     }

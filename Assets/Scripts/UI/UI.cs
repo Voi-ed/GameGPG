@@ -25,6 +25,8 @@ public class UI : MonoBehaviour
     public UI_FadeScreen fadeScreenUI { get; private set; }
     public UI_Quest questUI { get; private set; }
     public UI_Dialogue dialogueUI { get; private set; }
+    public UI_Teleport teleportUI { get; private set; }
+    public UI_BossChallenge bossChallengeUI { get; private set; }
 
     #endregion
 
@@ -50,6 +52,8 @@ public class UI : MonoBehaviour
         fadeScreenUI = GetComponentInChildren<UI_FadeScreen>(true);
         questUI = GetComponentInChildren<UI_Quest>(true);
         dialogueUI = GetComponentInChildren<UI_Dialogue>(true);
+        teleportUI = GetComponentInChildren<UI_Teleport>(true);
+        bossChallengeUI = GetComponentInChildren<UI_BossChallenge>(true);
 
         skillTreeEnabled = skillTreeUI.gameObject.activeSelf;
         inventoryEnabled = inventoryUI.gameObject.activeSelf;
@@ -231,6 +235,54 @@ public class UI : MonoBehaviour
 
         if (openMerchantUI == false)
             HideAllTooltips();
+    }
+
+    public void OpenTeleportUI(bool openTeleportUI)
+    {
+        if (teleportUI == null && openTeleportUI)
+        {
+            teleportUI = GetComponentInChildren<UI_Teleport>(true);
+            if (teleportUI == null)
+            {
+                teleportUI = UI_Teleport.CreateDefaultUI(transform);
+            }
+        }
+
+        if (teleportUI != null)
+        {
+            teleportUI.gameObject.SetActive(openTeleportUI);
+            if (openTeleportUI)
+                teleportUI.SetupButtons();
+
+            StopPlayerControls(openTeleportUI);
+
+            if (openTeleportUI == false)
+                HideAllTooltips();
+        }
+    }
+
+    public void OpenBossChallengeUI(bool openBossChallengeUI)
+    {
+        if (bossChallengeUI == null && openBossChallengeUI)
+        {
+            bossChallengeUI = GetComponentInChildren<UI_BossChallenge>(true);
+            if (bossChallengeUI == null)
+            {
+                bossChallengeUI = UI_BossChallenge.CreateDefaultUI(transform);
+            }
+        }
+
+        if (bossChallengeUI != null)
+        {
+            bossChallengeUI.gameObject.SetActive(openBossChallengeUI);
+            if (openBossChallengeUI)
+                bossChallengeUI.SetupButtons();
+
+            StopPlayerControls(openBossChallengeUI);
+
+            if (openBossChallengeUI == false)
+                HideAllTooltips();
+        }
     }
 
     public void HideAllTooltips()

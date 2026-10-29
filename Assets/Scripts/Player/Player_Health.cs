@@ -19,6 +19,14 @@ public class Player_Health : Entity_Health
             Die();
     }
 
+    public override bool TakeDamage(float damage, float elementalDamage, ElementType element, Transform damageDealer)
+    {
+        bool wasHit = base.TakeDamage(damage, elementalDamage, element, damageDealer);
+        if (wasHit && isDead == false && AudioManager.instance != null)
+            AudioManager.instance.PlayGlobalSFX("player_hurt");
+        return wasHit;
+    }
+
     protected override void Die()
     {
         if (canPreventDeath != null && canPreventDeath.Invoke())
@@ -28,6 +36,10 @@ public class Player_Health : Entity_Health
         }
 
         base.Die();
+
+        if (AudioManager.instance != null)
+            AudioManager.instance.PlayGlobalSFX("player_die");
+
         player.ui.OpenDeathScreenUI();
     }
 }

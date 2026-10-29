@@ -10,7 +10,15 @@ public class UI_InGame : MonoBehaviour
     private Inventory_Player inventory;
     private UI_SkillSlot[] skillSlots;
 
-    [Header("Health Bar References")]
+    [Header("Circular Health Globe (Diablo Style - Bottom Left)")]
+    [Tooltip("Sử dụng Quả Cầu Máu Diablo ở góc dưới bên trái thay cho thanh máu ngang cũ")]
+    [SerializeField] private bool useHealthGlobe = true;
+    [SerializeField] private UI_PlayerHealthGlobe healthGlobe;
+
+    [Header("Active Potion Buff Tray (Bottom Left)")]
+    [SerializeField] private UI_BuffBar buffBar;
+
+    [Header("Health Bar References (Legacy)")]
     [SerializeField] private RectTransform healthRect;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider ghostHealthSlider;
@@ -49,7 +57,16 @@ public class UI_InGame : MonoBehaviour
 
         player = FindFirstObjectByType<Player>();
 
-        SetupHealthBarVisuals();
+        if (useHealthGlobe)
+        {
+            SetupHealthGlobe();
+        }
+        else
+        {
+            SetupHealthBarVisuals();
+        }
+
+        SetupBuffBar();
 
         if (player != null)
         {
@@ -87,6 +104,48 @@ public class UI_InGame : MonoBehaviour
         }
 
         KillAllTweens();
+    }
+
+    private void SetupHealthGlobe()
+    {
+        // Ẩn thanh máu ngang cũ ở Top-Left
+        if (healthRect != null)
+            healthRect.gameObject.SetActive(false);
+        else if (healthSlider != null)
+            healthSlider.gameObject.SetActive(false);
+
+        if (healthGlobe == null)
+        {
+            healthGlobe = FindFirstObjectByType<UI_PlayerHealthGlobe>();
+            if (healthGlobe == null)
+            {
+                Transform parent = transform.parent != null ? transform.parent : transform;
+                healthGlobe = UI_PlayerHealthGlobe.CreateHealthGlobe(parent);
+            }
+        }
+
+        if (healthGlobe != null && player != null)
+        {
+            healthGlobe.Setup(player);
+        }
+    }
+
+    private void SetupBuffBar()
+    {
+        if (buffBar == null)
+        {
+            buffBar = FindFirstObjectByType<UI_BuffBar>();
+            if (buffBar == null)
+            {
+                Transform parent = transform.parent != null ? transform.parent : transform;
+                buffBar = UI_BuffBar.CreateBuffBar(parent);
+            }
+        }
+
+        if (buffBar != null && player != null)
+        {
+            buffBar.Setup(player);
+        }
     }
 
     private void SetupHealthBarVisuals()
@@ -213,6 +272,19 @@ public class UI_InGame : MonoBehaviour
         float currentHealth = Mathf.Max(0, Mathf.RoundToInt(player.health.GetCurrentHealth()));
         float maxHealth = player.stats.GetMaxHealth();
         float targetPercent = maxHealth > 0 ? currentHealth / maxHealth : 0f;
+
+        // Nếu bật chế độ Bình Cầu Máu Diablo ở Bottom-Left
+        if (useHealthGlobe)
+        {
+            if (healthGlobe == null)
+                SetupHealthGlobe();
+
+            if (healthGlobe != null)
+            {
+                healthGlobe.UpdateHealth(currentHealth, maxHealth);
+                return;
+            }
+        }
 
         // 1. Dynamic Bar Width (Clamped & Proportionate)
         UpdateBarWidth(maxHealth);

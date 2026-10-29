@@ -29,13 +29,13 @@ public class ArchDemon_BattleState : Enemy_BattleState
 
         float distToPlayer = DistanceToPlayer();
 
-        if (player != null && distToPlayer <= 12f)
-        {
-            UpdateBattleTimer();
-        }
-        else if (enemy.PlayerDetected())
+        if (enemy.PlayerDetected())
         {
             UpdateTargetIfNeeded();
+            UpdateBattleTimer();
+        }
+        else if (player != null && distToPlayer <= 12f)
+        {
             UpdateBattleTimer();
         }
 

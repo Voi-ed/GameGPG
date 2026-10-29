@@ -25,6 +25,9 @@ public class CrimsonBlade_BattleState : Enemy_BattleState
         stateTimer -= Time.deltaTime;
         UpdateAnimationParameters();
 
+        if (enemy.PlayerDetected())
+            UpdateTargetIfNeeded();
+
         if (player == null)
         {
             player = crimsonBlade.GetPlayerTarget();

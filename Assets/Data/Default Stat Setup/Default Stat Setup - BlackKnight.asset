@@ -12,22 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1845c76d127fee64f8f29b9b7203195b, type: 3}
   m_Name: Default Stat Setup - BlackKnight
   m_EditorClassIdentifier: 
-  maxHealth: 1800
+  maxHealth: 8500
   healthRegen: 0
-  attackSpeed: 1
-  damage: 25
-  critChance: 8
-  critPower: 150
+  attackSpeed: 1.0
+  damage: 60
+  critChance: 12
+  critPower: 160
   armorReduction: 15
-  fireDamage: 20
+  fireDamage: 25
   iceDamage: 0
   lightningDamage: 0
-  armor: 25
+  armor: 30
   evasion: 5
   fireResistance: 70
   iceResistance: 0
-  lightningResistance: 15
-  strength: 15
-  agility: 6
-  intelligence: 10
-  vitality: 15
+  lightningResistance: 20
+  strength: 20
+  agility: 0
+  intelligence: 0
+  vitality: 20

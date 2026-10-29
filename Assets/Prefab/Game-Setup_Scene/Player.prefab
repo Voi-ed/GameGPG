@@ -914,7 +914,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4959368856779774103}
   primaryWallCheck: {fileID: 493542544154815175}
   secondaryWallCheck: {fileID: 7913006580151602976}
-  groundPos: {fileID: 0}
+  groundPos: {fileID: 8474423373592709584}
   attackVelocity:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
@@ -1069,7 +1069,7 @@ MonoBehaviour:
   imageEchoPrefab: {fileID: 3013030631492103651, guid: 6fb5646cb6d638a478c3c567687e9539, type: 3}
   onDamageMaterial: {fileID: 2100000, guid: c92512a543c5a94499df3cc98251d3a9, type: 2}
   onDamageVfxDuration: 0.15
-  hitVfxColor: {r: 1, g: 1, b: 1, a: 1}
+  hitVfxColor: {r: 1, g: 0.90095055, b: 0.3537736, a: 1}
   hitVfx: {fileID: 6112724607161003390, guid: a092b215b1103c34982cf4ba009e0fed, type: 3}
   critHitVfx: {fileID: 1098636999657065682, guid: 003eae1b2e4e74c46910443c3f2c95a9, type: 3}
   chillVfx: {r: 0.42352942, g: 0.69803923, b: 1, a: 1}
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f12d99e4f817743a0847cde7801bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultStatSetup: {fileID: 11400000, guid: 8b4cb8613fb020444954a235eec851dd, type: 2}
+  defaultStatSetup: {fileID: 11400000, guid: 717ce0187aa1b674ab3e89585970c4bf, type: 2}
   resources:
     maxHealth:
       baseValue: 1400
@@ -1296,7 +1296,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1831899741
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 286124887, guid: 0a3f5e23b367f13428bdf880a182b529, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

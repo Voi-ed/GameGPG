@@ -24,6 +24,8 @@ public class GameData
     public SerializableDictionary<string, bool> completedQuests; // quest save id -> complete status
     public SerializableDictionary<string, int> activeQuests; // active quest save id -> current progress
 
+    public SerializableDictionary<string, bool> defeatedBosses; // boss id -> defeated status
+
     public string portalDestinationSceneName;
     public bool returningFromTown;
 
@@ -46,5 +48,7 @@ public class GameData
 
         completedQuests = new SerializableDictionary<string, bool>();
         activeQuests = new SerializableDictionary<string, int>();
+
+        defeatedBosses = new SerializableDictionary<string, bool>();
     }
 }

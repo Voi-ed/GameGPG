@@ -18,6 +18,7 @@ public class Player : Entity
     public Inventory_Player inventory { get; private set; }
     public Player_Stats stats { get; private set; }
     public Player_QuestManager questManager { get; private set; }
+    public Player_DragonForm dragonForm { get; private set; }
 
     [Header("Ground Position")]
     [SerializeField] private Transform groundPos;
@@ -107,6 +108,8 @@ public class Player : Entity
         input = new PlayerInputSet();
         if (ui != null)
             ui.SetupControlsUI(input);
+
+        dragonForm = GetComponent<Player_DragonForm>() ?? gameObject.AddComponent<Player_DragonForm>();
 
         idleState = new Player_IdleState(this, stateMachine, "idle");
         moveState = new Player_MoveState(this, stateMachine, "move");
@@ -279,6 +282,9 @@ public class Player : Entity
 
     private void HandleSpell(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
     {
+        if (Player_DragonForm.instance != null && Player_DragonForm.instance.IsDragonForm)
+            return;
+
         if (skillManager == null)
             return;
 

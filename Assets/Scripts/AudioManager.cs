@@ -74,14 +74,18 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator SwitchMusicCo(string musicGroup)
     {
-        AudioClipData data = audioDB.Get(musicGroup);
-        AudioClip nextMusic = data.GetRandomClip();
+        if (audioDB == null)
+            yield break;
 
-        if (data == null || data.clips.Count == 0)
+        AudioClipData data = audioDB.Get(musicGroup);
+
+        if (data == null || data.clips == null || data.clips.Count == 0)
         {
-            Debug.Log("No audio found for group" + musicGroup);
+            Debug.Log("No audio found for group " + musicGroup);
             yield break;
         }
+
+        AudioClip nextMusic = data.GetRandomClip();
 
         if (data.clips.Count > 1)
         {
@@ -99,7 +103,6 @@ public class AudioManager : MonoBehaviour
         bgmSource.Play();
 
         StartCoroutine(FadeVolumeCo(bgmSource, data.maxVolume, 1f));
-
     }
 
     private IEnumerator FadeVolumeCo(AudioSource source, float targetVolume, float duration)
@@ -118,41 +121,48 @@ public class AudioManager : MonoBehaviour
         source.volume = targetVolume;
     }
 
-    public void PlaySFX(string soundName, AudioSource sfxSource, float minDistanceToHearSound = 5)
+    public void PlaySFX(string soundName, AudioSource source, float minDistanceToHearSound = 5)
     {
-        if (player == null)
-            player = Player.instance.transform;
-
+        if (audioDB == null || source == null)
+            return;
 
         var data = audioDB.Get(soundName);
         if (data == null)
-        {
-            Debug.Log("Attempt to play sound - " + soundName);
             return;
-        }
 
         var clip = data.GetRandomClip();
         if (clip == null) return;
 
-        float maxVolume = data.maxVolume;
-        float distance = Vector2.Distance(sfxSource.transform.position, player.position);
-        float t = Mathf.Clamp01(1 - (distance / minDistanceToHearSound));
+        if (player == null && Player.instance != null)
+            player = Player.instance.transform;
 
-        sfxSource.pitch = Random.Range(.95f, 1.1f);
-        sfxSource.volume = Mathf.Lerp(0, maxVolume, t * t); // exponential falloff
-        sfxSource.PlayOneShot(clip);
+        float maxVolume = data.maxVolume;
+        float volume = maxVolume;
+
+        if (player != null)
+        {
+            float distance = Vector2.Distance(source.transform.position, player.position);
+            float t = Mathf.Clamp01(1 - (distance / minDistanceToHearSound));
+            volume = Mathf.Lerp(0, maxVolume, t * t); // exponential falloff
+        }
+
+        source.pitch = Random.Range(.98f, 1.02f);
+        source.volume = volume;
+        source.PlayOneShot(clip);
     }
 
     public void PlayGlobalSFX(string soundName)
     {
+        if (audioDB == null || sfxSource == null)
+            return;
+
         var data = audioDB.Get(soundName);
         if (data == null) return;
 
         var clip = data.GetRandomClip();
         if (clip == null) return;
 
-        Debug.Log("Played audio " + soundName);
-        sfxSource.pitch = Random.Range(.95f, 1.1f);
+        sfxSource.pitch = Random.Range(.98f, 1.02f);
         sfxSource.volume = data.maxVolume;
         sfxSource.PlayOneShot(clip);
     }
