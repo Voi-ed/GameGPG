@@ -101,6 +101,9 @@ public partial class GameManager : MonoBehaviour, ISaveable
 
     public void SaveData(ref GameData data)
     {
+        if (data == null)
+            data = new GameData();
+
         string currentScene = SceneManager.GetActiveScene().name;
 
         if (currentScene == "MainMenu")
@@ -115,7 +118,7 @@ public partial class GameManager : MonoBehaviour, ISaveable
             return;
         }
 
-        if (Player.instance != null)
+        if (Player.instance != null && Player.instance.transform != null)
             data.lastPlayerPosition = Player.instance.transform.position;
 
         data.lastScenePlayed = currentScene;

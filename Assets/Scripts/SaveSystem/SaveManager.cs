@@ -46,10 +46,16 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
+        if (dataHandler == null)
+            return;
+
+        if (gameData == null)
+            gameData = new GameData();
+
         allSaveables = FindISaveables();
 
         foreach (var saveable in allSaveables)
-            saveable.SaveData(ref gameData);
+            saveable?.SaveData(ref gameData);
 
         dataHandler.SaveData(gameData);
     }
@@ -67,19 +73,20 @@ public class SaveManager : MonoBehaviour
 
     private void OnApplicationFocus(bool hasFocus)
     {
-        if (!hasFocus)
+        if (!hasFocus && gameData != null)
             SaveGame();
     }
 
     private void OnApplicationPause(bool pauseStatus)
     {
-        if (pauseStatus)
+        if (pauseStatus && gameData != null)
             SaveGame();
     }
 
     private void OnApplicationQuit()
     {
-        SaveGame();
+        if (gameData != null)
+            SaveGame();
     }
 
     private List<ISaveable> FindISaveables()
