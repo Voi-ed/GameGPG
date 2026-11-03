@@ -43,8 +43,10 @@ public partial class GameManager
 
         if (SaveManager.instance != null)
         {
-            while (!dataLoaded)
+            float timeout = 2.0f;
+            while (!dataLoaded && timeout > 0f)
             {
+                timeout -= Time.unscaledDeltaTime;
                 yield return null;
             }
         }
@@ -97,6 +99,9 @@ public partial class GameManager
         if (isTransitioningScene)
             return;
 
+        if (string.IsNullOrEmpty(sceneName))
+            sceneName = "1_Village & Camp";
+
         isTransitioningScene = true;
 
         if (SaveManager.instance != null)
@@ -126,8 +131,10 @@ public partial class GameManager
 
         if (SaveManager.instance != null)
         {
-            while (!dataLoaded)
+            float timeout = 2.0f;
+            while (!dataLoaded && timeout > 0f)
             {
+                timeout -= Time.unscaledDeltaTime;
                 yield return null;
             }
         }

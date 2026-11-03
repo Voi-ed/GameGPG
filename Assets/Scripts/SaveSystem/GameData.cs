@@ -53,6 +53,8 @@ public class GameData
 
         defeatedBosses = new SerializableDictionary<string, bool>();
 
+        itemList = new List<Inventory_Item>();
         quickItemSaveIds = new List<string>();
+        lastScenePlayed = "1_Village & Camp";
     }
 }

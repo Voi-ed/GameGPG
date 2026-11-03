@@ -43,7 +43,7 @@ public partial class GameManager : MonoBehaviour, ISaveable
     }
 
     private Vector3 lastPlayerPosition;
-    private string lastScenePlayed;
+    private string lastScenePlayed = "1_Village & Camp";
     private bool dataLoaded;
     public bool isTransitioningScene { get; set; } = false;
 
@@ -67,6 +67,9 @@ public partial class GameManager : MonoBehaviour, ISaveable
 
     public void ContinuePlay()
     {
+        if (string.IsNullOrEmpty(lastScenePlayed))
+            lastScenePlayed = "1_Village & Camp";
+
         ChangeScene(lastScenePlayed, RespawnType.NonSpecific);
     }
 

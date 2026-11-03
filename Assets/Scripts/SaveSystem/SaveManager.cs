@@ -37,9 +37,9 @@ public class SaveManager : MonoBehaviour
         {
             Debug.Log("No save data found, creating new save!");
             gameData = new GameData();
-            return;
         }
 
+        allSaveables = FindISaveables();
         foreach (var saveable in allSaveables)
             saveable.LoadData(gameData);
     }
