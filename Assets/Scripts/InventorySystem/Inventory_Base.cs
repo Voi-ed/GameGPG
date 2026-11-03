@@ -12,6 +12,7 @@ public class Inventory_Base : MonoBehaviour , ISaveable
 
     [Header("ITEM DATA BASE")]
     [SerializeField] protected ItemListDataSO itemDataBase;
+    public ItemListDataSO ItemDataBase => itemDataBase;
 
 
     protected virtual void Awake()

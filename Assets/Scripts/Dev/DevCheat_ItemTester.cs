@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
 public class DevCheat_ItemTester : MonoBehaviour
 {
     private static DevCheat_ItemTester instance;
@@ -19,7 +19,8 @@ public class DevCheat_ItemTester : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F12))
+        // Hỗ trợ cả F12 và phím ~ (BackQuote) để tiện dùng trên trình duyệt Web
+        if (Input.GetKeyDown(KeyCode.F12) || Input.GetKeyDown(KeyCode.BackQuote))
             showGui = !showGui;
 
         if (Input.GetKeyDown(KeyCode.F2))
@@ -52,9 +53,13 @@ public class DevCheat_ItemTester : MonoBehaviour
 
     private void OnGUI()
     {
+        // Không hiện menu cheat lúc đang ở MainMenu
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            return;
+
         if (!showGui)
         {
-            if (GUI.Button(new Rect(10, 10, 120, 28), "Mở Menu Test (F12)"))
+            if (GUI.Button(new Rect(10, 10, 140, 28), "🛠️ Menu Test (~ / F12)"))
                 showGui = true;
             return;
         }
@@ -64,7 +69,14 @@ public class DevCheat_ItemTester : MonoBehaviour
 
     private void DrawWindow(int windowID)
     {
+        GUILayout.BeginHorizontal();
         GUILayout.Label("Mặc nhanh Full Bộ Set (4 món):", EditorStyles_BoldLabel());
+        if (GUILayout.Button("✕ Đóng", GUILayout.Width(55), GUILayout.Height(20)))
+        {
+            showGui = false;
+        }
+        GUILayout.EndHorizontal();
+
         if (GUILayout.Button("[F2] Set Cuồng Nộ (Berserker)", GUILayout.Height(26)))
             EquipSet("Berserker");
         if (GUILayout.Button("[F3] Set Sát Thủ (Shadow Assassin)", GUILayout.Height(26)))
@@ -101,7 +113,7 @@ public class DevCheat_ItemTester : MonoBehaviour
         GUILayout.EndHorizontal();
 
         GUILayout.Space(6);
-        GUILayout.Label("💡 F12: Menu | L: Hỏa Long | K: +100 SP", EditorStyles_ItalicLabel());
+        GUILayout.Label("💡 F12 hoặc phím [~]: Ẩn/Hiện Menu", EditorStyles_ItalicLabel());
         GUI.DragWindow(new Rect(0, 0, 10000, 20));
     }
 
@@ -123,18 +135,35 @@ public class DevCheat_ItemTester : MonoBehaviour
     private List<ItemDataSO> GetAllItemDataSOs()
     {
         List<ItemDataSO> list = new List<ItemDataSO>();
-#if UNITY_EDITOR
-        string[] guids = UnityEditor.AssetDatabase.FindAssets("t:ItemDataSO");
-        foreach (var guid in guids)
+
+        // 1. Lấy từ Database gốc của Player (hoạt động tốt trên WebGL & build thực tế)
+        Player player = Player.instance;
+        if (player != null && player.inventory != null && player.inventory.ItemDataBase != null)
         {
-            string path = UnityEditor.AssetDatabase.GUIDToAssetPath(guid);
-            ItemDataSO item = UnityEditor.AssetDatabase.LoadAssetAtPath<ItemDataSO>(path);
-            if (item != null)
-                list.Add(item);
+            if (player.inventory.ItemDataBase.itemList != null)
+            {
+                list.AddRange(player.inventory.ItemDataBase.itemList);
+            }
+        }
+
+#if UNITY_EDITOR
+        if (list.Count == 0)
+        {
+            string[] guids = UnityEditor.AssetDatabase.FindAssets("t:ItemDataSO");
+            foreach (var guid in guids)
+            {
+                string path = UnityEditor.AssetDatabase.GUIDToAssetPath(guid);
+                ItemDataSO item = UnityEditor.AssetDatabase.LoadAssetAtPath<ItemDataSO>(path);
+                if (item != null)
+                    list.Add(item);
+            }
         }
 #else
-        ItemDataSO[] loaded = Resources.FindObjectsOfTypeAll<ItemDataSO>();
-        list.AddRange(loaded);
+        if (list.Count == 0)
+        {
+            ItemDataSO[] loaded = Resources.FindObjectsOfTypeAll<ItemDataSO>();
+            list.AddRange(loaded);
+        }
 #endif
         return list;
     }
@@ -249,6 +278,27 @@ public class DevCheat_ItemTester : MonoBehaviour
         Player player = Player.instance;
         if (player != null && player.skillManager != null && player.skillManager.dash != null)
         {
+            // Tìm trong cây kỹ năng UI_SkillTree đang mở hoặc có trong Scene (hoạt động 100% trên WebGL)
+            UI_SkillTree skillTree = null;
+            if (UI.instance != null && UI.instance.skillTreeUI != null)
+                skillTree = UI.instance.skillTreeUI;
+            else
+                skillTree = FindFirstObjectByType<UI_SkillTree>(FindObjectsInactive.Include);
+
+            if (skillTree != null && skillTree.allTreeNodes != null)
+            {
+                foreach (var node in skillTree.allTreeNodes)
+                {
+                    if (node != null && node.skillData != null &&
+                        (node.skillData.name.Contains("Infernal") || (node.skillData.displayName != null && node.skillData.displayName.Contains("Hỏa Long"))))
+                    {
+                        player.skillManager.dash.SetSkillUpgrade(node.skillData);
+                        Debug.Log("<color=orange>[DevCheat] Đã kích hoạt & trang bị kỹ năng 'Hỏa Long Xung Kích' cho Player!</color>");
+                        return;
+                    }
+                }
+            }
+
 #if UNITY_EDITOR
             SkillDataSO infernalCrash = UnityEditor.AssetDatabase.LoadAssetAtPath<SkillDataSO>("Assets/Data/Skill Data/Skill data - Dash/Skill data - Infernal Crash.asset");
             if (infernalCrash != null)
@@ -262,5 +312,4 @@ public class DevCheat_ItemTester : MonoBehaviour
         }
     }
 }
-#endif
 
