@@ -37,14 +37,15 @@ public class UI_PlayerHealthGlobe : MonoBehaviour
     private float displayedHealth = 0f;
     private float currentMaxHealth = 100f;
     private bool isPulsing = false;
-    private Vector3 originalLocalPos;
+    private Vector2 originalAnchoredPos = new Vector2(40f, 40f);
 
     private void Awake()
     {
         if (globeTransform == null)
             globeTransform = GetComponent<RectTransform>();
 
-        originalLocalPos = globeTransform != null ? globeTransform.localPosition : Vector3.zero;
+        if (globeTransform != null && globeTransform.anchoredPosition != Vector2.zero)
+            originalAnchoredPos = globeTransform.anchoredPosition;
     }
 
     public void Setup(Player targetPlayer)
@@ -162,12 +163,12 @@ public class UI_PlayerHealthGlobe : MonoBehaviour
             return;
 
         globeTransform.DOKill(true);
-        globeTransform.localPosition = originalLocalPos;
-        globeTransform.DOShakePosition(0.2f, hitShakeStrength, 25, 90f, false, true)
+        globeTransform.anchoredPosition = originalAnchoredPos;
+        globeTransform.DOShakeAnchorPos(0.2f, hitShakeStrength, 25, 90f, false, true)
             .OnComplete(() =>
             {
                 if (globeTransform != null)
-                    globeTransform.localPosition = originalLocalPos;
+                    globeTransform.anchoredPosition = originalAnchoredPos;
             });
     }
 
@@ -341,6 +342,7 @@ public class UI_PlayerHealthGlobe : MonoBehaviour
         // 9. Attach Component & Connect References
         UI_PlayerHealthGlobe globe = root.AddComponent<UI_PlayerHealthGlobe>();
         globe.globeTransform = rootRect;
+        globe.originalAnchoredPos = new Vector2(40f, 40f);
         globe.mainLiquidImage = bloodImg;
         globe.ghostLiquidImage = ghostImg;
         globe.glassHighlightImage = glassImg;
