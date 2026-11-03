@@ -285,9 +285,13 @@ public class DevCheat_ItemTester : MonoBehaviour
             else
                 skillTree = FindFirstObjectByType<UI_SkillTree>(FindObjectsInactive.Include);
 
-            if (skillTree != null && skillTree.allTreeNodes != null)
+            UI_TreeNode[] nodes = skillTree != null
+                ? skillTree.GetComponentsInChildren<UI_TreeNode>(true)
+                : FindObjectsByType<UI_TreeNode>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+            if (nodes != null)
             {
-                foreach (var node in skillTree.allTreeNodes)
+                foreach (var node in nodes)
                 {
                     if (node != null && node.skillData != null &&
                         (node.skillData.name.Contains("Infernal") || (node.skillData.displayName != null && node.skillData.displayName.Contains("Hỏa Long"))))
