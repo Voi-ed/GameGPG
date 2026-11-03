@@ -93,6 +93,20 @@ public class Enemy_Mage : Enemy, ICounterable
         castSpellCoroutine = StartCoroutine(CastSpellCo());
     }
 
+    public override void TryEnterBattleState(Transform player)
+    {
+        // Bảo vệ không ngắt ngang khi Mage đang bắn phép, đang lùi né, hoặc đang bị choáng/chết
+        if (stateMachine.currentState == mageBattleState ||
+            stateMachine.currentState == mageSpellCastState ||
+            stateMachine.currentState == mageRetreatState ||
+            stateMachine.currentState == attackState ||
+            stateMachine.currentState == stunnedState ||
+            stateMachine.currentState == deadState)
+            return;
+
+        base.TryEnterBattleState(player);
+    }
+
     public void StopCastingSpell()
     {
         if (castSpellCoroutine != null)
@@ -100,7 +114,19 @@ public class Enemy_Mage : Enemy, ICounterable
             StopCoroutine(castSpellCoroutine);
             castSpellCoroutine = null;
         }
-        SetSpellCastPerformed(true);
+        SetSpellCastPerformed(false);
+    }
+
+    public override void ApplyStun(float duration)
+    {
+        StopCastingSpell();
+        base.ApplyStun(duration);
+    }
+
+    public override void EntityDeath()
+    {
+        StopCastingSpell();
+        base.EntityDeath();
     }
 
     private IEnumerator CastSpellCo()
@@ -139,6 +165,7 @@ public class Enemy_Mage : Enemy, ICounterable
         if (CanBeCountered == false)
             return;
 
+        StopCastingSpell();
         stateMachine.ChangeState(stunnedState);
     }
 

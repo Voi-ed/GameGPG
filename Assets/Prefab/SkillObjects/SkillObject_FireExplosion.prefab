@@ -54,11 +54,11 @@ MonoBehaviour:
   damageMultiplier: 1.8
   knockbackPower: {x: 8, y: 7.5}
   knockbackDuration: 0.35
-  lifetime: 1
+  lifetime: 1.6
   canStun: 1
   stunDuration: 1.5
   useHitStop: 1
-  hitStopDuration: 0.05
-  fireExplosionVfxPrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
+  hitStopDuration: 0.04
+  fireExplosionVfxPrefab: {fileID: 4794043405585894037, guid: f4444577e91cb4c85a758cc350c241c8, type: 3}
   vfxOffset: {x: 0, y: 0.2, z: 0}
-  vfxScale: {x: 1.35, y: 1.35, z: 1.35}
+  vfxScale: {x: 2.2, y: 2.2, z: 2.2}

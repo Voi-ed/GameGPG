@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Dark Mage
+  m_EditorClassIdentifier: 
+  monsterId: mage
+  monsterName: Dark Mage
+  monsterIcon: {fileID: 841079788, guid: 22316289a917ad64d8509dfb0f3de8f0, type: 3}
+  monsterPrefab: {fileID: 5403739060828821623, guid: 4a4428411eb3487439ef8c5a47188f88, type: 3}
+  monsterRank: 0
+  baseHealth: 130
+  mapLocation: 4_Caves
+  description: "Ph\xE1p s\u01B0 h\u1EAFc \xE1m t\u1EE5 c\u1EA7u l\u1EEDa v\xE0 t\u1EA1o
+    v\xF2ng ma ph\xE1p b\xF9ng n\u1ED5 d\u01B0\u1EDBi ch\xE2n ng\u01B0\u1EDDi ch\u01A1i."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0007, type: 2}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Arch Demon
+  m_EditorClassIdentifier: 
+  monsterId: arch_demon
+  monsterName: Arch Demon
+  monsterIcon: {fileID: 2764273851807834643, guid: e672c0b1b679e465981a334a5e0af1d0, type: 3}
+  monsterPrefab: {fileID: 6409625887082432548, guid: c4c26e23c1d914d02aca21afb3fc357d, type: 3}
+  monsterRank: 2
+  baseHealth: 2200
+  mapLocation: 6_Inferno Underworld (Boss)
+  description: "\u0110\u1EA1i ma \u0111\u1EA7u cai qu\u1EA3n \u0111\u1ECBa ng\u1EE5c
+    h\u1ECFa ng\u1EE5c, tri\u1EC7u h\u1ED3i m\u01B0a thi\xEAn th\u1EA1ch v\xE0 h\u1EAFc
+    c\u1EA7u h\u1EE7y di\u1EC7t."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0016, type: 2}

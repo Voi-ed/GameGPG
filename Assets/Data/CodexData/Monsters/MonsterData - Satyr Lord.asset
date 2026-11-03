@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Satyr Lord
+  m_EditorClassIdentifier: 
+  monsterId: satyr
+  monsterName: Satyr Lord
+  monsterIcon: {fileID: -7950320164446702114, guid: 2fc96e6bff73c4a1ab23be2d4abab69c, type: 3}
+  monsterPrefab: {fileID: 239948474345866161, guid: 876a2f8284c7d482b876f486d6f02496, type: 3}
+  monsterRank: 2
+  baseHealth: 1200
+  mapLocation: 3_Swamp (Boss)
+  description: "Ch\xFAa t\u1EC3 n\u1EEDa ng\u01B0\u1EDDi n\u1EEDa d\xEA c\u1EE7a
+    \u0111\u1EA7m l\u1EA7y u \xE1m, s\u1EDF h\u1EEFu s\u1EE9c m\u1EA1nh nguy\u1EC1n
+    r\u1EE7a v\xE0 cu\u1ED3ng b\u1EA1o."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0008, type: 2}

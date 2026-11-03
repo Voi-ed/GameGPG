@@ -61,10 +61,25 @@ public class SkillObject_FireExplosion : SkillObject_Base
         if (vfxPrefab != null)
             fireExplosionVfxPrefab = vfxPrefab;
 
+#if UNITY_EDITOR
+        if (fireExplosionVfxPrefab == null)
+        {
+            fireExplosionVfxPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefab/Vfx_UseItem/Vfx_Dragon_FireExplosion.prefab");
+        }
+#endif
+
         if (fireExplosionVfxPrefab != null && spawnedVfx == null)
         {
-            spawnedVfx = Instantiate(fireExplosionVfxPrefab, transform.position + vfxOffset, Quaternion.identity, transform);
+            Quaternion rot = fireExplosionVfxPrefab.transform.rotation;
+            spawnedVfx = Instantiate(fireExplosionVfxPrefab, transform.position + vfxOffset, rot, transform);
             spawnedVfx.transform.localScale = vfxScale;
+
+            foreach (var r in spawnedVfx.GetComponentsInChildren<Renderer>(true))
+            {
+                r.sortingLayerName = "Vfx_Front";
+                if (r.sortingOrder < 15)
+                    r.sortingOrder = 15;
+            }
         }
 
         Explode();
@@ -76,6 +91,15 @@ public class SkillObject_FireExplosion : SkillObject_Base
         if (playerStats == null)
             return;
 
+        // Âm thanh bộc phá uy lực cho Hỏa Long Xung Kích
+        if (AudioManager.instance != null)
+        {
+            if (isMain)
+                AudioManager.instance.PlayGlobalSFX("dragon_attack");
+            else
+                AudioManager.instance.PlayGlobalSFX("player_attackHit");
+        }
+
         AttackData attackData = playerStats.GetAttackData(damageScaleData);
         float baseDamage = playerStats.GetBaseDamage();
         float physDamage = baseDamage * 0.4f * (damageScaleData != null ? damageScaleData.phyiscal : 1f);
@@ -86,14 +110,14 @@ public class SkillObject_FireExplosion : SkillObject_Base
 
         foreach (var target in targets)
         {
-            IDamageable damageable = target.GetComponent<IDamageable>();
+            IDamageable damageable = target.GetComponentInParent<IDamageable>() ?? target.GetComponent<IDamageable>();
             if (damageable != null)
             {
                 damageable.TakeDamage(physDamage, fireDamage, ElementType.Fire, transform);
                 hitAnyEnemy = true;
             }
 
-            Entity_StatusHandler statusHandler = target.GetComponent<Entity_StatusHandler>();
+            Entity_StatusHandler statusHandler = target.GetComponentInParent<Entity_StatusHandler>() ?? target.GetComponent<Entity_StatusHandler>();
             if (statusHandler != null && attackData != null)
             {
                 statusHandler.ApplyStatusEffect(ElementType.Fire, attackData.effectData);
@@ -102,7 +126,7 @@ public class SkillObject_FireExplosion : SkillObject_Base
             // Stun enemy (only on main explosion)
             if (canStun)
             {
-                Enemy enemy = target.GetComponent<Enemy>();
+                Enemy enemy = target.GetComponentInParent<Enemy>() ?? target.GetComponent<Enemy>();
                 if (enemy != null)
                 {
                     enemy.ApplyStun(stunDuration);
@@ -110,7 +134,7 @@ public class SkillObject_FireExplosion : SkillObject_Base
             }
 
             // Knockback
-            Entity enemyEntity = target.GetComponent<Entity>();
+            Entity enemyEntity = target.GetComponentInParent<Entity>() ?? target.GetComponent<Entity>();
             if (enemyEntity != null)
             {
                 float dirX = Mathf.Sign(enemyEntity.transform.position.x - transform.position.x);

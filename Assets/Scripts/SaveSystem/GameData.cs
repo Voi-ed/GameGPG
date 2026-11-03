@@ -32,6 +32,8 @@ public class GameData
     public string lastScenePlayed;
     public Vector3 lastPlayerPosition;
 
+    public List<string> quickItemSaveIds;
+
     public GameData()
     {
         inventory = new SerializableDictionary<string, int>();
@@ -50,5 +52,7 @@ public class GameData
         activeQuests = new SerializableDictionary<string, int>();
 
         defeatedBosses = new SerializableDictionary<string, bool>();
+
+        quickItemSaveIds = new List<string>();
     }
 }

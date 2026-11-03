@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Samurai Zipp
+  m_EditorClassIdentifier: 
+  monsterId: samurai_zipp
+  monsterName: Samurai Zipp
+  monsterIcon: {fileID: 1669350216702576921, guid: f04305d3e896b4dfebe924fbbec7f7d3, type: 3}
+  monsterPrefab: {fileID: 5334568574400740619, guid: 26e489fefe45d41668a89170879fc124, type: 3}
+  monsterRank: 0
+  baseHealth: 210
+  mapLocation: 8_Metroidvania Ruins
+  description: "L\xE3ng kh\xE1ch ki\u1EBFm thu\u1EADt r\xFAt ki\u1EBFm ch\u1EDBp
+    nho\xE1ng (Iaido), l\u01B0\u1EDBt qua m\u1EE5c ti\xEAu g\xE2y s\xE1t th\u01B0\u01A1ng."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0013, type: 2}

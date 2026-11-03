@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: "MonsterData - Green Slime (V\u1EEBa)"
+  m_EditorClassIdentifier: 
+  monsterId: slime_medium
+  monsterName: "Green Slime (V\u1EEBa)"
+  monsterIcon: {fileID: 21300000, guid: 62891f7126431ec48a4b4d35fa7e8f10, type: 3}
+  monsterPrefab: {fileID: 1267526934011421454, guid: 86c02021f64d74c4f863a2f976b485c1, type: 3}
+  monsterRank: 0
+  baseHealth: 120
+  mapLocation: 2_Forest Green
+  description: "Slime tr\u01B0\u1EDFng th\xE0nh, c\xF3 th\u1EC3 ph\xE2n t\xE1ch khi
+    tr\xFAng \u0111\xF2n ch\xED m\u1EA1ng."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0002, type: 2}

@@ -82,6 +82,12 @@ public class BossArenaManager : MonoBehaviour
 
         Player player = Player.instance != null ? Player.instance : FindFirstObjectByType<Player>();
 
+        // Đảm bảo 100% Player luôn đầy máu khi chuẩn bị bước vào trận chiến Boss
+        if (player != null && player.health != null)
+        {
+            player.health.SetHealthToPercent(1f);
+        }
+
         // Định vị Player nếu có chỉ định playerSpawnPoint
         if (player != null && playerSpawnPoint != null)
         {
@@ -473,9 +479,24 @@ public class BossArenaManager : MonoBehaviour
     /// </summary>
     public void ReturnToCamp()
     {
+        string targetScene = (string.IsNullOrEmpty(campSceneName) || campSceneName == "CampScene")
+            ? "1_Village & Camp"
+            : campSceneName;
+
+        Player player = Player.instance != null ? Player.instance : FindFirstObjectByType<Player>();
+        if (player != null && player.health != null)
+        {
+            player.health.SetHealthToPercent(1f);
+        }
+
         if (GameManager.instance != null)
         {
-            GameManager.instance.ChangeScene(campSceneName, RespawnType.NonSpecific);
+            GameManager.instance.ResetTransitionState();
+            GameManager.instance.ChangeScene(targetScene, RespawnType.NonSpecific);
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(targetScene);
         }
     }
 

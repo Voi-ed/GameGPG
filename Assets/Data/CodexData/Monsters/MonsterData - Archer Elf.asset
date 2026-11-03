@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Archer Elf
+  m_EditorClassIdentifier: 
+  monsterId: archer_elf
+  monsterName: Archer Elf
+  monsterIcon: {fileID: 1650084079, guid: f347ca989c27d594991633486d27d2c6, type: 3}
+  monsterPrefab: {fileID: 293009362223351839, guid: 06aa93a948a9eff459a0fd616a2ee404, type: 3}
+  monsterRank: 0
+  baseHealth: 110
+  mapLocation: 2_Forest Green
+  description: "X\u1EA1 th\u1EE7 tinh linh tho\u1EAFt \u1EA9n tho\u1EAFt hi\u1EC7n
+    trong r\u1EEBng, b\u1EAFn t\xEAn \u0111\u1ED9c g\xE2y l\xE0m ch\u1EADm."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0006, type: 2}

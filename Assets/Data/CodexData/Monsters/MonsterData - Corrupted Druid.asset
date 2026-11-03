@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Corrupted Druid
+  m_EditorClassIdentifier: 
+  monsterId: druid
+  monsterName: Corrupted Druid
+  monsterIcon: {fileID: -722312802967330248, guid: 098a48ea66f18438ebcfa3b908d1ed80, type: 3}
+  monsterPrefab: {fileID: 6409625887082432548, guid: e3b9c3e2a0a63417288a25c0caf7cdaf, type: 3}
+  monsterRank: 1
+  baseHealth: 360
+  mapLocation: 7_Wasteland
+  description: "Tu s\u0129 r\u1EEBng s\xE2u b\u1ECB sa \u0111\u1ECDa, t\u1EA1o gai
+    nh\u1ECDn \u0111\xE2m l\xEAn t\u1EEB l\xF2ng \u0111\u1EA5t."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0018, type: 2}

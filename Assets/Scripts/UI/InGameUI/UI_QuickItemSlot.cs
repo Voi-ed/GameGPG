@@ -16,7 +16,11 @@ public class UI_QuickItemSlot : UI_ItemSlot
 
     public void SetupQuickSlotItem(Inventory_Item itemToPass)
     {
-        inventory.SetQuickItemInSlot(slotNumber, itemToPass);
+        if (inventory == null)
+            inventory = FindAnyObjectByType<Inventory_Player>();
+
+        if (inventory != null)
+            inventory.SetQuickItemInSlot(slotNumber, itemToPass);
     }
 
     public void SimulateButtonFeedback()

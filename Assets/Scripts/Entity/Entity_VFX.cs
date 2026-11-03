@@ -34,9 +34,39 @@ public class Entity_VFX : MonoBehaviour
     protected virtual void Awake()
     {
         entity = GetComponent<Entity>();
-        sr = GetComponentInChildren<SpriteRenderer>();
-        originalMaterial = sr.material;
+        if (sr == null)
+            sr = GetComponentInChildren<SpriteRenderer>();
+        if (sr != null && originalMaterial == null)
+            originalMaterial = sr.material;
         originalHitVfxColor = hitVfxColor;
+    }
+
+    protected virtual void OnEnable()
+    {
+        ResetVisuals();
+    }
+
+    protected virtual void OnDisable()
+    {
+        ResetVisuals();
+    }
+
+    public virtual void ResetVisuals()
+    {
+        if (onDamageVfxCoroutine != null)
+        {
+            StopCoroutine(onDamageVfxCoroutine);
+            onDamageVfxCoroutine = null;
+        }
+
+        StopImageEchoEffect();
+
+        if (sr != null)
+        {
+            if (originalMaterial != null)
+                sr.material = originalMaterial;
+            sr.color = Color.white;
+        }
     }
 
  
@@ -190,10 +220,15 @@ public class Entity_VFX : MonoBehaviour
 
     private IEnumerator OnDamageVfxCo()
     {
-        sr.material = onDamageMaterial;
+        if (sr != null && onDamageMaterial != null)
+            sr.material = onDamageMaterial;
 
         yield return new WaitForSeconds(onDamageVfxDuration);
-        sr.material = originalMaterial;
+        
+        if (sr != null && originalMaterial != null)
+            sr.material = originalMaterial;
+
+        onDamageVfxCoroutine = null;
     }
 
     public void PlayHealVfx()

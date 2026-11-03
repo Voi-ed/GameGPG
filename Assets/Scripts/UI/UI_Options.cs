@@ -8,6 +8,9 @@ public class UI_Options : MonoBehaviour
 {
     private Player player;
     [SerializeField] private Toggle healthBarToggle;
+    [SerializeField] private Toggle isMaleToggle;
+
+    private const string GenderPrefKey = "Player_IsMale";
 
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private float mixerMultiplier = 25;
@@ -24,8 +27,11 @@ public class UI_Options : MonoBehaviour
     {
         player = FindFirstObjectByType<Player>();
 
+        if (healthBarToggle != null)
+            healthBarToggle.onValueChanged.AddListener(OnHealthBarToggleChanged);
 
-        healthBarToggle.onValueChanged.AddListener(OnHealthBarToggleChanged);
+        if (isMaleToggle != null)
+            isMaleToggle.onValueChanged.AddListener(OnMaleToggleChanged);
     }
 
     public void BGMSliderValue(float value)
@@ -42,7 +48,23 @@ public class UI_Options : MonoBehaviour
 
     private void OnHealthBarToggleChanged(bool isOn)
     {
-        player.health.EnableHealthBar(isOn);
+        if (player != null && player.health != null)
+            player.health.EnableHealthBar(isOn);
+    }
+
+    private void OnMaleToggleChanged(bool isMale)
+    {
+        PlayerPrefs.SetInt(GenderPrefKey, isMale ? 1 : 0);
+        PlayerPrefs.Save();
+
+        if (player != null)
+        {
+            Player_Visual visual = player.GetComponent<Player_Visual>();
+            if (visual != null)
+            {
+                visual.SetGender(isMale ? CharacterGender.Male : CharacterGender.Female);
+            }
+        }
     }
 
     public void GoMainMenuBTN() => GameManager.instance.ChangeScene("MainMenu", RespawnType.NonSpecific);
@@ -51,6 +73,9 @@ public class UI_Options : MonoBehaviour
     {
         sfxSlider.value = PlayerPrefs.GetFloat(sfxParametr, .6f);
         bgmSlider.value = PlayerPrefs.GetFloat(bgmParametr, .6f);
+
+        if (isMaleToggle != null)
+            isMaleToggle.isOn = PlayerPrefs.GetInt(GenderPrefKey, 1) == 1;
     }
 
     private void OnDisable()

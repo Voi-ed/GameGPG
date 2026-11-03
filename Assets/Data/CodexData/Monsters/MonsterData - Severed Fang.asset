@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Severed Fang
+  m_EditorClassIdentifier: 
+  monsterId: severed_fang
+  monsterName: Severed Fang
+  monsterIcon: {fileID: 1810033441652940789, guid: 3fd1520b46e9e4c50b4358234774ac68, type: 3}
+  monsterPrefab: {fileID: 6409625887082432548, guid: 2813d51bfb8684c6480061529343b527, type: 3}
+  monsterRank: 1
+  baseHealth: 410
+  mapLocation: 7_Wasteland
+  description: "Qu\xE1i th\xFA r\u0103ng nh\u1ECDn v\xF9ng \u0111\u1EA5t hoang, \u0111\xF2n
+    v\u1ED3 c\u1EAFn x\xE9 g\xE2y hi\u1EC7u \u1EE9ng ch\u1EA3y m\xE1u c\u1EF1c n\u1EB7ng."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0019, type: 2}

@@ -91,7 +91,13 @@ public partial class GameManager
             }
         }
 
-        // 4. Ẩn và bảo vệ Player
+        // 4. Reset VFX thị giác và ẩn Player
+        if (player.vfx != null)
+            player.vfx.ResetVisuals();
+
+        if (player.dragonForm != null)
+            player.dragonForm.ForceResetVisuals();
+
         if (player.rb != null)
             player.rb.linearVelocity = Vector2.zero;
         player.gameObject.SetActive(false);
@@ -143,6 +149,27 @@ public partial class GameManager
         {
             player.transform.position = returnPos;
             player.gameObject.SetActive(true);
+
+            // Khôi phục hoàn toàn visual nguyên bản, xóa bỏ flash trắng và tắt visual rồng phụ
+            if (player.vfx != null)
+                player.vfx.ResetVisuals();
+
+            if (player.dragonForm != null)
+                player.dragonForm.ForceResetVisuals();
+
+            Transform dragonAvatar = player.transform.Find("Dragon_Avatar");
+            if (dragonAvatar != null)
+                dragonAvatar.gameObject.SetActive(false);
+
+            Transform knightVisual = player.transform.Find("Animator");
+            if (knightVisual != null)
+                knightVisual.gameObject.SetActive(true);
+
+            if (player.anim != null)
+            {
+                player.anim.enabled = true;
+                player.anim.Play("idle", 0, 0f);
+            }
 
             if (player.rb != null)
                 player.rb.linearVelocity = Vector2.zero;
@@ -212,9 +239,9 @@ public partial class GameManager
             foreach (var r in renderers)
             {
                 r.sortingLayerName = "Default";
-                r.sortingOrder = 30;
+                r.sortingOrder = Mathf.Clamp(r.sortingOrder, 1, 10);
             }
-            Destroy(vfx, 2.0f);
+            Destroy(vfx, 1.5f);
         }
     }
 

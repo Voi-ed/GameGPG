@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Shadow Reaper
+  m_EditorClassIdentifier: 
+  monsterId: reaper
+  monsterName: Shadow Reaper
+  monsterIcon: {fileID: 749404420, guid: 7f3ea69451df3874385a5b2b0247c21d, type: 3}
+  monsterPrefab: {fileID: 8666870364988906929, guid: 748185b31f764414b9a75bb6d050e4ae, type: 3}
+  monsterRank: 1
+  baseHealth: 320
+  mapLocation: 5_Castle Dungeon
+  description: "T\u1EED th\u1EA7n b\xF3ng \u0111\xEAm l\u01A1 l\u1EEDng, c\xF3 kh\u1EA3
+    n\u0103ng d\u1ECBch chuy\u1EC3n t\u1EE9c th\u1EDDi v\xE0 ch\xE9m l\u01B0\u1EE1i
+    h\xE1i di\u1EC7n r\u1ED9ng."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0005, type: 2}

@@ -85,7 +85,9 @@ public partial class GameManager : MonoBehaviour, ISaveable
             lastScenePlayed == "Level_0" ||
             lastScenePlayed == "LeveL_1" ||
             lastScenePlayed == "LeveL_2" ||
-            lastScenePlayed == "SampleScene")
+            lastScenePlayed == "SampleScene" ||
+            lastScenePlayed == "BattleScene" ||
+            lastScenePlayed.Contains("Arena"))
         {
             lastScenePlayed = "1_Village & Camp";
             lastPlayerPosition = Vector3.zero;
@@ -100,6 +102,15 @@ public partial class GameManager : MonoBehaviour, ISaveable
 
         if (currentScene == "MainMenu")
             return;
+
+        // Nếu thoát game hoặc lưu lúc đang ở Đấu Trường (BattleScene), luôn lưu map đích là Làng
+        if (currentScene == "BattleScene" || currentScene.Contains("Arena"))
+        {
+            data.lastScenePlayed = "1_Village & Camp";
+            data.lastPlayerPosition = Vector3.zero;
+            dataLoaded = false;
+            return;
+        }
 
         if (Player.instance != null)
             data.lastPlayerPosition = Player.instance.transform.position;

@@ -81,6 +81,7 @@ public class UI_InGame : MonoBehaviour
             {
                 inventory.OnInventoryChange += UpdateQuickSlotsUI;
                 inventory.OnQuickSlotUsed += PlayQuickSlotFeedback;
+                UpdateQuickSlotsUI();
             }
         }
     }
@@ -218,10 +219,19 @@ public class UI_InGame : MonoBehaviour
         if (inventory == null || inventory.quickItems == null)
             return;
 
+        if (quickItemSlots == null || quickItemSlots.Length == 0)
+            quickItemSlots = GetComponentsInChildren<UI_QuickItemSlot>();
+
+        if (quickItemSlots == null)
+            return;
+
         Inventory_Item[] quickItems = inventory.quickItems;
 
         for (int i = 0; i < quickItems.Length; i++)
-            quickItemSlots[i].UpdateQuickSlotUI(quickItems[i]);
+        {
+            if (i < quickItemSlots.Length && quickItemSlots[i] != null)
+                quickItemSlots[i].UpdateQuickSlotUI(quickItems[i]);
+        }
     }
 
     public void OpenQuickItemOptions(UI_QuickItemSlot quickItemSlot, RectTransform targetRect)

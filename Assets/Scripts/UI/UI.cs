@@ -27,6 +27,7 @@ public class UI : MonoBehaviour
     public UI_Dialogue dialogueUI { get; private set; }
     public UI_Teleport teleportUI { get; private set; }
     public UI_BossChallenge bossChallengeUI { get; private set; }
+    public UI_Codex codexUI { get; private set; }
 
     #endregion
 
@@ -54,6 +55,12 @@ public class UI : MonoBehaviour
         dialogueUI = GetComponentInChildren<UI_Dialogue>(true);
         teleportUI = GetComponentInChildren<UI_Teleport>(true);
         bossChallengeUI = GetComponentInChildren<UI_BossChallenge>(true);
+        codexUI = GetComponentInChildren<UI_Codex>(true);
+
+        if (uiElements != null)
+        {
+            uiElements = System.Array.FindAll(uiElements, elem => elem != null);
+        }
 
         skillTreeEnabled = skillTreeUI.gameObject.activeSelf;
         inventoryEnabled = inventoryUI.gameObject.activeSelf;
@@ -62,6 +69,14 @@ public class UI : MonoBehaviour
     private void Start()
     {
         skillTreeUI.UnlockDefaultSkills();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ToggleCodexUI();
+        }
     }
 
     public void SetupControlsUI(PlayerInputSet inputSet)
@@ -76,13 +91,16 @@ public class UI : MonoBehaviour
 
         input.UI.OptionsUI.performed += ctx =>
         { 
-            foreach (var element in uiElements)
+            if (uiElements != null)
             {
-                if (element.activeSelf)
+                foreach (var element in uiElements)
                 {
-                    Time.timeScale = 1;
-                    SwitchToInGameUI();
-                    return;
+                    if (element != null && element.activeSelf)
+                    {
+                        Time.timeScale = 1;
+                        SwitchToInGameUI();
+                        return;
+                    }
                 }
             }
 
@@ -127,14 +145,23 @@ public class UI : MonoBehaviour
 
         skillTreeEnabled = false;
         inventoryEnabled = false;
+        if (codexUI != null)
+            codexUI.gameObject.SetActive(false);
     }
     
     private void SwitchTo(GameObject objectToSwitchOn)
     {
-        foreach (var element in uiElements)
-            element.gameObject.SetActive(false);
+        if (uiElements != null)
+        {
+            foreach (var element in uiElements)
+            {
+                if (element != null)
+                    element.SetActive(false);
+            }
+        }
 
-        objectToSwitchOn.SetActive(true);
+        if (objectToSwitchOn != null)
+            objectToSwitchOn.SetActive(true);
     }
 
     private void StopPlayerControls(bool stopControls)
@@ -149,14 +176,49 @@ public class UI : MonoBehaviour
     {
         foreach (var element in uiElements)
         {
-            if (element.activeSelf)
+            if (element != null && element.activeSelf)
             {
                 StopPlayerControls(true);
                 return;
             }
         }
 
+        if (codexUI != null && codexUI.gameObject.activeSelf)
+        {
+            StopPlayerControls(true);
+            return;
+        }
+
         StopPlayerControls(false);
+    }
+
+    public void ToggleCodexUI()
+    {
+        if (codexUI == null)
+        {
+            codexUI = GetComponentInChildren<UI_Codex>(true);
+        }
+
+        if (codexUI == null) return;
+
+        bool willBeActive = !codexUI.gameObject.activeSelf;
+        if (willBeActive)
+        {
+            codexUI.transform.SetAsLastSibling();
+            SetTooltipsAsLastSibling();
+            if (fadeScreenUI != null)
+                fadeScreenUI.transform.SetAsLastSibling();
+
+            codexUI.gameObject.SetActive(true);
+            HideAllTooltips();
+            StopPlayerControls(true);
+        }
+        else
+        {
+            codexUI.gameObject.SetActive(false);
+            HideAllTooltips();
+            StopPlayerControlsIfNeeded();
+        }
     }
     
     public void ToggleSkillTreeUI()

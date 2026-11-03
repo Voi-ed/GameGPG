@@ -820,6 +820,8 @@ GameObject:
   - component: {fileID: 4422213722905681848}
   - component: {fileID: 2275694716094009475}
   - component: {fileID: 5664621282392904164}
+  - component: {fileID: 4705671083277664503}
+  - component: {fileID: 817038352716681348}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -848,6 +850,7 @@ Transform:
   - {fileID: 9119209451912592213}
   - {fileID: 902808852011774235}
   - {fileID: 8474423373592709584}
+  - {fileID: 4959368856779774888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8405265872060402481
@@ -1220,6 +1223,181 @@ MonoBehaviour:
   activeQuests: []
   completedQuests: []
   questDatabase: {fileID: 11400000, guid: 0da5a11d8e57fe943a39f0ed71d08b81, type: 2}
+--- !u!114 &4705671083277664503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566861989324100011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea55a9f3066449e985bedbafa0b2a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knightVisual: {fileID: 8089002270287890189}
+  dragonVisual: {fileID: 7566861989324100888}
+  dragonAnim: {fileID: 9223372036854775807}
+  dragonAnimatorController: {fileID: 9100000, guid: 700f99bf6fd840e089fe36c4288bc67d, type: 2}
+  dragonBuffIcon: {fileID: 8133175665754931523, guid: ca1a2001bc48040ac9689aeef1241081, type: 3}
+  clawDamage: 150
+  clawRange: 2.8
+  attackCooldown: 0.5
+  knockbackForce: {x: 10, y: 5}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
+  dragonColliderSize: {x: 1.6, y: 3}
+  dragonColliderOffset: {x: 0, y: 1.5}
+  comboResetTime: 0.85
+  hellfirePillarPrefab: {fileID: 4251143904839232136, guid: 64ce979f826d743bf95661c74360d028, type: 3}
+  skillDamage: 250
+  skillCooldown: 5
+  skillTargetRange: 11
+  maxPillarTargets: 3
+  pillarChainDelay: 0.12
+  fireballPrefab: {fileID: 3806039598199004532, guid: a6b2478df5e64452ea6a4667cd004e42, type: 3}
+  fireballDamage: 220
+  fireballSpeed: 15
+  fireballCooldown: 3
+--- !u!114 &817038352716681348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566861989324100011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f98a27d14b049e29ce817d23a4b9c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maleController: {fileID: 9100000, guid: 1a3b470671d22d64e8432c04b0b3d5d1, type: 2}
+  femaleController: {fileID: 22100000, guid: cc18db3e279014401b34f9e197f6d74b, type: 2}
+  currentGender: 0
+--- !u!1 &7566861989324100888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4959368856779774888}
+  - component: {fileID: 267286123505813888}
+  - component: {fileID: 9223372036854775807}
+  - component: {fileID: 5198719931175140888}
+  m_Layer: 7
+  m_Name: Dragon_Avatar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4959368856779774888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566861989324100888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01, y: -3.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4959368856779774103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &267286123505813888
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566861989324100888}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 8133175665754931523, guid: ca1a2001bc48040ac9689aeef1241081, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &9223372036854775807
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566861989324100888}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 700f99bf6fd840e089fe36c4288bc67d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5198719931175140888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566861989324100888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d992e8aa6014c719775f7eaf703105a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8089002270287890189
 GameObject:
   m_ObjectHideFlags: 0

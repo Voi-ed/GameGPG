@@ -230,45 +230,118 @@ public class Inventory_Player : Inventory_Base
             if (slot.HasItem())
                 data.equipedItems[slot.equipedItem.itemData.saveId] = slot.slotType;
         }
+
+        if (data.quickItemSaveIds == null)
+            data.quickItemSaveIds = new List<string>();
+        data.quickItemSaveIds.Clear();
+
+        if (quickItems != null)
+        {
+            for (int i = 0; i < quickItems.Length; i++)
+            {
+                if (quickItems[i] != null && quickItems[i].itemData != null)
+                    data.quickItemSaveIds.Add(quickItems[i].itemData.saveId);
+                else
+                    data.quickItemSaveIds.Add(string.Empty);
+            }
+        }
     }
 
     public override void LoadData(GameData data)
     {
         gold = data.gold;   
 
-        foreach (var entry in data.inventory)
+        // 1. Dọn sạch túi đồ trước khi nạp lại từ save để tránh nhân đôi đồ khi đổi scene
+        itemList.Clear();
+
+        if (data.inventory != null)
         {
-            string saveId = entry.Key;
-            int stackSize = entry.Value;
-
-            ItemDataSO itemData = itemDataBase.GetItemData(saveId);
-
-            if (itemData == null)
+            foreach (var entry in data.inventory)
             {
-                Debug.LogWarning("Item not found: " + saveId);
-                continue;
-            }
+                string saveId = entry.Key;
+                int stackSize = entry.Value;
 
-            for (int i = 0; i < stackSize; i++)
-            {
-                Inventory_Item itemToLoad = new Inventory_Item(itemData);
-                AddItem(itemToLoad);    
+                ItemDataSO itemData = itemDataBase != null ? itemDataBase.GetItemData(saveId) : null;
+
+                if (itemData == null)
+                {
+                    Debug.LogWarning("Item not found: " + saveId);
+                    continue;
+                }
+
+                for (int i = 0; i < stackSize; i++)
+                {
+                    Inventory_Item itemToLoad = new Inventory_Item(itemData);
+                    AddItem(itemToLoad);    
+                }
             }
         }
 
-        foreach (var entry in data.equipedItems)
+        // 2. Dọn sạch và gỡ bỏ Modifiers của toàn bộ trang bị cũ đang mang trên người
+        if (equipList != null)
         {
-            string saveId = entry.Key;
-            ItemType equipemntSlotType = entry.Value;
+            foreach (var slot in equipList)
+            {
+                if (slot != null && slot.equipedItem != null)
+                {
+                    if (player != null && player.stats != null)
+                        slot.equipedItem.RemoveModifiers(player.stats);
+                    slot.equipedItem.RemoveItemEffect();
+                    slot.equipedItem = null;
+                }
+            }
+        }
 
-            ItemDataSO itemData = itemDataBase.GetItemData(saveId);
-            Inventory_Item itemToLoad = new Inventory_Item(itemData);
+        // 3. Nạp lại các trang bị đã lưu từ save data với đầy đủ kiểm tra null-safety
+        if (data.equipedItems != null && equipList != null)
+        {
+            foreach (var entry in data.equipedItems)
+            {
+                string saveId = entry.Key;
+                ItemType equipemntSlotType = entry.Value;
 
-            var slot = equipList.Find(slot => slot.slotType == equipemntSlotType && slot.HasItem() == false);
+                if (string.IsNullOrEmpty(saveId))
+                    continue;
 
-            slot.equipedItem = itemToLoad;
-            slot.equipedItem.AddModifiers(player.stats);
-            slot.equipedItem.AddItemEffect(player);
+                ItemDataSO itemData = itemDataBase != null ? itemDataBase.GetItemData(saveId) : null;
+                if (itemData == null)
+                {
+                    Debug.LogWarning("[Inventory_Player] Không tìm thấy dữ liệu trang bị cho saveId: " + saveId);
+                    continue;
+                }
+
+                Inventory_Item itemToLoad = new Inventory_Item(itemData);
+
+                var slot = equipList.Find(s => s != null && s.slotType == equipemntSlotType && s.HasItem() == false);
+                if (slot == null)
+                {
+                    Debug.LogWarning($"[Inventory_Player] Không tìm thấy slot trống phù hợp cho {itemData.itemName} ({equipemntSlotType})!");
+                    continue;
+                }
+
+                slot.equipedItem = itemToLoad;
+                if (player != null && player.stats != null)
+                    slot.equipedItem.AddModifiers(player.stats);
+                if (player != null)
+                    slot.equipedItem.AddItemEffect(player);
+            }
+        }
+
+        // Nạp và đồng bộ lại các ô Quick Item Slots
+        if (data.quickItemSaveIds != null && quickItems != null)
+        {
+            for (int i = 0; i < data.quickItemSaveIds.Count && i < quickItems.Length; i++)
+            {
+                string saveId = data.quickItemSaveIds[i];
+                if (!string.IsNullOrEmpty(saveId))
+                {
+                    quickItems[i] = itemList.Find(it => it != null && it.itemData != null && it.itemData.saveId == saveId);
+                }
+                else
+                {
+                    quickItems[i] = null;
+                }
+            }
         }
 
         UpdateSetBonuses();

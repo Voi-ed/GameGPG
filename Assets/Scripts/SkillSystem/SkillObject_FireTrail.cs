@@ -30,8 +30,15 @@ public class SkillObject_FireTrail : SkillObject_Base
 
         if (fireVfxPrefab != null && spawnedVfx == null)
         {
-            spawnedVfx = Instantiate(fireVfxPrefab, transform.position + vfxOffset, Quaternion.identity, transform);
+            Quaternion rot = fireVfxPrefab.transform.rotation;
+            spawnedVfx = Instantiate(fireVfxPrefab, transform.position + vfxOffset, rot, transform);
             spawnedVfx.transform.localScale = vfxScale;
+            foreach (var r in spawnedVfx.GetComponentsInChildren<Renderer>(true))
+            {
+                r.sortingLayerName = "Vfx_Front";
+                if (r.sortingOrder < 10)
+                    r.sortingOrder = 10;
+            }
         }
     }
 
@@ -57,12 +64,12 @@ public class SkillObject_FireTrail : SkillObject_Base
 
         foreach (var target in GetEnemiesAround(transform, checkRadius))
         {
-            IDamageable damageable = target.GetComponent<IDamageable>();
+            IDamageable damageable = target.GetComponentInParent<IDamageable>() ?? target.GetComponent<IDamageable>();
             if (damageable == null)
                 continue;
 
             AttackData attackData = playerStats.GetAttackData(damageScaleData);
-            Entity_StatusHandler statusHandler = target.GetComponent<Entity_StatusHandler>();
+            Entity_StatusHandler statusHandler = target.GetComponentInParent<Entity_StatusHandler>() ?? target.GetComponent<Entity_StatusHandler>();
 
             float baseDamage = playerStats.GetBaseDamage();
             float physDamage = baseDamage * 0.2f * (damageScaleData != null ? damageScaleData.phyiscal : 1f);
@@ -90,7 +97,7 @@ public class SkillObject_FireTrail : SkillObject_Base
                     isMainExplosion: false,
                     overrideRadius: 1.5f,
                     overrideDamageMult: 0.85f,
-                    overrideVfxScale: new Vector3(0.75f, 0.75f, 0.75f)
+                    overrideVfxScale: new Vector3(1.1f, 1.1f, 1.1f)
                 );
             }
         }

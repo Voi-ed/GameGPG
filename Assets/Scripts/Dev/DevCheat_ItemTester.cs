@@ -6,7 +6,7 @@ public class DevCheat_ItemTester : MonoBehaviour
 {
     private static DevCheat_ItemTester instance;
     private bool showGui = true;
-    private Rect windowRect = new Rect(10, 10, 260, 345);
+    private Rect windowRect = new Rect(10, 10, 260, 485);
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void AutoInitialize()
@@ -42,6 +42,12 @@ public class DevCheat_ItemTester : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.J))
             RestoreHealthFull();
+
+        if (Input.GetKeyDown(KeyCode.K))
+            AddSkillPoints(100);
+
+        if (Input.GetKeyDown(KeyCode.L))
+            EquipInfernalCrash();
     }
 
     private void OnGUI()
@@ -86,7 +92,16 @@ public class DevCheat_ItemTester : MonoBehaviour
         }
 
         GUILayout.Space(6);
-        GUILayout.Label("💡 F12: Ẩn/Hiện | 'C': Mở Túi đồ", EditorStyles_ItalicLabel());
+        GUILayout.Label("Kỹ Năng & Điểm:", EditorStyles_BoldLabel());
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("[K] +100 SP", GUILayout.Height(26)))
+            AddSkillPoints(100);
+        if (GUILayout.Button("[L] Hỏa Long Xung Kích", GUILayout.Height(26)))
+            EquipInfernalCrash();
+        GUILayout.EndHorizontal();
+
+        GUILayout.Space(6);
+        GUILayout.Label("💡 F12: Menu | L: Hỏa Long | K: +100 SP", EditorStyles_ItalicLabel());
         GUI.DragWindow(new Rect(0, 0, 10000, 20));
     }
 
@@ -205,5 +220,47 @@ public class DevCheat_ItemTester : MonoBehaviour
             Debug.Log("<color=green>[DevCheat] Hồi đầy máu cho Player!</color>");
         }
     }
+
+    private void AddSkillPoints(int points)
+    {
+        UI_SkillTree skillTree = null;
+        if (UI.instance != null && UI.instance.skillTreeUI != null)
+        {
+            skillTree = UI.instance.skillTreeUI;
+        }
+        else
+        {
+            skillTree = FindFirstObjectByType<UI_SkillTree>(FindObjectsInactive.Include);
+        }
+
+        if (skillTree != null)
+        {
+            skillTree.AddSkillPoints(points);
+            Debug.Log($"<color=cyan>[DevCheat] Đã cộng thành công +{points} Điểm Kỹ Năng!</color>");
+        }
+        else
+        {
+            Debug.LogWarning("[DevCheat] Chưa tìm thấy UI_SkillTree trong Scene!");
+        }
+    }
+
+    private void EquipInfernalCrash()
+    {
+        Player player = Player.instance;
+        if (player != null && player.skillManager != null && player.skillManager.dash != null)
+        {
+#if UNITY_EDITOR
+            SkillDataSO infernalCrash = UnityEditor.AssetDatabase.LoadAssetAtPath<SkillDataSO>("Assets/Data/Skill Data/Skill data - Dash/Skill data - Infernal Crash.asset");
+            if (infernalCrash != null)
+            {
+                player.skillManager.dash.SetSkillUpgrade(infernalCrash);
+                Debug.Log("<color=orange>[DevCheat] Đã kích hoạt & trang bị kỹ năng 'Hỏa Long Xung Kích' cho Player!</color>");
+                return;
+            }
+#endif
+            Debug.LogWarning("[DevCheat] Không tìm thấy dữ liệu Skill data - Infernal Crash.asset!");
+        }
+    }
 }
 #endif
+

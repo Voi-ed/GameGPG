@@ -46,6 +46,77 @@ public class Player_DragonForm : MonoBehaviour
 
     public const string BUFF_SOURCE_ID = "DragonTransformation";
 
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (knightVisual == null)
+        {
+            Transform animT = transform.Find("Animator");
+            if (animT != null) knightVisual = animT.gameObject;
+        }
+
+        if (dragonVisual == null)
+        {
+            Transform dragT = transform.Find("Dragon_Avatar");
+            if (dragT != null)
+            {
+                dragonVisual = dragT.gameObject;
+                dragonAnim = dragonVisual.GetComponentInChildren<Animator>();
+            }
+        }
+
+        if (dragonAnim == null && dragonVisual != null)
+        {
+            dragonAnim = dragonVisual.GetComponentInChildren<Animator>();
+        }
+
+        if (whatIsEnemy.value == 0)
+        {
+            whatIsEnemy = LayerMask.GetMask("Enemy", "InteractiveObjects");
+        }
+
+        if (dragonAnimatorController == null)
+        {
+            dragonAnimatorController = UnityEditor.AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(
+                "Assets/Animations/AnimatorControllers/Characters/Dragon_Controller.controller");
+        }
+
+        if (hellfirePillarPrefab == null)
+        {
+            hellfirePillarPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/Prefab/Vfx_UseItem/Vfx_Dragon_HellfirePillar.prefab");
+        }
+
+        if (fireballPrefab == null)
+        {
+            fireballPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/Prefab/Vfx_UseItem/Vfx_Dragon_Fireball.prefab");
+        }
+
+        if (dragonBuffIcon == null)
+        {
+            UnityEngine.Object[] assets = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(
+                "Assets/Audio/VS2/Shadow_Demon_Dragon_Asset_Pack/Shadow_Demon_Dragon_Asset_Pack/Animations/Idle_Right/Idle_Right.png");
+            if (assets != null)
+            {
+                foreach (var asset in assets)
+                {
+                    if (asset is Sprite sp)
+                    {
+                        dragonBuffIcon = sp;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    private void Reset()
+    {
+        OnValidate();
+    }
+#endif
+
     private void Awake()
     {
         instance = this;
@@ -62,6 +133,36 @@ public class Player_DragonForm : MonoBehaviour
         {
             whatIsEnemy = LayerMask.GetMask("Enemy", "InteractiveObjects");
         }
+
+        if (knightVisual == null)
+        {
+            Transform animT = transform.Find("Animator");
+            if (animT != null) knightVisual = animT.gameObject;
+        }
+
+        if (dragonVisual == null)
+        {
+            Transform dragT = transform.Find("Dragon_Avatar");
+            if (dragT != null)
+            {
+                dragonVisual = dragT.gameObject;
+                dragonAnim = dragonVisual.GetComponentInChildren<Animator>();
+            }
+        }
+
+        if (dragonAnim == null && dragonVisual != null)
+        {
+            dragonAnim = dragonVisual.GetComponentInChildren<Animator>();
+        }
+
+#if UNITY_EDITOR
+        if (dragonAnimatorController == null)
+            dragonAnimatorController = UnityEditor.AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>("Assets/Animations/AnimatorControllers/Characters/Dragon_Controller.controller");
+        if (hellfirePillarPrefab == null)
+            hellfirePillarPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefab/Vfx_UseItem/Vfx_Dragon_HellfirePillar.prefab");
+        if (fireballPrefab == null)
+            fireballPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefab/Vfx_UseItem/Vfx_Dragon_Fireball.prefab");
+#endif
     }
 
     private void Start()
@@ -71,6 +172,21 @@ public class Player_DragonForm : MonoBehaviour
         // Đảm bảo ban đầu Avatar Rồng tắt, Hiệp Sĩ bật
         if (dragonVisual != null) dragonVisual.SetActive(false);
         if (knightVisual != null) knightVisual.SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+        EnsureVisualReferences();
+        if (dragonVisual != null) dragonVisual.SetActive(false);
+        if (knightVisual != null) knightVisual.SetActive(true);
+    }
+
+    public void ForceResetVisuals()
+    {
+        EnsureVisualReferences();
+        if (dragonVisual != null) dragonVisual.SetActive(false);
+        if (knightVisual != null) knightVisual.SetActive(true);
+        IsDragonForm = false;
     }
 
     private void EnsureVisualReferences()
@@ -88,6 +204,7 @@ public class Player_DragonForm : MonoBehaviour
             {
                 dragonVisual = dragT.gameObject;
                 dragonAnim = dragonVisual.GetComponentInChildren<Animator>();
+                dragonVisual.SetActive(false);
             }
             else
             {
@@ -97,6 +214,7 @@ public class Player_DragonForm : MonoBehaviour
                 dragonGO.transform.localPosition = Vector3.zero;
                 dragonGO.transform.localRotation = Quaternion.identity;
                 dragonGO.transform.localScale = Vector3.one;
+                dragonGO.SetActive(false);
 
                 // Thêm SpriteRenderer đồng bộ với Knight
                 SpriteRenderer knightSr = knightVisual != null ? knightVisual.GetComponent<SpriteRenderer>() : null;
@@ -120,6 +238,11 @@ public class Player_DragonForm : MonoBehaviour
 
                 dragonVisual = dragonGO;
             }
+        }
+
+        if (dragonAnim == null && dragonVisual != null)
+        {
+            dragonAnim = dragonVisual.GetComponentInChildren<Animator>();
         }
     }
 

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Court Sorcerer
+  m_EditorClassIdentifier: 
+  monsterId: knight_mage
+  monsterName: Court Sorcerer
+  monsterIcon: {fileID: 2588084238578454764, guid: 2a8de309930c34fc68c5e2d3808c43cc, type: 3}
+  monsterPrefab: {fileID: 3778334723117371262, guid: 3dd026d8aa7ec4c899c66ccdcee179b7, type: 3}
+  monsterRank: 1
+  baseHealth: 220
+  mapLocation: 5_Castle Dungeon
+  description: "Ng\u1EF1 ti\u1EC1n ph\xE1p s\u01B0 \u0111i\u1EC1u khi\u1EC3n qu\u1EA3
+    c\u1EA7u l\u1EEDa d\u1EABn \u0111\u01B0\u1EDDng g\xE2y n\u1ED5 l\u1EDBn."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0012, type: 2}

@@ -54,6 +54,7 @@ public class Enemy_MageSpellCastState : EnemyState
 
         if (enemyMage != null)
         {
+            enemyMage.StopCastingSpell();
             enemyMage.lastTimeCastSpell = Time.time;
         }
     }

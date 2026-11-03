@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e4f1a2d5b6c7e8a9b0c1d2e3f4a5b, type: 3}
+  m_Name: MonsterData - Black Knight
+  m_EditorClassIdentifier: 
+  monsterId: black_knight
+  monsterName: Black Knight
+  monsterIcon: {fileID: 1107217989793704244, guid: 6a59ce8e757dafe429f1182cf98b33b0, type: 3}
+  monsterPrefab: {fileID: 4586334694534287266, guid: 05dfb6ccda89d4db6973b933fea2af1b, type: 3}
+  monsterRank: 1
+  baseHealth: 450
+  mapLocation: 5_Castle Dungeon
+  description: "Hi\u1EC7p s\u0129 h\u1EAFc \xE1m kho\xE1c tr\u1ECDng gi\xE1p, \u0111\xF2n
+    \u0111\xE1nh g\xE2y cho\xE1ng n\u1EB7ng v\xE0 kh\xE1ng s\xE1t th\u01B0\u01A1ng
+    v\u1EADt l\xFD."
+  dropData: {fileID: 11400000, guid: d0a1b3c4d5e6f708192a3b4c5d6e0009, type: 2}
