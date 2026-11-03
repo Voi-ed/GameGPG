@@ -22,7 +22,7 @@ public class SaveManager : MonoBehaviour
     private IEnumerator Start()
     {
         Debug.Log(Application.persistentDataPath);
-        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName,encryptData);
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
         allSaveables = FindISaveables();
 
         yield return null;
@@ -46,7 +46,9 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        foreach(var saveable in allSaveables)
+        allSaveables = FindISaveables();
+
+        foreach (var saveable in allSaveables)
             saveable.SaveData(ref gameData);
 
         dataHandler.SaveData(gameData);
@@ -61,6 +63,18 @@ public class SaveManager : MonoBehaviour
         dataHandler.Delete();
 
         LoadGame();
+    }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus)
+            SaveGame();
+    }
+
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+            SaveGame();
     }
 
     private void OnApplicationQuit()

@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 public enum RewardType {  Merchant, Blacksmith, None};
 public enum QuestType { Kill, Talk, Delivery}

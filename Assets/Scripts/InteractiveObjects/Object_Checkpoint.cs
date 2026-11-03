@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 public class Object_Checkpoint : MonoBehaviour, ISaveable

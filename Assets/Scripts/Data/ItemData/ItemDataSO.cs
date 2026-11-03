@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "RPG Setup/Item Data/Material item", fileName = "Material data - ")]
