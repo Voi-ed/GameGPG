@@ -1004,6 +1004,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 157
       objectReference: {fileID: 0}
+    - target: {fileID: 5189101315905140901, guid: 40262f310bd1e4f4b914869f3c2127de, type: 3}
+      propertyPath: m_text
+      value: GAME RPG ACTION
+      objectReference: {fileID: 0}
     - target: {fileID: 6230878056057207880, guid: 40262f310bd1e4f4b914869f3c2127de, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 280
