@@ -18,28 +18,21 @@ public partial class GameManager
     public GameObject ActiveDragon => activeDragonInstance;
     public event Action<bool> OnDragonTransformationChanged;
 
-    private void Update()
+    /// <summary>
+    /// Bật/Tắt chế độ Hóa Rồng (dùng cho Menu Test / Phím tắt)
+    /// </summary>
+    public void ToggleDragonTransformation()
     {
-        UpdateDragonTransformationInput();
-    }
-
-    private void UpdateDragonTransformationInput()
-    {
-#if UNITY_EDITOR
-        if (UnityEngine.InputSystem.Keyboard.current != null && UnityEngine.InputSystem.Keyboard.current.tKey.wasPressedThisFrame)
+        if (!IsDragonTransformed)
         {
-            if (!IsDragonTransformed)
-            {
-                Debug.Log("[GameManager] Nhấn phím T: Bắt đầu Hóa Rồng.");
-                StartDragonTransformation(defaultDragonDuration);
-            }
-            else
-            {
-                Debug.Log("[GameManager] Nhấn phím T: Hủy sớm, hoàn về Player.");
-                EndDragonTransformation();
-            }
+            Debug.Log("[GameManager] Kích hoạt Hóa Rồng (Test).");
+            StartDragonTransformation(defaultDragonDuration);
         }
-#endif
+        else
+        {
+            Debug.Log("[GameManager] Hủy Hóa Rồng, hoàn về Player (Test).");
+            EndDragonTransformation();
+        }
     }
 
     /// <summary>

@@ -300,9 +300,7 @@ MonoBehaviour:
   firstDialogueLine: {fileID: 11400000, guid: d1a10001000000000000000000000012, type: 2}
   quests:
   - {fileID: 11400000, guid: e1bed40c136e48979f03d23e1c8ef3b9, type: 2}
-  - {fileID: 11400000, guid: 5765e3e4b19e43f3bdc4f9fa9fb9c3b7, type: 2}
   - {fileID: 11400000, guid: 5cf5b2f11e134b659421a9d805f114d0, type: 2}
-  - {fileID: 11400000, guid: 2dcd47932aaf43a599de138504bafe50, type: 2}
 --- !u!114 &1624890108060077712
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -52,6 +52,12 @@ MonoBehaviour:
   sr: {fileID: 7732641176309435221}
   rb: {fileID: 203847355132294202}
   col: {fileID: 4486759258564540025}
+  magnetRadius: 3.5
+  pickupDelay: 0.35
+  initialFlySpeed: 6
+  maxFlySpeed: 24
+  flyAcceleration: 35
+  collectDistance: 0.4
 --- !u!212 &7732641176309435221
 SpriteRenderer:
   m_ObjectHideFlags: 0

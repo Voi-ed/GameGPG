@@ -31,6 +31,7 @@ public class Entity_Combat : MonoBehaviour
     public void PerformAttack()
     {
         OnAttackTriggered?.Invoke();
+
         bool targetGotHit = false;
 
         foreach (var target in GetDetectedColliders(whatIsTarget))

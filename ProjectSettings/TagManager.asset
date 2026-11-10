@@ -41,8 +41,14 @@ TagManager:
   - name: Background
     uniqueID: 596823231
     locked: 0
+  - name: Deco_duoi
+    uniqueID: 1800215963
+    locked: 0
   - name: Ground
     uniqueID: 1379488757
+    locked: 0
+  - name: Deco_Tren
+    uniqueID: 1463768713
     locked: 0
   - name: Chest
     uniqueID: 551191945

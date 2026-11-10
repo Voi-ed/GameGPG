@@ -6,6 +6,8 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
     public List<QuestData> activeQuests;
     public List<QuestData> completedQuests;
 
+    public System.Action OnQuestListUpdated;
+
     private Entity_DropManager dropManager;
     private Inventory_Player inventory;
 
@@ -52,15 +54,37 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
 
     private void GiveQuestReward(QuestDataSO questDataSO)
     {
+        if (questDataSO == null || questDataSO.rewardItems == null) return;
+
         foreach (var item in questDataSO.rewardItems)
         {
             if (item == null || item.itemData == null) continue;
 
             for (int i = 0; i < item.stackSize; i++)
             {
-                dropManager.CreateItemDrop(item.itemData);
+                if (dropManager != null)
+                    dropManager.CreateItemDrop(item.itemData);
             }
         }
+    }
+
+    public void ClaimQuestRewardAndComplete(QuestData questData)
+    {
+        if (questData == null || questData.questDataSO == null) return;
+
+        if (questData.questDataSO.questType == QuestType.Delivery)
+        {
+            var requiredItem = questData.questDataSO.itemToDeliver;
+            var requiredAmount = questData.questDataSO.requiredAmount;
+
+            if (inventory != null && inventory.HasItemAmount(requiredItem, requiredAmount))
+            {
+                inventory.RemoveItemAmount(requiredItem, requiredAmount);
+            }
+        }
+
+        GiveQuestReward(questData.questDataSO);
+        CompleteQuest(questData);
     }
 
     public bool HasCompletedQuest()
@@ -87,42 +111,62 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
 
     public void AddProgress(string questTargetId, int amount = 1)
     {
-        List<QuestData> getRewardQuests = new List<QuestData>();
+        bool updated = false;
 
         foreach (var quest in activeQuests)
         {
             if (quest.questDataSO.questTargetId != questTargetId)
                 continue;
 
-            if(quest.CanGetReward() == false)
+            if (quest.CanGetReward() == false)
+            {
                 quest.AddQuestProgress(amount);
-
-            if (quest.questDataSO.rewardType == RewardType.None && quest.CanGetReward())
-                getRewardQuests.Add(quest);
+                updated = true;
+            }
         }
 
-        foreach (var quest in getRewardQuests)
+        if (updated)
         {
-            GiveQuestReward(quest.questDataSO);
-            CompleteQuest(quest);
+            SaveManager.instance?.SaveGame();
+            OnQuestListUpdated?.Invoke();
         }
     }
 
     public int GetQuestProgress(QuestData questToCheck)
     {
         QuestData quest = activeQuests.Find(q => q == questToCheck);
-        return quest != null ? quest.currentAmount : 0;
+        return quest != null ? quest.GetCurrentAmount() : 0;
+    }
+
+    /// <summary>
+    /// Kiểm tra người chơi có được nhận thêm nhiệm vụ mới hay không (Giới hạn tối đa 1 nhiệm vụ đang làm).
+    /// </summary>
+    public bool CanAcceptNewQuest()
+    {
+        return activeQuests == null || activeQuests.Count == 0;
     }
 
     public void AcceptQuest(QuestDataSO questDataSO)
     {
+        if (questDataSO == null) return;
+
+        if (!CanAcceptNewQuest())
+        {
+            Debug.LogWarning($"[QuestManager] Không thể nhận '{questDataSO.questName}' vì đang có nhiệm vụ chưa hoàn tất!");
+            return;
+        }
+
         activeQuests.Add(new QuestData(questDataSO));
+        SaveManager.instance?.SaveGame();
+        OnQuestListUpdated?.Invoke();
     }
 
     public void CompleteQuest(QuestData questData)
     {
         completedQuests.Add(questData);
         activeQuests.Remove(questData);
+        SaveManager.instance?.SaveGame();
+        OnQuestListUpdated?.Invoke();
     }
 
     public bool QuestIsActive(QuestDataSO questToCheck)
@@ -131,6 +175,24 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
             return false;
 
         return activeQuests.Find(q => q.questDataSO == questToCheck) != null;
+    }
+
+    public bool QuestIsCompleted(QuestDataSO questToCheck)
+    {
+        if (questToCheck == null)
+            return false;
+
+        if (completedQuests.Find(q => q != null && q.questDataSO == questToCheck) != null)
+            return true;
+
+        if (SaveManager.instance != null && SaveManager.instance.GetGameData() != null)
+        {
+            var data = SaveManager.instance.GetGameData();
+            if (data.completedQuests.TryGetValue(questToCheck.questSaveId, out bool isComp) && isComp)
+                return true;
+        }
+
+        return false;
     }
 
     public void LoadData(GameData data)
@@ -179,6 +241,8 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
             completedQuest.currentAmount = questDataSO.requiredAmount;
             completedQuests.Add(completedQuest);
         }
+
+        OnQuestListUpdated?.Invoke();
     }
 
     public void SaveData(ref GameData data)

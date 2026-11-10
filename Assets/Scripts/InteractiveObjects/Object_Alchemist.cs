@@ -28,20 +28,20 @@ public class Object_Alchemist : Object_NPC, IInteractable
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>() == null)
+        if (collision.GetComponentInParent<Player>() == null)
             return;
 
         base.OnTriggerEnter2D(collision);
         if (player != null)
             inventory = player.GetComponent<Inventory_Player>();
 
-        if (merchant != null)
+        if (merchant != null && inventory != null)
             merchant.SetInventory(inventory);
     }
 
     protected override void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>() == null)
+        if (collision.GetComponentInParent<Player>() == null)
             return;
 
         base.OnTriggerExit2D(collision);

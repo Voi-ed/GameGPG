@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61094b76dde8cd4b9c1811b7318e5f4, type: 3}
+  m_Name: Quest - Tutorial Merchant Bob
+  m_EditorClassIdentifier: 
+  questSaveId: 942a2a3881fc4ebda135a33fc52b2e0f
+  questType: 1
+  questName: "Tân Thủ: Chuẩn Bị Hành Trang"
+  description: "Trước khi bước vào tiền đồn hoang tàn đầy rẫy hiểm nguy, cậu cần có trang bị và vật phẩm chu đáo. Hãy đến gặp Thương nhân Bob ở góc chợ làng để xem qua hàng hóa phòng thân!"
+  questGoal: "- Gặp Thương nhân Bob : "
+  questTargetId: merchant_bob
+  requiredAmount: 1
+  itemToDeliver: {fileID: 0}
+  rewardType: 2
+  rewardItems:
+  - itemData: {fileID: 11400000, guid: cd14151d50d876842887f3278667bab6, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+

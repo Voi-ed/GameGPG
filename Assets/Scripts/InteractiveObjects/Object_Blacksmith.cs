@@ -11,30 +11,46 @@ public class Object_Blacksmith : Object_NPC, IInteractable
         base.Awake();
         storage = GetComponent<Inventory_Storage>();
         anim = GetComponentInChildren<Animator>();
-        anim.SetBool("isBlacksmith", true);
+        if (anim != null)
+            anim.SetBool("isBlacksmith", true);
     }
 
     public override void Interact()
     {
         base.Interact();
-        ui.storageUI.SetupStorageUI(storage);
-        ui.craftUI.SetupCraftUI(storage);
+        if (ui != null)
+        {
+            if (ui.storageUI != null && storage != null)
+                ui.storageUI.SetupStorageUI(storage);
+            if (ui.craftUI != null && storage != null)
+                ui.craftUI.SetupCraftUI(storage);
 
-        ui.OpenStorageUI(true);
+            ui.OpenStorageUI(true);
+        }
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
+        if (player == null)
+            return;
+
         inventory = player.GetComponent<Inventory_Player>();
-        storage.SetInventory(inventory);
+        if (storage != null && inventory != null)
+            storage.SetInventory(inventory);
     }
 
     protected override void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.GetComponentInParent<Player>() == null)
+            return;
+
         base.OnTriggerExit2D(collision);
-        ui.HideAllTooltips();
-        ui.OpenStorageUI(false);
+        if (ui != null)
+        {
+            ui.HideAllTooltips();
+            ui.OpenStorageUI(false);
+        }
     }
 
 }

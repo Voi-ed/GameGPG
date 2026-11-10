@@ -5,7 +5,19 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
-    public static SaveManager instance;
+    private static SaveManager _instance;
+    public static SaveManager instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindFirstObjectByType<SaveManager>();
+            }
+            return _instance;
+        }
+        private set => _instance = value;
+    }
 
     private FileDataHandler dataHandler;
     private GameData gameData;
@@ -16,13 +28,49 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        StartCoroutine(LoadDataOnSceneLoadedCo());
+    }
+
+    private IEnumerator LoadDataOnSceneLoadedCo()
+    {
+        // Chờ 1 frame để tất cả GameObject trong scene mới chạy xong Awake() và Start()
+        yield return null;
+
+        allSaveables = FindISaveables();
+        if (gameData != null)
+        {
+            foreach (var saveable in allSaveables)
+                saveable?.LoadData(gameData);
+        }
     }
 
     private IEnumerator Start()
     {
         Debug.Log(Application.persistentDataPath);
-        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
+        if (dataHandler == null)
+            dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
         allSaveables = FindISaveables();
 
         yield return null;
@@ -31,6 +79,9 @@ public class SaveManager : MonoBehaviour
 
     private void LoadGame()
     {
+        if (dataHandler == null)
+            dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
+
         gameData = dataHandler.LoadData();
 
         if (gameData == null)
@@ -47,7 +98,7 @@ public class SaveManager : MonoBehaviour
     public void SaveGame()
     {
         if (dataHandler == null)
-            return;
+            dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
 
         if (gameData == null)
             gameData = new GameData();
@@ -60,7 +111,16 @@ public class SaveManager : MonoBehaviour
         dataHandler.SaveData(gameData);
     }
 
-    public GameData GetGameData() => gameData;
+    public GameData GetGameData()
+    {
+        if (gameData == null)
+        {
+            if (dataHandler == null)
+                dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
+            gameData = dataHandler.LoadData() ?? new GameData();
+        }
+        return gameData;
+    }
 
     [ContextMenu("*** Delete save data ***")]
     public void DeleteSaveData()

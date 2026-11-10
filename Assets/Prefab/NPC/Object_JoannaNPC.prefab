@@ -399,12 +399,16 @@ MonoBehaviour:
   floatRange: 0.1
   firstDialogueLine: {fileID: 11400000, guid: d1a10002000000000000000000000013, type: 2}
   quests:
-  - {fileID: 11400000, guid: 10a35298f2cd404aaabbf3cbf46e5bf6, type: 2}
+  - {fileID: 11400000, guid: f0882ae234704430bda6d4470bce3f2f, type: 2}
+  - {fileID: 11400000, guid: b9783a6f28e94430b5d3260f98310d38, type: 2}
+  - {fileID: 11400000, guid: b5daaee0fa2ebbf43b3da3de6a038461, type: 2}
   - {fileID: 11400000, guid: 292eb6d8e1d44af3863a1a43b317f34e, type: 2}
   - {fileID: 11400000, guid: f34842405a4749118b064e2a72f6a3aa, type: 2}
   - {fileID: 11400000, guid: 0a072d40ef554c5b81c929c88606853e, type: 2}
+  - {fileID: 11400000, guid: 63eec79711683b5498a187e011a14579, type: 2}
   - {fileID: 11400000, guid: fa93c0c23e0c40689bc902e7a0b43b11, type: 2}
-  - {fileID: 11400000, guid: a7410cb2a51143a5b09b5e268c50c001, type: 2}
+  - {fileID: 11400000, guid: 5765e3e4b19e43f3bdc4f9fa9fb9c3b7, type: 2}
+  - {fileID: 11400000, guid: 6e933a98e4ce4529910a0b25a1ddbec8, type: 2}
   - {fileID: 11400000, guid: 5816333a3fba45b5bfbcb8b23ab1c7c0, type: 2}
 --- !u!1 &7085315479644786181
 GameObject:

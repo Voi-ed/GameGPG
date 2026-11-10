@@ -122321,6 +122321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2720815042300604233}
   - component: {fileID: 1051949503713333096}
+  - component: {fileID: 8786247237145478870}
   m_Layer: 5
   m_Name: UI_InGame
   m_TagString: Untagged
@@ -122387,6 +122388,25 @@ MonoBehaviour:
   lowHpThreshold: 0.3
   yOffsetQuickItemParent: 150
   quickItemOptionsParent: {fileID: 1843928711653949233}
+  fastTravelButton: {fileID: 0}
+--- !u!114 &8786247237145478870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786247237145478869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cfc4d6f91114fb685b1402b2c903de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintPanel: {fileID: 0}
+  titleText: {fileID: 0}
+  bodyText: {fileID: 0}
+  canvasGroup: {fileID: 0}
+  handPointerSprite: {fileID: 0}
+  handIcon: {fileID: 0}
 --- !u!1 &8795051391705950282
 GameObject:
   m_ObjectHideFlags: 0

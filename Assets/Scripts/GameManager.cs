@@ -45,6 +45,7 @@ public partial class GameManager : MonoBehaviour, ISaveable
     private Vector3 lastPlayerPosition;
     private string lastScenePlayed = "1_Village & Camp";
     private bool dataLoaded;
+    public bool hasWatchedIntroComic { get; private set; } = false;
     public bool isTransitioningScene { get; set; } = false;
 
     private void Awake()
@@ -67,10 +68,28 @@ public partial class GameManager : MonoBehaviour, ISaveable
 
     public void ContinuePlay()
     {
+        // Đồng bộ dữ liệu mới nhất từ SaveManager trước khi quyết định
+        if (SaveManager.instance != null && SaveManager.instance.GetGameData() != null)
+        {
+            hasWatchedIntroComic = SaveManager.instance.GetGameData().hasWatchedIntroComic;
+        }
+
+        // Nếu người chơi chưa từng xem Comic mở đầu (Lần đầu chơi / Sau khi Delete Save)
+        if (!hasWatchedIntroComic)
+        {
+            ChangeScene("ComicMap", RespawnType.NonSpecific);
+            return;
+        }
+
         if (string.IsNullOrEmpty(lastScenePlayed))
             lastScenePlayed = "1_Village & Camp";
 
         ChangeScene(lastScenePlayed, RespawnType.NonSpecific);
+    }
+
+    public void SetIntroComicWatched(bool watched)
+    {
+        hasWatchedIntroComic = watched;
     }
 
     public void RestartScene()
@@ -83,6 +102,7 @@ public partial class GameManager : MonoBehaviour, ISaveable
     {
         lastScenePlayed = data.lastScenePlayed;
         lastPlayerPosition = data.lastPlayerPosition;
+        hasWatchedIntroComic = data.hasWatchedIntroComic;
 
         if (string.IsNullOrEmpty(lastScenePlayed) ||
             lastScenePlayed == "Level_0" ||
@@ -103,6 +123,8 @@ public partial class GameManager : MonoBehaviour, ISaveable
     {
         if (data == null)
             data = new GameData();
+
+        data.hasWatchedIntroComic = hasWatchedIntroComic;
 
         string currentScene = SceneManager.GetActiveScene().name;
 

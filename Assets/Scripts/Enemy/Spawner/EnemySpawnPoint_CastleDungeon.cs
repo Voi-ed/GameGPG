@@ -40,6 +40,11 @@ public class EnemySpawnPoint_CastleDungeon : EnemySpawnPoint
         if (CustomEnemyPrefab != null)
             return CustomEnemyPrefab;
 
+        // Ưu tiên quái theo nhiệm vụ đang làm (Knight Cref, Footman hoặc Mage)
+        GameObject questTarget = GetQuestTargetEnemyPrefab(knightCrefPrefab, knightFootmanPrefab, magePrefab);
+        if (questTarget != null)
+            return questTarget;
+
         return PickWeightedRandom(
             (knightFootmanPrefab, knightFootmanWeight),
             (knightCrefPrefab, knightCrefWeight),

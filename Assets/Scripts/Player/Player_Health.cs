@@ -13,12 +13,6 @@ public class Player_Health : Entity_Health
         player = GetComponent<Player>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-            Die();
-    }
-
     public override bool TakeDamage(float damage, float elementalDamage, ElementType element, Transform damageDealer)
     {
         bool wasHit = base.TakeDamage(damage, elementalDamage, element, damageDealer);

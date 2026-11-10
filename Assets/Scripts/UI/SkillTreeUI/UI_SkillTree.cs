@@ -68,22 +68,36 @@ public class UI_SkillTree : MonoBehaviour, ISaveable
     {
         skillPoints = data.skillPoints;
 
-        foreach (var node in allTreeNodes)
-        {
-            string skillName = node.skillData.displayName;
+        if (allTreeNodes == null)
+            allTreeNodes = GetComponentsInChildren<UI_TreeNode>(true);
 
-            if (data.skillTreeUI.TryGetValue(skillName,out bool unlocked) && unlocked)
+        if (skillManager == null)
+            skillManager = FindAnyObjectByType<Player_SkillManager>();
+
+        if (allTreeNodes != null)
+        {
+            foreach (var node in allTreeNodes)
+            {
+                if (node == null || node.skillData == null) continue;
+                string skillName = node.skillData.displayName;
+
+                if (data.skillTreeUI != null && data.skillTreeUI.TryGetValue(skillName, out bool unlocked) && unlocked)
                     node.UnlockWithSaveData();
+            }
         }
 
-        foreach (var skill in skillManager.allSkills)
+        if (skillManager != null && skillManager.allSkills != null && allTreeNodes != null)
         {
-            if (data.skillUpgrades.TryGetValue(skill.GetSkillType(), out SkillUpgradeType upgradeType))
+            foreach (var skill in skillManager.allSkills)
             {
-                var upgradeNode = allTreeNodes.FirstOrDefault(node => node.skillData.upgradeData.upgradeType == upgradeType);
+                if (skill == null) continue;
+                if (data.skillUpgrades != null && data.skillUpgrades.TryGetValue(skill.GetSkillType(), out SkillUpgradeType upgradeType))
+                {
+                    var upgradeNode = allTreeNodes.FirstOrDefault(node => node != null && node.skillData != null && node.skillData.upgradeData != null && node.skillData.upgradeData.upgradeType == upgradeType);
 
-                if (upgradeNode != null)
-                    skill.SetSkillUpgrade(upgradeNode.skillData);
+                    if (upgradeNode != null)
+                        skill.SetSkillUpgrade(upgradeNode.skillData);
+                }
             }
         }
     }

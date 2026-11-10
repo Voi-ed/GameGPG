@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Quest - It's Dangerous to Go Alone
   m_EditorClassIdentifier: 
   questSaveId: b5daaee0fa2ebbf43b3da3de6a038461
-  questName: Đi Một Mình Thật Nguy Hiểm
-  description: "Cậu vừa mới bắt đầu chuyến phiêu lưu thì phải có vũ khí tử tế phòng thân chứ. Ta vừa mua được một thanh kiếm từ một gã kỳ dị - trông gã như điên khùng nhưng lưỡi kiếm thì bén ngót. Ơ mà ta để nó ở đâu nhỉ? À phải rồi! Bỏ quên bên chỗ Joe rồi. Cậu qua nói chuyện với lão thợ rèn Joe để lấy thanh kiếm xứng đáng với một vị anh hùng nhé."
-  questGoal: "- Nói chuyện với thợ rèn Joe"
+  questType: 1
+  questName: "Tân Thủ: Rèn Đúc Vũ Khí"
+  description: "Thanh kiếm cùn sẽ khó lòng giúp cậu sống sót trước lũ quái vật. Hãy ghé thăm lò rèn của Joe ở làng để làm quen với việc rèn đúc và nhận thanh kiếm chiến binh đầu tiên!"
+  questGoal: "- Gặp Thợ rèn Joe : "
   questTargetId: blacksmith_joe
   requiredAmount: 1
-  rewardType: 0
+  itemToDeliver: {fileID: 0}
+  rewardType: 2
   rewardItems:
   - itemData: {fileID: 11400000, guid: 45c4b1c1b037fc34785f05b61e2d61ad, type: 2}
     stackSize: 1

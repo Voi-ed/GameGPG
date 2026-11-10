@@ -32,10 +32,15 @@ public class GameData
     public string lastScenePlayed;
     public Vector3 lastPlayerPosition;
 
+    public bool hasWatchedIntroComic;
+    public bool hasFinishedVillageWakeup;
+
     public List<string> quickItemSaveIds;
 
     public GameData()
     {
+        hasWatchedIntroComic = false;
+        hasFinishedVillageWakeup = false;
         inventory = new SerializableDictionary<string, int>();
         storageItems = new SerializableDictionary<string, int>();
         storageMaterials = new SerializableDictionary<string, int>();

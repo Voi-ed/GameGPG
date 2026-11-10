@@ -26,7 +26,7 @@ public class Object_CampGuard : Object_NPC, IInteractable
 
     protected override void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>() == null)
+        if (collision.GetComponentInParent<Player>() == null)
             return;
 
         base.OnTriggerExit2D(collision);

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questSaveId: 5816333a3fba45b5bfbcb8b23ab1c7c0
   questType: 0
-  questName: "Đại Chiến Chúa Quỷ ArchDemon"
-  description: "Mối đe dọa tối thượng ArchDemon đã thức tỉnh sâu trong cấm địa! Toàn bộ quân lính không thể cản bước hắn, chỉ có cậu mới đủ sức trảm sát đại ác quỷ này!"
-  questGoal: "- Đại chiến Chúa Quỷ ArchDemon : "
-  questTargetId: enemy_arch_demon
+  questName: "Khiêu Chiến Đấu Trường: Crimson Blade"
+  description: "Tiền đồn đã mở cổng Đấu Trường Boss! Hãy đến gặp Joanna [F] chọn 'Khiêu chiến Boss' để vào Đấu Trường đánh bại Kiếm Sĩ Huyết Ảnh Crimson Blade (Trùm đầu tiên). Sau đó, cậu có thể tiếp tục tự do chinh phục các tầng Boss tiếp theo cho đến khi hạ gục Chúa Quỷ ArchDemon!"
+  questGoal: "- Tiêu diệt Crimson Blade : "
+  questTargetId: enemy_crimson_blade
   requiredAmount: 1
   itemToDeliver: {fileID: 0}
   rewardType: 2

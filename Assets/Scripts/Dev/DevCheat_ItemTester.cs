@@ -19,36 +19,9 @@ public class DevCheat_ItemTester : MonoBehaviour
 
     private void Update()
     {
-        // Hỗ trợ cả F12 và phím ~ (BackQuote) để tiện dùng trên trình duyệt Web
+        // Chỉ dùng F12 hoặc ~ để Ẩn/Hiện Menu Test, không dùng phím tắt cho các chức năng cheat
         if (Input.GetKeyDown(KeyCode.F12) || Input.GetKeyDown(KeyCode.BackQuote))
             showGui = !showGui;
-
-        if (Input.GetKeyDown(KeyCode.F2))
-            EquipSet("Berserker");
-
-        if (Input.GetKeyDown(KeyCode.F3))
-            EquipSet("Shadow");
-
-        if (Input.GetKeyDown(KeyCode.F4))
-            EquipSet("Royal");
-
-        if (Input.GetKeyDown(KeyCode.F5))
-            EquipSet("Astral");
-
-        if (Input.GetKeyDown(KeyCode.F6))
-            EquipSet("Inferno");
-
-        if (Input.GetKeyDown(KeyCode.H))
-            SetHealthPercent(0.2f);
-
-        if (Input.GetKeyDown(KeyCode.J))
-            RestoreHealthFull();
-
-        if (Input.GetKeyDown(KeyCode.K))
-            AddSkillPoints(100);
-
-        if (Input.GetKeyDown(KeyCode.L))
-            EquipInfernalCrash();
     }
 
     private void OnGUI()
@@ -77,27 +50,27 @@ public class DevCheat_ItemTester : MonoBehaviour
         }
         GUILayout.EndHorizontal();
 
-        if (GUILayout.Button("[F2] Set Cuồng Nộ (Berserker)", GUILayout.Height(26)))
+        if (GUILayout.Button("Set Cuồng Nộ (Berserker)", GUILayout.Height(26)))
             EquipSet("Berserker");
-        if (GUILayout.Button("[F3] Set Sát Thủ (Shadow Assassin)", GUILayout.Height(26)))
+        if (GUILayout.Button("Set Sát Thủ (Shadow Assassin)", GUILayout.Height(26)))
             EquipSet("Shadow");
-        if (GUILayout.Button("[F4] Set Hoàng Gia (Stormguard)", GUILayout.Height(26)))
+        if (GUILayout.Button("Set Hoàng Gia (Stormguard)", GUILayout.Height(26)))
             EquipSet("Royal");
-        if (GUILayout.Button("[F5] Set Pháp Sư (Astral Archmage)", GUILayout.Height(26)))
+        if (GUILayout.Button("Set Pháp Sư (Astral Archmage)", GUILayout.Height(26)))
             EquipSet("Astral");
-        if (GUILayout.Button("[F6] Set Viêm Đế (Inferno Overlord)", GUILayout.Height(26)))
+        if (GUILayout.Button("Set Viêm Đế (Inferno Overlord)", GUILayout.Height(26)))
             EquipSet("Inferno");
 
         GUILayout.Space(6);
         GUILayout.Label("Thao tác Máu / Sinh tồn:", EditorStyles_BoldLabel());
         GUILayout.BeginHorizontal();
-        if (GUILayout.Button("[H] Máu 20%", GUILayout.Height(26)))
+        if (GUILayout.Button("Máu 20%", GUILayout.Height(26)))
             SetHealthPercent(0.2f);
-        if (GUILayout.Button("[J] Đầy Máu", GUILayout.Height(26)))
+        if (GUILayout.Button("Đầy Máu", GUILayout.Height(26)))
             RestoreHealthFull();
         GUILayout.EndHorizontal();
 
-        if (GUILayout.Button("[N] Tự Sát (Test Bất Tử Set)", GUILayout.Height(26)))
+        if (GUILayout.Button("Tự Sát (Test Bất Tử Set)", GUILayout.Height(26)))
         {
             if (Player.instance != null && Player.instance.health != null)
                 Player.instance.health.TakeDamage(999999, 0, ElementType.None, null);
@@ -106,10 +79,33 @@ public class DevCheat_ItemTester : MonoBehaviour
         GUILayout.Space(6);
         GUILayout.Label("Kỹ Năng & Điểm:", EditorStyles_BoldLabel());
         GUILayout.BeginHorizontal();
-        if (GUILayout.Button("[K] +100 SP", GUILayout.Height(26)))
+        if (GUILayout.Button("+100 SP", GUILayout.Height(26)))
             AddSkillPoints(100);
-        if (GUILayout.Button("[L] Hỏa Long Xung Kích", GUILayout.Height(26)))
-            EquipInfernalCrash();
+
+        string dragonBtnText = (GameManager.instance != null && GameManager.instance.IsDragonTransformed)
+            ? "Hủy Hóa Rồng"
+            : "Hóa Rồng";
+        if (GUILayout.Button(dragonBtnText, GUILayout.Height(26)))
+            ToggleDragonTransformation();
+        GUILayout.EndHorizontal();
+
+        GUILayout.Space(6);
+        int currentGold = (Player.instance != null && Player.instance.inventory != null) ? Player.instance.inventory.gold : 0;
+        GUILayout.Label($"Tiền Tệ / Vàng (Hiện có: {currentGold:N0}g):", EditorStyles_BoldLabel());
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("+10,000 Vàng", GUILayout.Height(26)))
+            AddGold(10000);
+        if (GUILayout.Button("+100,000 Vàng", GUILayout.Height(26)))
+            AddGold(100000);
+        GUILayout.EndHorizontal();
+
+        GUILayout.Space(6);
+        GUILayout.Label("Nhiệm Vụ (Quest Tool):", EditorStyles_BoldLabel());
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Max Tiến Độ Quest", GUILayout.Height(26)))
+            CompleteCurrentActiveQuestGoals();
+        if (GUILayout.Button("Trả Nhanh Tất Cả", GUILayout.Height(26)))
+            FastClaimAllCompletedQuests();
         GUILayout.EndHorizontal();
 
         GUILayout.Space(6);
@@ -273,46 +269,64 @@ public class DevCheat_ItemTester : MonoBehaviour
         }
     }
 
-    private void EquipInfernalCrash()
+    private void ToggleDragonTransformation()
+    {
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.ToggleDragonTransformation();
+        }
+        else
+        {
+            Debug.LogWarning("[DevCheat] Chưa tìm thấy GameManager trong Scene để Hóa Rồng!");
+        }
+    }
+
+    private void AddGold(int amount)
     {
         Player player = Player.instance;
-        if (player != null && player.skillManager != null && player.skillManager.dash != null)
+        Inventory_Player inv = (player != null && player.inventory != null) ? player.inventory : FindFirstObjectByType<Inventory_Player>();
+
+        if (inv != null)
         {
-            // Tìm trong cây kỹ năng UI_SkillTree đang mở hoặc có trong Scene (hoạt động 100% trên WebGL)
-            UI_SkillTree skillTree = null;
-            if (UI.instance != null && UI.instance.skillTreeUI != null)
-                skillTree = UI.instance.skillTreeUI;
-            else
-                skillTree = FindFirstObjectByType<UI_SkillTree>(FindObjectsInactive.Include);
+            inv.gold += amount;
+            inv.TriggerUpdateUI();
+            Debug.Log($"<color=yellow>[DevCheat] Đã cộng +{amount:N0} Vàng! Tổng vàng hiện tại: {inv.gold:N0}g</color>");
+        }
+        else
+        {
+            Debug.LogWarning("[DevCheat] Chưa tìm thấy Inventory_Player trong Scene!");
+        }
+    }
 
-            UI_TreeNode[] nodes = skillTree != null
-                ? skillTree.GetComponentsInChildren<UI_TreeNode>(true)
-                : FindObjectsByType<UI_TreeNode>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-
-            if (nodes != null)
+    private void CompleteCurrentActiveQuestGoals()
+    {
+        Player player = Player.instance;
+        if (player != null && player.questManager != null && player.questManager.activeQuests != null)
+        {
+            foreach (var q in player.questManager.activeQuests)
             {
-                foreach (var node in nodes)
+                if (q != null && q.questDataSO != null && !q.CanGetReward())
                 {
-                    if (node != null && node.skillData != null &&
-                        (node.skillData.name.Contains("Infernal") || (node.skillData.displayName != null && node.skillData.displayName.Contains("Hỏa Long"))))
-                    {
-                        player.skillManager.dash.SetSkillUpgrade(node.skillData);
-                        Debug.Log("<color=orange>[DevCheat] Đã kích hoạt & trang bị kỹ năng 'Hỏa Long Xung Kích' cho Player!</color>");
-                        return;
-                    }
+                    q.AddQuestProgress(q.questDataSO.requiredAmount);
                 }
             }
+            player.questManager.OnQuestListUpdated?.Invoke();
+            SaveManager.instance?.SaveGame();
+            Debug.Log("<color=green>[DevCheat] Đã hoàn thành toàn bộ mục tiêu của các nhiệm vụ đang làm!</color>");
+        }
+    }
 
-#if UNITY_EDITOR
-            SkillDataSO infernalCrash = UnityEditor.AssetDatabase.LoadAssetAtPath<SkillDataSO>("Assets/Data/Skill Data/Skill data - Dash/Skill data - Infernal Crash.asset");
-            if (infernalCrash != null)
+    private void FastClaimAllCompletedQuests()
+    {
+        Player player = Player.instance;
+        if (player != null && player.questManager != null && player.questManager.activeQuests != null)
+        {
+            var completedList = player.questManager.activeQuests.FindAll(q => q != null && q.CanGetReward());
+            foreach (var q in completedList)
             {
-                player.skillManager.dash.SetSkillUpgrade(infernalCrash);
-                Debug.Log("<color=orange>[DevCheat] Đã kích hoạt & trang bị kỹ năng 'Hỏa Long Xung Kích' cho Player!</color>");
-                return;
+                player.questManager.ClaimQuestRewardAndComplete(q);
             }
-#endif
-            Debug.LogWarning("[DevCheat] Không tìm thấy dữ liệu Skill data - Infernal Crash.asset!");
+            Debug.Log($"<color=yellow>[DevCheat] Đã nhận thưởng và trả nhanh {completedList.Count} nhiệm vụ!</color>");
         }
     }
 }

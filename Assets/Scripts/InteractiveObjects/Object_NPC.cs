@@ -8,6 +8,7 @@ public class Object_NPC : MonoBehaviour, IInteractable
 
     [Header("Quest Info")]
     [SerializeField] private string npcTargetQuestId;
+    public string npcTargetQuestIdProperty => npcTargetQuestId;
     [SerializeField] protected RewardType rewardNpc;
     [Space]
     [SerializeField] private Transform npc;
@@ -69,10 +70,11 @@ public class Object_NPC : MonoBehaviour, IInteractable
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>() == null)
+        Player detectedPlayer = collision.GetComponentInParent<Player>();
+        if (detectedPlayer == null)
             return;
 
-        player = collision.transform;
+        player = detectedPlayer.transform;
         if (interactToolTip != null)
         {
             startPosition = interactToolTip.transform.position;
@@ -82,9 +84,11 @@ public class Object_NPC : MonoBehaviour, IInteractable
 
     protected virtual void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>() == null)
+        Player detectedPlayer = collision.GetComponentInParent<Player>();
+        if (detectedPlayer == null)
             return;
 
+        player = null;
         if (interactToolTip != null)
             interactToolTip.SetActive(false);
     }

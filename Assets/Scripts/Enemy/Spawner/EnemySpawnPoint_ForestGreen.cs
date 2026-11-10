@@ -32,6 +32,11 @@ public class EnemySpawnPoint_ForestGreen : EnemySpawnPoint
         if (CustomEnemyPrefab != null)
             return CustomEnemyPrefab;
 
+        // Ưu tiên quái theo nhiệm vụ đang làm (Slime hoặc Archer Elf)
+        GameObject questTarget = GetQuestTargetEnemyPrefab(largeSlimePrefab, archerElfPrefab);
+        if (questTarget != null)
+            return questTarget;
+
         return PickWeightedRandom(
             (largeSlimePrefab, largeSlimeWeight),
             (archerElfPrefab, archerElfWeight)

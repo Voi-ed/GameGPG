@@ -63,8 +63,14 @@ public class Enemy_Health : Entity_Health
         return true;    
     }
 
+    private bool hasGivenQuestProgress = false;
+
     protected override void Die()
     {
+        if (hasGivenQuestProgress)
+            return;
+        hasGivenQuestProgress = true;
+
         base.Die();
 
         if (AudioManager.instance != null)
@@ -76,6 +82,7 @@ public class Enemy_Health : Entity_Health
                 AudioManager.instance.PlayGlobalSFX("monster_die");
         }
 
-        questManager.AddProgress(enemy.questTargetId);
+        if (questManager != null && enemy != null)
+            questManager.AddProgress(enemy.questTargetId);
     }
 }

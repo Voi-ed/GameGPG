@@ -32,6 +32,11 @@ public class EnemySpawnPoint_Swamp : EnemySpawnPoint
         if (CustomEnemyPrefab != null)
             return CustomEnemyPrefab;
 
+        // Ưu tiên quái theo nhiệm vụ đang làm (Druid hoặc Dark Mage)
+        GameObject questTarget = GetQuestTargetEnemyPrefab(druidPrefab, magePrefab);
+        if (questTarget != null)
+            return questTarget;
+
         return PickWeightedRandom(
             (druidPrefab, druidWeight),
             (magePrefab, mageWeight)

@@ -48,6 +48,11 @@ public class EnemySpawnPoint_MetroidvaniaRuins : EnemySpawnPoint
         if (CustomEnemyPrefab != null)
             return CustomEnemyPrefab;
 
+        // Ưu tiên quái theo nhiệm vụ đang làm
+        GameObject questTarget = GetQuestTargetEnemyPrefab(knightCrefPrefab, severedFangPrefab, samuraiZippPrefab, demonKinPrefab);
+        if (questTarget != null)
+            return questTarget;
+
         return PickWeightedRandom(
             (knightCrefPrefab, knightCrefWeight),
             (severedFangPrefab, severedFangWeight),

@@ -36,10 +36,25 @@ public class UI_QuestPreviw : MonoBehaviour
 
     public void AcceptQuestBTN()
     {
+        if (questUI != null && questUI.questManager != null)
+        {
+            if (!questUI.questManager.CanAcceptNewQuest())
+            {
+                if (questDescription != null)
+                {
+                    questDescription.text = "<color=#FF4444>⚠️ Cậu đang có nhiệm vụ chưa hoàn tất! Hãy hoàn thành nhiệm vụ hiện tại trước khi nhận việc mới.</color>";
+                }
+                return;
+            }
+        }
+
         MakeQuestPreviwEmpty();
 
-        questUI.questManager.AcceptQuest(previwQuest);
-        questUI.UpdateQuestList();
+        if (questUI != null && questUI.questManager != null)
+        {
+            questUI.questManager.AcceptQuest(previwQuest);
+            questUI.UpdateQuestList();
+        }
     }
 
     public void MakeQuestPreviwEmpty()

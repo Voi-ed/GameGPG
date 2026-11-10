@@ -28,6 +28,7 @@ public class UI : MonoBehaviour
     public UI_Teleport teleportUI { get; private set; }
     public UI_BossChallenge bossChallengeUI { get; private set; }
     public UI_Codex codexUI { get; private set; }
+    public HintManager hintManager { get; private set; }
 
     #endregion
 
@@ -56,6 +57,11 @@ public class UI : MonoBehaviour
         teleportUI = GetComponentInChildren<UI_Teleport>(true);
         bossChallengeUI = GetComponentInChildren<UI_BossChallenge>(true);
         codexUI = GetComponentInChildren<UI_Codex>(true);
+        hintManager = GetComponentInChildren<HintManager>(true);
+        if (hintManager == null && inGameUI != null)
+        {
+            hintManager = inGameUI.gameObject.AddComponent<HintManager>();
+        }
 
         if (uiElements != null)
         {

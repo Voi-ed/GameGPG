@@ -155,6 +155,9 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
     protected virtual void Die()
     {
+        if (isDead)
+            return;
+
         isDead = true;
         OnDeath?.Invoke();
         entity?.EntityDeath();

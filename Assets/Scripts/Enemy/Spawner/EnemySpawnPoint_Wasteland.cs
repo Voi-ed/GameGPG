@@ -40,6 +40,11 @@ public class EnemySpawnPoint_Wasteland : EnemySpawnPoint
         if (CustomEnemyPrefab != null)
             return CustomEnemyPrefab;
 
+        // Ưu tiên quái theo nhiệm vụ đang làm (Samurai Zipp, Sicklezeep hoặc Skeleton)
+        GameObject questTarget = GetQuestTargetEnemyPrefab(samuraiZippPrefab, sicklezeepPrefab, skeletonPrefab);
+        if (questTarget != null)
+            return questTarget;
+
         return PickWeightedRandom(
             (samuraiZippPrefab, samuraiZippWeight),
             (sicklezeepPrefab, sicklezeepWeight),

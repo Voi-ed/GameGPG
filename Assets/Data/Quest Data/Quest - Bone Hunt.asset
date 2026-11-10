@@ -15,12 +15,12 @@ MonoBehaviour:
   questSaveId: 63eec79711683b5498a187e011a14579
   questType: 0
   questName: Săn Lùng Xương Cốt
-  description: "Nơi này từng yên bình lắm, chỉ có tiếng cuốc và men bia. Giờ thì xương xẩu bò lổm ngổm khắp nơi phiền toái chết đi được. Ta tự tay đập chúng thì cũng được thôi, nhưng đầu gối già này dạo này đau quá. Cậu ra đập tan vài bộ xương về cát bụi giúp ta nhé?"
+  description: "Hang Động từng yên bình giờ bị lũ xương xẩu Skeleton đội mồ sống dậy chiếm giữ. Hãy tiêu diệt 3 bộ xương Skeleton để giải phóng hầm mỏ!"
   questGoal: "- Tiêu diệt Skeleton : "
   questTargetId: enemy_skeleton
-  requiredAmount: 2
+  requiredAmount: 3
   itemToDeliver: {fileID: 0}
-  rewardType: 0
+  rewardType: 2
   rewardItems:
   - itemData: {fileID: 11400000, guid: 37c0b3204301de74c9bfbc5950b936b8, type: 2}
     stackSize: 1

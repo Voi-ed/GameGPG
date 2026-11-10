@@ -78,4 +78,51 @@ public class CameraCtrl : MonoBehaviour
         targetPos.z = cinemachineCam.transform.position.z;
         cinemachineCam.ForceCameraPosition(targetPos, cinemachineCam.transform.rotation);
     }
+
+    /// <summary>
+    /// Lấy biên ngang thế giới của Camera (minX: mép trái, maxX: mép phải)
+    /// </summary>
+    public bool GetCameraHorizontalBounds(out float minX, out float maxX)
+    {
+        Camera cam = Camera.main;
+        if (cam == null)
+        {
+            minX = 0f;
+            maxX = 0f;
+            return false;
+        }
+
+        float halfWidth = cam.orthographicSize * cam.aspect;
+        float camX = cam.transform.position.x;
+        minX = camX - halfWidth;
+        maxX = camX + halfWidth;
+        return true;
+    }
+
+    private Collider2D cachedConfinerCollider;
+
+    /// <summary>
+    /// Lấy biên ngang thế giới của CinemachineConfiner (minX: mép trái map, maxX: mép phải map)
+    /// </summary>
+    public bool GetConfinerHorizontalBounds(out float minX, out float maxX)
+    {
+        if (cachedConfinerCollider == null)
+        {
+            GameObject confinerObj = GameObject.Find("CinemachineConfiner");
+            if (confinerObj != null)
+                cachedConfinerCollider = confinerObj.GetComponent<Collider2D>();
+        }
+
+        if (cachedConfinerCollider != null)
+        {
+            Bounds b = cachedConfinerCollider.bounds;
+            minX = b.min.x;
+            maxX = b.max.x;
+            return true;
+        }
+
+        minX = 0f;
+        maxX = 0f;
+        return false;
+    }
 }

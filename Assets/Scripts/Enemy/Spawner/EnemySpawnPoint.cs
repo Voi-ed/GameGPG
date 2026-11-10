@@ -57,8 +57,51 @@ public class EnemySpawnPoint : MonoBehaviour
     {
         if (spawnOnStart)
         {
-            SpawnEnemy();
+            StartCoroutine(SpawnWithQuestSyncCo());
         }
+    }
+
+    protected virtual void OnEnable()
+    {
+        StartCoroutine(RegisterQuestListenerCo());
+    }
+
+    private IEnumerator RegisterQuestListenerCo()
+    {
+        while (Player.instance == null || Player.instance.questManager == null)
+            yield return null;
+
+        Player.instance.questManager.OnQuestListUpdated -= OnQuestListUpdated;
+        Player.instance.questManager.OnQuestListUpdated += OnQuestListUpdated;
+    }
+
+    private void OnQuestListUpdated()
+    {
+        if (gameObject.activeInHierarchy && enabled)
+        {
+            // Nếu quái hiện tại không khớp với nhiệm vụ mới, chuyển đổi ngay sang quái nhiệm vụ
+            GameObject target = SelectEnemyPrefab();
+            if (target != null && currentEnemyPrefab != target)
+            {
+                currentEnemyPrefab = target;
+                SpawnEnemy();
+            }
+        }
+    }
+
+    private IEnumerator SpawnWithQuestSyncCo()
+    {
+        // Chờ 1 frame để SaveManager và Player_QuestManager nạp dữ liệu từ file lưu
+        yield return null;
+
+        float timeout = 0.35f;
+        while ((Player.instance == null || Player.instance.questManager == null) && timeout > 0f)
+        {
+            timeout -= Time.deltaTime;
+            yield return null;
+        }
+
+        SpawnEnemy();
     }
 
     public virtual GameObject SpawnEnemy()
@@ -128,6 +171,105 @@ public class EnemySpawnPoint : MonoBehaviour
     public virtual GameObject SelectEnemyPrefab()
     {
         return customEnemyPrefab;
+    }
+
+    /// <summary>
+    /// Kiểm tra nhiệm vụ hiện tại hoặc tiến trình cốt truyện để ƯU TIÊN SINH ĐÚNG quái nhiệm vụ trong map.
+    /// </summary>
+    protected GameObject GetQuestTargetEnemyPrefab(params GameObject[] candidatePrefabs)
+    {
+        if (candidatePrefabs == null || candidatePrefabs.Length == 0)
+            return null;
+
+        // 1. Kiểm tra các quest đang làm từ Player_QuestManager
+        if (Player.instance != null && Player.instance.questManager != null)
+        {
+            var activeQuests = Player.instance.questManager.activeQuests;
+            if (activeQuests != null && activeQuests.Count > 0)
+            {
+                List<GameObject> matchingCandidates = new List<GameObject>();
+
+                for (int c = 0; c < candidatePrefabs.Length; c++)
+                {
+                    GameObject prefab = candidatePrefabs[c];
+                    if (prefab == null) continue;
+
+                    Enemy enemyComp = prefab.GetComponent<Enemy>();
+                    if (enemyComp == null) continue;
+
+                    string enemyId = enemyComp.questTargetId;
+                    if (string.IsNullOrEmpty(enemyId)) continue;
+
+                    for (int i = 0; i < activeQuests.Count; i++)
+                    {
+                        var q = activeQuests[i];
+                        if (q == null || q.questDataSO == null) continue;
+
+                        // Nếu quest đã đủ số lượng (đã xong, chờ nhận thưởng) -> KHÔNG ưu tiên sinh quái này nữa!
+                        if (q.CanGetReward()) continue;
+
+                        string neededId = q.questDataSO.questTargetId;
+
+                        // Khớp trực tiếp questTargetId (ví dụ: enemy_knight_cref, enemy_knight_footman,...)
+                        if (enemyId == neededId)
+                        {
+                            matchingCandidates.Add(prefab);
+                            break;
+                        }
+
+                        // Khớp quest thu thập vật phẩm (ví dụ: Slime Jelly -> quái enemy_slime)
+                        if (neededId == "Material data - Slime jelly" && enemyId == "enemy_slime")
+                        {
+                            matchingCandidates.Add(prefab);
+                            break;
+                        }
+                    }
+                }
+
+                if (matchingCandidates.Count > 0)
+                {
+                    // 100% sinh đúng con quái đang cần làm nhiệm vụ trong map này!
+                    return matchingCandidates[Random.Range(0, matchingCandidates.Count)];
+                }
+            }
+        }
+
+        // 2. Dự phòng: Đọc từ SaveManager theo tiến trình cốt truyện nếu chưa nhận quest
+        string storylineTargetId = null;
+        if (SaveManager.instance != null && SaveManager.instance.GetGameData() != null)
+        {
+            var data = SaveManager.instance.GetGameData();
+            int completedCount = data.completedQuests != null ? data.completedQuests.Count : 0;
+            if (Player.instance != null && Player.instance.questManager != null && Player.instance.questManager.completedQuests != null)
+                completedCount = Mathf.Max(completedCount, Player.instance.questManager.completedQuests.Count);
+
+            // Từng chặng nhiệm vụ tương ứng với 1 loại quái duy nhất:
+            if (completedCount == 0) storylineTargetId = "enemy_slime";
+            else if (completedCount == 1) storylineTargetId = "enemy_archerElf";
+            else if (completedCount == 2) storylineTargetId = "enemy_mage";
+            else if (completedCount == 3) storylineTargetId = "enemy_skeleton";
+            else if (completedCount == 4) storylineTargetId = "enemy_knight_cref";
+            else if (completedCount == 5) storylineTargetId = "enemy_severed_fang";
+            else if (completedCount == 6) storylineTargetId = "enemy_samuraizipp";
+            else if (completedCount == 7) storylineTargetId = "enemy_arch_demon";
+        }
+
+        if (!string.IsNullOrEmpty(storylineTargetId))
+        {
+            for (int i = 0; i < candidatePrefabs.Length; i++)
+            {
+                GameObject prefab = candidatePrefabs[i];
+                if (prefab == null) continue;
+
+                Enemy enemyComponent = prefab.GetComponent<Enemy>();
+                if (enemyComponent != null && enemyComponent.questTargetId == storylineTargetId)
+                {
+                    return prefab;
+                }
+            }
+        }
+
+        return null;
     }
 
     /// <summary>
@@ -273,6 +415,11 @@ public class EnemySpawnPoint : MonoBehaviour
 
     protected virtual void OnDisable()
     {
+        if (Player.instance != null && Player.instance.questManager != null)
+        {
+            Player.instance.questManager.OnQuestListUpdated -= OnQuestListUpdated;
+        }
+
         if (respawnCoroutine != null)
         {
             StopCoroutine(respawnCoroutine);
@@ -288,6 +435,11 @@ public class EnemySpawnPoint : MonoBehaviour
 
     protected virtual void OnDestroy()
     {
+        if (Player.instance != null && Player.instance.questManager != null)
+        {
+            Player.instance.questManager.OnQuestListUpdated -= OnQuestListUpdated;
+        }
+
         if (registeredHealth != null)
         {
             registeredHealth.OnDeath -= OnCurrentEnemyDeath;

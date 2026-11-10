@@ -40,6 +40,11 @@ public class EnemySpawnPoint_Inferno : EnemySpawnPoint
         if (CustomEnemyPrefab != null)
             return CustomEnemyPrefab;
 
+        // Ưu tiên quái theo nhiệm vụ đang làm (Severed Fang, DemonKin hoặc Fire Mage)
+        GameObject questTarget = GetQuestTargetEnemyPrefab(severedFangPrefab, demonKinPrefab, fireMagePrefab);
+        if (questTarget != null)
+            return questTarget;
+
         return PickWeightedRandom(
             (demonKinPrefab, demonKinWeight),
             (severedFangPrefab, severedFangWeight),

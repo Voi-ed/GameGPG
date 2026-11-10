@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61094b76dde8cd4b9c1811b7318e5f4, type: 3}
+  m_Name: Quest - Tutorial Alchemist Eleonore
+  m_EditorClassIdentifier: 
+  questSaveId: 237573e7221d4a98969217542dd80b05
+  questType: 1
+  questName: "Tân Thủ: Độc Dược & Hồi Phục"
+  description: "Rừng sâu ma thuật chứa đầy cạm bẫy và khí độc. Hãy qua chòi của Nhà Giả Kim Eleonore ở rìa làng để tìm hiểu về các loại độc dược và dự trữ thuốc hồi phục cho chuyến đi săn!"
+  questGoal: "- Gặp Nhà Giả Kim Eleonore : "
+  questTargetId: eleonore_witch
+  requiredAmount: 1
+  itemToDeliver: {fileID: 0}
+  rewardType: 2
+  rewardItems:
+  - itemData: {fileID: 11400000, guid: 065f37ce5c41a6743872917707d13aef, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: f1a2b3c4d5e6f708192a3b4c5d6e7f01, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
+

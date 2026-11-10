@@ -32,6 +32,11 @@ public class EnemySpawnPoint_Caves : EnemySpawnPoint
         if (CustomEnemyPrefab != null)
             return CustomEnemyPrefab;
 
+        // Ưu tiên quái theo nhiệm vụ đang làm (Skeleton hoặc Dark Mage)
+        GameObject questTarget = GetQuestTargetEnemyPrefab(skeletonPrefab, magePrefab);
+        if (questTarget != null)
+            return questTarget;
+
         return PickWeightedRandom(
             (skeletonPrefab, skeletonWeight),
             (magePrefab, mageWeight)

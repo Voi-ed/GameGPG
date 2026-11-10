@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questSaveId: 292eb6d8e1d44af3863a1a43b317f34e
   questType: 0
-  questName: "Dọn Sạch Đầm Slime"
-  description: "Lũ chất nhờn Slime đang sinh sôi nảy nở mất kiểm soát ở vùng đầm lầy, làm ô nhiễm nguồn nước ngầm. Hãy tiêu diệt 6 con Slime để trả lại môi trường trong lành!"
+  questName: "Dọn Sạch Bìa Rừng Slime"
+  description: "Lũ chất nhờn Slime đang sinh sôi nảy nở mất kiểm soát ở bìa Rừng Xanh ngoài tiền đồn. Hãy tiêu diệt 6 con Slime để bảo đảm an toàn cho các tuyến tuần tra!"
   questGoal: "- Tiêu diệt Slime : "
   questTargetId: enemy_slime
   requiredAmount: 6
