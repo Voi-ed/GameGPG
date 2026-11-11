@@ -405,8 +405,8 @@ public class UI_Dialogue : MonoBehaviour
 
                 dialogueChoicesText[i].gameObject.SetActive(true);
                 dialogueChoicesText[i].text = selectedChoiceIndex == i ?
-                    $"<color=yellow>▶ {i + 1}) {choiceText}</color>" :
-                    $"{i + 1}) {choiceText}";
+                    $"<color=yellow>> {i + 1}) {choiceText}</color>" :
+                    $"  {i + 1}) {choiceText}";
 
                 if (choice.actionType == DialogueActionType.GetQuestReward && (questManager == null || questManager.HasCompletedQuest() == false))
                     dialogueChoicesText[i].gameObject.SetActive(false);

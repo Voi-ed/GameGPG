@@ -16,7 +16,7 @@ public class QuestWorldIndicator : MonoBehaviour
     [SerializeField] private Sprite handSprite;
     [SerializeField] private float floatSpeed = 5f;
     [SerializeField] private float floatRange = 0.2f;
-    [SerializeField] private float yOffset = 1.6f;
+    [SerializeField] private float yOffset = 1.85f;
 
     // Bảng màu phân biệt các nhiệm vụ khác nhau
     private readonly Color[] pointerColors = new Color[]
@@ -168,7 +168,7 @@ public class QuestWorldIndicator : MonoBehaviour
         {
             PointerInstance p = GetOrCreatePointer(i);
             p.target = targets[i];
-            p.sr.color = pointerColors[i % pointerColors.Length];
+            p.sr.color = (i == 0) ? Color.white : pointerColors[i % pointerColors.Length];
             if (p.obj != null)
                 p.obj.SetActive(true);
         }
@@ -389,8 +389,8 @@ public class QuestWorldIndicator : MonoBehaviour
             }
 
             pObj.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-            pObj.transform.localScale = Vector3.one * 1.35f;
-            sr.color = pointerColors[newIdx % pointerColors.Length];
+            pObj.transform.localScale = Vector3.one * 0.75f;
+            sr.color = newIdx == 0 ? Color.white : pointerColors[newIdx % pointerColors.Length];
             sr.sortingOrder = 300;
             pObj.SetActive(false);
 

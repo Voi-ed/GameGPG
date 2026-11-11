@@ -630,17 +630,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbc5bc63710411a4892bbd4bfc41eb5e, type: 3}
---- !u!114 &589330140 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6181365098539276893, guid: db9794df58317439b8ac0100da8c4110, type: 3}
-  m_PrefabInstance: {fileID: 353436946}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457cef44fba9bc946a8559462a5fd119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,10 +1035,14 @@ PrefabInstance:
     - target: {fileID: 8175608197408719471, guid: 40262f310bd1e4f4b914869f3c2127de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 589330140}
+      objectReference: {fileID: 1821991220795809057}
     - target: {fileID: 8175608197408719471, guid: 40262f310bd1e4f4b914869f3c2127de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DeleteSaveData
+      value: Delete
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175608197408719471, guid: 40262f310bd1e4f4b914869f3c2127de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_Options, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8935810925885652980, guid: 40262f310bd1e4f4b914869f3c2127de, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1064,6 +1057,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40262f310bd1e4f4b914869f3c2127de, type: 3}
+--- !u!114 &1821991220795809057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8918028767299194108, guid: 40262f310bd1e4f4b914869f3c2127de, type: 3}
+  m_PrefabInstance: {fileID: 1821991220795809056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dfa959bf9db8e4439d5af90118f7bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class Player_DragonForm : MonoBehaviour
     [SerializeField] private Animator dragonAnim;
     [SerializeField] private RuntimeAnimatorController dragonAnimatorController;
     [SerializeField] private Sprite dragonBuffIcon;
+    public Sprite DragonBuffIcon => dragonBuffIcon;
 
     [Header("Dragon Combat")]
     [SerializeField] private float clawDamage = 150f;

@@ -117,7 +117,7 @@ public class HintManager : MonoBehaviour
                     string npcName = GetQuestGiverNpcName(currentQuest.questDataSO);
                     ShowHint(
                         "NHIỆM VỤ HOÀN THÀNH",
-                        $"📍 Bạn đã hoàn thành <b>'{currentQuest.questDataSO.questName}'</b>!\n" +
+                        $"Bạn đã hoàn thành <b>'{currentQuest.questDataSO.questName}'</b>!\n" +
                         $"Quay về gặp <b>{npcName}</b> tại Làng để nhận thưởng [F].",
                         new Color(0.2f, 1f, 0.4f)
                     );
@@ -130,7 +130,7 @@ public class HintManager : MonoBehaviour
 
                     ShowHint(
                         $"{currentQuest.questDataSO.questName.ToUpper()} <color=#FFD700>{progressText}</color>",
-                        $"📍 <b>Hướng đi:</b> {directionText}\n⚔️ <b>Cách đánh/Mẹo:</b> <color=#CFD8DC>{combatTip}</color>",
+                        $"- <b>Hướng đi:</b> {directionText}\n- <b>Cách đánh/Mẹo:</b> <color=#CFD8DC>{combatTip}</color>",
                         new Color(1f, 0.85f, 0.2f)
                     );
                 }
@@ -156,20 +156,24 @@ public class HintManager : MonoBehaviour
                 if (questManager != null && questManager.completedQuests != null)
                     completedCount = Mathf.Max(completedCount, questManager.completedQuests.Count);
 
+                int totalQuests = (questManager != null && questManager.QuestDatabase != null && questManager.QuestDatabase.allQuests != null)
+                    ? questManager.QuestDatabase.allQuests.Length
+                    : 18;
+
                 if (completedCount == 0)
                 {
                     ShowHint(
                         "MỤC TIÊU CỐT TRUYỆN",
-                        "📍 <b>Hướng đi:</b> Gặp <b>Joanna</b> tại tiền đồn trung tâm Làng để nhận nhiệm vụ đầu tiên.\n" +
-                        "💡 <b>Mẹo:</b> Nhấn [F] để nhận nhiệm vụ, hoặc [T] để mở bản đồ Dịch Chuyển.",
+                        "- <b>Hướng đi:</b> Gặp <b>Joanna</b> tại tiền đồn trung tâm Làng để nhận nhiệm vụ đầu tiên.\n" +
+                        "- <b>Mẹo:</b> Nhấn [F] để nhận nhiệm vụ, hoặc [T] để mở bản đồ Dịch Chuyển.",
                         new Color(1f, 0.85f, 0.2f)
                     );
                 }
-                else if (completedCount >= 11)
+                else if (completedCount >= totalQuests)
                 {
                     ShowHint(
                         "CHIẾN CÔNG HOÀN TẤT",
-                        "🏆 Bạn đã hoàn thành xuất sắc tất cả nhiệm vụ bảo vệ Tiền đồn và Vương quốc!",
+                        "Bạn đã hoàn thành xuất sắc tất cả nhiệm vụ bảo vệ Tiền đồn và Vương quốc!",
                         new Color(0.2f, 1f, 0.4f)
                     );
                 }
@@ -177,8 +181,8 @@ public class HintManager : MonoBehaviour
                 {
                     ShowHint(
                         "MỤC TIÊU KẾ TIẾP",
-                        "📍 <b>Hướng đi:</b> Quay về gặp <b>Joanna</b> (Tiền đồn Làng) để nhận nhiệm vụ kế tiếp.\n" +
-                        "💡 <b>Mẹo:</b> Sử dụng phím tắt [T] Dịch Chuyển để di chuyển về Làng nhanh chóng.",
+                        "- <b>Hướng đi:</b> Quay về gặp <b>Joanna</b> (Tiền đồn Làng) để nhận nhiệm vụ kế tiếp.\n" +
+                        "- <b>Mẹo:</b> Sử dụng phím tắt [T] Dịch Chuyển để di chuyển về Làng nhanh chóng.",
                         new Color(1f, 0.85f, 0.2f)
                     );
                 }
@@ -321,17 +325,17 @@ public class HintManager : MonoBehaviour
                 );
             case "enemy_crimson_blade":
                 return (
-                    "Gặp Joanna tại Tiền đồn Làng [F] ➔ Chọn 'Khiêu chiến Boss' ➔ Chọn '1. Crimson Blade' để vào Đấu Trường (BattleScene).",
+                    "Gặp Joanna tại Tiền đồn Làng [F] -> Chọn 'Khiêu chiến Boss' -> Chọn '1. Crimson Blade' để vào Đấu Trường (BattleScene).",
                     "Kiếm Sĩ Huyết Ảnh chém nhanh và có thế thủ phản đòn (Blood Guard). Tránh đánh khi hắn giơ kiếm thủ, canh lúc hắn vừa chém xong để phản kích!"
                 );
             case "enemy_arch_demon":
                 return (
-                    "Gặp Joanna tại Tiền đồn Làng [F] ➔ Chọn 'Khiêu chiến Boss' ➔ Chọn '8. ARCH DEMON' để vào Đấu Trường (BattleScene).",
+                    "Gặp Joanna tại Tiền đồn Làng [F] -> Chọn 'Khiêu chiến Boss' -> Chọn '8. ARCH DEMON' để vào Đấu Trường (BattleScene).",
                     "Chúa quỷ quét lửa diện rộng. Tận dụng tối đa I-frame của đòn lướt để né và dồn skill kết liễu!"
                 );
             case "enemy_reaper":
                 return (
-                    "Gặp Joanna tại Tiền đồn Làng [F] ➔ Chọn 'Khiêu chiến Boss' ➔ Chọn '7. Death Reaper' để vào Đấu Trường (BattleScene).",
+                    "Gặp Joanna tại Tiền đồn Làng [F] -> Chọn 'Khiêu chiến Boss' -> Chọn '7. Death Reaper' để vào Đấu Trường (BattleScene).",
                     "Lưỡi hái vung chém diện rộng và tàng hình áp sát. Lướt né đúng nhịp khi hắn hiện hình để phản kích!"
                 );
             default:
@@ -370,15 +374,15 @@ public class HintManager : MonoBehaviour
             if (q.CanGetReward())
             {
                 string npcName = GetQuestGiverNpcName(q.questDataSO);
-                sb.AppendLine($"<color={colorHex}><b>▶ [{i + 1}] {qName}:</b></color> <color=#00FF7F>[Xong] Gặp {npcName} nhận thưởng!</color>");
+                sb.AppendLine($"<color={colorHex}><b>> [{i + 1}] {qName}:</b></color> <color=#00FF7F>[Xong] Gặp {npcName} nhận thưởng!</color>");
             }
             else
             {
                 int curAmount = q.GetCurrentAmount();
                 string progress = $"({curAmount}/{q.questDataSO.requiredAmount})";
                 var (dir, _) = GetQuestGuideInfo(q.questDataSO.questTargetId, q.questDataSO);
-                sb.AppendLine($"<color={colorHex}><b>▶ [{i + 1}] {qName} <color=#FFD700>{progress}</color>:</b></color>");
-                sb.AppendLine($"   📍 <color=#E0E0E0>{dir}</color>");
+                sb.AppendLine($"<color={colorHex}><b>> [{i + 1}] {qName} <color=#FFD700>{progress}</color>:</b></color>");
+                sb.AppendLine($"   - <color=#E0E0E0>{dir}</color>");
             }
         }
 
@@ -386,20 +390,56 @@ public class HintManager : MonoBehaviour
         AdjustPanelHeight(total);
     }
 
-    private void AdjustPanelHeight(int questCount)
+    private void AdjustPanelHeight(int questCount = 0)
     {
-        if (hintPanel == null) return;
+        AutoFitPanelHeight();
+    }
+
+    /// <summary>
+    /// Tự động tính toán chiều cao panel vừa khít 100% với nội dung văn bản (Auto-fit), chống tràn viền.
+    /// </summary>
+    public void AutoFitPanelHeight()
+    {
+        if (hintPanel == null || bodyText == null) return;
+
+        RectTransform bRect = bodyText.rectTransform;
+        if (bRect != null)
+        {
+            // Đảm bảo chiều rộng text box luôn khớp chuẩn với khung panel trừ margin 2 bên (440 - 24 = 416)
+            bRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 416f);
+        }
+
+        bodyText.ForceMeshUpdate();
+        float bodyH = bodyText.preferredHeight;
+
+        float titleH = 20f;
+        if (titleText != null)
+        {
+            titleText.ForceMeshUpdate();
+            titleH = Mathf.Max(20f, titleText.preferredHeight);
+            RectTransform tRect = titleText.rectTransform;
+            if (tRect != null)
+                tRect.sizeDelta = new Vector2(-44f, titleH);
+        }
+
+        float topMargin = 8f;
+        float spacing = 6f;
+        float bottomMargin = 18f;
+
+        float bodyStartY = topMargin + titleH + spacing;
+
+        if (bRect != null)
+        {
+            bRect.anchoredPosition = new Vector2(12f, -bodyStartY);
+            bRect.sizeDelta = new Vector2(-24f, bodyH + 4f);
+        }
+
+        float totalH = Mathf.Max(96f, bodyStartY + bodyH + bottomMargin);
+
         RectTransform pRect = hintPanel.GetComponent<RectTransform>();
         if (pRect != null)
         {
-            // Panel rộng 440px và chiều cao co giãn thoải mái theo số lượng nhiệm vụ
-            float targetHeight = questCount <= 1 ? 104f : (68f + questCount * 44f);
-            pRect.sizeDelta = new Vector2(440f, targetHeight);
-            if (bodyText != null)
-            {
-                RectTransform bRect = bodyText.rectTransform;
-                bRect.sizeDelta = new Vector2(-24f, targetHeight - 34f);
-            }
+            pRect.sizeDelta = new Vector2(440f, totalH);
         }
     }
 
@@ -428,6 +468,8 @@ public class HintManager : MonoBehaviour
         {
             bodyText.text = body;
         }
+
+        AutoFitPanelHeight();
 
         // Hiệu ứng Pop nhẹ để người chơi chú ý
         if (hintPanel.transform != null)

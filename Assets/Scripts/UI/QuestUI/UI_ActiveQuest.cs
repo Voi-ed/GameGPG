@@ -8,13 +8,21 @@ public class UI_ActiveQuest : MonoBehaviour
 
     private void Awake()
     {
-        questManager = Player.instance.questManager;
+        if (Player.instance != null)
+            questManager = Player.instance.questManager;
         questSlots = GetComponentsInChildren<UI_ActiveQuestSlot>(true);
     }
 
     private void OnEnable()
     {
+        if (questManager == null && Player.instance != null)
+            questManager = Player.instance.questManager;
+
+        if (questManager == null || questSlots == null)
+            return;
+
         List<QuestData> quests = questManager.activeQuests;
+        if (quests == null) return;
 
         foreach (var slot in questSlots)
         {

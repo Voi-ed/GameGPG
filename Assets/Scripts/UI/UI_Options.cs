@@ -89,4 +89,8 @@ public class UI_Options : MonoBehaviour
         sfxSlider.value = PlayerPrefs.GetFloat(sfxParametr, .6f);
         bgmSlider.value = PlayerPrefs.GetFloat(bgmParametr, .6f);
     }
+    public void Delete()
+    {
+        SaveManager.instance.DeleteSaveData();
+    }
 }

@@ -3,12 +3,12 @@ using System.ComponentModel;
 using System.IO;
 using UnityEngine;
 
-public class FileDataHandler 
+public class FileDataHandler
 {
     private string fullPath;
     private string dataFileName;
     private bool encrpyData;
-    private string codeWord = "unityalexdev.com";
+    private string codeWord = "unitydev.com";
 
     public FileDataHandler(string dataDirPath, string dataFileName, bool encryptData)
     {

@@ -13,6 +13,7 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
 
     [Header("QUEST DATABASE")]
     [SerializeField] private QuestDatabaseSO questDatabase;
+    public QuestDatabaseSO QuestDatabase => questDatabase;
 
     private void Awake()
     {
@@ -28,18 +29,7 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
 
         foreach (var quest in activeQuests)
         {
-            // DELIVER ITEMS IF CAN
-            if (quest.questDataSO.questType == QuestType.Delivery)
-            {
-                var requiredItem = quest.questDataSO.itemToDeliver;
-                var requiredAmount = quest.questDataSO.requiredAmount;
-
-                if (inventory.HasItemAmount(requiredItem, requiredAmount))
-                {
-                    inventory.RemoveItemAmount(requiredItem, requiredAmount);
-                    quest.AddQuestProgress(requiredAmount);
-                }
-            }
+            if (quest == null || quest.questDataSO == null) continue;
 
             if (quest.CanGetReward() && quest.questDataSO.rewardType == npcType)
                 getRewardQuests.Add(quest);
@@ -47,8 +37,7 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
 
         foreach (var quest in getRewardQuests)
         {
-            GiveQuestReward(quest.questDataSO);
-            CompleteQuest(quest);
+            ClaimQuestRewardAndComplete(quest);
         }
     }
 
@@ -62,8 +51,19 @@ public class Player_QuestManager : MonoBehaviour, ISaveable
 
             for (int i = 0; i < item.stackSize; i++)
             {
-                if (dropManager != null)
+                Inventory_Item itemToAdd = new Inventory_Item(item.itemData);
+                bool added = false;
+
+                if (inventory != null && inventory.CanAddItem(itemToAdd))
+                {
+                    inventory.AddItem(itemToAdd);
+                    added = true;
+                }
+
+                if (!added && dropManager != null)
+                {
                     dropManager.CreateItemDrop(item.itemData);
+                }
             }
         }
     }

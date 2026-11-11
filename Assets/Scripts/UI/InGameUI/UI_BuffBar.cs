@@ -12,6 +12,12 @@ public class UI_BuffBar : MonoBehaviour
     [Tooltip("Khoảng cách phía trên Quả Cầu Máu (Default: 40, 185)")]
     [SerializeField] private Vector2 defaultAnchoredPosition = new Vector2(40f, 185f);
 
+    [Header("Dragon Buff Integration")]
+    [SerializeField] private Sprite fallbackDragonIcon;
+
+    public const string DRAGON_BUFF_SOURCE_ID = "DragonTransformation";
+    private ActiveBuffInfo dragonBuffInfo;
+
     private Player player;
     private Player_Stats playerStats;
     private List<UI_BuffSlot> activeSlots = new List<UI_BuffSlot>();
@@ -129,6 +135,15 @@ public class UI_BuffBar : MonoBehaviour
         for (int i = activeSlots.Count - 1; i >= 0; i--)
         {
             UI_BuffSlot slot = activeSlots[i];
+            if (slot == null)
+            {
+                activeSlots.RemoveAt(i);
+                continue;
+            }
+
+            if (slot.CurrentSourceId == DRAGON_BUFF_SOURCE_ID)
+                continue; // Do UpdateDragonBuff quản lý riêng
+
             bool stillActive = false;
             foreach (var b in buffs)
             {
@@ -182,6 +197,67 @@ public class UI_BuffBar : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        UpdateDragonBuff();
+    }
+
+    private void UpdateDragonBuff()
+    {
+        bool isDragon = GameManager.instance != null && GameManager.instance.IsDragonTransformed;
+        if (isDragon)
+        {
+            float rem = GameManager.instance.DragonRemainingTime;
+            float total = GameManager.instance.DragonTotalDuration;
+
+            if (dragonBuffInfo == null)
+            {
+                Sprite icon = GameManager.instance.DragonBuffIcon;
+                if (icon == null) icon = fallbackDragonIcon;
+                if (icon == null && player != null && player.dragonForm != null)
+                    icon = player.dragonForm.DragonBuffIcon;
+
+                dragonBuffInfo = new ActiveBuffInfo(
+                    DRAGON_BUFF_SOURCE_ID,
+                    "Rồng Bóng Tối",
+                    icon,
+                    total > 0f ? total : 15f,
+                    null,
+                    "Trạng thái Hóa Rồng: Cào xé, khạc cầu lửa, triệu hồi cột hắc hỏa"
+                );
+            }
+
+            dragonBuffInfo.remainingTime = rem;
+            dragonBuffInfo.duration = total > 0f ? total : 15f;
+
+            UI_BuffSlot dragonSlot = activeSlots.Find(s => s != null && s.CurrentSourceId == DRAGON_BUFF_SOURCE_ID);
+            if (dragonSlot == null)
+            {
+                dragonSlot = CreateNewSlot();
+                dragonSlot.Setup(dragonBuffInfo);
+                activeSlots.Insert(0, dragonSlot);
+            }
+            else
+            {
+                dragonSlot.UpdateSlot(dragonBuffInfo);
+            }
+        }
+        else
+        {
+            if (dragonBuffInfo != null)
+            {
+                dragonBuffInfo = null;
+                UI_BuffSlot dragonSlot = activeSlots.Find(s => s != null && s.CurrentSourceId == DRAGON_BUFF_SOURCE_ID);
+                if (dragonSlot != null)
+                {
+                    activeSlots.Remove(dragonSlot);
+                    if (dragonSlot.gameObject != null)
+                        Destroy(dragonSlot.gameObject);
+                }
+            }
+        }
+    }
+
     private UI_BuffSlot CreateNewSlot()
     {
         if (buffSlotPrefab != null)
@@ -206,6 +282,25 @@ public class UI_BuffBar : MonoBehaviour
         {
             cachedRingSprite = CreateRoundedRingSprite(64, 12, 4f, Color.white);
         }
+
+#if UNITY_EDITOR
+        if (fallbackDragonIcon == null)
+        {
+            var assets = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(
+                "Assets/Audio/VS2/Shadow_Demon_Dragon_Asset_Pack/Shadow_Demon_Dragon_Asset_Pack/Animations/Idle_Right/Idle_Right.png");
+            if (assets != null)
+            {
+                foreach (var a in assets)
+                {
+                    if (a is Sprite s)
+                    {
+                        fallbackDragonIcon = s;
+                        break;
+                    }
+                }
+            }
+        }
+#endif
     }
 
     // =========================================================================

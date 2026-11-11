@@ -62,31 +62,25 @@ public class ComicIntroController : MonoBehaviour
         // 1. Thị trấn thanh bình đầu game
         yield return new WaitForSeconds(1.0f);
 
-        yield return ShowDialogueCo("Dẫn chuyện", "Một buổi sáng yên ả tại thị trấn... Cuộc sống nơi đây vẫn luôn thanh bình như bao ngày.");
+        yield return ShowDialogueCo("Dẫn chuyện", "Một buổi chiều tối yên ả tại thị trấn... Cuộc sống nơi đây vẫn luôn thanh bình như bao ngày.");
 
         yield return new WaitForSeconds(0.4f);
 
-        // 2. Điềm báo - Bầu trời chuyển sắc tím u ám, mặt đất rung nhẹ
+        // 2. Điềm báo - Bầu trời chuyển sắc tím u ám
         if (globalLight != null)
         {
             DOTween.To(() => globalLight.color, c => globalLight.color = c, ominousSkyColor, 2.5f);
         }
 
-        ShakeCamera(1.0f, 0.15f);
-
         yield return ShowDialogueCo("Người dân", "Ủa? Sao trời bỗng nhiên tối sầm lại thế này? Có chuyện gì đang xảy ra vậy?!");
 
-        // 3. Động đất dữ dội, Boss xuất hiện tung đại chiêu
-        ShakeCamera(2.2f, 0.45f);
-
+        // 3. Boss xuất hiện tung đại chiêu
         if (bossVisual != null)
             bossVisual.SetActive(true);
 
         yield return ShowDialogueCo("Kẻ Thống Trị Hắc Ám", "Tất cả các ngươi... linh hồn này thuộc về bóng tối! HÃY BIẾN MẤT!");
 
         // 4. Toàn bộ người dân và NPC bị biến mất hàng loạt
-        ShakeCamera(1.5f, 0.5f);
-
         if (NpcManager.instance != null)
         {
             NpcManager.instance.TriggerMassDisappearance(0.06f);
@@ -125,11 +119,7 @@ public class ComicIntroController : MonoBehaviour
 
     private void ShakeCamera(float duration, float strength)
     {
-        Camera cam = Camera.main;
-        if (cam != null)
-        {
-            cam.transform.DOShakePosition(duration, strength, 20, 90, false, true);
-        }
+        // Đã tắt rung camera để trải nghiệm đọc thoại êm ái và không làm giật mặt nước
     }
 
     public void SkipCutscene()

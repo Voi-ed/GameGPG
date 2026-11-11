@@ -8,6 +8,7 @@ public partial class GameManager
     [SerializeField] private GameObject dragonPrefab;
     [SerializeField] private GameObject transformVfxPrefab;
     [SerializeField] private float defaultDragonDuration = 20f;
+    [SerializeField] private Sprite dragonBuffIcon;
 
     private GameObject activeDragonInstance;
     private Player cachedPlayer;
@@ -17,6 +18,10 @@ public partial class GameManager
     public bool IsDragonTransformed => activeDragonInstance != null;
     public GameObject ActiveDragon => activeDragonInstance;
     public event Action<bool> OnDragonTransformationChanged;
+    public float DragonRemainingTime { get; private set; }
+    public float DragonTotalDuration { get; private set; }
+    public Sprite DragonBuffIcon => dragonBuffIcon != null ? dragonBuffIcon : 
+        (cachedPlayer != null && cachedPlayer.dragonForm != null ? cachedPlayer.dragonForm.DragonBuffIcon : null);
 
     /// <summary>
     /// Bật/Tắt chế độ Hóa Rồng (dùng cho Menu Test / Phím tắt)
@@ -126,6 +131,8 @@ public partial class GameManager
             dragonDurationCoroutine = null;
         }
 
+        DragonRemainingTime = 0f;
+
         Vector3 returnPos = activeDragonInstance != null ? activeDragonInstance.transform.position : Vector3.zero;
 
         // 1. Sinh VFX khói lửa tan biến tại vị trí Rồng
@@ -194,18 +201,22 @@ public partial class GameManager
     private IEnumerator DragonDurationRoutine(float duration)
     {
         Debug.Log($"[GameManager] Đang đếm ngược hóa rồng: {duration}s");
-        float elapsed = 0f;
-        while (elapsed < duration)
+        DragonTotalDuration = duration;
+        DragonRemainingTime = duration;
+
+        while (DragonRemainingTime > 0f)
         {
             if (activeDragonInstance == null)
             {
                 Debug.Log("[GameManager] Rồng đã biến mất trước khi hết giờ (có thể đã chết), kết thúc đếm ngược.");
+                DragonRemainingTime = 0f;
                 yield break;
             }
             yield return null;
-            elapsed += Time.deltaTime;
+            DragonRemainingTime -= Time.deltaTime;
         }
 
+        DragonRemainingTime = 0f;
         Debug.Log("[GameManager] Đã hết thời gian hóa rồng! Bắt đầu hoàn về dạng Player...");
         EndDragonTransformation();
     }
@@ -248,6 +259,22 @@ public partial class GameManager
         if (transformVfxPrefab == null)
         {
             transformVfxPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefab/Vfx_UseItem/Vfx_Dragon_FireExplosion.prefab");
+        }
+        if (dragonBuffIcon == null)
+        {
+            var assets = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(
+                "Assets/Audio/VS2/Shadow_Demon_Dragon_Asset_Pack/Shadow_Demon_Dragon_Asset_Pack/Animations/Idle_Right/Idle_Right.png");
+            if (assets != null)
+            {
+                foreach (var a in assets)
+                {
+                    if (a is Sprite s)
+                    {
+                        dragonBuffIcon = s;
+                        break;
+                    }
+                }
+            }
         }
 #endif
     }

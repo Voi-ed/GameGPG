@@ -5,6 +5,7 @@ using UnityEngine;
 public class UI_SkillTree : MonoBehaviour, ISaveable
 {
     [SerializeField] private int skillPoints;
+    public int currentSkillPoints => skillPoints;
     [SerializeField] private TextMeshProUGUI skillPointsText;
     [SerializeField] private UI_TreeConnectHandler[] parentNodes;
     private UI_TreeNode[] allTreeNodes;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class UI : MonoBehaviour
     public UI_DeathScreen deathScreenUI { get; private set; }
     public UI_FadeScreen fadeScreenUI { get; private set; }
     public UI_Quest questUI { get; private set; }
+    public UI_ActiveQuest activeQuestUI { get; private set; }
     public UI_Dialogue dialogueUI { get; private set; }
     public UI_Teleport teleportUI { get; private set; }
     public UI_BossChallenge bossChallengeUI { get; private set; }
@@ -53,6 +55,7 @@ public class UI : MonoBehaviour
         deathScreenUI = GetComponentInChildren<UI_DeathScreen>(true);
         fadeScreenUI = GetComponentInChildren<UI_FadeScreen>(true);
         questUI = GetComponentInChildren<UI_Quest>(true);
+        activeQuestUI = GetComponentInChildren<UI_ActiveQuest>(true);
         dialogueUI = GetComponentInChildren<UI_Dialogue>(true);
         teleportUI = GetComponentInChildren<UI_Teleport>(true);
         bossChallengeUI = GetComponentInChildren<UI_BossChallenge>(true);
@@ -75,6 +78,55 @@ public class UI : MonoBehaviour
     private void Start()
     {
         skillTreeUI.UnlockDefaultSkills();
+        SetupCharacterAndQuestTabs();
+    }
+
+    private void SetupCharacterAndQuestTabs()
+    {
+        if (inventoryUI != null && activeQuestUI != null)
+        {
+            // Tab chuyển sang QUEST trên UI_Character
+            Button charToQuestBtn = inventoryUI.transform.Find("UI_Buttons/Button_ToQuests")?.GetComponent<Button>();
+            if (charToQuestBtn == null)
+            {
+                Transform charTabs = inventoryUI.transform.Find("UI_Buttons");
+                if (charTabs != null && charTabs.childCount > 1)
+                    charToQuestBtn = charTabs.GetChild(1).GetComponent<Button>();
+            }
+
+            if (charToQuestBtn != null)
+            {
+                charToQuestBtn.onClick.RemoveAllListeners();
+                charToQuestBtn.onClick.AddListener(() =>
+                {
+                    inventoryUI.gameObject.SetActive(false);
+                    inventoryEnabled = false;
+                    activeQuestUI.gameObject.SetActive(true);
+                    activeQuestUI.transform.SetAsLastSibling();
+                });
+            }
+
+            // Tab chuyển sang CHARACTER trên UI_ActiveQuests
+            Button questToCharBtn = activeQuestUI.transform.Find("UI_Buttons/Button_ToCharcater")?.GetComponent<Button>();
+            if (questToCharBtn == null)
+            {
+                Transform questTabs = activeQuestUI.transform.Find("UI_Buttons");
+                if (questTabs != null && questTabs.childCount > 0)
+                    questToCharBtn = questTabs.GetChild(0).GetComponent<Button>();
+            }
+
+            if (questToCharBtn != null)
+            {
+                questToCharBtn.onClick.RemoveAllListeners();
+                questToCharBtn.onClick.AddListener(() =>
+                {
+                    activeQuestUI.gameObject.SetActive(false);
+                    inventoryUI.gameObject.SetActive(true);
+                    inventoryEnabled = true;
+                    inventoryUI.transform.SetAsLastSibling();
+                });
+            }
+        }
     }
 
     private void Update()
@@ -153,6 +205,8 @@ public class UI : MonoBehaviour
         inventoryEnabled = false;
         if (codexUI != null)
             codexUI.gameObject.SetActive(false);
+        if (activeQuestUI != null)
+            activeQuestUI.gameObject.SetActive(false);
     }
     
     private void SwitchTo(GameObject objectToSwitchOn)
@@ -190,6 +244,12 @@ public class UI : MonoBehaviour
         }
 
         if (codexUI != null && codexUI.gameObject.activeSelf)
+        {
+            StopPlayerControls(true);
+            return;
+        }
+
+        if (activeQuestUI != null && activeQuestUI.gameObject.activeSelf)
         {
             StopPlayerControls(true);
             return;
@@ -242,6 +302,11 @@ public class UI : MonoBehaviour
 
     public void ToggleInventoryUI()
     {
+        if (activeQuestUI != null && activeQuestUI.gameObject.activeSelf)
+        {
+            activeQuestUI.gameObject.SetActive(false);
+        }
+
         inventoryUI.transform.SetAsLastSibling();
         SetTooltipsAsLastSibling();
         fadeScreenUI.transform.SetAsLastSibling();
@@ -251,6 +316,41 @@ public class UI : MonoBehaviour
         HideAllTooltips();
 
         StopPlayerControlsIfNeeded();
+    }
+
+    public void ToggleActiveQuestUI()
+    {
+        if (activeQuestUI == null)
+        {
+            activeQuestUI = GetComponentInChildren<UI_ActiveQuest>(true);
+        }
+
+        if (activeQuestUI == null) return;
+
+        bool willBeActive = !activeQuestUI.gameObject.activeSelf;
+        if (willBeActive)
+        {
+            if (inventoryUI != null && inventoryUI.gameObject.activeSelf)
+            {
+                inventoryUI.gameObject.SetActive(false);
+                inventoryEnabled = false;
+            }
+
+            activeQuestUI.transform.SetAsLastSibling();
+            SetTooltipsAsLastSibling();
+            if (fadeScreenUI != null)
+                fadeScreenUI.transform.SetAsLastSibling();
+
+            activeQuestUI.gameObject.SetActive(true);
+            HideAllTooltips();
+            StopPlayerControls(true);
+        }
+        else
+        {
+            activeQuestUI.gameObject.SetActive(false);
+            HideAllTooltips();
+            StopPlayerControlsIfNeeded();
+        }
     }
 
     public void OpenDialogueUI(DialogueLineSO firstLine,DialogueNpcData npcData)

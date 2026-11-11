@@ -51,8 +51,8 @@ public class UI_InGame : MonoBehaviour
     private UI_QuickItemSlotOption[] quickItemOptions;
     private UI_QuickItemSlot[] quickItemSlots;
 
-    [Header("Fast Travel Button")]
-    [SerializeField] private Button fastTravelButton;
+    [Header("Top Right Menu Bar")]
+    [SerializeField] private UI_TopRightMenu topRightMenu;
 
     private void Start()
     {
@@ -88,84 +88,21 @@ public class UI_InGame : MonoBehaviour
             }
         }
 
-        SetupFastTravelButton();
+        SetupTopRightMenu();
     }
 
-    private void Update()
+    private void SetupTopRightMenu()
     {
-        // Phím tắt nhanh [T] mở giao diện Dịch Chuyển
-        if (UnityEngine.InputSystem.Keyboard.current != null && 
-            UnityEngine.InputSystem.Keyboard.current.tKey.wasPressedThisFrame)
-        {
-            if (UI.instance != null && UI.instance.dialogueUI != null && UI.instance.dialogueUI.gameObject.activeSelf)
-                return;
+        if (topRightMenu == null)
+            topRightMenu = GetComponentInChildren<UI_TopRightMenu>(true);
 
-            OnFastTravelClicked();
-        }
+        if (topRightMenu == null)
+            topRightMenu = gameObject.AddComponent<UI_TopRightMenu>();
+
+        topRightMenu.Initialize(this);
     }
 
-    private void SetupFastTravelButton()
-    {
-        if (fastTravelButton == null)
-        {
-            Transform existingBtn = transform.Find("Btn_FastTravel");
-            if (existingBtn != null)
-            {
-                fastTravelButton = existingBtn.GetComponent<Button>();
-            }
-        }
-
-        if (fastTravelButton == null)
-        {
-            // Tạo nút Dịch Chuyển Nhanh ở góc trên bên phải màn hình
-            GameObject btnObj = new GameObject("Btn_FastTravel");
-            btnObj.transform.SetParent(transform, false);
-
-            RectTransform rect = btnObj.AddComponent<RectTransform>();
-            rect.anchorMin = new Vector2(1f, 1f);
-            rect.anchorMax = new Vector2(1f, 1f);
-            rect.pivot = new Vector2(1f, 1f);
-            rect.anchoredPosition = new Vector2(-25f, -25f);
-            rect.sizeDelta = new Vector2(136f, 36f);
-
-            // Nền tối bán trong suốt viền vàng Pixel RPG
-            Image bg = btnObj.AddComponent<Image>();
-            bg.color = new Color(0.08f, 0.10f, 0.16f, 0.90f);
-
-            Outline outline = btnObj.AddComponent<Outline>();
-            outline.effectColor = new Color(0.95f, 0.75f, 0.2f, 0.85f);
-            outline.effectDistance = new Vector2(1.5f, -1.5f);
-
-            fastTravelButton = btnObj.AddComponent<Button>();
-            var colors = fastTravelButton.colors;
-            colors.highlightedColor = new Color(0.2f, 0.25f, 0.35f, 1f);
-            colors.pressedColor = new Color(0.12f, 0.15f, 0.22f, 1f);
-            fastTravelButton.colors = colors;
-
-            // Text nhãn hiển thị nút
-            GameObject textObj = new GameObject("Text");
-            textObj.transform.SetParent(btnObj.transform, false);
-            RectTransform textRect = textObj.AddComponent<RectTransform>();
-            textRect.anchorMin = Vector2.zero;
-            textRect.anchorMax = Vector2.one;
-            textRect.sizeDelta = Vector2.zero;
-
-            TextMeshProUGUI btnText = textObj.AddComponent<TextMeshProUGUI>();
-            btnText.fontSize = 11.5f;
-            btnText.fontStyle = FontStyles.Bold;
-            btnText.alignment = TextAlignmentOptions.Center;
-            btnText.color = new Color(1f, 0.88f, 0.3f);
-            btnText.text = "⚡ DỊCH CHUYỂN [T]";
-        }
-
-        if (fastTravelButton != null)
-        {
-            fastTravelButton.onClick.RemoveListener(OnFastTravelClicked);
-            fastTravelButton.onClick.AddListener(OnFastTravelClicked);
-        }
-    }
-
-    private void OnFastTravelClicked()
+    public void OnFastTravelClicked()
     {
         if (UI.instance != null)
         {

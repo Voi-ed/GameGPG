@@ -517,7 +517,7 @@ public class BossArenaManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Kiểm tra xem Boss đã bị tiêu diệt chưa
+    /// Kiểm tra xem Boss đã bị tiêu diệt chưa (lấy từ dữ liệu JSON của SaveManager)
     /// </summary>
     public static bool IsBossDefeated(string bossId)
     {
@@ -531,11 +531,11 @@ public class BossArenaManager : MonoBehaviour
                 return val;
         }
 
-        return PlayerPrefs.GetInt("BossDefeated_" + bossId, 0) == 1;
+        return false;
     }
 
     /// <summary>
-    /// Đánh dấu Boss đã bị tiêu diệt (lưu vào SaveManager và PlayerPrefs)
+    /// Đánh dấu Boss đã bị tiêu diệt (lưu vào file JSON thông qua SaveManager)
     /// </summary>
     public static void MarkBossDefeated(string bossId)
     {
@@ -544,20 +544,24 @@ public class BossArenaManager : MonoBehaviour
 
         if (SaveManager.instance != null && SaveManager.instance.GetGameData() != null)
         {
-            var dict = SaveManager.instance.GetGameData().defeatedBosses;
-            if (dict != null)
-            {
-                dict[bossId] = true;
-                SaveManager.instance.SaveGame();
-            }
+            var data = SaveManager.instance.GetGameData();
+            if (data.defeatedBosses == null)
+                data.defeatedBosses = new SerializableDictionary<string, bool>();
+
+            data.defeatedBosses[bossId] = true;
+            SaveManager.instance.SaveGame();
         }
 
-        PlayerPrefs.SetInt("BossDefeated_" + bossId, 1);
-        PlayerPrefs.Save();
+        // Xóa key PlayerPrefs cũ nếu từng tồn tại để tránh xung đột
+        if (PlayerPrefs.HasKey("BossDefeated_" + bossId))
+        {
+            PlayerPrefs.DeleteKey("BossDefeated_" + bossId);
+            PlayerPrefs.Save();
+        }
     }
 
     /// <summary>
-    /// Đặt lại tiến trình tiêu diệt Boss (dùng cho test/debug)
+    /// Đặt lại tiến trình tiêu diệt Boss (lưu vào file JSON qua SaveManager)
     /// </summary>
     public static void ResetBossProgress()
     {
@@ -571,12 +575,13 @@ public class BossArenaManager : MonoBehaviour
             }
         }
 
+        // Dọn sạch tàn dư PlayerPrefs cũ nếu từng lưu trước đây
         string[] allBossIds = { "CrimsonBlade", "Seeker", "Satyr", "MartialHero", "KnightMage", "BlackKnight", "Reaper", "ArchDemon" };
         foreach (var id in allBossIds)
         {
             PlayerPrefs.DeleteKey("BossDefeated_" + id);
         }
         PlayerPrefs.Save();
-        Debug.Log("[BossArenaManager] Đã đặt lại toàn bộ tiến trình Boss!");
+        Debug.Log("[BossArenaManager] Đã đặt lại toàn bộ tiến trình Boss trong file JSON!");
     }
 }
